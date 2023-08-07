@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import PageAccueilCoach from './components/pageAccueilCoach/PageAccueilCoach';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
     <div className="App">
-      <h1>My app</h1>
+      <PageAccueilCoach />
     </div>
   );
 }
