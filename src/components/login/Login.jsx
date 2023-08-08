@@ -21,6 +21,7 @@ const Login = () => {
                 <AiOutlineUser className="fw-bold icon fs-4" />
               </InputGroup.Text>
               <Form.Control
+                type="email"
                 placeholder="Email"
                 aria-label="Email"
                 aria-describedby="basic-addon1"
@@ -31,6 +32,7 @@ const Login = () => {
                 <AiFillLock className="fw-bold icon fs-4" />
               </InputGroup.Text>
               <Form.Control
+                type="password"
                 placeholder="Mot de passe"
                 aria-label="Mot de passe"
                 aria-describedby="basic-addon1"
@@ -41,11 +43,12 @@ const Login = () => {
                 Mot de passe oublié ?
               </a>
             </div>
-            <button className="btn text-light fw-bold w-100">Connection</button>
+            <button className="login-btn btn text-light fw-bold w-100">
+              Connection
+            </button>
           </form>
         </Card.Body>
       </Card>
-      <div></div>
     </div>
   );
 };
