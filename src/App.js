@@ -14,7 +14,7 @@ function App() {
       {/* <Dashboard  /> */}
       {/* <Login /> */}
       <ForgotPW/>
-      <PageAccueilCoach />
+      {/* <PageAccueilCoach /> */}
       
     </div>
   );
