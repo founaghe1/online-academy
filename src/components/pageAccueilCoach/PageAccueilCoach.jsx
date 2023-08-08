@@ -4,6 +4,7 @@ import devWeb from '../../Assets/programmation.png';
 import design from '../../Assets/conception-graphique.png';
 import marketing from '../../Assets/digital-marketing.png';
 import { BsArrowRightSquare } from 'react-icons/bs'
+import chatPersonne from "../../Assets/chatPersonne.png"
 
 
 const PageAccueilCoach = () => {
@@ -64,10 +65,47 @@ const PageAccueilCoach = () => {
                     </div>
                 </div>
             </div>
-            <div className='col-md-3 col-sm-12 px-2 shadow rounded'>
-                <p className='sms'>Quick Message <span className='ms-5 smsNonLi'>Messages non lit</span> <span className='ms-5 nbr'>5</span> </p>
-                <div>
-                    <p></p>
+            <div className='col-md-3 col-sm-12 px-2 shadow rounded p-3 messagesCol'>
+                <div className='d-flex justify-content-around'>
+                    <p className='sms fw-bold'>Quick Message </p>
+                    <p className='sms fw-bold'>Messages non lit <span className='px-2 ms-3 bg-info rounded text-light'>7</span> </p>
+                </div>
+                
+
+                <div className='divChat d-flex rounded-3 shadow pt-3 ps-2 mb-3'>
+                    <p className='pChat rounded-circle p-2 bg-info'><img className='chatProfil rounded-circle' src={chatPersonne} alt="" width={50}/></p>
+                    <div className='nomSms ps-3'>
+                        <p className='nom'>Mohamed Diallo</p>
+                        <p className='border rounded shadow pSMS p-2'>Bonjour tout le monde c'est mohamed sarifou Diallo</p>
+                    </div>
+                </div>
+                <div className='divChat d-flex rounded-3 shadow pt-3 ps-2 my-3'>
+                    <p className='pChat rounded-circle p-2 bg-info'><img className='chatProfil rounded-circle' src={chatPersonne} alt="" width={50}/></p>
+                    <div className='nomSms ps-3'>
+                        <p className='nom'>Mohamed Diallo</p>
+                        <p className='border rounded shadow p-2'>@mohd.diallo</p>
+                    </div>
+                </div>
+                <div className='divChat d-flex rounded-3 shadow pt-3 ps-2 my-3'>
+                    <p className='pChat rounded-circle p-2 bg-info'><img className='chatProfil rounded-circle' src={chatPersonne} alt="" width={50}/></p>
+                    <div className='nomSms ps-3'>
+                        <p className='nom'>Mohamed Diallo</p>
+                        <p className='border rounded shadow p-2'>Bonjour tout le monde c'est mohamed sarifou Diallo</p>
+                    </div>
+                </div>
+                <div className='divChat d-flex rounded-3 shadow pt-3 ps-2 my-3'>
+                    <p className='pChat rounded-circle p-2 bg-info'><img className='chatProfil rounded-circle' src={chatPersonne} alt="" width={50}/></p>
+                    <div className='nomSms ps-3'>
+                        <p className='nom'>Mohamed Diallo</p>
+                        <p className='border rounded shadow p-2'>@mohd.diallo</p>
+                    </div>
+                </div>
+                <div className='divChat d-flex rounded-3 shadow pt-3 ps-2'>
+                    <p className='pChat rounded-circle p-2 bg-info'><img className='chatProfil rounded-circle' src={chatPersonne} alt="" width={50}/></p>
+                    <div className='nomSms ps-3'>
+                        <p className='nom'>Mohamed Diallo</p>
+                        <p className='border rounded shadow p-2'>Bonjour tout le monde c'est mohamed sarifou Diallo</p>
+                    </div>
                 </div>
             </div>
         </div>

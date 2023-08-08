@@ -21,7 +21,7 @@
     padding: 50px;
 }
 .design{
-    background-color: rgb(77, 1, 200);
+    background-color: rgb(100, 1, 200);
 }
 .design p{
     padding: 50px;
@@ -64,4 +64,23 @@
     background-color: rgb(26, 144, 254);
     color: aliceblue;
     border-radius: 5px;
+}
+.nomSms span{
+    color: rgb(131, 132, 134);
+}
+.nom{
+    font-size: 22px;
+    margin-bottom: -6px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.chatProfil{
+    height: 45px !important;
+    width: 45px !important;
+}
+.pChat{
+    height: 50px;
+    width: 50px;
+}
+.pSMS{
+    max-width: 100%;
 }
