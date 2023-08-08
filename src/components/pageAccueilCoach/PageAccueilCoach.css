@@ -1,0 +1,86 @@
+.accueil{
+    padding: 25px;
+}
+.modul{
+    width: 100%;
+}
+.colCard{
+    padding: 10px;
+}
+.card{
+    padding: 25px;
+    border: none !important;
+}
+.card-img{
+    padding: 25px;
+}
+.web{
+    background-color: coral;
+}
+.web p{
+    padding: 50px;
+}
+.design{
+    background-color: rgb(100, 1, 200);
+}
+.design p{
+    padding: 50px;
+}
+.market{
+    background-color: rgb(26, 144, 254);
+}
+.market p{
+    padding: 50px;
+}
+.cart1{
+    background-color: rgba(255, 127, 80, 0.257) !important;
+}
+.cart2{
+    background-color: rgba(77, 1, 200, 0.256) !important;
+}
+.cart3{
+    background-color: rgba(26, 144, 254, 0.218) !important;
+}
+.btnDiv{
+    text-align: end;
+}
+.btn1{
+    padding: 0 7px 4px 7px;
+    border: none;
+    background-color: coral;
+    color: aliceblue;
+    border-radius: 5px;
+}
+.btn2{
+    padding: 0 7px 4px 7px;
+    border: none;
+    background-color: rgb(77, 1, 200);
+    color: aliceblue;
+    border-radius: 5px;
+}
+.btn3{
+    padding: 0 7px 4px 7px;
+    border: none;
+    background-color: rgb(26, 144, 254);
+    color: aliceblue;
+    border-radius: 5px;
+}
+.nomSms span{
+    color: rgb(131, 132, 134);
+}
+.nom{
+    font-size: 22px;
+    margin-bottom: -6px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.chatProfil{
+    height: 45px !important;
+    width: 45px !important;
+}
+.pChat{
+    height: 50px;
+    width: 50px;
+}
+.pSMS{
+    max-width: 100%;
+}
