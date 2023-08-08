@@ -6,7 +6,7 @@ import Dashboard from './components/Dashboard/dashboard'
 function App() {
   return (
     <div className="App">
-      <Admin/>
+      {/* <Admin/> */}
       <Dashboard  />
       
     </div>

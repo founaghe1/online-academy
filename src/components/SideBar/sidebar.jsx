@@ -43,15 +43,14 @@ const sidebar = () => {
                         </a>
                     </li>
                     <br />
-                    <div class="card imgcard ms-4 border-none">
-            <img src={image} alt="" className='w-80'/> 
-
-      <div class="card-body rounded-3 shadow">
-    <h5 class="card-title text-center">Card title</h5>
-    <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn">Go somewhere</a>
-  </div>
-</div>
+                    <div class="card imgcard ms-4 border-none pb-5">
+                        <img src={image} alt="" className='w-80'/> 
+                        <div class="card-body rounded-3 shadow">
+                            <h5 class="card-title text-center">Card title</h5>
+                            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn">Go somewhere</a>
+                        </div>
+                    </div>
                 </ul>
             </div>
       

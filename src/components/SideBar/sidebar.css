@@ -18,12 +18,10 @@ ul li a:hover {
 }
 
 .sideBar li a:hover {
-
-    background: rgb(251, 232, 211);
-    background: linear-gradient(90deg, rgba(251, 232, 211, 1) 0%, rgba(251, 232, 211, 1) 62%, rgba(255, 255, 255, 1) 100%);
-    padding: 10px 0px 11px 10px;
-    border-radius: 25px 0 0 25px;
-    width: 80%;
+    background-color: #8a70d6; 
+    color:#fff!important ;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 .sideBar li a{
     margin-left: 20px;
