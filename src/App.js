@@ -1,10 +1,15 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dashboard from './components/Dashboard/dashboard'
+import NavBar from './components/NavBar/navbar'
+
+import SideBar from './components/SideBar/sidebar';
 function App() {
   return (
     <div className="App">
-      <Dashboard  />
+          <NavBar/>
+          < SideBar/>
+
+
     </div>
   );
 }

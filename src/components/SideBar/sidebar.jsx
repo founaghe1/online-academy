@@ -13,12 +13,12 @@ const sidebar = () => {
   return (
     <>
        <div className='fixed-top sideBar'>
-                <ul className='list-unstyled text-muted'>
+                <ul className='list-unstyled text-muted ms-5'>
 
-                    <li className='logo ms-5'>
+                    <li className='logo '>
                         <img src={logo} className='w-75 ' alt="" />
                     </li>
-                    <li className='liste'>
+                    <li className=''>
                         <a href='/' className='nav-link active my-3' aria-current="page">
                             <BsFillGridFill className='fs-3 mb-3'/>
                             <span className='mx-2 d-none d-sm-inline fs-3'>
