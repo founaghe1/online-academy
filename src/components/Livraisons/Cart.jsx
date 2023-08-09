@@ -17,10 +17,9 @@ const Cart = () => {
                 <img src={img} className="card-img-top" alt="..." />
                 </div>
                 <div className="card-Footer d-flex justify-content-between align-items-center">
-                    <button type="button" className="btn btn-md btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <GrView />Voir</button>
-                    <button type="button" className="btn btn-md btn-outline-success"><FcAcceptDatabase/>Accepter</button>
-                    <button type="button" className="btn btn-md btn-outline-danger"><TbPlayerEject />Rejeter</button>
+                    <button type="button" className="btn btn-lin btn-md btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"><GrView />Voir</button>
+                    <button type="button" className="btn btn-lin btn-md btn-outline-success"><FcAcceptDatabase/>Accepter</button>
+                    <button type="button" className="btn btn-lin btn-md btn-outline-danger"><TbPlayerEject />Rejeter</button>
                 </div>
               </div>
             </div>

@@ -17,7 +17,7 @@ const Livraison = () => {
                     <a class="nav-link active" aria-current="page" href="#"><IoMdNotifications className='icon' /></a>
                     </li>
                 </ul>
-                </div>
+              </div>
             </div>
             </nav>
         </div>

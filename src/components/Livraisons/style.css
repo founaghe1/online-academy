@@ -9,6 +9,25 @@
 
 }
 
-.btn{
+.btn-lin{
     margin: 10px;
+}
+.btn-cart{
+    background-color: #8e70d6;
+    color: white;
+}
+
+.btn-cart:hover{
+    background-color: #e9e3ff;
+    color: black;
+}
+
+.btn-car{
+    border: 2px solid #8e70d6;
+    color: white;
+}
+
+.btn-car:hover{
+    background-color: #e9e3ff;
+    color: black;
 }

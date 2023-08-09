@@ -8,15 +8,17 @@ import ForgotPW from './components/ForgotPW/ForgotPW'
 import PageAccueilCoach from './components/pageAccueilCoach/PageAccueilCoach';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Livraison from './components/Livraisons/Livraison';
+import Voirlivraison from './components/Livraisons/Voirlivraison';
 function App() {
   return (
     <div className="App">
       {/* <Admin/> */}
       {/* <Dashboard  /> */}
       {/* <Login /> */}
-      <ForgotPW/>
+      {/* <ForgotPW/> */}
       {/* <PageAccueilCoach /> */}
-      <Livraison />
+      {/* <Livraison /> */}
+      <Voirlivraison />      
       
     </div>
   );
