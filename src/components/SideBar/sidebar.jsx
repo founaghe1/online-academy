@@ -61,14 +61,14 @@ const sidebar = () => {
                         </a>
                     </li>
                     <br />
-                    <div class="card imgcard ms-4 border-none pb-5">
+                    {/* <div class="card imgcard ms-4 border-none pb-5">
                         <img src={image} alt="" className='w-80 '/> 
                         <div class="card-body rounded-3 shadow">
                             <h5 class="card-title text-center">Card title</h5>
                             <p class="card-text text-center">princesse mina yacine</p>
                             <a href="#" class="btn text-white">Go somewhere</a>
                         </div>
-                    </div>
+                    </div> */}
                 </ul>
             </div>
       

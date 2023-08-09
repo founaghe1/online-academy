@@ -26,8 +26,8 @@ function App() {
   return (
     <div className="App">
       {/* <Admin/> */}
-      <Dashboard  />
-      {/* <Dasashboardappt/> */}
+      {/* <Dashboard  /> */}
+      <Dasashboardappt/>
       {/* <Login /> */}
       {/* <ForgotPW/> */}
       {/* <PageAccueilCoach /> */}
@@ -42,8 +42,8 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-      <Modale />
-      <Coure />
+      {/* <Modale /> */}
+      {/* <Coure /> */}
     </div>
   );
 }
