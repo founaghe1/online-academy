@@ -1,4 +1,4 @@
-.add {
+.add_domain {
     position: relative;
     font-family: inherit;
     font-weight: 500;
@@ -11,8 +11,8 @@
     overflow: hidden;
 }
 
-.add::before,
-.add::after {
+.add_domain::before,
+.add_domain::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -21,7 +21,7 @@
     z-index: 0;
 }
 
-.add::before {
+.add_domain::before {
     content: "";
     background: black;
     color: black;
@@ -31,7 +31,7 @@
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
-.add span {
+.add_domain span {
     position: relative;
     z-index: 10;
     transition: color 0.4s;
@@ -40,11 +40,11 @@
     padding: 0.8em 1.2em 0.8em 1.05em;
 }
 
-.add:hover::before {
+.add_domain:hover::before {
     transform: translate3d(100%, 0, 0);
 }
 
-.add:active {
+.add_domain:active {
     transform: scale(0.95);
 }
 
@@ -53,6 +53,35 @@ h1 {
     font-weight: 800;
 
     padding-top: 20px;
+}
+
+.add_file{
+    padding: 15px 15px 10px 20px;
+}
+
+.add_file label{
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+}
+
+.modal-body .name_dom{ 
+    margin: 1rem;
+}
+
+.input-wrapper .name_dom {
+    background-color: #eee;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 18em;
+    border-radius: 1rem;
+    color: #8a70d6;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+}
+
+.input-wrapper .name_dom:focus {
+    outline-color: #8a70d6;
 }
 
 .violet {
@@ -89,12 +118,12 @@ h1 {
     background-color: rgba(128, 128, 128, 0.372);
 }
 
-.card-img-top {
+.img_card {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    padding: 15px;
+    margin: 35px;
 }
 
 .new {
@@ -119,17 +148,22 @@ h1 {
     transition: 1s;
 }
 
-p.card-text{
+p.card-text {
     font-size: 0.9rem;
     font-weight: 400;
     text-align: center;
     color: lightslategray;
 }
 
-.card-title.h5{
+.card-title.h5 {
     font-size: 1.3rem;
     font-weight: 800;
     text-align: center;
+}
+
+.card-body {
+    padding: 0 10px 10px 10px;
+    margin: 0;
 }
 
 @media screen and(max-width: 600px) {

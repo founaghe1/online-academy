@@ -1,9 +1,9 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Domain from './components/Domain/Domain';
-import Programmation from './components/Domain/Programmation';
-import Marketing from './components/Domain/Marketing';
-import Design from './components/Domain/Design';
+import Domain from './components/Domain/Coach/Domain';
+import Programmation from './components/Domain/Coach/Programmation';
+import Marketing from './components/Domain/Coach/Marketing';
+import Design from './components/Domain/Coach/Design';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
