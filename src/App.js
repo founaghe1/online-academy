@@ -1,5 +1,5 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 import Admin from './components/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard/dashboard'
@@ -19,6 +19,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Modale from "./components/Modal";
 import Coure from "./components/Cour";
 
+import Livraison from './components/Livraisons/Livraison';
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
       {/* <Login /> */}
       {/* <ForgotPW/> */}
       {/* <PageAccueilCoach /> */}
+      <Livraison />
       
       {/* <BrowserRouter>
         <Routes>
@@ -37,8 +39,8 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-      <Modale />
-      <Coure />
+      {/* <Modale />
+      <Coure /> */}
     </div>
   );
 }
