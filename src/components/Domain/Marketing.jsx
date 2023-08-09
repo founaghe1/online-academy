@@ -3,6 +3,9 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "react-bootstrap/Card";
 import "./domain.css";
 import { Link } from "react-router-dom";
+import Programmer from "../../Assets/programmer.png";
+import Marketer from "../../Assets/content-strategy.png";
+import Designer from "../../Assets/web-design.png";
 
 const Marketing = () => {
   return (

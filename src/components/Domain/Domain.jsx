@@ -1,9 +1,9 @@
 import React from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "react-bootstrap/Card";
-import Programmer from "../../assets/programmer.png";
-import Marketer from "../../assets/content-strategy.png";
-import Designer from "../../assets/web-design.png";
+import Programmer from "../../Assets/programmer.png";
+import Marketer from "../../Assets/content-strategy.png";
+import Designer from "../../Assets/web-design.png";
 import "./domain.css";
 
 import { Link } from "react-router-dom";;

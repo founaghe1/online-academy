@@ -3,10 +3,10 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "react-bootstrap/Card";
 import "./domain.css";
 import { Link } from "react-router-dom";
-import HTML from "../../assets/html-5.png";
-import CSS from "../../assets/css-3.png";
-import Javascript from "../../assets/js.png";
-import PHP from "../../assets/php.png";
+import HTML from "../../Assets/html-5.png";
+import CSS from "../../Assets/css-3.png";
+import Javascript from "../../Assets/js.png";
+import PHP from "../../Assets/php.png";
 
 const Programmation = () => {
   return (

@@ -24,8 +24,6 @@ function App() {
       {/* <ForgotPW/> */}
       {/* <PageAccueilCoach /> */}
       
-
-
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Domain />} />
