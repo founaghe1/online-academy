@@ -23,18 +23,18 @@ function Coure() {
    const handleShow = () => setShow(true);
   return (
     <>
-      <h1 className=''>Mes Cours</h1>
+      <h1 className='bg-info w-25 text-center ms-3 rounded text-light pb-4'>Mes Cours</h1>
       <div className='container'>
         <Table responsive className='table mt-5'>
           <thead>
-            <tr>
+            <tr className="text-center">
               <th>Course Name</th>
               <th>Debut</th>
               <th>Durée</th>
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-center">
             <tr>
               <td className=''>
                 <div className='d-flex justify-content-evenly align-items-center'>
