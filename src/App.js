@@ -15,6 +15,10 @@ import Marketing from './components/Domain/Marketing';
 import Design from './components/Domain/Design';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import Modale from "./components/Modal";
+import Coure from "./components/Cour";
+
 function App() {
   return (
     <div className="App">
@@ -24,14 +28,22 @@ function App() {
       {/* <ForgotPW/> */}
       {/* <PageAccueilCoach /> */}
       
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Domain />} />
           <Route path="/sous-domaine-programmation" element={<Programmation />} />
           <Route path="/sous-domaine-marketing" element={<Marketing />} />
           <Route path="/sous-domaine-design" element={<Design />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+
+
+
+
+
+      <Modale />
+      <Coure />
     </div>
   );
 }
