@@ -1,10 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+
+
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Modale from "./components/Modal";
+import Coure from "./components/Cour";
 
 function App() {
   return (
-    <div className="App">
-      <h1>My app</h1>
+    <div className='App'>
+      <Modale />
+      <Coure />
     </div>
   );
 }

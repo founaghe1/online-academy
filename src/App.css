@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+.icon1{
+  background-color: rgba(212, 195, 228, 0.613);
+}
+.sir{
+  color:blueviolet;
+}
+.icon2{
+  background-color:rgb(238, 238, 242);
+}
+.sir1{
+  color:blue;
+}
+.icon3{
+  background-color:rgb(247, 217, 245);
+}
+.sir2{
+  color:rgb(202, 25, 190);
+}
+.icon4{
+  background-color:rgb(215, 199, 231);
+}
+.sir3{
+  color:blueviolet;
+}
+.icon5{
+  background-color:rgb(246, 206, 188);
+}
+.sir4{
+  color:rgb(239, 95, 18);
+}
+
+.for{
+  background-color: rgb(240, 229, 238);
+}
