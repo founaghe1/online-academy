@@ -27,7 +27,7 @@ function Coure() {
       <div className='container'>
         <Table responsive className='table mt-5'>
           <thead>
-            <tr>
+            <tr className="text-center">
               <th>Course Name</th>
               <th>Debut</th>
               <th>Durée</th>
