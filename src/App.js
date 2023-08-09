@@ -1,10 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Domain from './components/Domain/Domain';
+import Programmation from './components/Domain/Programmation';
+import Marketing from './components/Domain/Marketing';
+import Design from './components/Domain/Design';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <h1>My app</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Domain />} />
+          <Route path="/sous-domaine-programmation" element={<Programmation />} />
+          <Route path="/sous-domaine-marketing" element={<Marketing />} />
+          <Route path="/sous-domaine-design" element={<Design />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
