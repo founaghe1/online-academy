@@ -16,7 +16,7 @@ function App() {
       {/* <Login /> */}
       <ForgotPW/>
       {/* <PageAccueilCoach /> */}
-      {/* <Livraison /> */}
+      <Livraison />
       
     </div>
   );
