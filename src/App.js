@@ -15,9 +15,10 @@ import Marketing from './components/Domain/Marketing';
 import Design from './components/Domain/Design';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Modale from "./components/Modal";
-import Coure from "./components/Cour";
+import Modale from "./components/Cour/Modal";
+import Coure from "./components/Cour/Cour";
 
 import Livraison from './components/Livraisons/Livraison';
 function App() {
@@ -28,7 +29,7 @@ function App() {
       {/* <Login /> */}
       {/* <ForgotPW/> */}
       {/* <PageAccueilCoach /> */}
-      <Livraison />
+      {/* <Livraison /> */}
       
       {/* <BrowserRouter>
         <Routes>
@@ -39,8 +40,8 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-      {/* <Modale />
-      <Coure /> */}
+      <Modale />
+      <Coure />
     </div>
   );
 }
