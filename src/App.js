@@ -18,6 +18,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modale from "./components/Modal";
 import Coure from "./components/Cour";
+import Chat from './components/Chat/Chat.jsx';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       {/* <Login /> */}
       {/* <ForgotPW/> */}
       {/* <PageAccueilCoach /> */}
+      <Chat/>
       
       {/* <BrowserRouter>
         <Routes>
@@ -42,8 +44,8 @@ function App() {
 
 
 
-      <Modale />
-      <Coure />
+      {/* <Modale /> */}
+      {/* <Coure /> */}
     </div>
   );
 }
