@@ -6,8 +6,11 @@ import {
 import {PiChatsCircleFill} from 'react-icons/pi'
 import {GrDomain} from 'react-icons/gr'
 import './sidebarappt.css'
-import logo from "../../medias/rrr.jpeg"
-import image from '../../medias/dk.jpeg'
+import logo from "../../medias/logo.jpeg"
+import dk from '../../medias/dk.jpeg'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 const sidebarappt = () => {
   return (
     <>
@@ -15,7 +18,7 @@ const sidebarappt = () => {
              <ul className='list-unstyled text-muted '>
 
                  <li className='logo ms-5'>
-                     <img src={logo} className='w-100 ' alt="" />
+                     <img src={logo} className='lo ' alt="" />
                  </li>
                  <li className='liste  '>
                      <a href='/' className='nav-link active my-3' aria-current="page">
@@ -58,14 +61,18 @@ const sidebarappt = () => {
                      </a>
                  </li> */}
                  <br />
-                 {/* <div class="card imgcard ms-4 border-none pb-5">
-                     <img src={image} alt="" className='w-80 '/> 
-                     <div class="card-body rounded-3 shadow">
-                         <h5 class="card-title text-center">Card title</h5>
-                         <p class="card-text text-center">princesse mina yacine</p>
-                         <a href="#" class="btn text-white">Go somewhere</a>
-                     </div>
-                 </div> */}
+                
+                 {/* <Card style={{ width: '18rem' }}>
+      <Card.Img   src={dk} alt="" className='w-80 '/> 
+
+      <Card.Body>
+        <Card.Title>Online Academy</Card.Title>
+        <Card.Text>
+          princesse
+        </Card.Text>
+        <Button variant="primary justify-content-center align-items-center">valider</Button>
+      </Card.Body>
+    </Card> */}
              </ul>
          </div>
    

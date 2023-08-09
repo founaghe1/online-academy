@@ -1,44 +1,51 @@
-import React from 'react'
-import { BsSearch, BsSliders, } from "react-icons/bs";
-import { IoMdNotificationsOutline } from "react-icons/io";
+import React, { useState } from 'react'
+import { BsSearch, BsSliders, BsBellFill } from "react-icons/bs";
 import { PiPencilSimpleLineDuotone } from "react-icons/pi"
 import avatar from "../../medias/avatar.jpg"
-import { useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import './navbar.css'
 import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 
 const navbar = () => {
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false)
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     return (
         <>
-            <nav class="navbar bg-white">
-                <div class="container-fluid ">
-                    <form className='navForm d-flex'>
-                        <div className='me-5 '>
-                            <h1>Dashboard</h1>
-                        </div>
-                        <div class="input-group recherche shadow rounded-5">
-
-                            <span class="input-group-text bg-white rounded-start-4" id="basic-addon1">
-                                <BsSearch />
-                            </span>
-                            <input type="text" class="form-control " placeholder="Search..." />
-                            <span class="input-group-text rounded-end-4 bg-white" id="basic-addon1">
-                                <BsSliders />
-                            </span>
-                        </div>
-                    </form>
-                    <ul class="ms-auto list-unstyled  d-flex align-items-center navList">
+            <Navbar expand="lg" className="bg-body-tertiary">
+                <Container>
+                    <Navbar.Brand href="#home"><span><h1>Dashboard</h1></span></Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="">
+                            <Nav.Link href="#home ">
+                                <div class="group ms-5 mt-3 me-auto">
+                                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                                        <g>
+                                            <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+                                        </g>
+                                    </svg>
+                                    <input placeholder="Search" type="search" class="input" />
+                                </div>
+                            </Nav.Link>
+                            <Nav.Link href="#link">
+                                <button class="btn">
+                                    <span><h4>Mes coachs</h4></span>
+                                </button>
+                            </Nav.Link>
+                            <ul class="ms-auto list-unstyled  d-flex align-items-center navList">
                         <li>
                             <a href="/">
-                                <IoMdNotificationsOutline className='fs-4 text-black' />
+                                <BsBellFill className='fs-5 text-black' />
                             </a>
                         </li>
                         <li >
@@ -63,7 +70,7 @@ const navbar = () => {
                         <li>
                             <a href="/">
 
-                                <Nav className="ms-auto">
+                            <Nav className="ms-auto">
                                     <Nav.Link href="#home">
                                         <Button
                                             className="btn btn-secondary text-white add"
@@ -147,12 +154,17 @@ const navbar = () => {
                                     </Nav.Link>
 
                                 </Nav>
+
                             </a>
                         </li>
 
                     </ul>
-                </div>
-            </nav >
+                
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+         
         </>
     )
 }
