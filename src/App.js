@@ -25,12 +25,12 @@ function App() {
   return (
     <div className="App">
       {/* <Admin/> */}
-      {/* <Dashboard  /> */}
+      <Dashboard  />
       {/* <Login /> */}
       {/* <ForgotPW/> */}
       {/* <PageAccueilCoach /> */}
       {/* <Livraison /> */}
-      <Chat/>
+      {/* <Chat/> */}
       
       {/* <BrowserRouter>
         <Routes>
