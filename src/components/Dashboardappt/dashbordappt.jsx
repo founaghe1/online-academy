@@ -1,18 +1,18 @@
 import React from 'react'
-import NavBar from '../NavBar/navbar'
-import SideBar from '../SideBar/sidebar'
-const dashboard = () => {
+import SideBarappt from '../SideBarappt/sidebarappt'
+import NavBarappt from '../NavBarappt/navbarappt'
+const dashbordappt = () => {
   return (
-   <>
+    <>
     
     <div className='container-fluid' >
     <div className='row'>
         <div className='col-2 min-vh-100 bg-white'>
-            <SideBar />
+            <SideBarappt />
         </div>
         <div className='col-10'>
             <div className='row bg-primary-subtle '>
-                <NavBar />
+                <NavBarappt />
 
             </div>
         </div>
@@ -22,4 +22,4 @@ const dashboard = () => {
   )
 }
 
-export default dashboard
+export default dashbordappt

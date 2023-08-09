@@ -1,0 +1,71 @@
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 220px;
+  }
+  
+  .input {
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    width: 100%;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #e9e3ff;
+    color: #0d0c22;
+    box-shadow: 0 0 5px #8a70d6, 0 0 0 10px #8a70d6;
+    transition: .3s ease;
+  }
+  
+  .input::placeholder {
+    color: #777;
+  }
+  
+  .icon {
+    position: absolute;
+    left: 1rem;
+    fill: #777;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  
+  
+  
+  
+  
+@media only screen and (max-width: 425px) {
+    .navForm {
+        width: 50%;
+        
+    }
+
+    .navBar {
+        display: flex;
+    }
+
+    .navList img {
+        width: 25px;
+        margin-right: 0px !important;
+    }
+
+    .navList li {
+        margin: 0 5px 0 5px !important;
+    }
+}
+
+.navList li {
+    margin: 0 20px 0 20px;
+}
+
+.navList img{
+    margin-right: 15px;
+}
+.recherche{
+    margin-left: 150px !important;
+    
+}
