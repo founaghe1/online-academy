@@ -37,11 +37,6 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-
-
-
-
-
       <Modale />
       <Coure />
     </div>
