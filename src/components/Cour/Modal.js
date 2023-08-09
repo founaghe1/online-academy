@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import "./modal.css";
 
 function Modale() {
   const [show, setShow] = useState(false);
@@ -16,7 +17,7 @@ function Modale() {
   return (
     <>
       <div className='d-flex justify-content-end mt-2 p-5'>
-        <Button variant='primary' onClick={handleShow}>
+        <Button variant='' onClick={handleShow} className="but" >
           Ajouter
         </Button>
       </div>
@@ -27,6 +28,18 @@ function Modale() {
         </Modal.Header>
         {/* <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body> */}
         <Form className='for p-3'>
+          <Form.Group
+            as={Row}
+            className='mb-3'
+            controlId='formPlaintextPassword'
+          >
+            <Form.Label column sm='2'>
+              Photo
+            </Form.Label>
+            <Col sm='10'>
+              <Form.Control type='file' placeholder='debut cour' name="image" id="image" />
+            </Col>
+          </Form.Group>
           <Form.Group
             as={Row}
             className='mb-3'
@@ -60,7 +73,7 @@ function Modale() {
           </Form.Group>
         </Form>
         <Modal.Footer>
-          <Button variant='primary' onClick={handleClose}>
+          <Button variant='' onClick={handleClose} className="but">
             Ajouter
           </Button>
         </Modal.Footer>

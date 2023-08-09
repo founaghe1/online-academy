@@ -1,9 +1,8 @@
 
-
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Modale from "./components/Modal";
-import Coure from "./components/Cour";
+import Modale from "./components/Cour/Modal";
+import Coure from "./components/Cour/Cour";
 
 function App() {
   return (
