@@ -44,7 +44,7 @@ function Coure() {
               <td>8h 15mn</td>
               <td>15h</td>
               <td>
-                <div className='d-flex justify-content-end gap-2 text-center  '>
+                <div className='d-flex justify-content-center gap-2 text-center  '>
                   <button type='button' className='btn btn-info'>
                     modifier
                   </button>
@@ -75,7 +75,7 @@ function Coure() {
               <td>8h 15mn</td>
               <td>15h</td>
               <td>
-                <div className='d-flex justify-content-end gap-2 text-center  '>
+                <div className='d-flex justify-content-center gap-2 text-center  '>
                   <button type='button' className='btn btn-info'>
                     modifier
                   </button>
