@@ -1,7 +1,64 @@
 
 .App {
-  background-color: #fbfbfb;
+  background-color: #e4e2e2;
 }
 
 
 
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.icon1{
+  background-color: rgba(212, 195, 228, 0.613);
+}
+.sir{
+  color:blueviolet;
+}
+.icon2{
+  background-color:rgb(238, 238, 242);
+}
+.sir1{
+  color:blue;
+}
+.icon3{
+  background-color:rgb(247, 217, 245);
+}
+.sir2{
+  color:rgb(202, 25, 190);
+}
+.icon4{
+  background-color:rgb(215, 199, 231);
+}
+.sir3{
+  color:blueviolet;
+}
+.icon5{
+  background-color:rgb(246, 206, 188);
+}
+.sir4{
+  color:rgb(239, 95, 18);
+}
+
+.for{
+  background-color: rgb(240, 229, 238);
+}
