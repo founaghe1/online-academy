@@ -19,7 +19,7 @@ const Chat = () => {
   return (
     <div className="container-fluid p-3">
       <div className="row">
-        <div className="col-4">
+        <div className="shadow">
           <Card>
             <Card.Body>
               <h4>Vos messages</h4>

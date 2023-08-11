@@ -16,7 +16,7 @@ function Modale() {
 
   return (
     <>
-      <div className='d-flex justify-content-end mt-2 p-5'>
+      <div className='d-flex justify-content-end  coursbg'>
         <Button variant='' onClick={handleShow} className="but" >
           Ajouter
         </Button>
@@ -26,7 +26,7 @@ function Modale() {
         <Modal.Header closeButton className='for'>
           <Modal.Title>Ajout Cours</Modal.Title>
         </Modal.Header>
-        {/* <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body> */}
+        
         <Form className='for p-3'>
           <Form.Group
             as={Row}
