@@ -1,5 +1,6 @@
 .accueil{
     padding: 25px;
+    background-color: rgb(255, 255, 255);
 }
 .modul{
     width: 100%;
@@ -8,11 +9,15 @@
     padding: 10px;
 }
 .card{
-    padding: 25px;
+    padding: 10px;
     border: none !important;
 }
+.card h2{
+    color: rgb(13, 34, 52);
+    font-size: 26px;
+}
 .card-img{
-    padding: 25px;
+    padding: 5px;
 }
 .web{
     background-color: coral;

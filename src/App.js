@@ -8,18 +8,14 @@ import ForgotPW from './components/ForgotPW/ForgotPW'
 import Dasashboardappt from './components/Dashboardappt/dashbordappt'
 import PageAccueilCoach from './components/pageAccueilCoach/PageAccueilCoach';
 
+
 import Domain from './components/Domain/Domain';
 import Programmation from './components/Domain/Programmation';
 import Marketing from './components/Domain/Marketing';
 import Design from './components/Domain/Design';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import Chat from './components/Chat/Chat.jsx';
-
-import Modale from "./components/Cour/Modal";
-import Coure from "./components/Cour/Cour";
 
 import Livraison from './components/Livraisons/Livraison';
 function App() {
@@ -27,9 +23,9 @@ function App() {
     <div className="App">
       {/* <Admin/> */}
       <Dashboard  />
+      
       {/* <Login /> */}
       {/* <ForgotPW/> */}
-      {/* <PageAccueilCoach /> */}
       {/* <Livraison /> */}
       {/* <Chat/> */}
       
@@ -42,15 +38,13 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-      {/* <Modale />
-      <Coure /> */}
+     
 
 
 
 
 
-      {/* <Modale /> */}
-      {/* <Coure /> */}
+      
     </div>
   );
 }
