@@ -1,10 +1,10 @@
 import './App.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
-import Admin from './components/admin/Admin';
+import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dashboard from './components/Dashboard/dashboard'
-import Login from './components/login/Login';
-import ForgotPW from './components/ForgotPW/ForgotPW'
+import Dashboard from './components/ComponentCoach/Dashboard/dashboard'
+import Login from './components/ComponentCoach/login/Login';
+import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
 
 
 // import Domain from './components/Domain/Domain';
@@ -17,9 +17,9 @@ import Marketing from './components/Domain/Coach/Marketing';
 import Design from './components/Domain/Coach/Design';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Chat from './components/Chat/Chat.jsx';
+import Chat from './components/ComponentCoach/Chat/Chat.jsx';
 
-import Livraison from './components/Livraisons/Livraison';
+import Livraison from './components/ComponentCoach/Livraisons/Livraison';
 function App() {
   return (
     <div className="App">

@@ -7,8 +7,8 @@ import {
   BsGearFill, 
 } from "react-icons/bs";
 import './sidebar.css'
-import logo from "../../medias/rrr.jpeg"
-import image from '../../medias/dk.jpeg'
+import logo from "../../../medias/rrr.jpeg"
+import image from '../../../medias/dk.jpeg'
 import { Link } from "react-router-dom";
 
 const sidebar = () => {

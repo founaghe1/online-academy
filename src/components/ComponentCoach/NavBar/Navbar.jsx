@@ -2,7 +2,7 @@ import React from "react";
 import { BsSearch, BsSliders } from "react-icons/bs";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { PiPencilSimpleLineDuotone } from "react-icons/pi";
-import avatar from "../../medias/avatar.jpg";
+import avatar from "../../../medias/avatar.jpg";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
