@@ -3,9 +3,9 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "react-bootstrap/Card";
 import "./domain.css";
 import { Link } from "react-router-dom";
-import Indtomark from "../../../assets/digital-marketing.png";
-import Socialmedia from "../../../assets/social-media.png";
-import Growth from "../../../assets/growth.png";
+import Indtomark from "../../assets/digital-marketing.png";
+import Socialmedia from "../../assets/social-media.png";
+import Growth from "../../assets/growth.png";
 
 const Marketing = () => {
 
