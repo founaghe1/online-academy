@@ -1,0 +1,16 @@
+
+.card{
+border:1px solid red;
+/* background-color: brown; */
+}
+@media screen and(max-width: 600px) {
+    .card {
+      width: 25% !important;
+    }
+}
+
+@media screen and(min-width: 992px) {
+    .card {
+        width: 25%;
+    }
+}

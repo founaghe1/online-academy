@@ -10,34 +10,39 @@ import PHP from "../../Assets/php.png";
 
 const Programmation = () => {
   return (
-    <div className="container">
+    <div className='container'>
       <h1>Les sous-domaines de la Programmation</h1>
-      <div className="join pt-3">
-        <button className="add rounded-3"><span>Ajouter</span></button>
+      <div className='join pt-3'>
+        <button className='add rounded-3'>
+          <span>Ajouter</span>
+        </button>
       </div>
 
-      <div className="row">
-        <div className="_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+      <div className='row'>
+        <div className='_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Card
             style={{ width: "15rem" }}
-            className="_grid item1 orangeclair shadow"
+            className='_grid item1 orangeclair shadow'
           >
-            <div className="p-4">
+            <div className='p-4'>
               <Card.Img
-                variant="top"
-                className="img-fluid d-flex orange"
+                variant='top'
+                className='img-fluid d-flex orange'
                 src={HTML}
               />
             </div>
             <Card.Body>
               <Card.Title>HTML</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
+              <Card.Text>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                ut <span>Voir plus</span>
+              </Card.Text>
               <Link
-                to="/sous-domaine-programmation"
-                className="join d-flex right-0"
+                to='/sous-domaine-programmation/html'
+                className='join d-flex right-0'
               >
                 <button
-                  className="orange d-flex justify-content-center align-items-center"
+                  className='orange d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -50,27 +55,26 @@ const Programmation = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className="_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className='_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Card
             style={{ width: "15rem" }}
-            className="_grid item2 violetclair shadow"
+            className='_grid item2 violetclair shadow'
           >
-            <div className="p-4">
-              <Card.Img
-                variant="top"
-                className="img-fluid violet"
-                src={CSS}
-              />
+            <div className='p-4'>
+              <Card.Img variant='top' className='img-fluid violet' src={CSS} />
             </div>
             <Card.Body>
               <Card.Title>CSS</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
+              <Card.Text>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                ut <span>Voir plus</span>
+              </Card.Text>
               <Link
-                to="/sous-domaine-marketing"
-                className="join d-flex right-0"
+                to='/sous-domaine-programmation/css'
+                className='join d-flex right-0'
               >
                 <button
-                  className="violet d-flex justify-content-center align-items-center"
+                  className='violet d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -83,24 +87,30 @@ const Programmation = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className="_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className='_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Card
             style={{ width: "15rem" }}
-            className="_grid item3 blueclair shadow"
+            className='_grid item3 blueclair shadow'
           >
-            <div className="p-4">
+            <div className='p-4'>
               <Card.Img
-                variant="top"
-                className="img-fluid blue"
+                variant='top'
+                className='img-fluid blue'
                 src={Javascript}
               />
             </div>
             <Card.Body>
               <Card.Title>JAVASCRIPT</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span> </Card.Text>
-              <Link to="/sous-domaine-design" className="join d-flex right-0">
+              <Card.Text>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                ut <span>Voir plus</span>{" "}
+              </Card.Text>
+              <Link
+                to='/sous-domaine-programmation/js'
+                className='join d-flex right-0'
+              >
                 <button
-                  className="blue d-flex justify-content-center align-items-center"
+                  className='blue d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -113,24 +123,26 @@ const Programmation = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className="_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className='_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Card
             style={{ width: "15rem" }}
-            className="_grid item3 blueclair shadow"
+            className='_grid item3 blueclair shadow'
           >
-            <div className="p-4">
-              <Card.Img
-                variant="top"
-                className="img-fluid blue"
-                src={PHP}
-              />
+            <div className='p-4'>
+              <Card.Img variant='top' className='img-fluid blue' src={PHP} />
             </div>
             <Card.Body>
               <Card.Title>PHP</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
-              <Link to="/sous-domaine-design" className="join d-flex right-0">
+              <Card.Text>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                ut <span>Voir plus</span>
+              </Card.Text>
+              <Link
+                to='/sous-domaine-programmation/php'
+                className='join d-flex right-0'
+              >
                 <button
-                  className="blue d-flex justify-content-center align-items-center"
+                  className='blue d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
