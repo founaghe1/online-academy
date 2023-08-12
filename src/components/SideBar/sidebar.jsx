@@ -9,6 +9,8 @@ import {
 import './sidebar.css'
 import logo from "../../medias/rrr.jpeg"
 import image from '../../medias/dk.jpeg'
+import { Link } from "react-router-dom";
+
 const sidebar = () => {
   return (
     <>
@@ -27,7 +29,7 @@ const sidebar = () => {
                         </a>
                     </li>
                     <li>
-                        <a href='/' className='nav-link my-3'>
+                        <a href='../Domain/Coach/Domain' className='nav-link my-3'>
                             <BsCartFill className='fs-4 mb-3'/>
                             <span className='mx-2 d-none d-sm-inline fs-4 mt-5'>
                                 Domaines
