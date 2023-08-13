@@ -10,11 +10,11 @@ import "./voirCour.css";
 function Voircourphp() {
   return (
     <>
-      <h2>VOIR COURS PHP</h2>
+      <h2 className='text-center'>VOIR COURS PHP</h2>
       <div className='container mt-5'>
-        <Row className=''>
+        <Row className='justify-content-center'>
           <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "50rem" }} className='card'>
+            <Card style={{ width: "45rem" }} className='car'>
               <Card.Body>
                 <Card.Title>Tache1: PRESENTATION DE PHP </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
@@ -34,9 +34,9 @@ function Voircourphp() {
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5'>
+        <Row className='mt-5 justify-content-center'>
           <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "50rem " }}>
+            <Card style={{ width: "45rem " }} className='car'>
               <Card.Body>
                 <Card.Title>Tache2:LES VARIABLES </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
@@ -56,9 +56,9 @@ function Voircourphp() {
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5 '>
+        <Row className='mt-5 justify-content-center '>
           <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "50rem" }}>
+            <Card style={{ width: "45rem" }} className='car'>
               <Card.Body>
                 <Card.Title>Tache2: LES CONDITIONS</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}

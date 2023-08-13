@@ -1,44 +1,35 @@
-import React from "react";
+import React from 'react';
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "react-bootstrap/Card";
 import "./domain.css";
 import { Link } from "react-router-dom";
-import HTML from "../../Assets/html-5.png";
-import CSS from "../../Assets/css-3.png";
-import Javascript from "../../Assets/js.png";
-import PHP from "../../Assets/php.png";
+import Photoshop from "../../Assets/photoshop.png";
+import Illustrator from "../../Assets/illustrator.png";
+import Premierpro from "../../Assets/premiere-pro.png";
+import Initiati3d from "../../Assets/3d-modeling.png";
 
-const Programmation = () => {
+const Design = () => {
+
   return (
     <div className='container'>
-      <h1>Les sous-domaines de la Programmation</h1>
-      <div className='join pt-3'>
-        <button className='add rounded-3'>
-          <span>Ajouter</span>
-        </button>
-      </div>
+      <h1>Les sous-domaines du Design</h1>
 
       <div className='row'>
-        <div className='_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4'>
           <Card
             style={{ width: "15rem" }}
             className='_grid item1 orangeclair shadow'
           >
-            <div className='p-4'>
-              <Card.Img
-                variant='top'
-                className='img-fluid d-flex orange'
-                src={HTML}
-              />
+            <div className='img_card p-4 d-flex orange'>
+              <Card.Img variant='top' className='img-fluid' src={Photoshop} />
             </div>
             <Card.Body>
-              <Card.Title>HTML</Card.Title>
+              <Card.Title>Appremdre Adobe Photoshop</Card.Title>
               <Card.Text>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                ut <span>Voir plus</span>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               </Card.Text>
               <Link
-                to='/sous-domaine-programmation/html/css'
+                to='/sous-domaine-design/photo'
                 className='join d-flex right-0'
               >
                 <button
@@ -55,22 +46,21 @@ const Programmation = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className='_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4'>
           <Card
             style={{ width: "15rem" }}
             className='_grid item2 violetclair shadow'
           >
-            <div className='p-4'>
-              <Card.Img variant='top' className='img-fluid violet' src={CSS} />
+            <div className='img_card p-4 d-flex violet'>
+              <Card.Img variant='top' className='img-fluid' src={Illustrator} />
             </div>
             <Card.Body>
-              <Card.Title>CSS</Card.Title>
+              <Card.Title>Apprendre Adobe Illustrator</Card.Title>
               <Card.Text>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                ut <span>Voir plus</span>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               </Card.Text>
               <Link
-                to='/sous-domaine-programmation/css'
+                to='/sous-domaine-design/ulis'
                 className='join d-flex right-0'
               >
                 <button
@@ -87,26 +77,21 @@ const Programmation = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className='_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4'>
           <Card
             style={{ width: "15rem" }}
             className='_grid item3 blueclair shadow'
           >
-            <div className='p-4'>
-              <Card.Img
-                variant='top'
-                className='img-fluid blue'
-                src={Javascript}
-              />
+            <div className='img_card p-4 d-flex blue'>
+              <Card.Img variant='top' className='img-fluid' src={Premierpro} />
             </div>
             <Card.Body>
-              <Card.Title>JAVASCRIPT</Card.Title>
+              <Card.Title>Apprendre Adobe Premier Pro</Card.Title>
               <Card.Text>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                ut <span>Voir plus</span>{" "}
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               </Card.Text>
               <Link
-                to='/sous-domaine-programmation/js'
+                to='/sous-domaine-design/pro'
                 className='join d-flex right-0'
               >
                 <button
@@ -123,22 +108,21 @@ const Programmation = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className='_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4'>
           <Card
             style={{ width: "15rem" }}
             className='_grid item3 blueclair shadow'
           >
-            <div className='p-4'>
-              <Card.Img variant='top' className='img-fluid blue' src={PHP} />
+            <div className='img_card p-4 d-flex blue'>
+              <Card.Img variant='top' className='img-fluid' src={Initiati3d} />
             </div>
             <Card.Body>
-              <Card.Title>PHP</Card.Title>
+              <Card.Title>Initiation au 3D</Card.Title>
               <Card.Text>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                ut <span>Voir plus</span>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               </Card.Text>
               <Link
-                to='/sous-domaine-programmation/php'
+                to='/sous-domaine-design/initia'
                 className='join d-flex right-0'
               >
                 <button
@@ -158,6 +142,6 @@ const Programmation = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Programmation;
+export default Design

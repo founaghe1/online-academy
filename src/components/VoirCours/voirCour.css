@@ -1,16 +1,26 @@
 
-.card{
-border:1px solid red;
+.car{
+border:1px solid #8e2de2 !important;
 /* background-color: brown; */
 }
-@media screen and(max-width: 600px) {
-    .card {
+@media screen and(max-width: 773px) {
+    .car {
+        flex-direction: column;
       width: 25% !important;
+      
     }
 }
 
-@media screen and(min-width: 992px) {
-    .card {
-        width: 25%;
+@media screen and(max-width:992px) {
+    .car{
+        flex-direction: column;
+        width: 25% !important;
     }
+}
+@media screen and(min-width:776px) {
+    .car{
+        flex-direction: column;
+        width: 25% !important;
+    }
+    
 }

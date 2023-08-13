@@ -10,15 +10,17 @@ import "./voirCour.css";
 function Voircourjs() {
   return (
     <>
-      <h2>VOIR COURS JAVASCRIP</h2>
+      <h2 className='text-center'>VOIR COURS JAVASCRIP</h2>
       <div className='container mt-5'>
-        <Row>
+        <Row className='justify-content-center'>
           <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "50rem" }} className='card'>
+            <Card style={{ width: "45rem" }} className='car'>
               <Card.Body>
                 <Card.Title>Tache1: INTRODUCTION AU JAVASCRIPT </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p>Ce tutoriel est a suivre et à reproduire</p>
+                <p className='text-center'>
+                  Ce tutoriel est a suivre et à reproduire
+                </p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
@@ -32,13 +34,15 @@ function Voircourjs() {
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5'>
+        <Row className='mt-5 justify-content-center'>
           <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "50rem " }}>
+            <Card style={{ width: "45rem " }} className='car'>
               <Card.Body>
                 <Card.Title>Tache2:LES VARIABLES EN JAVASCRIP</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p>Ce tutoriel est a suivre et à reproduire</p>
+                <p className='text-center'>
+                  Ce tutoriel est a suivre et à reproduire
+                </p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
@@ -52,15 +56,17 @@ function Voircourjs() {
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5'>
+        <Row className='mt-5 justify-content-center'>
           <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "50rem" }}>
+            <Card style={{ width: "45rem" }} className='car'>
               <Card.Body>
                 <Card.Title>
                   Tache2: MANIPULATION DES DOM EN JAVASCRIPT
                 </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p>Ce tutoriel est a suivre et à reproduire</p>
+                <p className='text-center'>
+                  Ce tutoriel est a suivre et à reproduire
+                </p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>

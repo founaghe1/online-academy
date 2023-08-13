@@ -6,25 +6,25 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./voirCour.css";
 
-function Voircourdevelop() {
+function Booter() {
   return (
     <>
-      <h2 className='text-center'>VOIR COURS SE DEMARQUER DANS LES RESEAUX SOCIAUX</h2>
+      <h2 className='text-center'>VOIR COURS LES BOOTER EN MARKETING</h2>
       <div className='container mt-5 mx-auto'>
         <Row className='justify-content-center'>
           <Col md={6} sm={6} lg={6}>
             <Card style={{ width: "45rem" }} className='car'>
               <Card.Body>
                 <Card.Title>
-                  Tache1: COMMENT DEMARQUER EN MARKETING SURLES RESEAUX SOCIAUX
+                  Tache1: CREATION DES BOOTER EN MARKETING
                 </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p>Ce tutoriel est a suivre et à reproduire</p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=0Q2tMO5IqCc'>
-                  https://www.youtube.com/watch?v=0Q2tMO5IqCc
+                <Card.Link href='https://www.youtube.com/watch?v=6Od6cuPpZPE'>
+                  https://www.youtube.com/watch?v=6Od6cuPpZPE
                 </Card.Link>
               </Card.Body>
               <button type='button' className='btn w-10 ms-auto text-white'>
@@ -78,4 +78,4 @@ function Voircourdevelop() {
   );
 }
 
-export default Voircourdevelop;
+export default Booter;
