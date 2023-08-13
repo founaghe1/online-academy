@@ -11,6 +11,7 @@ import Domain from './components/Domain/Domain';
 import Programmation from './components/Domain/Programmation';
 import Marketing from './components/Domain/Marketing';
 import Design from './components/Domain/Design';
+import StudentDashboard from './components/StudentDashboard/StudentDashboard';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Chat from './components/Chat/Chat.jsx';
@@ -20,7 +21,8 @@ function App() {
   return (
     <div className="App">
       {/* <Admin/> */}
-      <Dashboard  />
+      {/* <Dashboard  /> */}
+      <StudentDashboard/>
       
       {/* <Login /> */}
       {/* <ForgotPW/> */}

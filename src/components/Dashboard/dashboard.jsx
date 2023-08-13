@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../NavBar/Navbar'
+import NavBar from '../NavBar/navbar'
 import SideBar from '../SideBar/sidebar'
 import Modale from '../Cour/Modal'
 import Coure from '../Cour/Cour'
