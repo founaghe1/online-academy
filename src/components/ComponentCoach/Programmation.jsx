@@ -6,12 +6,12 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./domain.css";
 import { Link } from "react-router-dom";
-import HTMLCSS from "../../../assets/coding.png";
-import Bootstrap from "../../../assets/bootstrap.png";
-import Javascript from "../../../assets/js.png";
-import PHP from "../../../assets/php.png";
-import Django from "../../../assets/django.png";
-import Csharp from "../../../assets/c-sharp.png"; 
+import HTMLCSS from "../../assets/coding.png";
+import Bootstrap from "../../assets/bootstrap.png";
+import Javascript from "../../assets/js.png";
+import PHP from "../../assets/php.png";
+import Django from "../../assets/django.png";
+import Csharp from "../../assets/c-sharp.png"; 
 
 const Programmation = () => {
 
@@ -103,7 +103,7 @@ const Programmation = () => {
               />
             </div>
             <Card.Body>
-              <Card.Title>CSS</Card.Title>
+              <Card.Title>BOOTSTRAP</Card.Title>
               <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
               <Link
                 to=""

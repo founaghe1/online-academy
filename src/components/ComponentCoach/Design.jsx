@@ -6,10 +6,10 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./domain.css";
 import { Link } from "react-router-dom";
-import Photoshop from "../../../assets/photoshop.png";
-import Illustrator from "../../../assets/illustrator.png";
-import Premierpro from "../../../assets/premiere-pro.png";
-import Initiati3d from "../../../assets/3d-modeling.png";
+import Photoshop from "../../assets/photoshop.png";
+import Illustrator from "../../assets/illustrator.png";
+import Premierpro from "../../assets/premiere-pro.png";
+import Initiati3d from "../../assets/3d-modeling.png";
 
 const Design = () => {
 
