@@ -6,7 +6,7 @@ import {IoMdNotifications} from 'react-icons/io'
 const Livraison = () => {
   return (
     <div>
-      <div className="container-fluid mt-5">
+      <div className="container mt-5">
         <div className="row">
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
@@ -23,13 +23,16 @@ const Livraison = () => {
         </div>
         <div className="row">
             <h3 className='title'>Livraisons</h3>
-            <div className="col-md-4">
+            <div className="col-md-3">
                 <Cart />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-3">
                 <Cart />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-3">
+                <Cart />
+            </div>
+            <div className="col-md-3">
                 <Cart />
             </div>
         </div>

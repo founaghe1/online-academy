@@ -6,24 +6,19 @@ import {TbPlayerEject} from 'react-icons/tb'
 
 const Cart = () => {
   return (
-    <div>
-      <div className="container">
-        <div className="row">
-            <div className="col mt-5">
-              <div className="card">
-              <h5 className="card-title mt-3">Tache</h5>
-              <p className="card-text">Some quick example text </p>
-                <div className="card-body">
-                <img src={img} className="card-img-top" alt="..." />
-                </div>
-                <div className="card-Footer d-flex justify-content-between align-items-center">
-                    <button type="button" className="btn btn-lin btn-md btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"><GrView />Voir</button>
-                    <button type="button" className="btn btn-lin btn-md btn-outline-success"><FcAcceptDatabase/>Accepter</button>
-                    <button type="button" className="btn btn-lin btn-md btn-outline-danger"><TbPlayerEject />Rejeter</button>
-                </div>
-              </div>
-            </div>
-        </div>
+      <div>
+          <div className="card mt-4">
+            <h3 className="">Tache</h3>
+            <p className="">Some quick example text </p>
+            <div className="">
+            <img src={img} className="img-fluid mb-3" alt="..." />
+          </div>
+          <div className="d-flex justify-content-between align-items-center">
+              <button type="button" className="btn btn-sm btn-car"
+               data-bs-toggle="modal" data-bs-target="#exampleModal"><GrView />Voir</button>
+              <button type="button" className="btn btn-sm btn-cart"><FcAcceptDatabase/>Accepter</button>
+              <button type="button" className="btn btn-sm btn-cartt"><TbPlayerEject />Rejeter</button>
+          </div>  
       </div>
 
         {/* <!-- Modal --> */}
@@ -31,7 +26,7 @@ const Cart = () => {
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Voir Livraison</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
