@@ -10,7 +10,6 @@ const Dashboards = () => {
       <div className="container-fluid">
         <PageAccueilCoach />
 
-        
         <Coure />
       </div>
     </>

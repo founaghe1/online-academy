@@ -8,10 +8,6 @@ import SideBar from './components/ComponentCoach/SideBar/Sidebar';
 import Navbar from './components/ComponentCoach/NavBar/Navbar';
 import Layout from './components/ComponentCoach/Layout/Layout';
 
-
-
-
-
 // import Domain from './components/Domain/Domain';
 // import Programmation from './components/Domain/Programmation';
 // import Marketing from './components/Domain/Marketing';
@@ -32,16 +28,14 @@ import Chat from './components/ComponentCoach/Chat/Chat.jsx';
 import Livraison from './components/ComponentCoach/Livraisons/Livraison';
 import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
 
-import StudentDashboard from '../src/components/StudentDashboard/StudentDashboard';
+import StudentDashboard from './components/ComponentApprenant/StudentDashboard/StudentDashboard';
 import Dashboards from './components/ComponentCoach/Dashboard/Dashboards';
 
 function App() {
   return (
     <div className="App">
       {/* <Admin/> */}
-
-      
-      {/* <StudentDashboard /> */}
+      <StudentDashboard />
       
       {/* <Login /> */}
 
@@ -60,7 +54,10 @@ function App() {
           <Route path="/design" element={<Design />} />
         </Routes>
       </BrowserRouter> */}
-      <Router>
+
+      {/* Routes Yagouba */}
+      
+      {/* <Router>
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path="/layout" element={ <Layout />}>
@@ -68,7 +65,7 @@ function App() {
             <Route path='/layout/dashboard/domain' element={<Domain />} />
           </Route>
         </Routes>
-    </Router>
+      </Router> */}
 
       {/* <Dashboard  /> */}
       {/* <Login /> */}

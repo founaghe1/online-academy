@@ -3,7 +3,7 @@ import "./studentSidebar.css";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { RiMenuUnfoldFill } from "react-icons/ri";
-import logo from "../../../medias/rrr.jpeg"
+import logo from "../../../../medias/rrr.jpeg"
 import { BiSolidDashboard, BiSolidBookReader, BiUpload } from "react-icons/bi";
 import {FaChalkboardTeacher} from "react-icons/fa"
 import {BsFillChatRightFill} from "react-icons/bs"
