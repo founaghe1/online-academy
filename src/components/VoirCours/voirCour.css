@@ -24,3 +24,11 @@ border:1px solid #8e2de2 !important;
     }
     
 }
+.butt:hover{
+    background-color: blueviolet;
+
+}
+.container{
+    justify-content: center;
+    align-items: center;
+}

@@ -6,15 +6,16 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./voirCour.css";
+import ReactPlayer from "react-player";
 
 function Voircourphp() {
   return (
     <>
       <h2 className='text-center'>VOIR COURS PHP</h2>
       <div className='container mt-5'>
-        <Row className='justify-content-center'>
-          <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "45rem" }} className='car'>
+        <Row className='justify-content-center align-items-center'>
+          <Col md={12} sm={12} lg={12}>
+            <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
                 <Card.Title>Tache1: PRESENTATION DE PHP </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
@@ -28,15 +29,18 @@ function Voircourphp() {
                   https://www.youtube.com/watch?v=cWoq5znh0vw&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD
                 </Card.Link>
               </Card.Body>
-              <button type='button' className='btn w-10 ms-auto text-white'>
+              <button
+                type='button'
+                className='btn w-10 ms-auto text-white  butt'
+              >
                 Demarer
               </button>
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5 justify-content-center'>
-          <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "45rem " }} className='car'>
+        <Row className='mt-5 justify-content-center align-items-center'>
+          <Col md={12} sm={12} lg={12}>
+            <Card style={{ width: "45rem " }} className='car mx-auto'>
               <Card.Body>
                 <Card.Title>Tache2:LES VARIABLES </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
@@ -48,17 +52,23 @@ function Voircourphp() {
                 <h3>Lien utiles</h3>
                 <Card.Link href='https://www.youtube.com/watch?v=UnqJwiIPbag&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=5'>
                   https://www.youtube.com/watch?v=UnqJwiIPbag&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=5
+                  <div className='video-responsive'>
+                    <ReactPlayer url=' https://www.youtube.com/watch?v=UnqJwiIPbag&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=5' />
+                  </div>
                 </Card.Link>
               </Card.Body>
-              <button type='button' className='btn w-10 ms-auto text-white'>
+              <button
+                type='button'
+                className='btn w-10 ms-auto text-white  butt'
+              >
                 Demarer
               </button>
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5 justify-content-center '>
-          <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "45rem" }} className='car'>
+        <Row className='mt-5 justify-content-center align-items-center '>
+          <Col md={12} sm={12} lg={12}>
+            <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
                 <Card.Title>Tache2: LES CONDITIONS</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
@@ -70,9 +80,15 @@ function Voircourphp() {
                 <h3>Lien utiles</h3>
                 <Card.Link href='https://www.youtube.com/watch?v=zFqdht5bFJY&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=7'>
                   https://www.youtube.com/watch?v=zFqdht5bFJY&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=7
+                  <div className='video-responsive'>
+                    <ReactPlayer url='https://www.youtube.com/watch?v=zFqdht5bFJY&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=7' />
+                  </div>
                 </Card.Link>
               </Card.Body>
-              <button type='button' className='btn w-10 ms-auto text-white'>
+              <button
+                type='button'
+                className='btn w-10 ms-auto text-white  butt'
+              >
                 Demarer
               </button>
             </Card>

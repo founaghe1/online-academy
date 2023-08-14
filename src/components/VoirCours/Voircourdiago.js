@@ -6,15 +6,16 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./voirCour.css";
+import ReactPlayer from "react-player";
 
 function Voircourdiago() {
   return (
     <>
       <h2 className='text-center'>VOIR COURS DJANGO</h2>
       <div className='container mt-5'>
-        <Row className='justify-content-center'>
-          <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "45rem" }} className='car'>
+        <Row className='justify-content-center align-items-center'>
+          <Col md={12} sm={12} lg={12}>
+            <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
                 <Card.Title>Tache1: INTRODUCTION </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
@@ -26,19 +27,25 @@ function Voircourdiago() {
                 <h3 className=''>Lien utiles</h3>
                 <Card.Link href='https://www.youtube.com/watch?v=iBGhDHtysAA&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO'>
                   https://www.youtube.com/watch?v=iBGhDHtysAA&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO
+                  <div className='video-responsive'>
+                    <ReactPlayer url='https://www.youtube.com/watch?v=iBGhDHtysAA&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO' />
+                  </div>
                 </Card.Link>
               </Card.Body>
-              <button type='button' className='btn w-10 ms-auto text-white'>
+              <button
+                type='button'
+                className='btn w-10 ms-auto text-white  butt'
+              >
                 Demarer
               </button>
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5 justify-content-center'>
-          <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "45rem " }} className='car'>
+        <Row className='mt-5 justify-content-center align-items-center'>
+          <Col md={12} sm={12} lg={12}>
+            <Card style={{ width: "45rem " }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache2:LES FICHIERS STATIQUE </Card.Title>
+                <Card.Title>Tache2:LES FORMULAIRES </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
@@ -46,19 +53,25 @@ function Voircourdiago() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=_jfryi6pEOM&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=5'>
-                  https://www.youtube.com/watch?v=_jfryi6pEOM&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=5
+                <Card.Link href='https://www.youtube.com/watch?v=3e0SjrSgWzk&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=11'>
+                  https://www.youtube.com/watch?v=3e0SjrSgWzk&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=11
+                  <div className='video-responsive'>
+                    <ReactPlayer url='https://www.youtube.com/watch?v=3e0SjrSgWzk&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=11' />
+                  </div>
                 </Card.Link>
               </Card.Body>
-              <button type='button' className='btn w-10 ms-auto text-white'>
+              <button
+                type='button'
+                className='btn w-10 ms-auto text-white  butt'
+              >
                 Demarer
               </button>
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5 justify-content-center '>
-          <Col md={6} sm={6} lg={6}>
-            <Card style={{ width: "45rem" }} className='car'>
+        <Row className='mt-5 justify-content-center align-items-center'>
+          <Col md={12} sm={12} lg={12}>
+            <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
                 <Card.Title>Tache3: LES BALISES ET FILTER</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
@@ -72,7 +85,10 @@ function Voircourdiago() {
                   https://www.youtube.com/watch?v=xNPiqBCftc8&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=6
                 </Card.Link>
               </Card.Body>
-              <button type='button' className='btn w-10 ms-auto text-white'>
+              <button
+                type='button'
+                className='btn w-10 ms-auto text-white  butt'
+              >
                 Demarer
               </button>
             </Card>
