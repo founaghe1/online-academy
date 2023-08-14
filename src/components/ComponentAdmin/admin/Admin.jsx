@@ -15,7 +15,11 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { BsPencilSquare, BsTrash } from "react-icons/bs";
 
 const Admin = () => {
-  
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
  
   return (
     <>
