@@ -1,20 +1,24 @@
 import React from "react";
-import './Login.css'
+import "./ForgotPW.css";
 import Card from "react-bootstrap/Card";
-import logo from '../../medias/rrr.jpeg'
+import logo from "../../../medias/rrr.jpeg";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import { AiOutlineUser, AiFillLock } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 
-const Login = () => {
+const ForgotPW = () => {
   return (
     <div className="vh-100 d-flex justify-content-center align-items-center">
-      <Card className="px-3 mx-3 py-3 login-card">
+      <Card className="px-3 mx-3 py-3 forgotPW-card">
         <Card.Body>
           <div className="d-flex justify-content-center align-items-center">
             <img src={logo} className="logo img-fluid" alt="" />
           </div>
-          <h2 className="text-center title mb-3">CONNECTEZ-VOUS</h2>
+          <h2 className="text-center title mb-3">Mot de passe oublié ?</h2>
+          <p className="mb-3 text-center">
+            Pas de soucis, nous vous enverrons des instructions de
+            réinitialisation
+          </p>
           <form action="">
             <InputGroup className="mb-3">
               <InputGroup.Text id="basic-addon1">
@@ -27,24 +31,13 @@ const Login = () => {
                 aria-describedby="basic-addon1"
               />
             </InputGroup>
-            <InputGroup className="mb-2">
-              <InputGroup.Text id="basic-addon1">
-                <AiFillLock className="fw-bold icon fs-4" />
-              </InputGroup.Text>
-              <Form.Control
-                type="password"
-                placeholder="Mot de passe"
-                aria-label="Mot de passe"
-                aria-describedby="basic-addon1"
-              />
-            </InputGroup>
             <div className="mb-5">
-              <a href="../ForgotPW/ForgotPW.jsx" className="forgotPW">
-                Mot de passe oublié ?
+              <a href="../login/Login.jsx" className="forgotPW">
+                Retour connexion
               </a>
             </div>
-            <button className="login-btn btn text-light fw-bold w-100">
-              Connection
+            <button className="reset-btn btn text-light fw-bold w-100">
+              Réinitialiser mot de passe
             </button>
           </form>
         </Card.Body>
@@ -53,4 +46,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPW;

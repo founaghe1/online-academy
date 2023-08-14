@@ -9,8 +9,10 @@ import {PiChatsCircleFill} from 'react-icons/pi'
 
 import {PiStudentFill} from 'react-icons/pi'
 import './sidebar.css'
-import logo from "../../medias/rrr.jpeg"
-import image from '../../medias/dk.jpeg'
+import logo from "../../../medias/rrr.jpeg"
+import image from '../../../medias/dk.jpeg'
+import { Link } from "react-router-dom";
+
 const sidebar = () => {
   return (
     <>
@@ -29,8 +31,13 @@ const sidebar = () => {
                         </a>
                     </li>
                     <li>
+<<<<<<< HEAD:src/components/SideBar/sidebar.jsx
                         <a href='/' className='nav-link my-3'>
                             <BsFillBagFill className='fs-4 mb-3'/>
+=======
+                        <a href='../Domain/Coach/Domain' className='nav-link my-3'>
+                            <BsCartFill className='fs-4 mb-3'/>
+>>>>>>> 48e997b3909cc0a50d5a56cdf2331f84e7c869e3:src/components/ComponentCoach/SideBar/sidebar.jsx
                             <span className='mx-2 d-none d-sm-inline fs-4 mt-5'>
                                 Domaines
                             </span>
