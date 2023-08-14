@@ -18,7 +18,7 @@ const dashboard = () => {
                         <NavBar />
                         <PageAccueilCoach />
 
-                        <Modale />
+                        
                         <Coure />
                     </div>
                 </div>

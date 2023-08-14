@@ -15,21 +15,21 @@ import Domain from './components/ComponentCoach/Domain/Domain';
 import Programmation from './components/ComponentCoach/Domain/Programmation';
 import Marketing from './components/ComponentCoach/Domain/Marketing';
 import Design from './components/ComponentCoach/Domain/Design';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Redirect } from 'react-router-dom';
 
 import Chat from './components/ComponentCoach/Chat/Chat.jsx';
 
 import Livraison from './components/ComponentCoach/Livraisons/Livraison';
+import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
 function App() {
   return (
     <div className="App">
       {/* <Admin/> */}
-      <Dashboard  />
-      
-      {/* <Login /> */}
+      {/* <AjoutCours /> */}
       {/* <ForgotPW/> */}
       {/* <Livraison /> */}
       {/* <Chat/> */}
+      
       
       {/* <BrowserRouter>
         <Routes>
@@ -40,9 +40,14 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-     
+      <Dashboard  />
+      {/* <Login /> */}
+
+    
+
     </div>
   );
 }
+
 
 export default App;
