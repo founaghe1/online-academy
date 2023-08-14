@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       {/* <Admin/> */}
       {/* <Dashboard  /> */}
-      {/* <StudentDashboard/> */}
+      <StudentDashboard/>
       
       {/* <Login /> */}
       {/* <ForgotPW/> */}
@@ -31,14 +31,14 @@ function App() {
       {/* <Chat/> */}
       
       
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Domain />} />
           <Route path="/programmation" element={<Programmation />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/design" element={<Design />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
 
       {/* <Dashboard  /> */}
       {/* <Login /> */}
