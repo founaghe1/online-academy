@@ -2,20 +2,17 @@ import './App.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
 import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dashboard from './components/ComponentCoach/Dashboard/dashboard'
+import Dashboard from './components/ComponentCoach/Dashboard/Dashboard'
 import Login from './components/ComponentCoach/login/Login';
 import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
 
 
-// import Domain from './components/Domain/Domain';
-// import Programmation from './components/Domain/Programmation';
-// import Marketing from './components/Domain/Marketing';
-// import Design from './components/Domain/Design';
 import Domain from './components/ComponentCoach/Domain/Domain';
 import Programmation from './components/ComponentCoach/Domain/Programmation';
 import Marketing from './components/ComponentCoach/Domain/Marketing';
 import Design from './components/ComponentCoach/Domain/Design';
-import { BrowserRouter as Router, Route, Routes, Redirect } from 'react-router-dom';
+import StudentDashboard from './components/StudentDashboard/StudentDashboard';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Chat from './components/ComponentCoach/Chat/Chat.jsx';
 
@@ -25,22 +22,25 @@ function App() {
   return (
     <div className="App">
       {/* <Admin/> */}
-      {/* <AjoutCours /> */}
+      {/* <Dashboard  /> */}
+      {/* <StudentDashboard/> */}
+      
+      {/* <Login /> */}
       {/* <ForgotPW/> */}
       {/* <Livraison /> */}
       {/* <Chat/> */}
       
       
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Domain />} />
           <Route path="/programmation" element={<Programmation />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/design" element={<Design />} />
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
 
-      <Dashboard  />
+      {/* <Dashboard  /> */}
       {/* <Login /> */}
 
     
