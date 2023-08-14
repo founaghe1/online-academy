@@ -21,6 +21,7 @@ import Chat from './components/ComponentCoach/Chat/Chat.jsx';
 
 import Livraison from './components/ComponentCoach/Livraisons/Livraison';
 import ListeApprenants from './components/ComponentCoach/ListeApprenants/ListeApprenants';
+import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
 function App() {
   return (
     <div className="App">
@@ -31,7 +32,8 @@ function App() {
       {/* <ForgotPW/> */}
       {/* <Livraison /> */}
       {/* <Chat/> */}
-      <ListeApprenants/>
+      {/* <ListeApprenants/> */}
+      <NotificationsCoachs/>
       
       {/* <BrowserRouter>
         <Routes>
