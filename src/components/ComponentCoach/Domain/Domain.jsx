@@ -8,6 +8,7 @@ import Programmer from "../../../Assets/programmer.png";
 import Marketer from "../../../Assets/content-strategy.png";
 import Designer from "../../../Assets/web-design.png";
 import { Link } from "react-router-dom";
+import "./domain.css";
 // import Programmer from "../../Assets/programmer.png";
 // import Marketer from "../../Assets/content-strategy.png";
 // import Designer from "../../Assets/web-design.png";
@@ -19,7 +20,7 @@ const Domain = () => {
   const handleShow = () => setShow(true);
   return (
     <div className="container">
-      <h1>Les domaines de formation</h1>
+      <h1>Domaines de formation</h1>
       <div className="join pt-3">
         <button className="add_domain rounded-3" onClick={handleShow}>
           <span>Ajouter</span>
