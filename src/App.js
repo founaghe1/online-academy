@@ -11,10 +11,10 @@ import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
 // import Programmation from './components/Domain/Programmation';
 // import Marketing from './components/Domain/Marketing';
 // import Design from './components/Domain/Design';
-import Domain from './components/Domain/Coach/Domain';
-import Programmation from './components/Domain/Coach/Programmation';
-import Marketing from './components/Domain/Coach/Marketing';
-import Design from './components/Domain/Coach/Design';
+import Domain from './components/ComponentCoach/Domain/Domain';
+import Programmation from './components/ComponentCoach/Domain/Programmation';
+import Marketing from './components/ComponentCoach/Domain/Marketing';
+import Design from './components/ComponentCoach/Domain/Design';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Chat from './components/ComponentCoach/Chat/Chat.jsx';
@@ -34,9 +34,9 @@ function App() {
       {/* <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Domain />} />
-          <Route path="/" element={<Programmation />} />
-          <Route path="/" element={<Marketing />} />
-          <Route path="/" element={<Design />} />
+          <Route path="/programmation" element={<Programmation />} />
+          <Route path="/marketing" element={<Marketing />} />
+          <Route path="/design" element={<Design />} />
         </Routes>
       </BrowserRouter> */}
 
