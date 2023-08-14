@@ -15,26 +15,43 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Programmation from './components/Domain/Programmation';
 // import Marketing from './components/Domain/Marketing';
 // import Design from './components/Domain/Design';
+<<<<<<< HEAD
 // import Domain from './components/ComponentCoach/Domain/Coach/Domain';
 // import Programmation from './components/ComponentCoach/Domain/Coach/Programmation';
 // import Marketing from './components/ComponentCoach/Domain/Coach/Marketing';
 // import Design from './components/ComponentCoach/Domain/Design';
+=======
+import Domain from './components/ComponentCoach/Domain/Domain';
+import Programmation from './components/ComponentCoach/Domain/Programmation';
+import Marketing from './components/ComponentCoach/Domain/Marketing';
+import Design from './components/ComponentCoach/Domain/Design';
+import { BrowserRouter as Router, Route, Routes, Redirect } from 'react-router-dom';
+>>>>>>> f5b7dbc7ea83596dfeda4a3635dd2fc75e2c9736
 
 import Chat from './components/ComponentCoach/Chat/Chat.jsx';
 import Livraison from './components/ComponentCoach/Livraisons/Livraison';
+<<<<<<< HEAD
 import Dashboards from './components/ComponentCoach/Dashboard/Dashboards';
 import Domain from './components/ComponentCoach/Domain/Domain';
 
+=======
+import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
+>>>>>>> f5b7dbc7ea83596dfeda4a3635dd2fc75e2c9736
 function App() {
   return (
     <div className="App">
       {/* <Admin/> */}
+<<<<<<< HEAD
       {/* <Dashboard  /> */}
       
       {/* <Login /> */}
+=======
+      {/* <AjoutCours /> */}
+>>>>>>> f5b7dbc7ea83596dfeda4a3635dd2fc75e2c9736
       {/* <ForgotPW/> */}
       {/* <Livraison /> */}
       {/* <Chat/> */}
+      
       
       {/* <BrowserRouter>
         <Routes>
@@ -54,9 +71,14 @@ function App() {
         </Routes>
     </Router>
 
-     
+      <Dashboard  />
+      {/* <Login /> */}
+
+    
+
     </div>
   );
 }
+
 
 export default App;
