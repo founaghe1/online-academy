@@ -18,10 +18,10 @@ import Layout from './components/ComponentCoach/Layout/Layout';
 // import Marketing from './components/ComponentCoach/Domain/Coach/Marketing';
 // import Design from './components/ComponentCoach/Domain/Design';
 
-import Domain from './components/ComponentCoach/Domain/Domain';
-import Programmation from './components/ComponentCoach/Domain/Programmation';
-import Marketing from './components/ComponentCoach/Domain/Marketing';
-import Design from './components/ComponentCoach/Domain/Design';
+// import Domain from './components/ComponentCoach/Domain/Domain';
+// import Programmation from './components/ComponentCoach/Domain/Programmation';
+// import Marketing from './components/ComponentCoach/Domain/Marketing';
+// import Design from './components/ComponentCoach/Domain/Design';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Chat from './components/ComponentCoach/Chat/Chat.jsx';
@@ -30,12 +30,17 @@ import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
 
 import StudentDashboard from './components/ComponentApprenant/StudentDashboard/StudentDashboard';
 import Dashboards from './components/ComponentCoach/Dashboard/Dashboards';
+import Domain from './components/ComponentApprenant/DomainApprnt/Domain';
+import Programmation from './components/ComponentApprenant/DomainApprnt/Programmation';
+import Marketing from './components/ComponentApprenant/DomainApprnt/Marketing';
+import Design from './components/ComponentApprenant/DomainApprnt/Design';
+
 
 function App() {
   return (
     <div className="App">
       {/* <Admin/> */}
-      <StudentDashboard />
+      {/* <StudentDashboard /> */}
       
       {/* <Login /> */}
 
@@ -46,17 +51,17 @@ function App() {
       {/* <Chat/> */}
       
       
-      {/* <BrowserRouter>
+      <Router>
         <Routes>
           <Route exact path="/" element={<Domain />} />
           <Route path="/programmation" element={<Programmation />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/design" element={<Design />} />
         </Routes>
-      </BrowserRouter> */}
+      </Router>
 
       {/* Routes Yagouba */}
-      
+
       {/* <Router>
         <Routes>
           <Route path='/' element={<Login />} />
