@@ -44,9 +44,11 @@ const Login = () => {
                 Mot de passe oublié ?
               </a>
             </div>
-            <button className="login-btn btn text-light fw-bold w-100" >
-              <Link to="/layout/dashboard">Connection</Link>
-            </button>
+            <Link to="/layout">
+              <button className="login-btn btn text-light fw-bold w-100" >
+                Connection
+              </button>
+            </Link>
           </form>
         </Card.Body>
       </Card>

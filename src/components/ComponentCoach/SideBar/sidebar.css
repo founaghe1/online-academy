@@ -35,6 +35,11 @@ ul li a:hover {
 .btn{
     background-color: #8a70d6;
 }
+
+a{
+    text-decoration: none !important;
+    color: #8a70d6 !important;
+}
 @media only screen and (max-width: 425px) {
     .logo img {
         width: 50px;

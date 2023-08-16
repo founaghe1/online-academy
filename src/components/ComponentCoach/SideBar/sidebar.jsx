@@ -23,15 +23,17 @@ const Sidebar = () => {
                     <li className='liste'>
                         <a href='/' className='nav-link active my-3' aria-current="page">
                             <BsFillGridFill className='fs-3 mb-3'/>
-                            <span className='mx-2 d-none d-sm-inline fs-3'>
-                                Dashboard
-                            </span>
+                            <Link to="/layout">
+                                <span className='mx-2 d-none d-sm-inline fs-3'>
+                                    Dashboard
+                                </span>
+                            </Link>
                         </a>
                     </li>
                     <li>
-                        <a href='../Domain/Coach/Domain' className='nav-link my-3'>
+                        <a href='' className='nav-link my-3'>
                             <BsCartFill className='fs-4 mb-3'/>
-                            <Link to="/layout/dashboard/domain">
+                            <Link to="/layout/domain">
                             <span className='mx-2 d-none d-sm-inline fs-4 mt-5'>
                                 Domaines
                             </span>
@@ -41,9 +43,11 @@ const Sidebar = () => {
                     <li>
                         <a href='/' className='nav-link my-3'>
                             <BsFillStarFill className='fs-4 mb-3'/>
-                            <span className='mx-2 d-none d-sm-inline fs-4 mt-5'>
-                                Livraisons
-                            </span>
+                            <Link to="/layout/livraison">
+                                <span className='mx-2 d-none d-sm-inline fs-4 mt-5'>
+                                    Livraisons
+                                </span>
+                            </Link>
                         </a>
                     </li>
                     <br />
