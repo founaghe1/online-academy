@@ -1,4 +1,4 @@
-ul {
+/* ul {
     margin: 0;
     padding: 0;
 }
@@ -48,4 +48,13 @@ ul li a:hover {
         margin-left: 25px;
         font-size: 20px;
     }
+} */
+.side-link{
+    color: #424040;
+}
+.side-icon{
+    color: #8a70d6;
+}
+.side-logo{
+    width: 200px;
 }
