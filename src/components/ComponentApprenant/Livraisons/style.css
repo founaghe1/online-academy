@@ -20,41 +20,28 @@
 .btn-car{
     background-color: gray;
     color: white;  
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
 }
 
 .btn-car:hover{
     background-color: gray !important;
     color: white !important;  
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
 }
 
 .btn-cart{
     background-color: #8e70d6;
     color: white;  
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
 }
 .btn-cart:hover{
     background-color: #8e70d6;
     color: white;  
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
-}
-
-.btn-ca{
-    background-color: #8e70d6;
-    color: white;  
-    font-size: 20px;
-    font-weight: 500;
-}
-.btn-ca:hover{
-    background-color: #8e70d6;
-    color: white;  
-    font-size: 20px;
-    font-weight: 500;
 }
 
 .btn-cartt{
@@ -83,9 +70,6 @@
     color: white;
     font-size: 20px;
     font-weight: 500;
-}
-.modal-header .btn-close{
-    color: white;
 }
 
 .btn-cap{
@@ -128,12 +112,4 @@
 .btn-car:hover{
     background-color: #e9e3ff;
     color: black;
-}
-
-.certificat{
-    box-shadow: white;
-    background-color: white;
-    color: black;
-    font-size: 20px;
-    font-weight: normal;
 }

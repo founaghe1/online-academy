@@ -13,10 +13,10 @@ import Domain from './components/ComponentCoach/Domain/Domain';
 import Programmation from './components/ComponentCoach/Domain/Programmation';
 import Marketing from './components/ComponentCoach/Domain/Marketing';
 import Design from './components/ComponentCoach/Domain/Design';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
 import Chat from './components/ComponentCoach/Chat/Chat.jsx';
-import Livraison from './components/ComponentCoach/Livraisons/Livraison';
+import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
 import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
 
 // Apprenants
@@ -27,20 +27,24 @@ import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/Pro
 import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
 import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
 
+import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
 
 function App() {
   return (
     <div className="App">
-      {/* <Admin /> */}
-      <StudentDashboard />
-      
+      {/* <Admin/> */}
+      {/* <Dashboard  /> */}
       {/* <Login /> */}
+      {/* <StudentDashboard /> */}
 
       {/* <AjoutCours /> */}
 
       {/* <ForgotPW/> */}
-      {/* <Livraison /> */}
+      <Livraison />
+      <Voirlivraison />      
       {/* <Chat/> */}
+      {/* <ListeApprenants/> */}
+      {/* <NotificationsCoachs/> */}
       
       
       {/* <Router>
