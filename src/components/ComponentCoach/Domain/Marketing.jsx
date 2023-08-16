@@ -6,12 +6,14 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./domain.css";
 import { Link } from "react-router-dom";
-import Photoshop from "../../../Assets/bootstrap.png";
-import Illustrator from "../../../Assets/illustrator.png";
-import Premierpro from "../../../Assets/premiere-pro.png";
-import Initiati3d from "../../../Assets/3d-modeling.png";
+import Indtomark from "../../../Assets/digitalMarketing.png";
+import Socialmedia from "../../../Assets/social-media.png";
+import Growth from "../../../Assets/growth.png";
 
-const Design = () => {
+
+
+
+const Marketing = () => {
 
   const [show, setShow] = useState(false);
 
@@ -19,18 +21,18 @@ const Design = () => {
   const handleShow = () => setShow(true);
   return (
     <div className="container">
-      <h1>Les sous-domaines du Design</h1>
+      <h1>Les sous-domaines du Marketing Digital</h1>
       <div className="join pt-3">
         <button className="add_domain rounded-3" onClick={handleShow}>
           <span>Ajouter</span>
         </button>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Ajout de sous-domaine</Modal.Title>
+            <Modal.Title>Ajout sous-domaine</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="add_file">
-              <label htmlFor="illustration">Image du sous-domaine :</label>
+              <label htmlFor="illustration">Image du sous-domaine:</label>
               <input
                 type="file"
                 id="illustration"
@@ -55,7 +57,7 @@ const Design = () => {
       </div>
 
       <div className="row">
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4">
+        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
           <Card
             style={{ width: "15rem" }}
             className="_grid item1 orangeclair shadow"
@@ -63,13 +65,13 @@ const Design = () => {
             <div className="img_card p-4 d-flex orange">
               <Card.Img
                 variant="top"
-                className="img-fluid"
-                src={Photoshop}
+                className="img-fluid d-flex"
+                src={Indtomark}
               />
             </div>
             <Card.Body>
-              <Card.Title>Appremdre Adobe Photoshop</Card.Title>
-              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
+              <Card.Title>Introduction au marketing digital</Card.Title>
+              <Card.Text>10 sous-domaines</Card.Text>
               <Link
                 to=""
                 className="join d-flex right-0"
@@ -88,7 +90,7 @@ const Design = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4">
+        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
           <Card
             style={{ width: "15rem" }}
             className="_grid item2 violetclair shadow"
@@ -97,12 +99,12 @@ const Design = () => {
               <Card.Img
                 variant="top"
                 className="img-fluid"
-                src={Illustrator}
+                src={Socialmedia}
               />
             </div>
             <Card.Body>
-              <Card.Title>Apprendre Adobe Illustrator</Card.Title>
-              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
+              <Card.Title>Se démarquer sur les réseaux sociaux</Card.Title>
+              <Card.Text>07 sous-domaines</Card.Text>
               <Link
                 to=""
                 className="join d-flex right-0"
@@ -121,7 +123,7 @@ const Design = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4">
+        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
           <Card
             style={{ width: "15rem" }}
             className="_grid item3 blueclair shadow"
@@ -130,42 +132,12 @@ const Design = () => {
               <Card.Img
                 variant="top"
                 className="img-fluid"
-                src={Premierpro}
+                src={Growth}
               />
             </div>
             <Card.Body>
-              <Card.Title>Apprendre Adobe Premier Pro</Card.Title>
-              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
-              <Link to="" className="join d-flex right-0">
-                <button
-                  className="blue d-flex justify-content-center align-items-center"
-                  style={{
-                    fontSize: "1.8rem",
-                    borderRadius: "5px",
-                    color: "white",
-                  }}
-                >
-                  <MdOutlineKeyboardArrowRight />
-                </button>
-              </Link>
-            </Card.Body>
-          </Card>
-        </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4">
-          <Card
-            style={{ width: "15rem" }}
-            className="_grid item3 blueclair shadow"
-          >
-            <div className="img_card p-4 d-flex blue">
-              <Card.Img
-                variant="top"
-                className="img-fluid"
-                src={Initiati3d}
-              />
-            </div>
-            <Card.Body>
-              <Card.Title>Initiation au 3D</Card.Title>
-              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
+              <Card.Title>Comment Booster ses Stats</Card.Title>
+              <Card.Text>08 sous-domaines</Card.Text>
               <Link to="" className="join d-flex right-0">
                 <button
                   className="blue d-flex justify-content-center align-items-center"
@@ -186,4 +158,4 @@ const Design = () => {
   )
 }
 
-export default Design
+export default Marketing

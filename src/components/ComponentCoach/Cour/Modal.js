@@ -16,7 +16,7 @@ function Modale() {
 
   return (
     <>
-      <div className='d-flex justify-content-end  coursbg'>
+      <div className='d-flex justify-content-end  coursbg pe-5 mt-5'>
         <Button variant='' onClick={handleShow} className="but" >
           Ajouter
         </Button>

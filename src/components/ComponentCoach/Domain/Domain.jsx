@@ -1,35 +1,38 @@
-import React from 'react';
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import Card from "react-bootstrap/Card";
+import React from "react";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import "./domain.css";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import Card from "react-bootstrap/Card";
+import Programmer from "../../../Assets/programmer.png";
+import Marketer from "../../../Assets/content-strategy.png";
+import Designer from "../../../Assets/web-design.png";
 import { Link } from "react-router-dom";
-import Indtomark from "../../../Assets/digitalMarketing.png";
-import Socialmedia from "../../../Assets/social-media.png";
-import Growth from "../../../Assets/growth.png";
+import "./domain.css";
+// import Programmer from "../../Assets/programmer.png";
+// import Marketer from "../../Assets/content-strategy.png";
+// import Designer from "../../Assets/web-design.png";
 
-const Marketing = () => {
 
+const Domain = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
     <div className="container">
-      <h1>Les sous-domaines du Marketing Digital</h1>
+      <h1>Domaines de formation</h1>
       <div className="join pt-3">
         <button className="add_domain rounded-3" onClick={handleShow}>
           <span>Ajouter</span>
         </button>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Ajout sous-domaine</Modal.Title>
+            <Modal.Title>Ajout de domaine</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="add_file">
-              <label htmlFor="illustration">Image du sous-domaine:</label>
+              <label htmlFor="illustration">Image du domaine:</label>
               <input
                 type="file"
                 id="illustration"
@@ -63,14 +66,14 @@ const Marketing = () => {
               <Card.Img
                 variant="top"
                 className="img-fluid d-flex"
-                src={Indtomark}
+                src={Programmer}
               />
             </div>
             <Card.Body>
-              <Card.Title>Introduction au marketing digital</Card.Title>
+              <Card.Title>Programmation</Card.Title>
               <Card.Text>10 sous-domaines</Card.Text>
               <Link
-                to=""
+                to="/programmation"
                 className="join d-flex right-0"
               >
                 <button
@@ -93,17 +96,13 @@ const Marketing = () => {
             className="_grid item2 violetclair shadow"
           >
             <div className="img_card p-4 d-flex violet">
-              <Card.Img
-                variant="top"
-                className="img-fluid"
-                src={Socialmedia}
-              />
+              <Card.Img variant="top" className="img-fluid" src={Marketer} />
             </div>
             <Card.Body>
-              <Card.Title>Se démarquer sur les réseaux sociaux</Card.Title>
+              <Card.Title>Marketing Digital</Card.Title>
               <Card.Text>07 sous-domaines</Card.Text>
               <Link
-                to=""
+                to="/marketing"
                 className="join d-flex right-0"
               >
                 <button
@@ -126,16 +125,12 @@ const Marketing = () => {
             className="_grid item3 blueclair shadow"
           >
             <div className="img_card p-4 d-flex blue">
-              <Card.Img
-                variant="top"
-                className="img-fluid"
-                src={Growth}
-              />
+              <Card.Img variant="top" className="img-fluid" src={Designer} />
             </div>
             <Card.Body>
-              <Card.Title>Comment Booster ses Stats</Card.Title>
+              <Card.Title>Design</Card.Title>
               <Card.Text>08 sous-domaines</Card.Text>
-              <Link to="" className="join d-flex right-0">
+              <Link to="/design" className="join d-flex right-0">
                 <button
                   className="blue d-flex justify-content-center align-items-center"
                   style={{
@@ -152,7 +147,7 @@ const Marketing = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Marketing
+export default Domain;
