@@ -20,42 +20,40 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Design from './components/ComponentCoach/Domain/Design';
 
 import Chat from './components/ComponentCoach/Chat/Chat.jsx';
-import Livraison from './components/ComponentCoach/Livraisons/Livraison';
-import Dashboards from './components/ComponentCoach/Dashboard/Dashboards';
 import Domain from './components/ComponentCoach/Domain/Domain';
 import Programmation from './components/ComponentCoach/Domain/Programmation';
 import Marketing from './components/ComponentCoach/Domain/Marketing';
 import Design from './components/ComponentCoach/Domain/Design';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-import Chat from './components/ComponentCoach/Chat/Chat.jsx';
-import Livraison from './components/ComponentCoach/Livraisons/Livraison';
+import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
+import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
 import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
 
 // Apprenants
 import StudentDashboard from './components/ComponentApprenant/StudentDashboard/StudentDashboard';
-import Dashboards from './components/ComponentCoach/Dashboard/Dashboards';
+import Dashboard from './components/ComponentCoach/Dashboard/Dashboard';
 import DomainApprt from './components/ComponentApprenant/DomainApprnt/DomainApprt';
 import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/ProgrammationApprt';
 import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
 import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
 
+import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
 
 function App() {
   return (
     <div className="App">
-      {/* <Admin /> */}
-      {/* <StudentDashboard /> */}
       {/* <Admin/> */}
       {/* <Dashboard  /> */}
-      
       {/* <Login /> */}
+      {/* <StudentDashboard /> */}
 
       {/* <AjoutCours /> */}
 
       {/* <ForgotPW/> */}
       {/* <Livraison /> */}
+      {/* <Voirlivraison />       */}
       {/* <Chat/> */}
+      {/* <ListeApprenants/> */}
+      {/* <NotificationsCoachs/> */}
       
       
       {/* <Router>
@@ -72,13 +70,9 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Login />} />
-          <Route path="/layout" element={ <Layout />}>
-            <Route index element={<Dashboards />} />
-            <Route path='/layout/domain' element={<Domain />} />
-            <Route path='/layout/domain/programmation' element={<Programmation />} />
-            <Route path='/layout/domain/marketing' element={<Marketing />} />
-            <Route path='/layout/domain/design' element={<Design />} />
-            <Route path='/layout/livraison' element={<LivraisonApprt />} />
+          <Route path="/dashboard" element={ <Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path='/dashboard/domain' element={<DomainApprt />} />
           </Route>
         </Routes>
         </Router>

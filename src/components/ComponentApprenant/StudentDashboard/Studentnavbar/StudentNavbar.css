@@ -7,3 +7,7 @@
 #profil img{
     width: 70px;
 }
+.noc{
+    height: 250px;
+    overflow: scroll;
+}

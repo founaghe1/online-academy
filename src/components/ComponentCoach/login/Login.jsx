@@ -44,7 +44,7 @@ const Login = () => {
                 Mot de passe oublié ?
               </a>
             </div>
-            <Link to="/layout">
+            <Link to="/dashboard">
               <button className="login-btn btn text-light fw-bold w-100" >
                 Connection
               </button>
