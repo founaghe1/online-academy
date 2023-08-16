@@ -27,11 +27,13 @@ import Design from './components/ComponentCoach/Domain/Design';
 import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
 import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
 import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
+import ListeApprenants from './components/ComponentCoach/ListeApprenants/ListeApprenants'
 
 // Apprenants
 import StudentDashboard from './components/ComponentApprenant/StudentDashboard/StudentDashboard';
 import Dashboard from './components/ComponentCoach/Dashboard/Dashboard';
 import DomainApprt from './components/ComponentApprenant/DomainApprnt/DomainApprt';
+
 import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/ProgrammationApprt';
 import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
 import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
@@ -67,7 +69,7 @@ function App() {
       </Router> */}
 
       {/* Routes Yagouba */}
-
+ 
       <Router>
         <Routes>
           <Route path='/' element={<Login />} />
@@ -83,7 +85,8 @@ function App() {
       {/* {/* <Dashboards  /> */}
       {/* <Login /> */}
 
-    
+      {/* domApprenant Component*/}
+      {/* <DomainApprt /> */}
 
     </div>
   );
