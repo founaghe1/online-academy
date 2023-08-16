@@ -16,7 +16,8 @@ function Sidebar() {
 
   return (
     <>
-      <div className="d-lg-none d-flex justify-content-between align-items-center">
+      <div className="sticky-top">
+        <div className="d-lg-none d-flex justify-content-between align-items-center">
         <div>
           <Button variant="primary" className="d-lg-none" onClick={handleShow}>
             <RiMenuUnfoldFill className="fs-4 fw-bold" />
@@ -78,6 +79,7 @@ function Sidebar() {
           </div>
         </Offcanvas.Body>
       </Offcanvas>
+      </div>
     </>
   );
 }

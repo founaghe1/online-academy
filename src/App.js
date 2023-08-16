@@ -35,11 +35,12 @@ function App() {
       {/* <Admin/> */}
       {/* <Dashboard  /> */}
       {/* <Login /> */}
+      <StudentDashboard />
 
       {/* <AjoutCours /> */}
 
       {/* <ForgotPW/> */}
-      <Livraison />
+      {/* <Livraison /> */}
       {/* <Voirlivraison />       */}
       {/* <Chat/> */}
       
