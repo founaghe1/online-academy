@@ -1,10 +1,10 @@
 import React from 'react'
 import NavBar from '../NavBar/Navbar'
-import SideBar from '../SideBar/sidebar'
+import SideBar from '../SideBar/Sidebar'
 import Modale from '../Cour/Modal'
 import Coure from '../Cour/Cour'
 import PageAccueilCoach from '../pageAccueilCoach/PageAccueilCoach'
-const dashboard = () => {
+const Dashboard = () => {
   return (
     <>
     
@@ -18,7 +18,7 @@ const dashboard = () => {
                         <NavBar />
                         <PageAccueilCoach />
 
-                        <Modale />
+                        
                         <Coure />
                     </div>
                 </div>
@@ -28,4 +28,4 @@ const dashboard = () => {
   )
 }
 
-export default dashboard
+export default Dashboard

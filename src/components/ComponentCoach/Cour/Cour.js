@@ -128,7 +128,7 @@ function Coure() {
                       </Button>
                     </Modal.Footer>
                   </Modal>
-                  <button type='button' className='btn btn-danger'>
+                  <button type='button' className='btn btn-danger bg-danger'>
                     <RiDeleteBinLine />
                   </button>
                 </div>
