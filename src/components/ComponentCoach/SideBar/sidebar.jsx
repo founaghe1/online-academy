@@ -14,7 +14,7 @@ import logo from "../../../medias/rrr.jpeg"
 import image from '../../../medias/dk.jpeg'
 import { Link } from "react-router-dom";
 
-const sidebar = () => {
+const Sidebar = () => {
   return (
     <>
        <div className='fixed-top sideBar'>
@@ -34,9 +34,11 @@ const sidebar = () => {
                     <li>
                         <a href='../Domain/Coach/Domain' className='nav-link my-3'>
                             <BsCartFill className='fs-4 mb-3'/>
+                            <Link to="/layout/dashboard/domain">
                             <span className='mx-2 d-none d-sm-inline fs-4 mt-5'>
                                 Domaines
                             </span>
+                            </Link>
                         </a>
                     </li>
                     <li>
@@ -80,4 +82,4 @@ const sidebar = () => {
   )
 }
 
-export default sidebar
+export default Sidebar

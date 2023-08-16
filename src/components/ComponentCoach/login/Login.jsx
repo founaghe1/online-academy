@@ -5,6 +5,7 @@ import logo from '../../../medias/rrr.jpeg'
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { AiOutlineUser, AiFillLock } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -43,8 +44,8 @@ const Login = () => {
                 Mot de passe oublié ?
               </a>
             </div>
-            <button className="login-btn btn text-light fw-bold w-100">
-              Connection
+            <button className="login-btn btn text-light fw-bold w-100" >
+              <Link to="/layout/dashboard">Connection</Link>
             </button>
           </form>
         </Card.Body>
