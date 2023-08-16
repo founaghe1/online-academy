@@ -16,7 +16,7 @@ import Design from './components/ComponentCoach/Domain/Design';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Chat from './components/ComponentCoach/Chat/Chat.jsx';
-import Livraison from './components/ComponentCoach/Livraisons/Livraison';
+import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
 import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
 
 // Apprenants
@@ -27,19 +27,20 @@ import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/Pro
 import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
 import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
 
+import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
 
 function App() {
   return (
     <div className="App">
-      {/* <Admin /> */}
-      {/* <StudentDashboard /> */}
-      
+      {/* <Admin/> */}
+      {/* <Dashboard  /> */}
       {/* <Login /> */}
 
       {/* <AjoutCours /> */}
 
       {/* <ForgotPW/> */}
-      {/* <Livraison /> */}
+      <Livraison />
+      {/* <Voirlivraison />       */}
       {/* <Chat/> */}
       
       
@@ -54,7 +55,7 @@ function App() {
 
       {/* Routes Yagouba */}
 
-      <Router>
+      {/* <Router>
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path="/layout" element={ <Layout />}>
@@ -62,7 +63,7 @@ function App() {
             <Route path='/layout/dashboard/domain' element={<DomainApprt />} />
           </Route>
         </Routes>
-      </Router>
+      </Router> */}
 
       {/* <Dashboard  /> */}
       {/* <Login /> */}
