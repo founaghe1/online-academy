@@ -13,7 +13,7 @@ import Marketing from './components/ComponentCoach/Domain/Marketing';
 import Design from './components/ComponentCoach/Domain/Design';
 import StudentDashboard from './components/StudentDashboard/StudentDashboard';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
 import Chat from './components/ComponentCoach/Chat/Chat.jsx';
 
 import Livraison from './components/ComponentCoach/Livraisons/Livraison';
