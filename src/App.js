@@ -13,7 +13,7 @@ import Domain from './components/ComponentCoach/Domain/Domain';
 import Programmation from './components/ComponentCoach/Domain/Programmation';
 import Marketing from './components/ComponentCoach/Domain/Marketing';
 import Design from './components/ComponentCoach/Domain/Design';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
 import Chat from './components/ComponentCoach/Chat/Chat.jsx';
 import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
@@ -21,7 +21,7 @@ import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
 
 // Apprenants
 import StudentDashboard from './components/ComponentApprenant/StudentDashboard/StudentDashboard';
-import Dashboards from './components/ComponentCoach/Dashboard/Dashboards';
+import Dashboard from './components/ComponentCoach/Dashboard/Dashboard';
 import DomainApprt from './components/ComponentApprenant/DomainApprnt/DomainApprt';
 import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/ProgrammationApprt';
 import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
@@ -35,7 +35,7 @@ function App() {
       {/* <Admin/> */}
       {/* <Dashboard  /> */}
       {/* <Login /> */}
-      <StudentDashboard />
+      {/* <StudentDashboard /> */}
 
       {/* <AjoutCours /> */}
 
@@ -58,15 +58,15 @@ function App() {
 
       {/* Routes Yagouba */}
 
-      {/* <Router>
+      <Router>
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path="/layout" element={ <Layout />}>
-            <Route path='/layout/dashboard' element={<Dashboards />} />
+            <Route path='/layout/dashboard' element={<Dashboard />} />
             <Route path='/layout/dashboard/domain' element={<DomainApprt />} />
           </Route>
         </Routes>
-      </Router> */}
+      </Router>
 
       {/* <Dashboard  /> */}
       {/* <Login /> */}
