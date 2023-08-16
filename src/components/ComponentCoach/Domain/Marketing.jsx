@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./domain.css";
 import { Link } from "react-router-dom";
-
 import Indtomark from "../../../Assets/digitalMarketing.png";
 import Socialmedia from "../../../Assets/social-media.png";
 import Growth from "../../../Assets/growth.png";

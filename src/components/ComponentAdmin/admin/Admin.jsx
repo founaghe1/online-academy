@@ -20,7 +20,32 @@ const Admin = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+ 
   return (
+    <>
+    
+    
+    <div
+    className="modal show"
+    style={{ display: 'block', position: 'initial' }}
+  >
+    <Modal.Dialog>
+      <Modal.Header closeButton>
+        <Modal.Title>Modal title</Modal.Title>
+      </Modal.Header>
+
+      <Modal.Body>
+        <p>Modal body text goes here.</p>
+      </Modal.Body>
+
+      <Modal.Footer>
+        <Button variant="secondary">Close</Button>
+        <Button variant="primary">Save changes</Button>
+      </Modal.Footer>
+    </Modal.Dialog>
+  </div>
+
+
     <div className="vh-100">
       <div className="container">
         <Navbar expand="lg" className="bg-body-tertiary text-dark">
@@ -302,6 +327,7 @@ const Admin = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
