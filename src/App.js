@@ -30,7 +30,7 @@ function App() {
       {/* <Livraison /> */}
       {/* <Chat/> */}
       {/* <ListeApprenants/> */}
-      <NotificationsCoachs/>
+      {/* <NotificationsCoachs/> */}
       
       
       {/* <BrowserRouter>
