@@ -8,6 +8,7 @@ import { BiSolidDashboard, BiSolidBookReader, BiUpload } from "react-icons/bi";
 import { PiStudentBold } from "react-icons/pi";
 import { BsFillChatRightFill } from "react-icons/bs";
 import {useState}  from "react";
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     const [show, setShow] = useState(false);
@@ -53,10 +54,12 @@ const Sidebar = () => {
                     </a>
                   </li>
                   <li className="mb-4 fs-5">
-                    <a href="" className="text-decoration-none side-link">
-                      <BiSolidBookReader className="side-icon fs-4 me-2" />
-                      Domaines
-                    </a>
+                    <Link to="/dashboard/domain">
+                        <a href="" className="text-decoration-none side-link">
+                        <BiSolidBookReader className="side-icon fs-4 me-2" />
+                        Domaines
+                        </a>
+                    </Link>
                   </li>
                   <li className="mb-4 fs-5">
                     <a href="" className="text-decoration-none side-link">

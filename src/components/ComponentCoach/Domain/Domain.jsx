@@ -20,7 +20,7 @@ const Domain = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div className="container">
+    <div className="container domain">
       <h1>Domaines de formation</h1>
       <div className="join pt-3">
         <button className="add_domain rounded-3" onClick={handleShow}>
@@ -73,7 +73,7 @@ const Domain = () => {
               <Card.Title>Programmation</Card.Title>
               <Card.Text>10 sous-domaines</Card.Text>
               <Link
-                to="/layout/domain/programmation"
+                to="/dashboard/domain/programmation"
                 className="join d-flex right-0"
               >
                 <button

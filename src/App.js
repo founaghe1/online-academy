@@ -37,6 +37,7 @@ import MarketingApprt from './components/ComponentApprenant/DomainApprnt/Marketi
 import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
 
 import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
+import Error from './Error';
 
 function App() {
   return (
@@ -72,8 +73,10 @@ function App() {
           <Route path='/' element={<Login />} />
           <Route path="/dashboard" element={ <Layout />}>
             <Route index element={<Dashboard />} />
-            <Route path='/dashboard/domain' element={<DomainApprt />} />
+            <Route path='/dashboard/domain' element={<Domain />} />
+            <Route path='/dashboard/domain/programmation' element={<Programmation />} />
           </Route>
+          <Route path='*' element={<Error />} />
         </Routes>
         </Router>
 
