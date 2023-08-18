@@ -1,6 +1,7 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
 import { AiOutlineSearch } from "react-icons/ai";
+import Button from 'react-bootstrap/Button';
 
 import './ListeApprenants.css'
 const ListeApprenants = () => {
@@ -128,13 +129,16 @@ const ListeApprenants = () => {
           </tbody>
 
         </Table>
-
+        <div className="row mt-3 float-end">
+      <div className="col-4 prev rounded text-white">   
+         <Button variant="primary">prev</Button>
+         </div>
+        <div className="col-4 pt-3 ms text-center">1</div>
+        <div className="col-4 prev rounded text-white">   
+         <Button variant="primary">next</Button></div>
       </div>
-      <div className="row float-end mt-3">
-        <div className="col-4 prev rounded text-white">prev</div>
-        <div className="col-4 pt-3 ms">1</div>
-        <div className="col-4 prev rounded text-white">next</div>
       </div>
+    
     </>
   )
 }
