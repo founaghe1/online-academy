@@ -26,6 +26,7 @@ import DomainApprt from './components/ComponentApprenant/DomainApprnt/DomainAppr
 import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/ProgrammationApprt';
 import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
 import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
+import ListeApprenants from './components/ComponentCoach/ListeApprenants/ListeApprenants'
 
 import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
 
@@ -68,7 +69,7 @@ function App() {
         </Routes>
       </Router>
 
-      {/* <Dashboard  /> */}
+      {/* <Dashboard  />bakelitraining */}
       {/* <Login /> */}
 
     
