@@ -7,7 +7,7 @@ import './style.css'
 const CartLive = () => {
   return (
     <div>
-        <div class="card cart-liv mb-5">
+        <div class="card shadow-sm cart-liv mb-3">
           <div class=''>
               <h3 class="">Tache</h3>
               <p class="">Some quick example text </p>
@@ -15,11 +15,15 @@ const CartLive = () => {
           <div class="">
               <img src={img1} className="img-fluid mb-3" alt="..." />
           </div>
-          <div class="d-flex justify-content-between aling-items-center">
-              <button type="button" className="btn btn-sm btn-car" data-bs-toggle="modal" data-bs-target="#modal0">
+          <div className="d-flex justify-content-between align-items-center mb-2">
+            <div className="col d-flex justify-content-between align-items-center">
+            <button type="button" className="btn btn-car1 btn-sm" data-bs-toggle="modal" data-bs-target="#modal0">
                 <GrView className='me-2'/>Voir</button>
-              <button type="button" className="btn btn-sm btn-cart" data-bs-toggle="modal" data-bs-target="#modal1">
+            </div>
+           <div className="col d-flex justify-content-between align-items-center">
+           <button type="button" className="btn btn-cart1 btn-sm" data-bs-toggle="modal" data-bs-target="#modal1">
                 <FcAcceptDatabase className='me-2'/>Commentaire</button>
+           </div>
           </div>
         </div>
          {/* <!-- Modal --> */}
@@ -33,7 +37,6 @@ const CartLive = () => {
                 <div class="modal-body">
                     <img src={img1} className="card-img-top" height='550px' alt="..." />
                 </div>
-                <div class="modal-footer"></div>
                 </div>
             </div>
         </div>

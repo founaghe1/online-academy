@@ -1,7 +1,7 @@
 import './App.css';
-import 'bootstrap/dist/js/bootstrap.min.js'
 import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js'
 import Login from './components/ComponentCoach/login/Login';
 import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
 import SideBar from './components/ComponentCoach/SideBar/Sidebar';
@@ -36,11 +36,10 @@ function App() {
       {/* <Dashboard  /> */}
       {/* <Login /> */}
       {/* <StudentDashboard /> */}
-
       {/* <AjoutCours /> */}
 
       {/* <ForgotPW/> */}
-      <Livraison />
+      {/* <Livraison /> */}
       <Voirlivraison />      
       {/* <Chat/> */}
       {/* <ListeApprenants/> */}

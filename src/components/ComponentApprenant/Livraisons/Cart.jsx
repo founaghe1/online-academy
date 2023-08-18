@@ -7,22 +7,22 @@ import {TbPlayerEject} from 'react-icons/tb'
 const Cart = () => {
   return (
       <div>
-          <div className="card mt-4">
+          <div className="card mb-3 shadow-sm mt-4">
             <h3 className="">Tache</h3>
             <p className="">Some quick example text </p>
             <div className="">
             <img src={img} className="img-fluid mb-3" alt="..." />
           </div>
-          <div className="d-flex justify-content-between align-items-center">
-              <div className="col-md-4 d-flex justify-content-between">
-                <button type="button" className="btn btn-sm "
+          <div className="d-flex justify-content-between mb-2">
+              <div className="col-md-4 col-sm-4 d-flex justify-content-between">
+                <button type="button" className="btn btn-sm btn-car"
                data-bs-toggle="modal" data-bs-target="#exampleModal"><GrView className='me-2'/>Voir</button>
               </div>
-              <div className="col-md-4 d-flex justify-content-between">
-                <button type="button" className="btn btn-sm "><FcAcceptDatabase className='me-2'/>Accepter</button>
+              <div className="col-md-4 col-sm-4 d-flex justify-content-between">
+                <button type="button" className="btn btn-sm btn-cart"><FcAcceptDatabase className='me-2'/>Accepter</button>
               </div>
-              <div className="col-md-4 d-flex justify-content-between">
-                <button type="button" className="btn btn-sm "><TbPlayerEject className='me-2'/>Rejeter</button>
+              <div className="col-md-4 col-sm-4 d-flex justify-content-between">
+                <button type="button" className="btn btn-sm btn-cartt"><TbPlayerEject className='me-2'/>Rejeter</button>
               </div>
           </div>  
       </div>
@@ -33,7 +33,7 @@ const Cart = () => {
             <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Voir Livraison</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <img src={img} className="card-img-top" height='550px' alt="..." />

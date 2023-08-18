@@ -17,31 +17,55 @@
 
 }
 
-.btn-car{
+.btn-ca{
+    background-color: #8e70d6;
+    color: white;  
+    font-size: 20px;
+    font-weight: 500;
+    height: 50px !important;
+    width: 200px !important;
+}
+
+.btn-ca:hover{
+    background-color: #8e70d6 !important;
+    color: white !important;  
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.btn-car1{
     background-color: gray;
     color: white;  
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
+    height: 40px !important;
+    width: 150px !important;
 }
 
-.btn-car:hover{
+.btn-car1:hover{
     background-color: gray !important;
     color: white !important;  
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
+    height: 40px !important;
+    width: 150px !important;
 }
 
-.btn-cart{
+.btn-cart1{
     background-color: #8e70d6;
     color: white;  
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
+    height: 40px !important;
+    width: 180px !important;
 }
-.btn-cart:hover{
+.btn-cart1:hover{
     background-color: #8e70d6;
     color: white;  
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
+    height: 40px !important;
+    width: 180px !important;
 }
 
 .btn-cartt{

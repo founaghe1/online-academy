@@ -4,13 +4,13 @@ import CartLive from './CartLive'
 const Voirlivraison = () => {
   return (
     <>
-    <div className='container'>
-        <div class='d-flex justify-content-end mt-5'>
-        <button type="button" class="btn btn-ca shadow mb-5 mt-3" data-bs-toggle="modal" data-bs-target="#mod1">
-                Envoyer mon travail
-        </button>
-    </div>
-            
+    <div className='container-fluid'>
+        <div className='d-flex justify-content-end'>
+          <button  className="btn btn-sm btn-ca shadow mb-5 mt-5" data-bs-toggle="modal" 
+            data-bs-target="#mod1">
+                  Envoyer mon travail
+          </button>
+        </div>
     {/* <!-- Modal --> */}
     <div class="modal bx-shadow fade" id="mod1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-xl">
@@ -22,7 +22,7 @@ const Voirlivraison = () => {
           <div class="modal-body">
             <form action="">
               <select class="form-select shadow rounded border border-warning p-3 mb-4" 
-              aria-label="Default select example">
+                aria-label="Default select example">
                 <option selected>Selectionner une tache</option>
                 <option value="1">Tache 1</option>
                 <option value="2">tache 2</option>
@@ -39,7 +39,7 @@ const Voirlivraison = () => {
                   <div className="cap p-4"></div>
               </div>
               <div className='mb-3 d-grid'>
-            <button type="button" className="btn btn-lg rounded btn-send">Envoyer</button>
+            <button type="button" className="btn btn-block btn-lg rounded btn-send">Envoyer</button>
             </div>
             </form>
           </div>
@@ -47,7 +47,7 @@ const Voirlivraison = () => {
       </div>
     </div>
     </div>
-    <div className="container">
+    <div className="container-fluid">
       <div className="row">
         <div className="col-md-3">
           <CartLive />
