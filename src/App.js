@@ -36,7 +36,7 @@ function App() {
       {/* <Admin/> */}
       {/* <Dashboard  /> */}
       {/* <Login /> */}
-      <StudentDashboard />
+      {/* <StudentDashboard /> */}
 
       {/* <AjoutCours /> */}
 
