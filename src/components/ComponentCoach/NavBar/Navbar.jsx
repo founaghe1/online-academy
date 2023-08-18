@@ -15,6 +15,12 @@ const Navbar = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
+  const [shownoc, setShownoc] = useState(false);
+
+  const handleClosenoc = () => setShownoc(false);
+  const handleShownoc = () => setShownoc(true);
+  
   return (
     <nav>
       <div className="container-fluid mt-3">
@@ -35,9 +41,36 @@ const Navbar = () => {
             <div className="d-flex justify-content-end align-items-center gap-3">
               <div>
                 {/* Modal pour notifs */}
-                <a href="">
-                  <IoMdNotifications className="notif-icon fs-1 fw-bold" />
-                </a>
+                <IoMdNotifications className="notif-icon fs-4 fw-bold"   onClick={handleShownoc} />
+                <div
+                  className="modal show"
+                  style={{ display: 'block', position: 'initial' }}
+                >
+                  
+
+                  <Modal show={shownoc} onHide={handleClosenoc}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>
+                        <h3>Notifications</h3>
+                      </Modal.Title>
+                    </Modal.Header>
+                   
+                    <Modal.Body className='noc'>
+                    <h4><span>Online-Academy</span></h4>
+          <p>Modal body text goes here. Modal body text goes here Modal body text goes here Modal body text goes here </p>
+          <p className='d-flex justify-content-end fw-bold'> 16 Aout 2023, 11:19</p>
+
+            <h4><span>Online-Academy</span></h4>
+          <p>Modal body text goes here. Modal body text goes here Modal body text goes here Modal body text goes here </p>
+          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p>
+
+          <h4><span>Online-Academy</span></h4>
+          <p>Modal body text goes here. Modal body text goes here Modal body text goes here Modal body text goes here </p>
+          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 18:02</p>
+        </Modal.Body>
+                  </Modal>
+                 
+                </div>
               </div>
               <div id="profil">
                 <div className="d-flex align-items-center">
@@ -125,7 +158,7 @@ const Navbar = () => {
                       className="btnFermer  "
                       onClick={handleClose}
                     >
-                      Fermer
+                      Fermer 
                     </Button>
                     <Button
                       className="saveBtn"
