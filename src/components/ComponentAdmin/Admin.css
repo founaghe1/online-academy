@@ -1,0 +1,14 @@
+.add, .logout, .save{
+    background-color: #8a70d6;
+    font-weight: bold;
+}
+.selectModal{
+    padding: 15px;
+}
+.carte{
+    background-color: #e9e3ff;
+    border: none;
+}
+.img-profil{
+    width: 35px;
+}

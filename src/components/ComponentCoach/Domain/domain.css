@@ -181,3 +181,9 @@ p.card-text {
         width: 50%;
     }
 }
+.cours{
+    text-decoration: none !important;
+}
+.join{
+    text-decoration: none !important;
+}

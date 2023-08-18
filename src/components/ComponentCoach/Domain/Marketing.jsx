@@ -6,12 +6,18 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./domain.css";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD:src/components/ComponentCoach/Domain/Marketing.jsx
 import Indtomark from "../../../Assets/digitalMarketing.png";
 import Socialmedia from "../../../Assets/social-media.png";
 import Growth from "../../../Assets/growth.png";
 
 
 
+=======
+import Indtomark from "../../../assets/digitalMarketing.png";
+import Socialmedia from "../../../assets/social-media.png";
+import Growth from "../../../assets/growth.png";
+>>>>>>> a55026de1064ec70df558421c99bbbdc48ad4654:src/components/ComponentCoach/Marketing.jsx
 
 const Marketing = () => {
 
