@@ -19,34 +19,34 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modale from "./components/Cour/Modal";
 import Coure from "./components/Cour/Cour";
-import Voircour from "./components/VoirCours/VoirCour";
-import CourBoostrap from "./components/VoirCours/CourBoostrap";
-import Voircourjs from "./components/VoirCours/VoircourJS"
-import Voircourphp from "./components/VoirCours/Voircourphp"
-import Voircourdiago from "./components/VoirCours/Voircourdiago"
-import Voircourc from "./components/VoirCours/Voircousc++"
-import Booter from "./components/VoirCours/Courbooster"
-import Potoshop from "./components/VoirCours/Voircourdegiadop"
-import Ulistration from "./components/VoirCours/ulistratindesi"
-import PRO from "./components/VoirCours/Designpro"
-import Initialisation from "./components/VoirCours/ulistratindesi"
-import Analysemarche from "./components/VoirCours/VoirMarkmarche"
-import Etude from "./components/VoirCours/Voircourmarketud"
-import Voircourdevelop from "./components/VoirCours/Voircourmarkdevelo"
+import Voircour from "./components/ComponentApprenant/VoirCours/VoirCour";
+import CourBoostrap from "./components/ComponentApprenant/VoirCours/CourBoostrap";
+import Voircourjs from "./components/ComponentApprenant/VoirCours/VoircourJS"
+import Voircourphp from "./components/ComponentApprenant/VoirCours/Voircourphp"
+import Voircourdiago from "./components/ComponentApprenant/VoirCours/Voircourdiago"
+import Voircourc from "./components/ComponentApprenant/VoirCours/Voircousc++"
+import Booter from "./components/ComponentApprenant/VoirCours/Courbooster";
+import Potoshop from "./components/ComponentApprenant/VoirCours/Voircourdegiadop";
+import Ulistration from "./components/ComponentApprenant/VoirCours/ulistratindesi";
+import PRO from "./components/ComponentApprenant/VoirCours/Designpro";
+import Initialisation from "./components/ComponentApprenant/VoirCours/ulistratindesi";
+import Analysemarche from "./components/ComponentApprenant/VoirCours/VoirMarkmarche";
+import Etude from "./components/ComponentApprenant/VoirCours/Voircourmarketud";
+import Voircourdevelop from "./components/ComponentApprenant/VoirCours/Voircourmarkdevelo";
 // import Livraison from './components/Livraisons/Livraison';
-import Quizzes from "./components/VoirCours/Quizzes"
-import QuizzBoostrap from "./components/VoirCours/QuizzBoostrap"
-import  QuizzJs from "./components/VoirCours/QuizzJs"
-import QuizzPhp from "./components/VoirCours/QuizzPhp"
-import Quizzdjango  from "./components/VoirCours/Quizzdjango"
-import QuizzC from "./components/VoirCours/QuizzC++"
-import QuizzMarketinDigital from "./components/VoirCours/QuizzMarketinDigital"
-import Quizzresauxsocia  from "./components/VoirCours/Quizzresauxsocia"
-import QuizzBooter from "./components/VoirCours/QuizzBooter"
-import QuizzPhotos from "./components/VoirCours/QuizzPhotos"
-import Quizzullustrator from "./components/VoirCours/Quizzullustrator";
-import Quizzinitialisation from "./components/VoirCours/Quizzinitialisation"
-import Quizzpro from "./components/VoirCours/Quizzpro"
+import Quizzes from "./components/ComponentApprenant/VoirCours/Quizzes";
+import QuizzBoostrap from "./components/ComponentApprenant/VoirCours/QuizzBoostrap";
+import QuizzJs from "./components/ComponentApprenant/VoirCours/QuizzJs";
+import QuizzPhp from "./components/ComponentApprenant/VoirCours/QuizzPhp";
+import Quizzdjango from "./components/ComponentApprenant/VoirCours/Quizzdjango";
+import QuizzC from "./components/ComponentApprenant/VoirCours/QuizzC++";
+import QuizzMarketinDigital from "./components/ComponentApprenant/VoirCours/QuizzMarketinDigital";
+import Quizzresauxsocia from "./components/ComponentApprenant/VoirCours/Quizzresauxsocia";
+import QuizzBooter from "./components/ComponentApprenant/VoirCours/QuizzBooter";
+import QuizzPhotos from "./components/ComponentApprenant/VoirCours/QuizzPhotos";
+import Quizzullustrator from "./components/ComponentApprenant/VoirCours/Quizzullustrator";
+import Quizzinitialisation from "./components/ComponentApprenant/VoirCours/Quizzinitialisation";
+import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
 
 // import Qestion from "./components/VoirCours/Voircourphp"
 function App() {

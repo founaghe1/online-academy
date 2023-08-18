@@ -1,14 +1,18 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./voirCour.css";
- const Quizzes = () => {
+
+const Quizzinitialisation = () => {
   return (
-    <div>
-      <h1 className='text-center '>Quizz Html Css</h1>
+    <div className='quizboost justify-content-center align-items-center mx-auto'>
+      <h1 className='text-center '>Quizz Design intiation</h1>
       <div class='radio-input justify-content-center align-items-center mx-auto '>
         <div class='info'>
-          <span class='question'>Que signifie HTML ?</span>
-          <span class='steps'>1/5</span>
+          <span class='question'>
+            Lequel des éléments suivants n'est pas une phase utilisée dans la //
+            méthode Design Thinking ?
+          </span>
+          <span class='steps m-2'>1/5</span>
         </div>
         <div className='d-flex'>
           <input
@@ -18,7 +22,7 @@ import "./voirCour.css";
             value='value-1'
             className='m-2'
           />
-          <label for='value-1'>Home Toll Markup Language</label>
+          <label for='value-1'>Prototype</label>
         </div>
         <div className='d-flex'>
           <input
@@ -28,7 +32,7 @@ import "./voirCour.css";
             value='value-2'
             className='m-2'
           />
-          <label for='value-2'>Hyper Text Markup language</label>
+          <label for='value-2'>Empathie</label>
         </div>
         <div className='d-flex'>
           <input
@@ -38,54 +42,17 @@ import "./voirCour.css";
             value='value-3'
             className='m-2'
           />
-          <label for='value-3'>Hyperlinks and text Markup Language</label>
-        </div>
-      </div>
-      <br></br>
-      <div class='radio-input justify-content-center align-items-center mx-auto '>
-        <div class='info'>
-          <span class='question'>Que signifie CSS ?</span>
-          <span class='steps'>2/5</span>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-1'
-            name='value-radio'
-            value='value-1'
-            className='m-2'
-          />
-          <label for='value-1'>Cascading Style sheets</label>
-        </div>
-        <div className='d-flex '>
-          <input
-            type='radio'
-            id='value-2'
-            name='value-radio'
-            value='value-2'
-            className='m-2'
-          />
-          <label for='value-2'>Colorful Style Sheets</label>
-        </div>
-        <div className='d-flex '>
-          <input
-            type='radio'
-            id='value-2'
-            name='value-radio'
-            value='value-2'
-            className='m-2'
-          />
-          <label for='value-2'>Creative Style Sheets</label>
+          <label for='value-3'>Vente</label>
         </div>
       </div>
       <br></br>
       <div class='radio-input justify-content-center align-items-center mx-auto '>
         <div class='info'>
           <span class='question'>
-            Dans un document HTML, où se trouve le bon endroit pour faire
-            référence à une feuille de style externe ?
+            {" "}
+            Quelle est la première phase de la méthode Design Thinking ?
           </span>
-          <span class='steps'>3/5</span>
+          <span class='steps m-2'>2/5</span>
         </div>
         <div className='d-flex'>
           <input
@@ -95,7 +62,44 @@ import "./voirCour.css";
             value='value-1'
             className='m-2'
           />
-          <label for='value-1'>At the end of the document</label>
+          <label for='value-1'>Idéation</label>
+        </div>
+        <div className='d-flex '>
+          <input
+            type='radio'
+            id='value-2'
+            name='value-radio'
+            value='value-2'
+            className='m-2'
+          />
+          <label for='value-2'>Empathie</label>
+        </div>
+        <div className='d-flex '>
+          <input
+            type='radio'
+            id='value-2'
+            name='value-radio'
+            value='value-2'
+            className='m-2'
+          />
+          <label for='value-2'>Définition</label>
+        </div>
+      </div>
+      <br></br>
+      <div class='radio-input justify-content-center align-items-center mx-auto '>
+        <div class='info'>
+          <span class='question'>Le Design Thinking est une méthode:</span>
+          <span class='steps m-2'>3/5</span>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-1'
+            name='value-radio'
+            value='value-1'
+            className='m-2'
+          />
+          <label for='value-1'>Itérative</label>
         </div>
         <div className='d-flex'>
           <input
@@ -105,7 +109,7 @@ import "./voirCour.css";
             value='value-2'
             className='m-2'
           />
-          <label for='value-2'>In the head section</label>
+          <label for='value-2'>Linéaire</label>
         </div>
         <div className='d-flex'>
           <input
@@ -115,7 +119,7 @@ import "./voirCour.css";
             value='value-3'
             className='m-2'
           />
-          <label for='value-3'>In the body section</label>
+          <label for='value-3'>Circulaire</label>
         </div>
       </div>
       <br></br>
@@ -127,4 +131,4 @@ import "./voirCour.css";
     </div>
   );
 }
-export default Quizzes;
+export default Quizzinitialisation;

@@ -28,6 +28,10 @@ border:1px solid #8e2de2 !important;
     background-color: blueviolet;
 
 }
+.steps{
+  color: #fff;
+}
+
 .container{
     justify-content: center;
     align-items: center;
@@ -46,16 +50,18 @@ border:1px solid #8e2de2 !important;
   
   flex-direction: column;
   padding: 12px;
-  background: #fff;
-  color: #000;
+  background: #da76f6;
+  color: #fff;
   border-radius: 10px;
   box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
-  
+  /* height:200px;
+   */
   
   
 }
 .radio-input:hover{
   background-color: blanchedalmond;
+  color:black
 }
 .info {
   margin-bottom: 10px;
@@ -129,8 +135,12 @@ border:1px solid #8e2de2 !important;
   display: flex;
 }
 .but{
-  
+  background-color:#da76f6 ;
   /* right: 0; */
+}
+.but:hover{
+  background-color:blanchedalmond ;
+  color: #000;
 }
 .quizboost{
 width: 60%;

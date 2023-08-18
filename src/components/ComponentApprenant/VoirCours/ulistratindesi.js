@@ -8,7 +8,7 @@ import "./voirCour.css";
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
 
-function Initialisation() {
+function Ulistration() {
   return (
     <>
       <h2 className='text-center'>TACHES</h2>
@@ -17,7 +17,7 @@ function Initialisation() {
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache1: COMMENT faire un design flyer</Card.Title>
+                <Card.Title>Tache1: LA PLUME</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
@@ -25,10 +25,10 @@ function Initialisation() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=oIEJG5XAB08'>
-                  https://www.youtube.com/watch?v=oIEJG5XAB08
+                <Card.Link href='https://www.youtube.com/watch?v=O-Z_eN2WmOk&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U'>
+                  https://www.youtube.com/watch?v=O-Z_eN2WmOk&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U<br></br>
                   <div className='video-responsive'>
-                    <ReactPlayer url='https://www.youtube.com/watch?v=oIEJG5XAB08' />
+                    <ReactPlayer url='https://www.youtube.com/watch?v=O-Z_eN2WmOk&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U' />
                   </div>
                 </Card.Link>
               </Card.Body>
@@ -45,7 +45,7 @@ function Initialisation() {
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem " }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache2:POSTER DESIGN IN PHOTOSHOP</Card.Title>
+                <Card.Title>Tache2: COMBINER LES FORMES</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
@@ -53,11 +53,8 @@ function Initialisation() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=-CIFGBcbPPg'>
-                  https://www.youtube.com/watch?v=-CIFGBcbPPg
-                  <div className='video-responsive'>
-                    <ReactPlayer url=' https://www.youtube.com/watch?v=-CIFGBcbPPg' />
-                  </div>
+                <Card.Link href='https://www.youtube.com/watch?v=NdcoEmWb4Go&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U&index=3'>
+                  https://www.youtube.com/watch?v=NdcoEmWb4Go&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U&index=3<br></br>
                 </Card.Link>
               </Card.Body>
               <button
@@ -69,11 +66,11 @@ function Initialisation() {
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5 justify-content-center align-items-center'>
+        <Row className='justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache 3: PRO POSTER DESIGN</Card.Title>
+                <Card.Title>Tache 3: Vectoriasation d'images </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
@@ -81,8 +78,11 @@ function Initialisation() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=yFHfOlEVcxs'>
-                  https://www.youtube.com/watch?v=yFHfOlEVcxs
+                <Card.Link href='https://www.youtube.com/watch?v=Ka8fcqb6fjU&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U&index=4'>
+                  https://www.youtube.com/watch?v=Ka8fcqb6fjU&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U&index=4<br></br>
+                  <div className='video-responsive'>
+                    <ReactPlayer url=' https://www.youtube.com/watch?v=Ka8fcqb6fjU&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U&index=4' />
+                  </div>
                 </Card.Link>
               </Card.Body>
               <button
@@ -104,7 +104,7 @@ function Initialisation() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/initialisation' className='join '>
+              <Link to='/ullustrator' className='join '>
                 <button className='btn btn-primary'>Demarer</button>
               </Link>
             </Card>
@@ -115,4 +115,4 @@ function Initialisation() {
   );
 }
 
-export default Initialisation;
+export default Ulistration;

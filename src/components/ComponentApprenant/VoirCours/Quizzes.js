@@ -1,15 +1,14 @@
 import React from 'react'
-
- const Quizzullustrator = () => {
+import { Link } from "react-router-dom";
+import "./voirCour.css";
+ const Quizzes = () => {
   return (
-    <div>
-      <h1 className='text-center '>Quizz Design Adobe Ullustrator</h1>
+    <div className='quizboost justify-content-center align-items-center mx-auto'>
+      <h1 className='text-center '>Quizz Html Css</h1>
       <div class='radio-input justify-content-center align-items-center mx-auto '>
         <div class='info'>
-          <span class='question'>
-            In Adobe Illustrator we create our design and Illustrations on…
-          </span>
-          <span class='steps'>1/5</span>
+          <span class='question'>Que signifie HTML ?</span>
+          <span class='steps m-2'>1/5</span>
         </div>
         <div className='d-flex'>
           <input
@@ -19,7 +18,7 @@ import React from 'react'
             value='value-1'
             className='m-2'
           />
-          <label for='value-1'>Page</label>
+          <label for='value-1'>Home Toll Markup Language</label>
         </div>
         <div className='d-flex'>
           <input
@@ -29,7 +28,7 @@ import React from 'react'
             value='value-2'
             className='m-2'
           />
-          <label for='value-2'>Canvas</label>
+          <label for='value-2'>Hyper Text Markup language</label>
         </div>
         <div className='d-flex'>
           <input
@@ -39,26 +38,54 @@ import React from 'react'
             value='value-3'
             className='m-2'
           />
-          <label for='value-3'>Cardboard</label>
+          <label for='value-3'>Hyperlinks and text Markup Language</label>
+        </div>
+      </div>
+      <br></br>
+      <div class='radio-input justify-content-center align-items-center mx-auto '>
+        <div class='info'>
+          <span class='question'>Que signifie CSS ?</span>
+          <span class='steps m-2'>2/5</span>
         </div>
         <div className='d-flex'>
           <input
             type='radio'
-            id='value-3'
+            id='value-1'
             name='value-radio'
-            value='value-3'
+            value='value-1'
             className='m-2'
           />
-          <label for='value-3'>Artboard</label>
+          <label for='value-1'>Cascading Style sheets</label>
+        </div>
+        <div className='d-flex '>
+          <input
+            type='radio'
+            id='value-2'
+            name='value-radio'
+            value='value-2'
+            className='m-2'
+          />
+          <label for='value-2'>Colorful Style Sheets</label>
+        </div>
+        <div className='d-flex '>
+          <input
+            type='radio'
+            id='value-2'
+            name='value-radio'
+            value='value-2'
+            className='m-2'
+          />
+          <label for='value-2'>Creative Style Sheets</label>
         </div>
       </div>
       <br></br>
       <div class='radio-input justify-content-center align-items-center mx-auto '>
         <div class='info'>
           <span class='question'>
-            Maximum Number of sheets we can made in Adobe Illustrator CS6 are :
+            Dans un document HTML, où se trouve le bon endroit pour faire
+            référence à une feuille de style externe ?
           </span>
-          <span class='steps'>2/5</span>
+          <span class='steps m-2'>3/5</span>
         </div>
         <div className='d-flex'>
           <input
@@ -68,57 +95,7 @@ import React from 'react'
             value='value-1'
             className='m-2'
           />
-          <label for='value-1'> 10</label>
-        </div>
-        <div className='d-flex '>
-          <input
-            type='radio'
-            id='value-2'
-            name='value-radio'
-            value='value-2'
-            className='m-2'
-          />
-          <label for='value-2'> 100</label>
-        </div>
-        <div className='d-flex '>
-          <input
-            type='radio'
-            id='value-2'
-            name='value-radio'
-            value='value-2'
-            className='m-2'
-          />
-          <label for='value-2'>1000</label>
-        </div>
-        <div className='d-flex '>
-          <input
-            type='radio'
-            id='value-2'
-            name='value-radio'
-            value='value-2'
-            className='m-2'
-          />
-          <label for='value-2'> 99</label>
-        </div>
-      </div>
-      <br></br>
-      <div class='radio-input justify-content-center align-items-center mx-auto '>
-        <div class='info'>
-          <span class='question'>
-            Artwork in Adobe Illustrator which falls outside of printing box is
-            known
-          </span>
-          <span class='steps'>3/5</span>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-1'
-            name='value-radio'
-            value='value-1'
-            className='m-2'
-          />
-          <label for='value-1'>Bleed</label>
+          <label for='value-1'>At the end of the document</label>
         </div>
         <div className='d-flex'>
           <input
@@ -128,7 +105,7 @@ import React from 'react'
             value='value-2'
             className='m-2'
           />
-          <label for='value-2'>Slug</label>
+          <label for='value-2'>In the head section</label>
         </div>
         <div className='d-flex'>
           <input
@@ -138,17 +115,7 @@ import React from 'react'
             value='value-3'
             className='m-2'
           />
-          <label for='value-3'>Margin</label>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-3'
-            name='value-radio'
-            value='value-3'
-            className='m-2'
-          />
-          <label for='value-4'>Spine</label>
+          <label for='value-3'>In the body section</label>
         </div>
       </div>
       <br></br>
@@ -160,4 +127,4 @@ import React from 'react'
     </div>
   );
 }
-export default Quizzullustrator;
+export default Quizzes;

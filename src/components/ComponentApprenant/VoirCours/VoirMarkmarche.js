@@ -6,18 +6,17 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./voirCour.css";
 import ReactPlayer from "react-player";
-import { Link } from "react-router-dom";
 
-function Ulistration() {
+function Analysemarche() {
   return (
     <>
-      <h2 className='text-center'>TACHES</h2>
+      <h2>VOIR COURS ANALYSE DU MARCHE</h2>
       <div className='container mt-5 mx-auto'>
         <Row className='justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
-            <Card style={{ width: "45rem" }} className='car mx-auto'>
+            <Card style={{ width: "50rem" }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache1: LA PLUME</Card.Title>
+                <Card.Title>Tache1:INTRODUCTION DU MARKETING</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
@@ -25,10 +24,10 @@ function Ulistration() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=O-Z_eN2WmOk&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U'>
-                  https://www.youtube.com/watch?v=O-Z_eN2WmOk&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U
-                  <div className='video-responsive'>
-                    <ReactPlayer url='https://www.youtube.com/watch?v=O-Z_eN2WmOk&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U' />
+                <Card.Link href='https://www.youtube.com/watch?v=IboxRS49q8M'>
+                  https://www.youtube.com/watch?v=IboxRS49q8M
+                  <div className='video-responsive mt-2'>
+                    <ReactPlayer url=' https://www.youtube.com/watch?v=IboxRS49q8M' />
                   </div>
                 </Card.Link>
               </Card.Body>
@@ -43,9 +42,11 @@ function Ulistration() {
         </Row>
         <Row className='mt-5 justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
-            <Card style={{ width: "45rem " }} className='car mx-auto'>
+            <Card style={{ width: "50rem " }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache2: COMBINER LES FORMES</Card.Title>
+                <Card.Title>
+                  Tache2:ANALYSES LES DONNEES DU MARKETING
+                </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
@@ -53,8 +54,8 @@ function Ulistration() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=NdcoEmWb4Go&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U&index=3'>
-                  https://www.youtube.com/watch?v=NdcoEmWb4Go&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U&index=3
+                <Card.Link href='https://www.youtube.com/watch?v=yYRZ9TX7lRw'>
+                  https://www.youtube.com/watch?v=yYRZ9TX7lRw<br></br>
                 </Card.Link>
               </Card.Body>
               <button
@@ -66,11 +67,11 @@ function Ulistration() {
             </Card>
           </Col>
         </Row>
-        <Row className='justify-content-center align-items-center'>
+        <Row className='mt-5 justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
-            <Card style={{ width: "45rem" }} className='car mx-auto'>
+            <Card style={{ width: "50rem" }} className="car mx-auto">
               <Card.Body>
-                <Card.Title>Tache 3: Vectoriasation d'images </Card.Title>
+                <Card.Title>Tache 3: LES STRATEGIE DU MARKETING</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
@@ -78,10 +79,10 @@ function Ulistration() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=Ka8fcqb6fjU&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U&index=4'>
-                  https://www.youtube.com/watch?v=Ka8fcqb6fjU&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U&index=4
+                <Card.Link href='https://www.youtube.com/watch?v=4Q5K39aPIbI'>
+                  https://www.youtube.com/watch?v=4Q5K39aPIbI<br></br>
                   <div className='video-responsive'>
-                    <ReactPlayer url=' https://www.youtube.com/watch?v=Ka8fcqb6fjU&list=PLFT1RuQiwwb4CnmpsS2_WcJquYgHcOx5U&index=4' />
+                    <ReactPlayer url='  https://www.youtube.com/watch?v=4Q5K39aPIbI' />
                   </div>
                 </Card.Link>
               </Card.Body>
@@ -94,25 +95,9 @@ function Ulistration() {
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5 justify-content-center align-items-center '>
-          <Col md={12} sm={12} lg={12}>
-            <Card style={{ width: "45rem" }} className='car mx-auto'>
-              <Card.Body>
-                <h1>QUIZZ</h1>
-                <p>
-                  Apres avoir suivi les cours les quizzes sont obligatoires
-                  cliqué sur le button pour demarer
-                </p>
-              </Card.Body>
-              <Link to='/ullustrator' className='join '>
-                <button className='btn btn-primary'>Demarer</button>
-              </Link>
-            </Card>
-          </Col>
-        </Row>
       </div>
     </>
   );
 }
 
-export default Ulistration;
+export default Analysemarche;

@@ -1,52 +1,52 @@
-/** @format */
 
 // import { useState } from 'react';
 import Card from "react-bootstrap/Card";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./voirCour.css";
+import { Container } from "react-bootstrap";
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
 
-function Voircourdiago() {
+
+function Voircour() {
   return (
     <>
-      <h2 className='text-center'>VOIR COURS DJANGO</h2>
-      <div className='container mt-5'>
-        <Row className='justify-content-center align-items-center'>
+      <h2 className='text-center'>TACHES</h2>
+      <Container className='container mt-5'>
+        <Row className='justify-content-center align-items-center '>
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
-              <Card.Body>
-                <Card.Title>Tache1: INTRODUCTION </Card.Title>
+              <Card>
+                <Card.Title>tache 1:LES BASES EN HTML ET CSS </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
                 </p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
-                <h3 className=''>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=iBGhDHtysAA&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO'>
-                  https://www.youtube.com/watch?v=iBGhDHtysAA&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO
+                <h3>Lien utiles</h3>
+                <Card.Link href='https://www.youtube.com/playlist?list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3'>
+                  https://www.youtube.com/playlist?list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3<br></br>
                   <div className='video-responsive'>
-                    <ReactPlayer url='https://www.youtube.com/watch?v=iBGhDHtysAA&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO' />
+                    <ReactPlayer url='https://www.youtube.com/watch?v=Y80juYcu3ZI&list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3&index=1' />
                   </div>
                 </Card.Link>
-              </Card.Body>
+              </Card>
               <button
                 type='button'
-                className='btn w-10 ms-auto text-white  butt'
+                className='btn w-10 ms-auto text-white butt'
               >
                 Demarer
               </button>
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5 justify-content-center align-items-center'>
+        <Row className='mt-5 justify-content-center align-items-center '>
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem " }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache2:LES FORMULAIRES </Card.Title>
+                <Card.Title>tache2:Création d'une page html</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
@@ -54,10 +54,10 @@ function Voircourdiago() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=3e0SjrSgWzk&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=11'>
-                  https://www.youtube.com/watch?v=3e0SjrSgWzk&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=11
+                <Card.Link href='https://www.youtube.com/watch?v=rRt-yvGQST0&t=6s'>
+                  https://www.youtube.com/watch?v=rRt-yvGQST0&t=6s<br></br>
                   <div className='video-responsive'>
-                    <ReactPlayer url='https://www.youtube.com/watch?v=3e0SjrSgWzk&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=11' />
+                    <ReactPlayer url='https://www.youtube.com/watch?v=rRt-yvGQST0&t=6s' />
                   </div>
                 </Card.Link>
               </Card.Body>
@@ -72,9 +72,11 @@ function Voircourdiago() {
         </Row>
         <Row className='mt-5 justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
-            <Card style={{ width: "45rem" }} className='car mx-auto'>
+            <Card style={{ width: "45rem" }} className='car mx-auto '>
               <Card.Body>
-                <Card.Title>Tache3: LES BALISES ET FILTER</Card.Title>
+                <Card.Title>
+                  tache2: Les elementes, les balises et les attributs en html
+                </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
@@ -82,8 +84,8 @@ function Voircourdiago() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=xNPiqBCftc8&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=6'>
-                  https://www.youtube.com/watch?v=xNPiqBCftc8&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=6
+                <Card.Link href='https://www.youtube.com/watch?v=nwpARFlhjXQ&list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3&index=7'>
+                  https://www.youtube.com/watch?v=nwpARFlhjXQ&list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3&index=7<br></br>
                 </Card.Link>
               </Card.Body>
               <button
@@ -100,20 +102,17 @@ function Voircourdiago() {
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
                 <h1>QUIZZ</h1>
-                <p>
-                  Apres avoir suivi les cours les quizzes sont obligatoires
-                  cliqué sur le button pour demarer
-                </p>
+               <p>Apres avoir suivi les cours les quizzes sont obligatoires cliqué sur le button pour demarer</p>
               </Card.Body>
-              <Link to='/django' className='join '>
+              <Link to='/question' className='join '>
                 <button className='btn btn-primary'>Demarer</button>
               </Link>
             </Card>
           </Col>
         </Row>
-      </div>
+      </Container>
     </>
   );
 }
 
-export default Voircourdiago;
+export default Voircour;

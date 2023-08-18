@@ -1,32 +1,35 @@
 /** @format */
 
-// import { useState } from 'react';
 import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
+
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./voirCour.css";
 import ReactPlayer from "react-player";
+import { Link } from "react-router-dom";
 
-function Voircourphp() {
+function Initialisation() {
   return (
     <>
       <h2 className='text-center'>TACHES</h2>
-      <div className='container mt-5'>
+      <div className='container mt-5 mx-auto'>
         <Row className='justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache1: PRESENTATION DE PHP </Card.Title>
+                <Card.Title>Tache1: COMMENT faire un design flyer</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
                 </p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
-                <h3 className=''>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=cWoq5znh0vw&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD'>
-                  https://www.youtube.com/watch?v=cWoq5znh0vw&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD
+                <h3>Lien utiles</h3>
+                <Card.Link href='https://www.youtube.com/watch?v=oIEJG5XAB08'>
+                  https://www.youtube.com/watch?v=oIEJG5XAB08<br></br>
+                  <div className='video-responsive'>
+                    <ReactPlayer url='https://www.youtube.com/watch?v=oIEJG5XAB08' />
+                  </div>
                 </Card.Link>
               </Card.Body>
               <button
@@ -42,7 +45,7 @@ function Voircourphp() {
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem " }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache2:LES VARIABLES </Card.Title>
+                <Card.Title>Tache2:POSTER DESIGN IN PHOTOSHOP</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
@@ -50,10 +53,10 @@ function Voircourphp() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=UnqJwiIPbag&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=5'>
-                  https://www.youtube.com/watch?v=UnqJwiIPbag&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=5
+                <Card.Link href='https://www.youtube.com/watch?v=-CIFGBcbPPg'>
+                  https://www.youtube.com/watch?v=-CIFGBcbPPg<br></br>
                   <div className='video-responsive'>
-                    <ReactPlayer url=' https://www.youtube.com/watch?v=UnqJwiIPbag&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=5' />
+                    <ReactPlayer url=' https://www.youtube.com/watch?v=-CIFGBcbPPg' />
                   </div>
                 </Card.Link>
               </Card.Body>
@@ -66,11 +69,11 @@ function Voircourphp() {
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5 justify-content-center align-items-center '>
+        <Row className='mt-5 justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache2: LES CONDITIONS</Card.Title>
+                <Card.Title>Tache 3: PRO POSTER DESIGN</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center'>
                   Ce tutoriel est a suivre et à reproduire
@@ -78,11 +81,8 @@ function Voircourphp() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=zFqdht5bFJY&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=7'>
-                  https://www.youtube.com/watch?v=zFqdht5bFJY&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=7
-                  <div className='video-responsive'>
-                    <ReactPlayer url='https://www.youtube.com/watch?v=zFqdht5bFJY&list=PLjwdMgw5TTLVDv-ceONHM_C19dPW1MAMD&index=7' />
-                  </div>
+                <Card.Link href='https://www.youtube.com/watch?v=yFHfOlEVcxs'>
+                  https://www.youtube.com/watch?v=yFHfOlEVcxs<br></br>
                 </Card.Link>
               </Card.Body>
               <button
@@ -91,18 +91,6 @@ function Voircourphp() {
               >
                 Demarer
               </button>
-            </Card>
-          </Col>
-        </Row>
-        <Row className='mt-5 justify-content-center align-items-center '>
-          <Col md={12} sm={12} lg={12}>
-            <Card style={{ width: "45rem" }} className='car mx-auto'>
-              <Card.Body>
-                <Card.Title>Tache2: LES CONDITIONS</Card.Title>
-              </Card.Body>
-              <Link to='/question' className='join '>
-                <button className='btn btn-primary'>VoirQuizzes</button>
-              </Link>
             </Card>
           </Col>
         </Row>
@@ -116,7 +104,7 @@ function Voircourphp() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/php' className='join '>
+              <Link to='/initialisation' className='join '>
                 <button className='btn btn-primary'>Demarer</button>
               </Link>
             </Card>
@@ -127,4 +115,4 @@ function Voircourphp() {
   );
 }
 
-export default Voircourphp;
+export default Initialisation;

@@ -2,7 +2,7 @@ import React from 'react';
 import './PageAccueilCoach.css';
 import devWeb from '../../Assets/programmation.png';
 import design from '../../Assets/conception-graphique.png';
-import marketing from '../../Assets/digital-marketing.png';
+import marketing from '../../Assets/digitalMarketing.png';
 import { BsArrowRightSquare } from 'react-icons/bs'
 import chatPersonne from "../../Assets/chatPersonne.png"
 

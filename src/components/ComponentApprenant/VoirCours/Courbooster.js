@@ -1,34 +1,33 @@
 /** @format */
-import { Link } from "react-router-dom";
-// import { useState } from 'react';
+
 import Card from "react-bootstrap/Card";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./voirCour.css";
 import ReactPlayer from "react-player";
-
-function Voircourjs() {
+import { Link } from "react-router-dom";
+function Booter() {
   return (
     <>
       <h2 className='text-center'>TACHES</h2>
-      <div className='container mt-5'>
+      <div className='container mt-5 mx-auto'>
         <Row className='justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache1: INTRODUCTION AU JAVASCRIPT </Card.Title>
+                <Card.Title>
+                  Tache1: CREATION DES BOOTER EN MARKETING
+                </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p className='text-center'>
-                  Ce tutoriel est a suivre et à reproduire
-                </p>
+                <p>Ce tutoriel est a suivre et à reproduire</p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=lDO14MA0C_o&list=PLwLsbqvBlImFB8AuT6ENIg-s87ys4yGWI&index=2'>
-                  https://www.youtube.com/watch?v=lDO14MA0C_o&list=PLwLsbqvBlImFB8AuT6ENIg-s87ys4yGWI&index=2
-                  <div className='video-responsive'>
-                    <ReactPlayer url=' https://www.youtube.com/watch?v=lDO14MA0C_o&list=PLwLsbqvBlImFB8AuT6ENIg-s87ys4yGWI&index=2' />
+                <Card.Link href='https://www.youtube.com/watch?v=6Od6cuPpZPE'>
+                  https://www.youtube.com/watch?v=6Od6cuPpZPE<br></br>
+                  <div className='video-responsive '>
+                    <ReactPlayer url='https://www.youtube.com/watch?v=6Od6cuPpZPE' />
                   </div>
                 </Card.Link>
               </Card.Body>
@@ -45,16 +44,17 @@ function Voircourjs() {
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem " }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache2:LES VARIABLES EN JAVASCRIP</Card.Title>
+                <Card.Title>Tache2:COMMENT FIDELISE UN CLIENT</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p className='text-center'>
-                  Ce tutoriel est a suivre et à reproduire
-                </p>
+                <p>Ce tutoriel est a suivre et à reproduire</p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=9jGQLBaw32Q&list=PLwLsbqvBlImFB8AuT6ENIg-s87ys4yGWI&index=6'>
-                  https://www.youtube.com/watch?v=9jGQLBaw32Q&list=PLwLsbqvBlImFB8AuT6ENIg-s87ys4yGWI&index=6
+                <Card.Link href='https://www.youtube.com/watch?v=6J5-zDk0FS4'>
+                  https://www.youtube.com/watch?v=6J5-zDk0FS4<b></b>
+                  <div className='video-responsive mt-4'>
+                    <ReactPlayer url=' https://www.youtube.com/watch?v=6J5-zDk0FS4' />
+                  </div>
                 </Card.Link>
               </Card.Body>
               <button
@@ -70,21 +70,14 @@ function Voircourjs() {
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>
-                  Tache2: MANIPULATION DES DOM EN JAVASCRIPT
-                </Card.Title>
+                <Card.Title>Tache 3: OBJECTIF ET SOURCE</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p className='text-center'>
-                  Ce tutoriel est a suivre et à reproduire
-                </p>
+                <p>Ce tutoriel est a suivre et à reproduire</p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=sXwPfnsKGiE&t=154s'>
-                  https://www.youtube.com/watch?v=sXwPfnsKGiE&t=154s
-                  <div className='video-responsive'>
-                    <ReactPlayer url='https://www.youtube.com/watch?v=sXwPfnsKGiE&t=154s' />
-                  </div>
+                <Card.Link href='https://www.youtube.com/watch?v=amo6DNeLotQ&t=125s'>
+                  https://www.youtube.com/watch?v=amo6DNeLotQ&t=125s<br></br>
                 </Card.Link>
               </Card.Body>
               <button
@@ -106,7 +99,7 @@ function Voircourjs() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/javascrip' className='join '>
+              <Link to='/booter' className='join '>
                 <button className='btn btn-primary'>Demarer</button>
               </Link>
             </Card>
@@ -117,4 +110,4 @@ function Voircourjs() {
   );
 }
 
-export default Voircourjs;
+export default Booter;

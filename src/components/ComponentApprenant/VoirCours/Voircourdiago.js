@@ -1,4 +1,6 @@
+/** @format */
 
+// import { useState } from 'react';
 import Card from "react-bootstrap/Card";
 
 import Col from "react-bootstrap/Col";
@@ -7,23 +9,28 @@ import "./voirCour.css";
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
 
-function CourBoostrap() {
+function Voircourdiago() {
   return (
     <>
-      <h2 className='text-center'>TACHES</h2>
-      <div className='container mt-5 mx-auto'>
+      <h2 className='text-center'>VOIR COURS DJANGO</h2>
+      <div className='container mt-5'>
         <Row className='justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache1:INTRODUCTION</Card.Title>
+                <Card.Title>Tache1: INTRODUCTION </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p>Ce tutoriel est a suivre et à reproduire</p>
+                <p className='text-center'>
+                  Ce tutoriel est a suivre et à reproduire
+                </p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
-                <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=rdarnjxaY3M&list=PL5BcU-_5Oa_o2nmu4eIVjrhxoT3jcQq8F'>
-                  https://www.youtube.com/watch?v=rdarnjxaY3M&list=PL5BcU-_5Oa_o2nmu4eIVjrhxoT3jcQq8F
+                <h3 className=''>Lien utiles</h3>
+                <Card.Link href='https://www.youtube.com/watch?v=iBGhDHtysAA&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO'>
+                  https://www.youtube.com/watch?v=iBGhDHtysAA&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO<br></br>
+                  <div className='video-responsive'>
+                    <ReactPlayer url='https://www.youtube.com/watch?v=iBGhDHtysAA&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO' />
+                  </div>
                 </Card.Link>
               </Card.Body>
               <button
@@ -39,16 +46,18 @@ function CourBoostrap() {
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem " }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache2:LES CONTAINER</Card.Title>
+                <Card.Title>Tache2:LES FORMULAIRES </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p>Ce tutoriel est a suivre et à reproduire</p>
+                <p className='text-center'>
+                  Ce tutoriel est a suivre et à reproduire
+                </p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=bTmsLRNP6io&list=PL5BcU-_5Oa_o2nmu4eIVjrhxoT3jcQq8F&index=4'>
-                  https://www.youtube.com/watch?v=bTmsLRNP6io&list=PL5BcU-_5Oa_o2nmu4eIVjrhxoT3jcQq8F&index=4
+                <Card.Link href='https://www.youtube.com/watch?v=3e0SjrSgWzk&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=11'>
+                  https://www.youtube.com/watch?v=3e0SjrSgWzk&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=11<br></br>
                   <div className='video-responsive'>
-                    <ReactPlayer url=' https://www.youtube.com/watch?v=bTmsLRNP6io&list=PL5BcU-_5Oa_o2nmu4eIVjrhxoT3jcQq8F&index=4' />
+                    <ReactPlayer url='https://www.youtube.com/watch?v=3e0SjrSgWzk&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=11' />
                   </div>
                 </Card.Link>
               </Card.Body>
@@ -63,21 +72,18 @@ function CourBoostrap() {
         </Row>
         <Row className='mt-5 justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
-            <Card style={{ width: "45rem" }} className='car mx-auto '>
+            <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>
-                  Tache 3: LES SYSTEME DE GRID EN BOOSTRAP
-                </Card.Title>
+                <Card.Title>Tache3: LES BALISES ET FILTER</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p>Ce tutoriel est a suivre et à reproduire</p>
+                <p className='text-center'>
+                  Ce tutoriel est a suivre et à reproduire
+                </p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=Rx6qMZTrvTM&list=PL5BcU-_5Oa_o2nmu4eIVjrhxoT3jcQq8F&index=5'>
-                  https://www.youtube.com/watch?v=Rx6qMZTrvTM&list=PL5BcU-_5Oa_o2nmu4eIVjrhxoT3jcQq8F&index=5
-                  <div className='video-responsive'>
-                    <ReactPlayer url=' https://www.youtube.com/watch?v=Rx6qMZTrvTM&list=PL5BcU-_5Oa_o2nmu4eIVjrhxoT3jcQq8F&index=5' />
-                  </div>
+                <Card.Link href='https://www.youtube.com/watch?v=xNPiqBCftc8&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=6'>
+                  https://www.youtube.com/watch?v=xNPiqBCftc8&list=PLrSOXFDHBtfED_VFTa6labxAOPh29RYiO&index=6<br></br>
                 </Card.Link>
               </Card.Body>
               <button
@@ -99,7 +105,7 @@ function CourBoostrap() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/quiss' className='join '>
+              <Link to='/django' className='join '>
                 <button className='btn btn-primary'>Demarer</button>
               </Link>
             </Card>
@@ -110,4 +116,4 @@ function CourBoostrap() {
   );
 }
 
-export default CourBoostrap;
+export default Voircourdiago;

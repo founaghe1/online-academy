@@ -3,12 +3,12 @@ import React from 'react'
 import "./voirCour.css";
  const QuizzC = () => {
   return (
-    <div>
+    <div className='quizboost justify-content-center align-items-center mx-auto'>
       <h1 className='text-center '>Quizz C++</h1>
       <div class='radio-input justify-content-center align-items-center mx-auto '>
         <div class='info'>
           <span class='question'>C++ est un alias de C#</span>
-          <span class='steps'>1/5</span>
+          <span class='steps m-2'>1/5</span>
         </div>
         <div className='d-flex'>
           <input
@@ -38,7 +38,7 @@ import "./voirCour.css";
             Quel type de données est utilisé pour créer une variable qui doit //
             stocker du texte ?
           </span>
-          <span class='steps'>2/5</span>
+          <span class='steps m-2'>2/5</span>
         </div>
         <div className='d-flex'>
           <input
@@ -87,7 +87,7 @@ import "./voirCour.css";
           <span class='question'>
             Comment créez-vous une variable avec le nombre flottant 2.8 ?
           </span>
-          <span class='steps'>3/5</span>
+          <span class='steps m-2'>3/5</span>
         </div>
         <div className='d-flex'>
           <input

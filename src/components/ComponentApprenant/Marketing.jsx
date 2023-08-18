@@ -3,7 +3,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "react-bootstrap/Card";
 import "./domain.css";
 import { Link } from "react-router-dom";
-import Indtomark from "../../Assets/digital-marketing.png";
+import Indtomark from "../../Assets/digitalMarketing.png";
 import Socialmedia from "../../Assets/social-media.png";
 import Growth from "../../Assets/growth.png";
 

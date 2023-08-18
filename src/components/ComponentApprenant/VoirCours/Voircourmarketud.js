@@ -26,7 +26,7 @@ function Etude() {
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
                 <Card.Link href='https://www.youtube.com/watch?v=5iwiYc_LPys'>
-                  https://www.youtube.com/watch?v=5iwiYc_LPys
+                  https://www.youtube.com/watch?v=5iwiYc_LPys<br></br>
                   <div className='video-responsive'>
                     <ReactPlayer url=' https://www.youtube.com/watch?v=5iwiYc_LPys' />
                   </div>
@@ -52,7 +52,7 @@ function Etude() {
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
                 <Card.Link href='https://www.youtube.com/watch?v=6J5-zDk0FS4'>
-                  https://www.youtube.com/watch?v=6J5-zDk0FS4
+                  https://www.youtube.com/watch?v=6J5-zDk0FS4<br></br>
                   <div className='video-responsive'>
                     <ReactPlayer url=' https://www.youtube.com/watch?v=6J5-zDk0FS4' />
                   </div>
@@ -78,7 +78,7 @@ function Etude() {
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
                 <Card.Link href='https://www.youtube.com/watch?v=amo6DNeLotQ&t=125s'>
-                  https://www.youtube.com/watch?v=amo6DNeLotQ&t=125s
+                  https://www.youtube.com/watch?v=amo6DNeLotQ&t=125s<br></br>
                 </Card.Link>
               </Card.Body>
               <button

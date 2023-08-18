@@ -7,27 +7,30 @@ import Row from "react-bootstrap/Row";
 import "./voirCour.css";
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
-function PRO() {
+
+function Voircourdevelop() {
   return (
     <>
-      <h2 className='text-center'>TACHES</h2>
+      <h2 className='text-center'>
+        TACHES
+      </h2>
       <div className='container mt-5 mx-auto'>
         <Row className='justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache1: INTRODUCTION</Card.Title>
+                <Card.Title>
+                  Tache1: COMMENT DEMARQUER EN MARKETING SURLES RESEAUX SOCIAUX
+                </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p className='text-center'>
-                  Ce tutoriel est a suivre et à reproduire
-                </p>
+                <p>Ce tutoriel est a suivre et à reproduire</p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=L9guX8WREEo&list=PLEk7gaNrZEXcQFBBb_pzpqYY8YpstQHZr'>
-                  https://www.youtube.com/watch?v=L9guX8WREEo&list=PLEk7gaNrZEXcQFBBb_pzpqYY8YpstQHZr
+                <Card.Link href='https://www.youtube.com/watch?v=0Q2tMO5IqCc'>
+                  https://www.youtube.com/watch?v=0Q2tMO5IqCc<br></br>
                   <div className='video-responsive'>
-                    <ReactPlayer url=' https://www.youtube.com/watch?v=-CIFGBcbPPg' />
+                    <ReactPlayer url='https://www.youtube.com/watch?v=0Q2tMO5IqCc' />
                   </div>
                 </Card.Link>
               </Card.Body>
@@ -40,20 +43,18 @@ function PRO() {
             </Card>
           </Col>
         </Row>
-        <Row className='mt-5 justify-content-center align-items-center'>
+        <Row className='mt-5 justify-content-center align-items-centerr'>
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem " }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache2:PREPARER VOS FICHIERS</Card.Title>
+                <Card.Title>Tache2:COMMENT FIDELISE UN CLIENT</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p className='text-center'>
-                  Ce tutoriel est a suivre et à reproduire
-                </p>
+                <p>Ce tutoriel est a suivre et à reproduire</p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=Hc_ze6v9ofc&list=PLEk7gaNrZEXcQFBBb_pzpqYY8YpstQHZr&index=2'>
-                  https://www.youtube.com/watch?v=Hc_ze6v9ofc&list=PLEk7gaNrZEXcQFBBb_pzpqYY8YpstQHZr&index=2
+                <Card.Link href='https://www.youtube.com/watch?v=6J5-zDk0FS4'>
+                  https://www.youtube.com/watch?v=6J5-zDk0FS4<br></br>
                 </Card.Link>
               </Card.Body>
               <button
@@ -69,16 +70,17 @@ function PRO() {
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
-                <Card.Title>Tache 3: LES MANUPILATION DE DEPART</Card.Title>
+                <Card.Title>Tache 3: OBJECTIF ET SOURCE</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p className='text-center'>
-                  Ce tutoriel est a suivre et à reproduire
-                </p>
+                <p>Ce tutoriel est a suivre et à reproduire</p>
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/watch?v=wUV_XURrviY&list=PLEk7gaNrZEXcQFBBb_pzpqYY8YpstQHZr&index=4'>
-                  https://www.youtube.com/watch?v=wUV_XURrviY&list=PLEk7gaNrZEXcQFBBb_pzpqYY8YpstQHZr&index=4
+                <Card.Link href='https://www.youtube.com/watch?v=amo6DNeLotQ&t=125s'>
+                  https://www.youtube.com/watch?v=amo6DNeLotQ&t=125s<br></br>
+                  <div className='video-responsive'>
+                    <ReactPlayer url='https://www.youtube.com/watch?v=amo6DNeLotQ&t=125s' />
+                  </div>
                 </Card.Link>
               </Card.Body>
               <button
@@ -100,7 +102,7 @@ function PRO() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/pro' className='join '>
+              <Link to='/resaux' className='join '>
                 <button className='btn btn-primary'>Demarer</button>
               </Link>
             </Card>
@@ -111,4 +113,4 @@ function PRO() {
   );
 }
 
-export default PRO;
+export default Voircourdevelop;

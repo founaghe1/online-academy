@@ -1,18 +1,16 @@
 import React from 'react'
 // import { Link } from "react-router-dom";
 import "./voirCour.css";
-
-const Quizzinitialisation = () => {
+ const Quizzresauxsocia = () => {
   return (
-    <div>
-      <h1 className='text-center '>Quizz Design intiation</h1>
+    <div className='quizboost justify-content-center align-items-center mx-auto'>
+      <h1 className='text-center '>Quizz Marketing les Reseaux Sociaux</h1>
       <div class='radio-input justify-content-center align-items-center mx-auto '>
         <div class='info'>
           <span class='question'>
-            Lequel des éléments suivants n'est pas une phase utilisée dans la //
-            méthode Design Thinking ?
+            Sur quel réseau social peut-on voir un fantôme ?
           </span>
-          <span class='steps'>1/5</span>
+          <span class='steps m-2'>1/5</span>
         </div>
         <div className='d-flex'>
           <input
@@ -22,7 +20,7 @@ const Quizzinitialisation = () => {
             value='value-1'
             className='m-2'
           />
-          <label for='value-1'>Prototype</label>
+          <label for='value-1'>Snapchat</label>
         </div>
         <div className='d-flex'>
           <input
@@ -32,7 +30,7 @@ const Quizzinitialisation = () => {
             value='value-2'
             className='m-2'
           />
-          <label for='value-2'>Empathie</label>
+          <label for='value-2'>Pinterest</label>
         </div>
         <div className='d-flex'>
           <input
@@ -42,74 +40,7 @@ const Quizzinitialisation = () => {
             value='value-3'
             className='m-2'
           />
-          <label for='value-3'>Vente</label>
-        </div>
-      </div>
-      <br></br>
-      <div class='radio-input justify-content-center align-items-center mx-auto '>
-        <div class='info'>
-          <span class='question'>
-            {" "}
-            Quelle est la première phase de la méthode Design Thinking ?
-          </span>
-          <span class='steps'>2/5</span>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-1'
-            name='value-radio'
-            value='value-1'
-            className='m-2'
-          />
-          <label for='value-1'>Idéation</label>
-        </div>
-        <div className='d-flex '>
-          <input
-            type='radio'
-            id='value-2'
-            name='value-radio'
-            value='value-2'
-            className='m-2'
-          />
-          <label for='value-2'>Empathie</label>
-        </div>
-        <div className='d-flex '>
-          <input
-            type='radio'
-            id='value-2'
-            name='value-radio'
-            value='value-2'
-            className='m-2'
-          />
-          <label for='value-2'>Définition</label>
-        </div>
-      </div>
-      <br></br>
-      <div class='radio-input justify-content-center align-items-center mx-auto '>
-        <div class='info'>
-          <span class='question'>Le Design Thinking est une méthode:</span>
-          <span class='steps'>3/5</span>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-1'
-            name='value-radio'
-            value='value-1'
-            className='m-2'
-          />
-          <label for='value-1'>Itérative</label>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-2'
-            name='value-radio'
-            value='value-2'
-            className='m-2'
-          />
-          <label for='value-2'>Linéaire</label>
+          <label for='value-3'>Twitter</label>
         </div>
         <div className='d-flex'>
           <input
@@ -119,7 +50,135 @@ const Quizzinitialisation = () => {
             value='value-3'
             className='m-2'
           />
-          <label for='value-3'>Circulaire</label>
+          <label for='value-3'>Whatsapp</label>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-3'
+            name='value-radio'
+            value='value-3'
+            className='m-2'
+          />
+          <label for='value-3'>Facebook</label>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-3'
+            name='value-radio'
+            value='value-3'
+            className='m-2'
+          />
+          <label for='value-3'>Viber</label>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-3'
+            name='value-radio'
+            value='value-3'
+            className='m-2'
+          />
+          <label for='value-3'>Line</label>
+        </div>
+      </div>
+      <br></br>
+      <div class='radio-input justify-content-center align-items-center mx-auto '>
+        <div class='info'>
+          <span class='question'>
+            Quel format de post permet de faire défiler plusieurs images ?
+          </span>
+          <span class='steps m-2'>2/5</span>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-1'
+            name='value-radio'
+            value='value-1'
+            className='m-2'
+          />
+          <label for='value-1'> Rotonde</label>
+        </div>
+        <div className='d-flex '>
+          <input
+            type='radio'
+            id='value-2'
+            name='value-radio'
+            value='value-2'
+            className='m-2'
+          />
+          <label for='value-2'>Manège</label>
+        </div>
+        <div className='d-flex '>
+          <input
+            type='radio'
+            id='value-2'
+            name='value-radio'
+            value='value-2'
+            className='m-2'
+          />
+          <label for='value-2'>Vitrine</label>
+        </div>
+        <div className='d-flex '>
+          <input
+            type='radio'
+            id='value-2'
+            name='value-radio'
+            value='value-2'
+            className='m-2'
+          />
+          <label for='value-2'>Carrousel</label>
+        </div>
+      </div>
+      <br></br>
+      <div class='radio-input justify-content-center align-items-center mx-auto '>
+        <div class='info'>
+          <span class='question'>
+            En général, combien de temps restent visibles les stories ?
+          </span>
+          <span class='steps m-2'>3/5</span>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-1'
+            name='value-radio'
+            value='value-1'
+            className='m-2'
+          />
+          <label for='value-1'>1 heure</label>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-2'
+            name='value-radio'
+            value='value-2'
+            className='m-2'
+          />
+          <label for='value-2'>1 jour</label>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-3'
+            name='value-radio'
+            value='value-3'
+            className='m-2'
+          />
+          <label for='value-3'>1 semaine</label>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-3'
+            name='value-radio'
+            value='value-3'
+            className='m-2'
+          />
+          <label for='value-4'>1 mois</label>
         </div>
       </div>
       <br></br>
@@ -131,4 +190,4 @@ const Quizzinitialisation = () => {
     </div>
   );
 }
-export default Quizzinitialisation;
+export default Quizzresauxsocia;

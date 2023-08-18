@@ -1,16 +1,17 @@
 import React from 'react'
 // import { Link } from "react-router-dom";
 import "./voirCour.css";
- const QuizzJs = () => {
+ const QuizzBooter = () => {
   return (
-    <div>
-      <h1 className='text-center '>Quizz Javascript</h1>
+    <div className='quizboost justify-content-center align-items-center mx-auto'>
+      <h1 className='text-center '>Quizz Marketing Booster ses stats</h1>
       <div class='radio-input justify-content-center align-items-center mx-auto '>
         <div class='info'>
           <span class='question'>
-            Où est le bon endroit pour insérer un JavaScript ?
+            Pensez-vous que vos concurrents en termes de référencement naturel
+            sont forcément les mêmes que « dans la vraie vie » ?
           </span>
-          <span class='steps'>1/5</span>
+          <span class='steps m-2'>1/5</span>
         </div>
         <div className='d-flex'>
           <input
@@ -20,7 +21,78 @@ import "./voirCour.css";
             value='value-1'
             className='m-2'
           />
-          <label for='value-1'>The body section</label>
+          <label for='value-1'>True</label>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-2'
+            name='value-radio'
+            value='value-2'
+            className='m-2'
+          />
+          <label for='value-2'>False</label>
+        </div>
+      </div>
+      <br></br>
+      <div class='radio-input justify-content-center align-items-center mx-auto '>
+        <div class='info'>
+          <span class='question'>
+            Quelle levier d’acquisition en ligne est le plus rentable sur //
+            plusieurs années ?
+          </span>
+          <span class='steps m-2'>2/5</span>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-1'
+            name='value-radio'
+            value='value-1'
+            className='m-2'
+          />
+          <label for='value-1'>
+            {" "}
+            Les publicités Google Ads « achat de mots-clés »
+          </label>
+        </div>
+        <div className='d-flex '>
+          <input
+            type='radio'
+            id='value-2'
+            name='value-radio'
+            value='value-2'
+            className='m-2'
+          />
+          <label for='value-2'>
+            {" "}
+            Le référencement naturel (résultats naturels)
+          </label>
+        </div>
+      </div>
+      <br></br>
+      <div class='radio-input justify-content-center align-items-center mx-auto '>
+        <div class='info'>
+          <span class='question'>
+            Quel est l’élément indispensable à soigner pour optimiser le //
+            positionnement de sa page web/son article de blog dans les résultats
+            de Google ?
+          </span>
+          <span class='steps m-2'>3/5</span>
+        </div>
+        <div className='d-flex'>
+          <input
+            type='radio'
+            id='value-1'
+            name='value-radio'
+            value='value-1'
+            className='m-2'
+          />
+          <label for='value-1'>
+            {" "}
+            L’image qui s’affiche quand on partage ma page web sur les réseaux
+            sociaux
+          </label>
         </div>
         <div className='d-flex'>
           <input
@@ -31,87 +103,8 @@ import "./voirCour.css";
             className='m-2'
           />
           <label for='value-2'>
-            {" "}
-            Both the head section and the body section are correct
+            La balise titre de ma page web ou de mon article de blog
           </label>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-3'
-            name='value-radio'
-            value='value-3'
-            className='m-2'
-          />
-          <label for='value-3'>The head section</label>
-        </div>
-      </div>
-      <br></br>
-      <div class='radio-input justify-content-center align-items-center mx-auto '>
-        <div class='info'>
-          <span class='question'>
-            Le fichier JavaScript externe doit contenir la balise script
-          </span>
-          <span class='steps'>2/5</span>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-1'
-            name='value-radio'
-            value='value-1'
-            className='m-2'
-          />
-          <label for='value-1'>true</label>
-        </div>
-        <div className='d-flex '>
-          <input
-            type='radio'
-            id='value-2'
-            name='value-radio'
-            value='value-2'
-            className='m-2'
-          />
-          <label for='value-2'>false</label>
-        </div>
-      </div>
-      <br></br>
-      <div class='radio-input justify-content-center align-items-center mx-auto '>
-        <div class='info'>
-          <span class='question'>
-            Comment créer une fonction en JavaScript ?
-          </span>
-          <span class='steps'>3/5</span>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-1'
-            name='value-radio'
-            value='value-1'
-            className='m-2'
-          />
-          <label for='value-1'>function = myfunction()</label>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-2'
-            name='value-radio'
-            value='value-2'
-            className='m-2'
-          />
-          <label for='value-2'>function myfunction()</label>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-3'
-            name='value-radio'
-            value='value-3'
-            className='m-2'
-          />
-          <label for='value-3'>function:myfunction()</label>
         </div>
       </div>
       <br></br>
@@ -123,4 +116,4 @@ import "./voirCour.css";
     </div>
   );
 }
-export default QuizzJs;
+export default QuizzBooter;

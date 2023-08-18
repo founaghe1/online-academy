@@ -1,16 +1,17 @@
 import React from 'react'
 // import { Link } from "react-router-dom";
 import "./voirCour.css";
- const Quizzresauxsocia = () => {
+
+const Quizzdjango = () => {
   return (
-    <div>
-      <h1 className='text-center '>Quizz Marketing les Reseaux Sociaux</h1>
+    <div className='quizboost justify-content-center align-items-center mx-auto'>
+      <h1 className='text-center '>Quizz Django</h1>
       <div class='radio-input justify-content-center align-items-center mx-auto '>
         <div class='info'>
           <span class='question'>
-            Sur quel réseau social peut-on voir un fantôme ?
+            Quelle est la syntaxe correcte pour créer un projet Django ?
           </span>
-          <span class='steps'>1/5</span>
+          <span class='steps m-2'>1/5</span>
         </div>
         <div className='d-flex'>
           <input
@@ -20,7 +21,7 @@ import "./voirCour.css";
             value='value-1'
             className='m-2'
           />
-          <label for='value-1'>Snapchat</label>
+          <label for='value-1'>django-admin startproject my_tennis_club</label>
         </div>
         <div className='d-flex'>
           <input
@@ -30,7 +31,7 @@ import "./voirCour.css";
             value='value-2'
             className='m-2'
           />
-          <label for='value-2'>Pinterest</label>
+          <label for='value-2'>django start my_tennis_club</label>
         </div>
         <div className='d-flex'>
           <input
@@ -40,56 +41,17 @@ import "./voirCour.css";
             value='value-3'
             className='m-2'
           />
-          <label for='value-3'>Twitter</label>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-3'
-            name='value-radio'
-            value='value-3'
-            className='m-2'
-          />
-          <label for='value-3'>Whatsapp</label>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-3'
-            name='value-radio'
-            value='value-3'
-            className='m-2'
-          />
-          <label for='value-3'>Facebook</label>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-3'
-            name='value-radio'
-            value='value-3'
-            className='m-2'
-          />
-          <label for='value-3'>Viber</label>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-3'
-            name='value-radio'
-            value='value-3'
-            className='m-2'
-          />
-          <label for='value-3'>Line</label>
+          <label for='value-3'> py manage.py start-django my_tennis_club</label>
         </div>
       </div>
       <br></br>
       <div class='radio-input justify-content-center align-items-center mx-auto '>
         <div class='info'>
           <span class='question'>
-            Quel format de post permet de faire défiler plusieurs images ?
+            Quelle est la syntaxe correcte pour démarrer un serveur de
+            développement Django sur votre ordinateur ?
           </span>
-          <span class='steps'>2/5</span>
+          <span class='steps m-2'>2/5</span>
         </div>
         <div className='d-flex'>
           <input
@@ -99,7 +61,7 @@ import "./voirCour.css";
             value='value-1'
             className='m-2'
           />
-          <label for='value-1'> Rotonde</label>
+          <label for='value-1'>py manage.py startserver</label>
         </div>
         <div className='d-flex '>
           <input
@@ -109,7 +71,7 @@ import "./voirCour.css";
             value='value-2'
             className='m-2'
           />
-          <label for='value-2'>Manège</label>
+          <label for='value-2'>py manage.py runserver</label>
         </div>
         <div className='d-flex '>
           <input
@@ -119,26 +81,14 @@ import "./voirCour.css";
             value='value-2'
             className='m-2'
           />
-          <label for='value-2'>Vitrine</label>
-        </div>
-        <div className='d-flex '>
-          <input
-            type='radio'
-            id='value-2'
-            name='value-radio'
-            value='value-2'
-            className='m-2'
-          />
-          <label for='value-2'>Carrousel</label>
+          <label for='value-2'>py manage.py run</label>
         </div>
       </div>
       <br></br>
       <div class='radio-input justify-content-center align-items-center mx-auto '>
         <div class='info'>
-          <span class='question'>
-            En général, combien de temps restent visibles les stories ?
-          </span>
-          <span class='steps'>3/5</span>
+          <span class='question'>Dans quelle langue Django est-il écrit ?</span>
+          <span class='steps m-2'>3/5</span>
         </div>
         <div className='d-flex'>
           <input
@@ -148,7 +98,7 @@ import "./voirCour.css";
             value='value-1'
             className='m-2'
           />
-          <label for='value-1'>1 heure</label>
+          <label for='value-1'>Java</label>
         </div>
         <div className='d-flex'>
           <input
@@ -158,7 +108,7 @@ import "./voirCour.css";
             value='value-2'
             className='m-2'
           />
-          <label for='value-2'>1 jour</label>
+          <label for='value-2'>Phyton</label>
         </div>
         <div className='d-flex'>
           <input
@@ -168,17 +118,7 @@ import "./voirCour.css";
             value='value-3'
             className='m-2'
           />
-          <label for='value-3'>1 semaine</label>
-        </div>
-        <div className='d-flex'>
-          <input
-            type='radio'
-            id='value-3'
-            name='value-radio'
-            value='value-3'
-            className='m-2'
-          />
-          <label for='value-4'>1 mois</label>
+          <label for='value-3'>C</label>
         </div>
       </div>
       <br></br>
@@ -190,4 +130,4 @@ import "./voirCour.css";
     </div>
   );
 }
-export default Quizzresauxsocia;
+export default Quizzdjango;
