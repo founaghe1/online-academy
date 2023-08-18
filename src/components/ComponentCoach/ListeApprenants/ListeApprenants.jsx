@@ -1,7 +1,9 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
 import { AiOutlineSearch } from "react-icons/ai";
-
+import Button from 'react-bootstrap/Button';
+import  { IoIosArrowForward} from 'react-icons/io'; 
+import {IoIosArrowBack} from 'react-icons/io'
 import './ListeApprenants.css'
 const ListeApprenants = () => {
   return (
@@ -128,13 +130,16 @@ const ListeApprenants = () => {
           </tbody>
 
         </Table>
-
+        <div className="row mt-3 float-end">
+      <div className="col-4 prev rounded text-white">   
+         <Button className='px-2 d-flex fw-bold align-items-center previous'> <span><IoIosArrowBack className='fs-4'/></span> <span><IoIosArrowBack className='fs-4'/></span> <span className='fs-4'></span></Button>
+         </div>
+        <div className="col-4  ms text-center"><span><button className='btn  px-3 mab'>1</button></span></div>
+        <div className="col-4 prev rounded text-white">   
+         <Button  className='px-2 d-flex fw-bold align-items-center next'><span  className='fs-4'></span> <span><IoIosArrowForward className='fs-4'/></span> <span><IoIosArrowForward className='fs-4'/></span></Button></div>
       </div>
-      <div className="row float-end mt-3">
-        <div className="col-4 prev rounded text-white">prev</div>
-        <div className="col-4 pt-3 ms">1</div>
-        <div className="col-4 prev rounded text-white">next</div>
       </div>
+    
     </>
   )
 }

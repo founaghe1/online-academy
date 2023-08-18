@@ -1,4 +1,30 @@
-.pro{
-    background-color: #8a70d6 !important; 
-    color:#fff!important ;
+.pro {
+  background-color: #8a70d6 !important;
+  color: #fff !important;
+}
+
+.next {
+  background-color: transparent;
+  border: 3px solid #8a70d6;
+  color: black;
+
+}
+
+.next:hover {
+  background-color: #8a70d6;
+}
+
+.previous {
+  background-color: transparent;
+  border: 3px solid #8a70d6;
+  color: black;
+}
+
+.previous:hover {
+  background-color: #8a70d6;
+}
+
+.mab {
+  background-color: #8a70d6;
+  color: #fff;
 }
