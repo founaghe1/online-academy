@@ -30,6 +30,7 @@ import MarketingApprt from './components/ComponentApprenant/DomainApprnt/Marketi
 import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
 
 import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
+import ChatPage from './components/ComponentCoach/ChatPage/ChatPage';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
       {/* <Chat/> */}
       {/* <ListeApprenants/> */}
       {/* <NotificationsCoachs/> */}
+      <ChatPage />
       
       
       {/* <Router>
@@ -60,7 +62,7 @@ function App() {
 
       {/* Routes Yagouba */}
 
-      <Router>
+      {/* <Router>
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path="/layout" element={ <Layout />}>
@@ -68,7 +70,7 @@ function App() {
             <Route path='/layout/dashboard/domain' element={<DomainApprt />} />
           </Route>
         </Routes>
-      </Router>
+      </Router> */}
 
       {/* <Dashboard  /> */}
       {/* <Login /> */}
