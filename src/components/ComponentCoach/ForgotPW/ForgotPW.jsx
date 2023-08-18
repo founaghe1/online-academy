@@ -20,7 +20,7 @@ const ForgotPW = () => {
             réinitialisation
           </p>
           <form action="">
-            <InputGroup className="mb-3">
+            <InputGroup className="mb-3 w-auto">
               <InputGroup.Text id="basic-addon1">
                 <AiOutlineUser className="fw-bold icon fs-4" />
               </InputGroup.Text>

@@ -58,7 +58,7 @@ function App() {
 
       {/* Routes Yagouba */}
 
-      <Router>
+      {/* <Router>
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path="/layout" element={ <Layout />}>
@@ -66,7 +66,7 @@ function App() {
             <Route path='/layout/dashboard/domain' element={<DomainApprt />} />
           </Route>
         </Routes>
-      </Router>
+      </Router> */}
 
       {/* <Dashboard  /> */}
       {/* <Login /> */}

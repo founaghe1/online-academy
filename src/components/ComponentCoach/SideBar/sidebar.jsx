@@ -21,8 +21,8 @@ const Sidebar = () => {
         <div className="d-lg-none d-flex justify-content-between align-items-center">
           <div>
             <Button
-              variant="primary"
-              className="d-lg-none"
+              variant="menuBtn"
+              className="d-lg-none menuBtn px-4 fw-bold"
               onClick={handleShow}
             >
               {/* <RiMenuUnfoldFill className="fs-4 fw-bold" /> */}
@@ -46,31 +46,31 @@ const Sidebar = () => {
               <h5>Menu</h5>
               <div className="d-flex justify-content-center align-items-center">
                 <ul className="list-unstyled">
-                  <li className="mb-4 fs-5">
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
                     <a href="" className="text-decoration-none side-link">
                       <BiSolidDashboard className="side-icon fs-4 me-2" />
                       Dashboard
                     </a>
                   </li>
-                  <li className="mb-4 fs-5">
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
                     <a href="" className="text-decoration-none side-link">
                       <BiSolidBookReader className="side-icon fs-4 me-2" />
                       Domaines
                     </a>
                   </li>
-                  <li className="mb-4 fs-5">
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
                     <a href="" className="text-decoration-none side-link">
                       <BiUpload className="side-icon fs-4 me-2" />
                       Livraisons
                     </a>
                   </li>
-                  <li className="mb-4 fs-5">
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
                     <a href="" className="text-decoration-none side-link">
                       <PiStudentBold className="side-icon fs-4 me-2" />
                       Ètudiants
                     </a>
                   </li>
-                  <li className="mb-4 fs-5">
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
                     <a href="" className="text-decoration-none side-link">
                       <BsFillChatRightFill className="side-icon fs-4 me-2" />
                       Messagerie
@@ -79,7 +79,7 @@ const Sidebar = () => {
                 </ul>
               </div>
               <div className="w-100 mt-5">
-                <Button variant="primary" className="">
+                <Button variant="" className="btnDecon">
                   Déconnexion
                 </Button>
               </div>

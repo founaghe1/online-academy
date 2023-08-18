@@ -17,7 +17,7 @@ const Login = () => {
           </div>
           <h2 className="text-center title mb-3">CONNECTEZ-VOUS</h2>
           <form action="">
-            <InputGroup className="mb-3">
+            <InputGroup className="mb-3 w-auto">
               <InputGroup.Text id="basic-addon1">
                 <AiOutlineUser className="fw-bold icon fs-4" />
               </InputGroup.Text>
@@ -28,7 +28,7 @@ const Login = () => {
                 aria-describedby="basic-addon1"
               />
             </InputGroup>
-            <InputGroup className="mb-2">
+            <InputGroup className="mb-3 w-auto">
               <InputGroup.Text id="basic-addon1">
                 <AiFillLock className="fw-bold icon fs-4" />
               </InputGroup.Text>
@@ -45,7 +45,7 @@ const Login = () => {
               </a>
             </div>
             <button className="login-btn btn text-light fw-bold w-100" >
-              <Link to="/layout/dashboard">Connection</Link>
+              <Link to="/layout/dashboard" className="Link">Connection</Link>
             </button>
           </form>
         </Card.Body>
