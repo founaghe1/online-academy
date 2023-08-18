@@ -7,6 +7,9 @@
 .logo{
     width: 150px;
 }
+.reset-btn{
+    background:#a023e8 ;
+}
 .reset-btn:hover{
     background-color: #8a70d6;
 }

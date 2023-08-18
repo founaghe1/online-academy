@@ -19,8 +19,8 @@ const Navbar = () => {
     <nav>
       <div className="container-fluid mt-3">
         <div className="row">
-          <div className="d-flex justify-content-end align-items-center gap-3">
-            <div class="input-group">
+          <div className="d-flex justify-content-end align-items-center gap-5">
+            <div class="input-group ">
               <span class="input-group-text" id="basic-addon1">
                 <AiOutlineSearch className="fs-4 fw-bold search-icon" />
               </span>
@@ -36,12 +36,12 @@ const Navbar = () => {
               <div>
                 {/* Modal pour notifs */}
                 <a href="">
-                  <IoMdNotifications className="notif-icon fs-4 fw-bold" />
+                  <IoMdNotifications className="notif-icon fs-1 fw-bold" />
                 </a>
               </div>
               <div id="profil">
                 <div className="d-flex align-items-center">
-                <img src={avatar} class="rounded-4 " alt="" width="50" />
+                <img src={avatar} class="rounded-circle " alt="" width="50" />
                 <p className="d-none d-sm-inline">
                   <br />
                   <span>Bb Yacine</span>
@@ -63,7 +63,7 @@ const Navbar = () => {
                   </ul>
                 </div>
                 <Button
-                  className="btn btn-secondary text-white add"
+                  className="text-white add ms-3"
                   onClick={handleShow}
                 >
                   <PiPencilSimpleLineDuotone className="fs-4 text-white" />
@@ -122,13 +122,13 @@ const Navbar = () => {
                   </Modal.Body>
                   <Modal.Footer>
                     <Button
-                      className="btn btn-secondary text-white fw-bold"
+                      className="btnFermer  "
                       onClick={handleClose}
                     >
                       Fermer
                     </Button>
                     <Button
-                      className="btn btn-secondary text-white save"
+                      className="saveBtn"
                       onClick={handleClose}
                     >
                       Enregistrer

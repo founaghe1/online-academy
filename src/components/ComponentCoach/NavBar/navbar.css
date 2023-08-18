@@ -29,3 +29,32 @@
     margin-left: 150px !important;
     
 } */
+
+
+.add{
+    background-color: #a023e8 !important;
+    border: 3px solid #a023e8;
+}
+.add:hover{
+    background:#920fac !important;
+    border: 3px solid #a023e8;
+}
+
+.btnFermer{
+    background-color: transparent !important;
+    border: 3px solid #a023e8;
+    color: black;
+}
+.btnFermer:hover{
+    background:#d80c0c !important;
+    border: 3px solid #e81010;
+}
+.saveBtn{
+    background-color: green;
+    border: 3px solid green;
+}
+
+.saveBtn:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
