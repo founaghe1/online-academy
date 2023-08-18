@@ -41,7 +41,7 @@ const Navbar = () => {
             <div className="d-flex justify-content-end align-items-center gap-3">
               <div>
                 {/* Modal pour notifs */}
-                <IoMdNotifications className="notif-icon fs-4 fw-bold"   onClick={handleShownoc} />
+                <IoMdNotifications className="notif-icon fs-2 fw-bold"   onClick={handleShownoc} />
                 <div
                   className="modal show"
                   style={{ display: 'block', position: 'initial' }}
