@@ -98,7 +98,7 @@
 
 .btn-cap{
     background-color: #cf70d6;
-    color: white;
+    /* color: white; */
     font-size: 20px;
     font-weight: 600;
     padding: 15px;
@@ -116,7 +116,6 @@
     color: white;
     font-size: 20px;
     font-weight: 600;
-    padding: 15px;
 }
 .btn-send:hover{
     background-color: #8e70d6;

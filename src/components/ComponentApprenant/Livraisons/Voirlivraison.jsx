@@ -35,12 +35,13 @@ const Voirlivraison = () => {
                 <textarea class="form-control  shadow rounded border border-warning" placeholder='Description' id="exampleFormControlTextarea1" rows="3"></textarea>
               </div>
               <div className='d-flex justify-content-center  shadow bg-body rounded mb-5 p-4 border border-warning'>
-                  <button type="button" class="btn btn-cap rounded p-2 btn-lg"><a className='nav-link' href="#">Ajouter images</a></button>
+              <input type="file" accept='image/*' 
+                    placeholder='Ajouter Images' className=' rounded' multiple/>
                   <div className="cap p-4"></div>
               </div>
-              <div className='mb-3 d-grid'>
-            <button type="button" className="btn btn-block btn-lg rounded btn-send">Envoyer</button>
-            </div>
+              <div className='col mb-3'>
+                  <button type="button" className="btn btn-lg rounded  btn-send">Envoyer</button>
+              </div>
             </form>
           </div>
         </div>
