@@ -6,11 +6,11 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./voirCour.css";
 import ReactPlayer from "react-player";
-
+import { Link } from "react-router-dom";
 function Booter() {
   return (
     <>
-      <h2 className='text-center'>VOIR COURS LES BOOTER EN MARKETING</h2>
+      <h2 className='text-center'>TACHES</h2>
       <div className='container mt-5 mx-auto'>
         <Row className='justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
@@ -86,6 +86,22 @@ function Booter() {
               >
                 Demarer
               </button>
+            </Card>
+          </Col>
+        </Row>
+        <Row className='mt-5 justify-content-center align-items-center '>
+          <Col md={12} sm={12} lg={12}>
+            <Card style={{ width: "45rem" }} className='car mx-auto'>
+              <Card.Body>
+                <h1>QUIZZ</h1>
+                <p>
+                  Apres avoir suivi les cours les quizzes sont obligatoires
+                  cliqué sur le button pour demarer
+                </p>
+              </Card.Body>
+              <Link to='/booter' className='join '>
+                <button className='btn btn-primary'>Demarer</button>
+              </Link>
             </Card>
           </Col>
         </Row>

@@ -2,7 +2,7 @@
 
 // import { useState } from 'react';
 import Card from "react-bootstrap/Card";
-
+import { Link } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./voirCour.css";
@@ -11,7 +11,7 @@ import ReactPlayer from "react-player";
 function Voircourphp() {
   return (
     <>
-      <h2 className='text-center'>VOIR COURS PHP</h2>
+      <h2 className='text-center'>TACHES</h2>
       <div className='container mt-5'>
         <Row className='justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
@@ -91,6 +91,34 @@ function Voircourphp() {
               >
                 Demarer
               </button>
+            </Card>
+          </Col>
+        </Row>
+        <Row className='mt-5 justify-content-center align-items-center '>
+          <Col md={12} sm={12} lg={12}>
+            <Card style={{ width: "45rem" }} className='car mx-auto'>
+              <Card.Body>
+                <Card.Title>Tache2: LES CONDITIONS</Card.Title>
+              </Card.Body>
+              <Link to='/question' className='join '>
+                <button className='btn btn-primary'>VoirQuizzes</button>
+              </Link>
+            </Card>
+          </Col>
+        </Row>
+        <Row className='mt-5 justify-content-center align-items-center '>
+          <Col md={12} sm={12} lg={12}>
+            <Card style={{ width: "45rem" }} className='car mx-auto'>
+              <Card.Body>
+                <h1>QUIZZ</h1>
+                <p>
+                  Apres avoir suivi les cours les quizzes sont obligatoires
+                  cliqué sur le button pour demarer
+                </p>
+              </Card.Body>
+              <Link to='/php' className='join '>
+                <button className='btn btn-primary'>Demarer</button>
+              </Link>
             </Card>
           </Col>
         </Row>
