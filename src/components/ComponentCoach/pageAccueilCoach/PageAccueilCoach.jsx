@@ -2,7 +2,7 @@ import React from "react";
 import "./PageAccueilCoach.css";
 import devWeb from "../../../Assets/programmation.png";
 import design from "../../../Assets/conception-graphique.png";
-import marketing from "../../../Assets/digital-marketing.png";
+import marketing from "../../../Assets/digitalMarketing.png";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Chat from "../../ComponentCoach/Chat/Chat";
 

@@ -1,9 +1,6 @@
 import React from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "react-bootstrap/Card";
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import "./domain.css";
 import { Link } from "react-router-dom";
 import HTMLCSS from "../../../Assets/coding.png";
@@ -13,48 +10,12 @@ import PHP from "../../../Assets/php.png";
 import Django from "../../../Assets/django.png";
 import Csharp from "../../../Assets/c-sharp.png"; 
 
+
 const Programmation = () => {
 
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   return (
     <div className="container-fluid">
       <h1>Les sous-domaines de la Programmation</h1>
-      <div className="join pt-3">
-        <button className="add_domain rounded-3" onClick={handleShow}>
-          <span>Ajouter</span>
-        </button>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Ajout de sous-domaine</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div className="add_file">
-              <label htmlFor="illustration">Image du sous-domaine :</label>
-              <input
-                type="file"
-                id="illustration"
-                name="illustration"
-                accept="image/png, image/jpeg"
-              />
-            </div>
-            <div class="input-wrapper">
-              <label htmlFor="name_dom"></label>
-              <input type="text" id="name_dom" name="name_dom" placeholder="Entrer le nom du domaine" class="name_dom" />
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Annuler
-            </Button>
-            <Button variant="default" style={{backgroundColor: "#8a70d6", color: "white"}} onClick={handleClose}>
-              Valider
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
 
       <div className="row">
         <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-6 d-flex justify-content-center mt-4">

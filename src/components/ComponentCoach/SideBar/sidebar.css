@@ -1,4 +1,4 @@
-ul {
+/* ul {
     margin: 0;
     padding: 0;
 }
@@ -48,4 +48,46 @@ ul li a:hover {
         margin-left: 25px;
         font-size: 20px;
     }
+} */
+.side-link{
+    color: #424040;
+}
+.side-icon{
+    color: #8a70d6;
+}
+.side-logo{
+    width: 200px;
+}
+
+.menuBtn{
+    border: 3px solid #a023e8;
+}
+
+.menuBtn:hover{
+    background-color: #a023e8;
+    color: aliceblue;
+}
+.btnDecon:hover{
+    background-color: #e60303;
+    color: aliceblue;
+}
+.btnDecon{
+    border: 3px solid #fe0000;
+}
+
+.menuLi{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.menuLi:hover {
+    background-color: #a023e8;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    transition: .7s;
+}
+.menuLi:hover .side-icon{
+    color: aliceblue;
+}
+.menuLi:hover .side-link{
+    color: aliceblue;
 }

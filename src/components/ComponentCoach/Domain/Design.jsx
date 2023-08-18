@@ -1,36 +1,40 @@
-import React from "react";
+import React from 'react';
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import Card from "react-bootstrap/Card";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import Card from "react-bootstrap/Card";
-import Programmer from "../../../Assets/programmer.png";
-import Marketer from "../../../Assets/content-strategy.png";
-import Designer from "../../../Assets/web-design.png";
+import "./domain.css";
 import { Link } from "react-router-dom";
-// import Programmer from "../../Assets/programmer.png";
-// import Marketer from "../../Assets/content-strategy.png";
-// import Designer from "../../Assets/web-design.png";
 
-const Domain = () => {
+import Photoshop from "../../../Assets/bootstrap.png";
+import Illustrator from "../../../Assets/illustrator.png";
+import Premierpro from "../../../Assets/premiere-pro.png";
+import Initiati3d from "../../../Assets/3d-modeling.png";
+
+
+
+
+const Design = () => {
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
     <div className="container">
-      <h1>Les domaines de formation</h1>
+      <h1>Les sous-domaines du Design</h1>
       <div className="join pt-3">
         <button className="add_domain rounded-3" onClick={handleShow}>
           <span>Ajouter</span>
         </button>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Ajout de domaine</Modal.Title>
+            <Modal.Title>Ajout de sous-domaine</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="add_file">
-              <label htmlFor="illustration">Image du domaine:</label>
+              <label htmlFor="illustration">Image du sous-domaine :</label>
               <input
                 type="file"
                 id="illustration"
@@ -55,7 +59,7 @@ const Domain = () => {
       </div>
 
       <div className="row">
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4">
           <Card
             style={{ width: "15rem" }}
             className="_grid item1 orangeclair shadow"
@@ -63,15 +67,15 @@ const Domain = () => {
             <div className="img_card p-4 d-flex orange">
               <Card.Img
                 variant="top"
-                className="img-fluid d-flex"
-                src={Programmer}
+                className="img-fluid"
+                src={Photoshop}
               />
             </div>
             <Card.Body>
-              <Card.Title>Programmation</Card.Title>
-              <Card.Text>10 sous-domaines</Card.Text>
+              <Card.Title>Appremdre Adobe Photoshop</Card.Title>
+              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link
-                to="/sous-domaine-programmation"
+                to=""
                 className="join d-flex right-0"
               >
                 <button
@@ -88,19 +92,23 @@ const Domain = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4">
           <Card
             style={{ width: "15rem" }}
             className="_grid item2 violetclair shadow"
           >
             <div className="img_card p-4 d-flex violet">
-              <Card.Img variant="top" className="img-fluid" src={Marketer} />
+              <Card.Img
+                variant="top"
+                className="img-fluid"
+                src={Illustrator}
+              />
             </div>
             <Card.Body>
-              <Card.Title>Marketing Digital</Card.Title>
-              <Card.Text>07 sous-domaines</Card.Text>
+              <Card.Title>Apprendre Adobe Illustrator</Card.Title>
+              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link
-                to="/sous-domaine-marketing"
+                to=""
                 className="join d-flex right-0"
               >
                 <button
@@ -117,18 +125,52 @@ const Domain = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4">
           <Card
             style={{ width: "15rem" }}
             className="_grid item3 blueclair shadow"
           >
             <div className="img_card p-4 d-flex blue">
-              <Card.Img variant="top" className="img-fluid" src={Designer} />
+              <Card.Img
+                variant="top"
+                className="img-fluid"
+                src={Premierpro}
+              />
             </div>
             <Card.Body>
-              <Card.Title>Design</Card.Title>
-              <Card.Text>08 sous-domaines</Card.Text>
-              <Link to="/sous-domaine-design" className="join d-flex right-0">
+              <Card.Title>Apprendre Adobe Premier Pro</Card.Title>
+              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
+              <Link to="" className="join d-flex right-0">
+                <button
+                  className="blue d-flex justify-content-center align-items-center"
+                  style={{
+                    fontSize: "1.8rem",
+                    borderRadius: "5px",
+                    color: "white",
+                  }}
+                >
+                  <MdOutlineKeyboardArrowRight />
+                </button>
+              </Link>
+            </Card.Body>
+          </Card>
+        </div>
+        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4">
+          <Card
+            style={{ width: "15rem" }}
+            className="_grid item3 blueclair shadow"
+          >
+            <div className="img_card p-4 d-flex blue">
+              <Card.Img
+                variant="top"
+                className="img-fluid"
+                src={Initiati3d}
+              />
+            </div>
+            <Card.Body>
+              <Card.Title>Initiation au 3D</Card.Title>
+              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
+              <Link to="" className="join d-flex right-0">
                 <button
                   className="blue d-flex justify-content-center align-items-center"
                   style={{
@@ -145,7 +187,7 @@ const Domain = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Domain;
+export default Design

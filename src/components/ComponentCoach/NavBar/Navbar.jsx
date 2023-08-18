@@ -1,59 +1,47 @@
 import React from "react";
-import { BsSearch, BsSliders } from "react-icons/bs";
-import { IoMdNotificationsOutline } from "react-icons/io";
+import "./navbar.css";
+import { AiOutlineSearch } from "react-icons/ai";
+import { IoMdNotifications } from "react-icons/io";
 import { PiPencilSimpleLineDuotone } from "react-icons/pi";
 import avatar from "../../../medias/avatar.jpg";
-import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import "./navbar.css";
 import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
+import { useState } from "react";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   return (
-    <>
-      <nav class="navbar bg-white">
-        <div class="container-fluid ">
-          <form className="navForm d-flex">
-            <div className="me-5 ">
-              <h1>Dashboard</h1>
-            </div>
-            <div class="input-group recherche shadow rounded-5">
-              <span
-                class="input-group-text bg-white rounded-start-4"
-                id="basic-addon1"
-              >
-                <BsSearch />
+    <nav>
+      <div className="container-fluid mt-3">
+        <div className="row">
+          <div className="d-flex justify-content-end align-items-center gap-5">
+            <div class="input-group ">
+              <span class="input-group-text" id="basic-addon1">
+                <AiOutlineSearch className="fs-4 fw-bold search-icon" />
               </span>
               <input
-                type="text"
-                class="form-control "
-                placeholder="Search..."
+                type="search"
+                class="form-control"
+                placeholder="Recherche"
+                aria-label="Recherche"
+                aria-describedby="basic-addon1"
               />
-              <span
-                class="input-group-text rounded-end-4 bg-white"
-                id="basic-addon1"
-              >
-                <BsSliders />
-              </span>
             </div>
-          </form>
-          <ul class="ms-auto list-unstyled  d-flex align-items-center navList">
-            <li>
-              <a href="/">
-                <IoMdNotificationsOutline className="fs-4 text-black" />
-              </a>
-            </li>
-            <li>
-              <div className="d-flex align-items-center">
-                <img src={avatar} class="rounded-4 " alt="" width="50" />
+            <div className="d-flex justify-content-end align-items-center gap-3">
+              <div>
+                {/* Modal pour notifs */}
+                <a href="">
+                  <IoMdNotifications className="notif-icon fs-1 fw-bold" />
+                </a>
+              </div>
+              <div id="profil">
+                <div className="d-flex align-items-center">
+                <img src={avatar} class="rounded-circle " alt="" width="50" />
                 <p className="d-none d-sm-inline">
                   <br />
                   <span>Bb Yacine</span>
@@ -74,108 +62,86 @@ const Navbar = () => {
                     </li>
                   </ul>
                 </div>
-              </div>
-            </li>
-            <li>
-              <a href="/">
-                <Nav className="ms-auto">
-                  <Nav.Link href="#home">
-                    <Button
-                      className="btn btn-secondary text-white add"
-                      onClick={handleShow}
-                    >
-                      <PiPencilSimpleLineDuotone className="fs-4 text-white" />
-                    </Button>
+                <Button
+                  className="text-white add ms-3"
+                  onClick={handleShow}
+                >
+                  <PiPencilSimpleLineDuotone className="fs-4 text-white" />
+                </Button>
 
-                    <Modal show={show} onHide={handleClose}>
-                      <Modal.Header closeButton>
-                        <Modal.Title>
-                          <h3>Modifier le profil</h3>
-                        </Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body className="my-3">
-                        <div className=" d-flex justify-content-center align-items-center mb-3">
-                          <div>
-                            <a href="">
-                              <img
-                                src={avatar}
-                                class="rounded-circle shadow"
-                                alt=""
-                                width="80"
-                              />
-                            </a>
-                          </div>
-                        </div>
-                        <div className="row align-items-baseline">
-                          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Nom"
-                            >
-                              <Form.Control
-                                type="text"
-                                placeholder="princesse"
-                              />
-                            </FloatingLabel>
-                          </div>
-                          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Prenom"
-                            >
-                              <Form.Control
-                                type="text"
-                                placeholder="princesse"
-                              />
-                            </FloatingLabel>
-                          </div>
-                          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Email"
-                            >
-                              <Form.Control
-                                type="email"
-                                placeholder="princesse@gmail.com"
-                              />
-                            </FloatingLabel>
-                          </div>
-                          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                            <FloatingLabel
-                              controlId="floatingInput"
-                              label="Mot de passe"
-                            >
-                              <Form.Control
-                                type="password"
-                                placeholder="*********"
-                              />
-                            </FloatingLabel>
-                          </div>
-                        </div>
-                      </Modal.Body>
-                      <Modal.Footer>
-                        <Button
-                          className="btn btn-secondary text-white fw-bold"
-                          onClick={handleClose}
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>
+                      <h3>Modifier le profil</h3>
+                    </Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body className="my-3">
+                    <div className=" d-flex justify-content-center align-items-center mb-3">
+                      <div>
+                        <a href="">
+                          <img
+                            src={avatar}
+                            class="rounded-circle shadow"
+                            alt=""
+                            width="80"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="row align-items-baseline">
+                      <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                        <FloatingLabel controlId="floatingInput" label="Nom">
+                          <Form.Control type="text" placeholder="princesse" />
+                        </FloatingLabel>
+                      </div>
+                      <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                        <FloatingLabel controlId="floatingInput" label="Prenom">
+                          <Form.Control type="text" placeholder="princesse" />
+                        </FloatingLabel>
+                      </div>
+                      <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                        <FloatingLabel controlId="floatingInput" label="Email">
+                          <Form.Control
+                            type="email"
+                            placeholder="princesse@gmail.com"
+                          />
+                        </FloatingLabel>
+                      </div>
+                      <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                        <FloatingLabel
+                          controlId="floatingInput"
+                          label="Mot de passe"
                         >
-                          Fermer
-                        </Button>
-                        <Button
-                          className="btn btn-secondary text-white save"
-                          onClick={handleClose}
-                        >
-                          Enregistrer
-                        </Button>
-                      </Modal.Footer>
-                    </Modal>
-                  </Nav.Link>
-                </Nav>
-              </a>
-            </li>
-          </ul>
+                          <Form.Control
+                            type="password"
+                            placeholder="*********"
+                          />
+                        </FloatingLabel>
+                      </div>
+                    </div>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button
+                      className="btnFermer  "
+                      onClick={handleClose}
+                    >
+                      Fermer
+                    </Button>
+                    <Button
+                      className="saveBtn"
+                      onClick={handleClose}
+                    >
+                      Enregistrer
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+              </div>
+            </div>
+          </div>
         </div>
-      </nav>
-    </>
+      </div>
+      </div>
+    </nav>
   );
 };
 export default Navbar;

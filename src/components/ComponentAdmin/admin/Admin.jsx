@@ -20,7 +20,14 @@ const Admin = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+ 
   return (
+    <>
+    
+    
+    
+
+
     <div className="vh-100">
       <div className="container">
         <Navbar expand="lg" className="bg-body-tertiary text-dark">
@@ -33,7 +40,7 @@ const Admin = () => {
               <Nav className="ms-auto">
                 <Nav.Link href="#home">
                   <Button
-                    className="btn btn-secondary text-dark add"
+                    className="btn btn-secondary text-light add"
                     onClick={handleShow}
                   >
                     Ajouter
@@ -104,7 +111,7 @@ const Admin = () => {
                   </Modal>
                 </Nav.Link>
                 <Nav.Link href="#link">
-                  <button className="btn btn-secondary text-dark logout">
+                  <button className="btn btn-danger text-light logout">
                     Déconnection
                   </button>
                 </Nav.Link>
@@ -302,6 +309,7 @@ const Admin = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
