@@ -1,30 +1,22 @@
 import React from 'react';
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "react-bootstrap/Card";
-<<<<<<< HEAD:src/components/ComponentCoach/Domain/Domain.jsx
 import Programmer from "../../../Assets/programmer.png";
 import Marketer from "../../../Assets/content-strategy.png";
 import Designer from "../../../Assets/web-design.png";
-=======
 import "./domain.css";
->>>>>>> a55026de1064ec70df558421c99bbbdc48ad4654:src/components/ComponentCoach/Domain.jsx
 import { Link } from "react-router-dom";
-import "./domain.css";
-// import Programmer from "../../Assets/programmer.png";
-// import Marketer from "../../Assets/content-strategy.png";
-// import Designer from "../../Assets/web-design.png";
+
 
 
 const Marketing = () => {
   return (
     <div className="container">
-<<<<<<< HEAD:src/components/ComponentCoach/Domain/Domain.jsx
       <h1>Domaines de formation</h1>
-=======
-      <h1>Les sous-domaines du Marketing Digital</h1>
->>>>>>> a55026de1064ec70df558421c99bbbdc48ad4654:src/components/ComponentCoach/Domain.jsx
       <div className="join pt-3">
-        <button className="add rounded-3"><span>Ajouter</span></button>
+      <button className="add_domain rounded-3" >
+          <span>Ajouter</span>
+        </button>
       </div>
 
       <div className="row">
@@ -37,7 +29,7 @@ const Marketing = () => {
               <Card.Img
                 variant="top"
                 className="img-fluid d-flex orange"
-                src="{Programmer}"
+                src={Programmer}
               />
             </div>
             <Card.Body>
@@ -70,7 +62,7 @@ const Marketing = () => {
               <Card.Img
                 variant="top"
                 className="img-fluid violet"
-                src="{Marketer}"
+                src={Marketer}
               />
             </div>
             <Card.Body>
@@ -103,7 +95,7 @@ const Marketing = () => {
               <Card.Img
                 variant="top"
                 className="img-fluid blue"
-                src="{}"
+                src={Designer}
               />
             </div>
             <Card.Body>

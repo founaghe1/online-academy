@@ -33,8 +33,8 @@ import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignAppr
 import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
 
 
-import Modale from "./components/Cour/Modal";
-import Coure from "./components/Cour/Cour";
+import Modal from "./components/ComponentCoach/Cour/Modal";
+import Cour from "./components/ComponentCoach/Cour/Cour";
 import Voircour from "./components/ComponentApprenant/VoirCours/VoirCour";
 import CourBoostrap from "./components/ComponentApprenant/VoirCours/CourBoostrap";
 import Voircourjs from "./components/ComponentApprenant/VoirCours/VoircourJS"
@@ -110,14 +110,15 @@ function App() {
       {/* domApprenant Component*/}
       {/* <DomainApprt /> */}
 
-      <BrowserRouter>
+
+      {/* nini Routes */}
+
+      <Router>
         <Routes>
           <Route exact path='/' element={<Domain />} />
-          <Route
-            path='/sous-domaine-programmation'
-            element={<Programmation />}
-          />
-          <Route path='/sous-domaine-marketing' element={<Marketing />} />
+          <Route path="/programmation" element={<Programmation />} />
+          <Route path="/marketing" element={<Marketing />} />
+          <Route path="/design" element={<Design />} />
           <Route
             path='/sous-domaine-marketing/developpement'
             element={<Voircourdevelop />}
@@ -167,16 +168,19 @@ function App() {
           <Route path='/initialisation' element={<Quizzinitialisation />} />
           <Route path='/pro' element={<Quizzpro />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
+
+
       {/* <Modale />
       <Coure />  */}
 
-      {/* <BrowserRouter> */}
-      {/* <Routes>
+      {/* <BrowserRouter>
+      <Routes>
           <Route exact path='/' element={<Voirquizze />} />
           <Route path='/question' element={<Qestion />} />
         </Routes>
       </BrowserRouter> */}
+
     </div>
   );
 }

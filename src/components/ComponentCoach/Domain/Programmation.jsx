@@ -3,7 +3,6 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "react-bootstrap/Card";
 import "./domain.css";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD:src/components/ComponentCoach/Domain/Programmation.jsx
 import HTMLCSS from "../../../Assets/coding.png";
 import Bootstrap from "../../../Assets/bootstrap.png";
 import Javascript from "../../../Assets/js.png";
@@ -11,14 +10,6 @@ import PHP from "../../../Assets/php.png";
 import Django from "../../../Assets/django.png";
 import Csharp from "../../../Assets/c-sharp.png"; 
 
-=======
-import HTMLCSS from "../../Assets/coding.png";
-import Bootstrap from "../../Assets/bootstrap.png";
-import Javascript from "../../Assets/js.png";
-import PHP from "../../Assets/php.png";
-import Django from "../../Assets/django.png";
-import Csharp from "../../Assets/c-sharp.png"; 
->>>>>>> a55026de1064ec70df558421c99bbbdc48ad4654:src/components/ComponentApprenant/Programmation.jsx
 
 const Programmation = () => {
 
