@@ -31,6 +31,7 @@ import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignAppr
 
 
 import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
+import ChatPage from './components/ComponentCoach/ChatPage/ChatPage';
 
 
 import Modal from "./components/ComponentCoach/Cour/Modal";
@@ -81,6 +82,7 @@ function App() {
       {/* <Chat/> */}
       {/* <ListeApprenants/> */}
       {/* <NotificationsCoachs/> */}
+      <ChatPage />
       
       
       {/* <Router>
