@@ -48,10 +48,12 @@ const Sidebar = () => {
               <div className="d-flex justify-content-center align-items-center">
                 <ul className="list-unstyled">
                   <li className="mb-4 fs-5">
-                    <a href="" className="text-decoration-none side-link">
-                      <BiSolidDashboard className="side-icon fs-4 me-2" />
-                      Dashboard
-                    </a>
+                    <Link to="/dashboard">
+                      <a href="" className="text-decoration-none side-link">
+                        <BiSolidDashboard className="side-icon fs-4 me-2" />
+                        Dashboard
+                      </a>
+                    </Link>
                   </li>
                   <li className="mb-4 fs-5">
                     <Link to="/dashboard/domain">
@@ -62,16 +64,20 @@ const Sidebar = () => {
                     </Link>
                   </li>
                   <li className="mb-4 fs-5">
-                    <a href="" className="text-decoration-none side-link">
-                      <BiUpload className="side-icon fs-4 me-2" />
-                      Livraisons
-                    </a>
+                    <Link to="/dashboard/livraison" className='text-decoration-none'>
+                      <a href="" className="text-decoration-none side-link">
+                        <BiUpload className="side-icon fs-4 me-2" />
+                        Livraisons
+                      </a>
+                    </Link>
                   </li>
                   <li className="mb-4 fs-5">
-                    <a href="" className="text-decoration-none side-link">
-                      <PiStudentBold className="side-icon fs-4 me-2" />
-                      Ètudiants
-                    </a>
+                    <Link to="/dashboard/list_apprenants">
+                      <a href="" className="text-decoration-none side-link">
+                        <PiStudentBold className="side-icon fs-4 me-2" />
+                        Ètudiants
+                      </a>
+                    </Link>
                   </li>
                   <li className="mb-4 fs-5">
                     <a href="" className="text-decoration-none side-link">
@@ -82,9 +88,11 @@ const Sidebar = () => {
                 </ul>
               </div>
               <div className="w-100 mt-5">
-                <Button variant="primary" className="">
-                  Déconnexion
-                </Button>
+                <Link to="/">
+                  <Button variant="primary" className="">
+                    Déconnexion
+                  </Button>
+                </Link>
               </div>
             </div>
           </Offcanvas.Body>

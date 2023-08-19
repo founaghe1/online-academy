@@ -1,15 +1,15 @@
-import './App.css';
-import 'bootstrap/dist/js/bootstrap.min.js'
-import Admin from './components/ComponentAdmin/admin/Admin';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './components/ComponentCoach/login/Login';
-import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
-import SideBar from './components/ComponentCoach/SideBar/Sidebar';
-import Navbar from './components/ComponentCoach/NavBar/Navbar';
-import Layout from './components/ComponentCoach/Layout/Layout';
+import "./App.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import Admin from "./components/ComponentAdmin/admin/Admin";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Login from "./components/ComponentCoach/login/Login";
+import ForgotPW from "./components/ComponentCoach/ForgotPW/ForgotPW";
+import SideBar from "./components/ComponentCoach/SideBar/Sidebar";
+import Navbar from "./components/ComponentCoach/NavBar/Navbar";
+import Layout from "./components/ComponentCoach/Layout/Layout";
 
 // Coach
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import Domain from './components/Domain/Domain';
 // import Programmation from './components/Domain/Programmation';
 // import Marketing from './components/Domain/Marketing';
@@ -19,27 +19,27 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Marketing from './components/ComponentCoach/Domain/Coach/Marketing';
 // import Design from './components/ComponentCoach/Domain/Design';
 
-import Chat from './components/ComponentCoach/Chat/Chat.jsx';
-import Domain from './components/ComponentCoach/Domain/Domain';
-import Programmation from './components/ComponentCoach/Domain/Programmation';
-import Marketing from './components/ComponentCoach/Domain/Marketing';
-import Design from './components/ComponentCoach/Domain/Design';
-import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
-import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
-import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
-import ListeApprenants from './components/ComponentCoach/ListeApprenants/ListeApprenants'
+import Chat from "./components/ComponentCoach/Chat/Chat.jsx";
+import Domain from "./components/ComponentCoach/Domain/Domain";
+import Programmation from "./components/ComponentCoach/Domain/Programmation";
+import Marketing from "./components/ComponentCoach/Domain/Marketing";
+import Design from "./components/ComponentCoach/Domain/Design";
+import NotificationsCoachs from "./components/ComponentCoach/NotificationsCoachs/NotificationsCoachs";
+import Livraison from "./components/ComponentCoach/LivraisonCoach/Livraison";
+import AjoutCours from "./components/ComponentCoach/AjoutCours/AjoutCours";
+import ListeApprenants from "./components/ComponentCoach/ListeApprenants/ListeApprenants";
 
 // Apprenants
-import StudentDashboard from './components/ComponentApprenant/StudentDashboard/StudentDashboard';
-import Dashboard from './components/ComponentCoach/Dashboard/Dashboard';
-import DomainApprt from './components/ComponentApprenant/DomainApprnt/DomainApprt';
+import StudentDashboard from "./components/ComponentApprenant/StudentDashboard/StudentDashboard";
+import Dashboard from "./components/ComponentCoach/Dashboard/Dashboard";
+import DomainApprt from "./components/ComponentApprenant/DomainApprnt/DomainApprt";
 
-import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/ProgrammationApprt';
-import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
-import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
+import ProgrammationApprt from "./components/ComponentApprenant/DomainApprnt/ProgrammationApprt";
+import MarketingApprt from "./components/ComponentApprenant/DomainApprnt/MarketingApprt";
+import DesignApprt from "./components/ComponentApprenant/DomainApprnt/DesignApprt";
 
-import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
-import Error from './Error';
+import Voirlivraison from "./components/ComponentApprenant/Livraisons/Voirlivraison";
+import Error from "./Error";
 
 function App() {
   return (
@@ -57,8 +57,7 @@ function App() {
       {/* <Chat/> */}
       {/* <ListeApprenants/> */}
       {/* <NotificationsCoachs/> */}
-      
-      
+
       {/* <Router>
         <Routes>
           <Route exact path="/" element={<Domain />} />
@@ -69,28 +68,34 @@ function App() {
       </Router> */}
 
       {/* Routes Yagouba */}
- 
+
       <Router>
         <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path="/dashboard" element={ <Layout />}>
+          <Route path="/" element={<Login />} />
+          <Route path="/forgotPW" element={<ForgotPW />} />
+          <Route path="/dashboard" element={<Layout />}>
             <Route index element={<Dashboard />} />
-            <Route path='/dashboard/domain' element={<Domain />} />
-            <Route path='/dashboard/domain/programmation' element={<Programmation />} />
+            <Route path="/dashboard/domain" element={<Domain />} />
+            <Route
+              path="/dashboard/domain/programmation"
+              element={<Programmation />}
+            />
+            <Route path="/dashboard/domain/marketing" element={<Marketing />} />
+            <Route path="/dashboard/domain/design" element={<Design />} />
+            <Route path="/dashboard/livraison" element={<Livraison />} />
+            <Route path="/dashboard/list_apprenants" element={<ListeApprenants />} />
           </Route>
-          <Route path='*' element={<Error />} />
+          <Route path="*" element={<Error />} />
         </Routes>
-        </Router>
+      </Router>
 
       {/* {/* <Dashboards  /> */}
       {/* <Login /> */}
 
       {/* domApprenant Component*/}
       {/* <DomainApprt /> */}
-
     </div>
   );
 }
-
 
 export default App;

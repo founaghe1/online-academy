@@ -102,7 +102,7 @@ const Domain = () => {
               <Card.Title>Marketing Digital</Card.Title>
               <Card.Text>07 sous-domaines</Card.Text>
               <Link
-                to="/layout/domain/marketing"
+                to="/dashboard/domain/marketing"
                 className="join d-flex right-0"
               >
                 <button
@@ -130,7 +130,7 @@ const Domain = () => {
             <Card.Body>
               <Card.Title>Design</Card.Title>
               <Card.Text>08 sous-domaines</Card.Text>
-              <Link to="/layout/domain/design" className="join d-flex right-0">
+              <Link to="/dashboard/domain/design" className="join d-flex right-0">
                 <button
                   className="blue d-flex justify-content-center align-items-center"
                   style={{
