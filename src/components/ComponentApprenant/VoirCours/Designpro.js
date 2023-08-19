@@ -101,7 +101,7 @@ function PRO() {
                 </p>
               </Card.Body>
               <Link to='/pro' className='join '>
-                <button className='btn btn-primary'>Demarer</button>
+                <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>
           </Col>

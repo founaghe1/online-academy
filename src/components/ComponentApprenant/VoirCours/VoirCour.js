@@ -17,7 +17,7 @@ function Voircour() {
         <Row className='justify-content-center align-items-center '>
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
-              <Card>
+              <Card.Body>
                 <Card.Title>tache 1:LES BASES EN HTML ET CSS </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
                 <p className='text-center fs-4'>
@@ -26,13 +26,13 @@ function Voircour() {
                 {/* </Card.Subtitle> */}
                 <Card.Text></Card.Text>
                 <h3>Lien utiles</h3>
-                <Card.Link href='https://www.youtube.com/playlist?list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3'>
+                <Card.Link href='https://www.youtube.com/playlist?list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3' className="cardLink">
                   https://www.youtube.com/playlist?list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3<br></br>
-                  <div className='video-responsive'>
+                  <div className='video-responsive '>
                     <ReactPlayer url='https://www.youtube.com/watch?v=Y80juYcu3ZI&list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3&index=1' />
                   </div>
                 </Card.Link>
-              </Card>
+              </Card.Body>
               <button
                 type='button'
                 className='btn w-10 ms-auto text-white butt'
@@ -56,7 +56,7 @@ function Voircour() {
                 <h3>Lien utiles</h3>
                 <Card.Link href='https://www.youtube.com/watch?v=rRt-yvGQST0&t=6s'>
                   https://www.youtube.com/watch?v=rRt-yvGQST0&t=6s<br></br>
-                  <div className='video-responsive'>
+                  <div className='video-responsive vid '>
                     <ReactPlayer url='https://www.youtube.com/watch?v=rRt-yvGQST0&t=6s' />
                   </div>
                 </Card.Link>
@@ -105,7 +105,7 @@ function Voircour() {
                <p className="fs-4">Apres avoir suivi les cours les quizzes sont obligatoires cliqué sur le button pour demarer</p>
               </Card.Body>
               <Link to='/question' className='join '>
-                <button className='btn btn-primary'>Demarer</button>
+                <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>
           </Col>

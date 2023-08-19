@@ -106,7 +106,7 @@ function Voircourdiago() {
                 </p>
               </Card.Body>
               <Link to='/django' className='join '>
-                <button className='btn btn-primary'>Demarer</button>
+                <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>
           </Col>

@@ -98,7 +98,7 @@ function Potoshop() {
                 </p>
               </Card.Body>
               <Link to='/photo' className='join '>
-                <button className='btn btn-primary'>Demarer</button>
+                <button className='btn butt btn-primary'>Demarer</button>
               </Link>
             </Card>
           </Col>

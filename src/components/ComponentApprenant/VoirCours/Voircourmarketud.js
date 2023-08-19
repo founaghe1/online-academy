@@ -101,7 +101,7 @@ function Etude() {
                 </p>
               </Card.Body>
               <Link to='/digital' className='join '>
-                <button className='btn btn-primary'>Demarer</button>
+                <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>
           </Col>
