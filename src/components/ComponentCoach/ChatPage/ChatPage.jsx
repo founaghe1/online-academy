@@ -8,13 +8,13 @@ const ChatPage = () => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div id="messages" className="col-lg-3 border-end pb-3">
+        <div id="messages" className="col-lg-4 border-end pb-3">
           <a href="../../Dashboard/Dashboard.jsx" className='text-decoration-none text-dark fw-bold'>
             <BiArrowBack /> Dashboard
           </a>
           <Messages />
         </div>
-        <div id="chats" className="col-lg-9">
+        <div id="chats" className="col-lg-8">
           <Chat />
         </div>
       </div>
