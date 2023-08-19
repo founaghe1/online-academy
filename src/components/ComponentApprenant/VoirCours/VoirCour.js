@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 function Voircour() {
   return (
     <>
-      <h2 className='text-center'>TACHES</h2>
+      <h2 className='text-center'>TACHES De HTML & CSS</h2>
       <Container className='container mt-5'>
         <Row className='justify-content-center align-items-center '>
           <Col md={12} sm={12} lg={12}>
@@ -20,7 +20,7 @@ function Voircour() {
               <Card>
                 <Card.Title>tache 1:LES BASES EN HTML ET CSS </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p className='text-center'>
+                <p className='text-center fs-4'>
                   Ce tutoriel est a suivre et à reproduire
                 </p>
                 {/* </Card.Subtitle> */}
@@ -48,7 +48,7 @@ function Voircour() {
               <Card.Body>
                 <Card.Title>tache2:Création d'une page html</Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p className='text-center'>
+                <p className='text-center fs-4'>
                   Ce tutoriel est a suivre et à reproduire
                 </p>
                 {/* </Card.Subtitle> */}
@@ -78,7 +78,7 @@ function Voircour() {
                   tache2: Les elementes, les balises et les attributs en html
                 </Card.Title>
                 {/* <Card.Subtitle className='mb-2 text-muted'> */}
-                <p className='text-center'>
+                <p className='text-center fs-4'>
                   Ce tutoriel est a suivre et à reproduire
                 </p>
                 {/* </Card.Subtitle> */}
@@ -102,7 +102,7 @@ function Voircour() {
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
                 <h1>QUIZZ</h1>
-               <p>Apres avoir suivi les cours les quizzes sont obligatoires cliqué sur le button pour demarer</p>
+               <p className="fs-4">Apres avoir suivi les cours les quizzes sont obligatoires cliqué sur le button pour demarer</p>
               </Card.Body>
               <Link to='/question' className='join '>
                 <button className='btn btn-primary'>Demarer</button>

@@ -2,23 +2,40 @@ import './App.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
 // import Admin from './components/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dashboard from './components/Dashboard/dashboard'
-import Login from './components/login/Login';
-import ForgotPW from './components/ForgotPW/ForgotPW'
-import PageAccueilCoach from './components/pageAccueilCoach/PageAccueilCoach';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Login from './components/ComponentCoach/login/Login';
+import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
+import SideBar from './components/ComponentCoach/SideBar/Sidebar';
+import Navbar from './components/ComponentCoach/NavBar/Navbar';
+import Layout from './components/ComponentCoach/Layout/Layout';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Domain from './components/ComponentApprenant/Domain';
-import Programmation from './components/ComponentApprenant/Programmation';
-import Marketing from './components/ComponentApprenant/Marketing';
-import Design from './components/ComponentApprenant/Design';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// Coach
+import Domain from './components/ComponentCoach/Domain/Domain';
+import Programmation from './components/ComponentCoach/Domain/Programmation';
+import Marketing from './components/ComponentCoach/Domain/Marketing';
+import Design from './components/ComponentCoach/Domain/Design';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
+import Chat from './components/ComponentCoach/Chat/Chat.jsx';
+import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
+import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
+import ListeApprenants from './components/ComponentCoach/ListeApprenants/ListeApprenants'
 
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Modale from "./components/Cour/Modal";
-import Coure from "./components/Cour/Cour";
+// Apprenants
+import StudentDashboard from './components/ComponentApprenant/StudentDashboard/StudentDashboard';
+import Dashboard from './components/ComponentCoach/Dashboard/Dashboard';
+import DomainApprt from './components/ComponentApprenant/DomainApprnt/DomainApprt';
+
+import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/ProgrammationApprt';
+import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
+import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
+
+
+import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
+import ChatPage from './components/ComponentCoach/ChatPage/ChatPage';
+
+
+import Modal from "./components/ComponentCoach/Cour/Modal";
+import Cour from "./components/ComponentCoach/Cour/Cour";
 import Voircour from "./components/ComponentApprenant/VoirCours/VoirCour";
 import CourBoostrap from "./components/ComponentApprenant/VoirCours/CourBoostrap";
 import Voircourjs from "./components/ComponentApprenant/VoirCours/VoircourJS"
@@ -55,17 +72,55 @@ function App() {
       {/* <Admin /> */}
       {/* <Dashboard  /> */}
       {/* <Login /> */}
+      {/* <StudentDashboard /> */}
+
+      {/* <AjoutCours /> */}
+
       {/* <ForgotPW/> */}
-      {/* <PageAccueilCoach /> */}
       {/* <Livraison /> */}
-      <BrowserRouter>
+      {/* <Voirlivraison />       */}
+      {/* <Chat/> */}
+      {/* <ListeApprenants/> */}
+      {/* <NotificationsCoachs/> */}
+      {/* <ChatPage /> */}
+      
+      
+      {/* <Router>
+        <Routes>
+          <Route exact path="/" element={<Domain />} />
+          <Route path="/programmation" element={<Programmation />} />
+          <Route path="/marketing" element={<Marketing />} />
+          <Route path="/design" element={<Design />} />
+        </Routes>
+      </Router> */}
+
+      {/* Routes Yagouba */}
+
+      {/* <Router>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path="/layout" element={ <Layout />}>
+            <Route path='/layout/dashboard' element={<Dashboard />} />
+            <Route path='/layout/dashboard/domain' element={<DomainApprt />} />
+          </Route>
+        </Routes>
+      </Router> */}
+
+      {/* <Dashboard  />bakelitraining */}
+      {/* <Login /> */}
+
+      {/* domApprenant Component*/}
+      {/* <DomainApprt /> */}
+
+
+      {/* nini Routes */}
+      
+      <Router>
         <Routes>
           <Route exact path='/' element={<Domain />} />
-          <Route
-            path='/sous-domaine-programmation'
-            element={<Programmation />}
-          />
-          <Route path='/sous-domaine-marketing' element={<Marketing />} />
+          <Route path="/programmation" element={<Programmation />} />
+          <Route path="/marketing" element={<Marketing />} />
+          <Route path="/design" element={<Design />} />
           <Route
             path='/sous-domaine-marketing/developpement'
             element={<Voircourdevelop />}
@@ -115,13 +170,21 @@ function App() {
           <Route path='/initialisation' element={<Quizzinitialisation />} />
           <Route path='/pro' element={<Quizzpro />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
+
+
       {/* <Modale />
       <Coure />  */}
 
-      
+      {/* <BrowserRouter> */}
+      {/* <Routes>
+          <Route exact path='/' element={<Voirquizze />} />
+          <Route path='/question' element={<Qestion />} />
+        </Routes>
+      </BrowserRouter> */}
     </div>
   );
 }
+
 
 export default App;
