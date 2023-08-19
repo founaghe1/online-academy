@@ -119,12 +119,7 @@ function App() {
       {/* <Modale />
       <Coure />  */}
 
-      {/* <BrowserRouter> */}
-      {/* <Routes>
-          <Route exact path='/' element={<Voirquizze />} />
-          <Route path='/question' element={<Qestion />} />
-        </Routes>
-      </BrowserRouter> */}
+      
     </div>
   );
 }

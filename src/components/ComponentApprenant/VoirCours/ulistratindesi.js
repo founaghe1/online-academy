@@ -1,4 +1,3 @@
-/** @format */
 
 import Card from "react-bootstrap/Card";
 
