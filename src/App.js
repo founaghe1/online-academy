@@ -115,7 +115,7 @@ function App() {
 
       {/* nini Routes */}
 
-      <Router>
+      {/* <Router>
         <Routes>
           <Route exact path='/' element={<Domain />} />
           <Route path="/programmation" element={<Programmation />} />
@@ -170,7 +170,7 @@ function App() {
           <Route path='/initialisation' element={<Quizzinitialisation />} />
           <Route path='/pro' element={<Quizzpro />} />
         </Routes>
-      </Router>
+      </Router> */}
 
 
       {/* <Modale />
