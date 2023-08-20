@@ -48,7 +48,7 @@ const Sidebar = () => {
               <div className="d-flex justify-content-center align-items-center">
                 <ul className="list-unstyled">
                   <li className="mb-4 fs-5">
-                    <Link to="/dashboard">
+                    <Link to="/cch/dashboard">
                       <a href="" className="text-decoration-none side-link">
                         <BiSolidDashboard className="side-icon fs-4 me-2" />
                         Dashboard
@@ -56,7 +56,7 @@ const Sidebar = () => {
                     </Link>
                   </li>
                   <li className="mb-4 fs-5">
-                    <Link to="/dashboard/domain">
+                    <Link to="/cch/dashboard/domain">
                         <a href="" className="text-decoration-none side-link">
                         <BiSolidBookReader className="side-icon fs-4 me-2" />
                         Domaines
@@ -64,7 +64,7 @@ const Sidebar = () => {
                     </Link>
                   </li>
                   <li className="mb-4 fs-5">
-                    <Link to="/dashboard/livraison" className='text-decoration-none'>
+                    <Link to="/cch/dashboard/livraison" className='text-decoration-none'>
                       <a href="" className="text-decoration-none side-link">
                         <BiUpload className="side-icon fs-4 me-2" />
                         Livraisons
@@ -72,7 +72,7 @@ const Sidebar = () => {
                     </Link>
                   </li>
                   <li className="mb-4 fs-5">
-                    <Link to="/dashboard/list_apprenants">
+                    <Link to="/cch/dashboard/list_apprenants">
                       <a href="" className="text-decoration-none side-link">
                         <PiStudentBold className="side-icon fs-4 me-2" />
                         Ètudiants
@@ -88,7 +88,7 @@ const Sidebar = () => {
                 </ul>
               </div>
               <div className="w-100 mt-5">
-                <Link to="/">
+                <Link to="/cch/dashboard/messagerie">
                   <Button variant="primary" className="">
                     Déconnexion
                   </Button>

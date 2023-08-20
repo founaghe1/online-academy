@@ -50,8 +50,8 @@ const Login = () => {
                 </a>
               </Link>
             </div>
-            <Link to="/dashboard">
-              <button className="login-btn btn text-light fw-bold w-100" onClick="getValue();" >
+            <Link to="/cch/dashboard">
+              <button className="login-btn btn text-light fw-bold w-100" >
                 Connection
               </button>
             </Link>

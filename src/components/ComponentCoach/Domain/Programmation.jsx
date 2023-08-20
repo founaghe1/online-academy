@@ -32,7 +32,7 @@ const Programmation = () => {
             </div>
             <Card.Body>
               <Card.Title>HTML/CSS</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
+              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link
                 to=""
                 className="join d-flex right-0"
@@ -65,7 +65,7 @@ const Programmation = () => {
             </div>
             <Card.Body>
               <Card.Title>CSS</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
+              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link
                 to=""
                 className="join d-flex right-0"
@@ -98,7 +98,7 @@ const Programmation = () => {
             </div>
             <Card.Body>
               <Card.Title>JAVASCRIPT</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span> </Card.Text>
+              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link to="" className="join d-flex right-0">
                 <button
                   className="blue d-flex justify-content-center align-items-center"
@@ -128,7 +128,7 @@ const Programmation = () => {
             </div>
             <Card.Body>
               <Card.Title>PHP</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
+              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link to="" className="join d-flex right-0">
                 <button
                   className="orange d-flex justify-content-center align-items-center"
@@ -147,9 +147,9 @@ const Programmation = () => {
         <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
           <Card
             style={{ width: "15rem" }}
-            className="_grid item3 orangeclair shadow"
+            className="_grid item3 violetclair shadow"
           >
-            <div className="img_card p-4 d-flex orange">
+            <div className="img_card p-4 d-flex violet">
               <Card.Img
                 variant="top"
                 className="img-fluid"
@@ -158,10 +158,10 @@ const Programmation = () => {
             </div>
             <Card.Body>
               <Card.Title>PHP</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
+              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link to="" className="join d-flex right-0">
                 <button
-                  className="orange d-flex justify-content-center align-items-center"
+                  className="violet d-flex justify-content-center align-items-center"
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -177,9 +177,9 @@ const Programmation = () => {
         <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
           <Card
             style={{ width: "15rem" }}
-            className="_grid item3 orangeclair shadow"
+            className="_grid item3 blueclair shadow"
           >
-            <div className="img_card p-4 d-flex orange">
+            <div className="img_card p-4 d-flex blue">
               <Card.Img
                 variant="top"
                 className="img-fluid"
@@ -188,10 +188,10 @@ const Programmation = () => {
             </div>
             <Card.Body>
               <Card.Title>PHP</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
+              <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link to="" className="join d-flex right-0">
                 <button
-                  className="orange d-flex justify-content-center align-items-center"
+                  className="blue d-flex justify-content-center align-items-center"
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",

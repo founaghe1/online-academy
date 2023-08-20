@@ -7,6 +7,7 @@ import logo from "../../../../medias/rrr.jpeg"
 import { BiSolidDashboard, BiSolidBookReader, BiUpload } from "react-icons/bi";
 import {FaChalkboardTeacher} from "react-icons/fa"
 import {BsFillChatRightFill} from "react-icons/bs"
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [show, setShow] = useState(false);
@@ -41,15 +42,19 @@ function Sidebar() {
             <div className="d-flex justify-content-center align-items-center">
               <ul className="list-unstyled">
                 <li className="mb-4 fs-5">
-                  <a href="" className="text-decoration-none side-link">
-                    <BiSolidDashboard className="side-icon fs-4 me-2" />Dashboard
-                  </a>
+                  <Link to="/cch/dashboard">
+                    <a href="" className="text-decoration-none side-link">
+                      <BiSolidDashboard className="side-icon fs-4 me-2" />Dashboard
+                    </a>
+                  </Link>
                 </li>
                 <li className="mb-4 fs-5">
-                  <a href="" className="text-decoration-none side-link">
-                    <BiSolidBookReader className="side-icon fs-4 me-2" />
-                    Cours
-                  </a>
+                  <Link to="/cch/dashboard/cours">
+                    <a href="" className="text-decoration-none side-link">
+                      <BiSolidBookReader className="side-icon fs-4 me-2" />
+                      Cours
+                    </a>
+                  </Link>
                 </li>
                 <li className="mb-4 fs-5">
                   <a href="" className="text-decoration-none side-link">
