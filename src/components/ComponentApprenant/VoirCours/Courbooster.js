@@ -100,7 +100,7 @@ function Booter() {
                 </p>
               </Card.Body>
               <Link to='/booter' className='join '>
-                <button className='btn btn-primary'>Demarer</button>
+                <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>
           </Col>

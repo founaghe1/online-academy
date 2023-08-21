@@ -105,7 +105,7 @@ function Voircourc() {
                 </p>
               </Card.Body>
               <Link to='/c++' className='join '>
-                <button className='btn btn-primary'>Demarer</button>
+                <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>
           </Col>

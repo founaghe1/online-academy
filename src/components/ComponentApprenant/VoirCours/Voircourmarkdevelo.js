@@ -103,7 +103,7 @@ function Voircourdevelop() {
                 </p>
               </Card.Body>
               <Link to='/resaux' className='join '>
-                <button className='btn btn-primary'>Demarer</button>
+                <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>
           </Col>
