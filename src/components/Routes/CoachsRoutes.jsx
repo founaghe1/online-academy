@@ -12,6 +12,7 @@ import Sidebar from "../ComponentCoach/SideBar/Sidebar";
 import Navbar from "../ComponentCoach/NavBar/Navbar";
 import Layout from "../ComponentCoach/Layout/Layout";
 import ListeApprenants from "../ComponentCoach/ListeApprenants/ListeApprenants";
+import ChatPage from "../ComponentCoach/ChatPage/ChatPage";
 
 function CoachsRoutes() {
   return (
@@ -30,6 +31,7 @@ function CoachLayout() {
           <Route index element={<Dashboard />} />
           <Route path="/Livraison" element={<Livraison />} />
           <Route path="/list_apprenants" element={<ListeApprenants />} />
+          <Route path="/messagerie" element={<ChatPage />} />
           <Route path="/domain/*" element={<DomCchRoutes />} />
         </Route>  
     </Routes>
@@ -58,13 +60,14 @@ function DomCchRoutes() {
     <Routes>
       <Route path="/" element={<Domain />} />
       <Route path="/programmation" element={<Programmation />} />
+      <Route path="/programmation/*" element={<Programmation />} />
       <Route path="/marketing" element={<Marketing />} />
       <Route path="/design" element={<Design />} />
     </Routes>
   );
 }
 
-// function SousDomCchRoutes() {
+// function TacheProgRoutes() {
 //   return (
 //     <Routes>
 //       <Route path="/programmation" element={<Programmation />} />

@@ -22,8 +22,8 @@ const Sidebar = () => {
         <div className="d-lg-none d-flex justify-content-between align-items-center">
           <div>
             <Button
-              variant="primary"
-              className="d-lg-none"
+              variant="menuBtn"
+              className="d-lg-none menuBtn px-4 fw-bold"
               onClick={handleShow}
             >
               {/* <RiMenuUnfoldFill className="fs-4 fw-bold" /> */}
@@ -47,43 +47,38 @@ const Sidebar = () => {
               <h5>Menu</h5>
               <div className="d-flex justify-content-center align-items-center">
                 <ul className="list-unstyled">
-                  <li className="mb-4 fs-5">
-                    <Link to="/cch/dashboard">
-                      <a href="" className="text-decoration-none side-link">
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                    <Link to="/cch/dashboard" className="text-decoration-none side-link">
                         <BiSolidDashboard className="side-icon fs-4 me-2" />
                         Dashboard
-                      </a>
+                     
                     </Link>
                   </li>
-                  <li className="mb-4 fs-5">
-                    <Link to="/cch/dashboard/domain">
-                        <a href="" className="text-decoration-none side-link">
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                    <Link to="/cch/dashboard/domain" className="text-decoration-none side-link">
+                        
                         <BiSolidBookReader className="side-icon fs-4 me-2" />
                         Domaines
-                        </a>
+                       
                     </Link>
                   </li>
-                  <li className="mb-4 fs-5">
-                    <Link to="/cch/dashboard/livraison" className='text-decoration-none'>
-                      <a href="" className="text-decoration-none side-link">
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                    <Link to="/cch/dashboard/livraison" className="text-decoration-none side-link">
                         <BiUpload className="side-icon fs-4 me-2" />
                         Livraisons
-                      </a>
                     </Link>
                   </li>
-                  <li className="mb-4 fs-5">
-                    <Link to="/cch/dashboard/list_apprenants">
-                      <a href="" className="text-decoration-none side-link">
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                    <Link to="/cch/dashboard/list_apprenants" className="text-decoration-none side-link">
                         <PiStudentBold className="side-icon fs-4 me-2" />
                         Ètudiants
-                      </a>
                     </Link>
                   </li>
-                  <li className="mb-4 fs-5">
-                    <a href="" className="text-decoration-none side-link">
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                    <Link to="/cch/dashboard/messagerie" className="text-decoration-none side-link">
                       <BsFillChatRightFill className="side-icon fs-4 me-2" />
                       Messagerie
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

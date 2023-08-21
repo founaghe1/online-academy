@@ -5,6 +5,7 @@ ul {
 
 ul li a:hover {
     cursor: pointer;
+    color: #fff !important;
 }
 
 
@@ -18,7 +19,7 @@ ul li a:hover {
 }
 
 .sideBar li a:hover {
-    background-color: #8a70d6; 
+    background-color: #8a70d6;
     color:#fff!important ;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -62,4 +63,37 @@ a{
 }
 .side-logo{
     width: 200px;
+}
+
+.menuBtn{
+    border: 3px solid #a023e8;
+}
+
+.menuBtn:hover{
+    background-color: #a023e8;
+    color: aliceblue;
+}
+.btnDecon:hover{
+    background-color: #e60303;
+    color: aliceblue;
+}
+.btnDecon{
+    border: 3px solid #fe0000;
+}
+
+.menuLi{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.menuLi:hover {
+    background-color: #a023e8;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    transition: .7s;
+}
+.menuLi:hover .side-icon{
+    color: aliceblue;
+}
+.menuLi:hover .side-link{
+    color: aliceblue;
 }

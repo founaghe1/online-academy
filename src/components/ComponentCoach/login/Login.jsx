@@ -21,7 +21,7 @@ const Login = () => {
           </div>
           <h2 className="text-center title mb-3">CONNECTEZ-VOUS</h2>
           <form action="">
-            <InputGroup className="mb-3">
+            <InputGroup className="mb-3 w-auto">
               <InputGroup.Text id="basic-addon1">
                 <AiOutlineUser className="fw-bold icon fs-4" />
               </InputGroup.Text>

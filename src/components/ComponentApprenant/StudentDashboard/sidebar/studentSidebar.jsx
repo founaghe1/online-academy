@@ -17,7 +17,7 @@ function Sidebar() {
 
   return (
     <>
-      <div className="sticky-top">
+      <div className="sticky-top shadow-end">
         <div className="d-lg-none d-flex justify-content-between align-items-center">
         <div>
           <Button variant="primary" className="d-lg-none" onClick={handleShow}>
@@ -41,43 +41,39 @@ function Sidebar() {
             <h5>Menu</h5>
             <div className="d-flex justify-content-center align-items-center">
               <ul className="list-unstyled">
-                <li className="mb-4 fs-5">
-                  <Link to="/cch/dashboard">
-                    <a href="" className="text-decoration-none side-link">
+                <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                  <Link to="/cch/dashboard" className="text-decoration-none side-link">
                       <BiSolidDashboard className="side-icon fs-4 me-2" />Dashboard
-                    </a>
                   </Link>
                 </li>
-                <li className="mb-4 fs-5">
-                  <Link to="/cch/dashboard/cours">
-                    <a href="" className="text-decoration-none side-link">
+                <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                  <Link to="/cch/dashboard/cours" className="text-decoration-none side-link">
                       <BiSolidBookReader className="side-icon fs-4 me-2" />
                       Cours
-                    </a>
                   </Link>
                 </li>
-                <li className="mb-4 fs-5">
-                  <a href="" className="text-decoration-none side-link">
+                <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                  <Link to="/cch/dashboard/livraison" className="text-decoration-none side-link">
                     <BiUpload className="side-icon fs-4 me-2" />
                     Livraisons
-                  </a>
+                  </Link>
                 </li>
-                <li className="mb-4 fs-5">
-                  <a href="" className="text-decoration-none side-link">
+                <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                  <Link to="" className="text-decoration-none side-link">
                     <FaChalkboardTeacher className="side-icon fs-4 me-2" />
                     Coachs
-                  </a>
+                  </Link>
                 </li>
-                <li className="mb-4 fs-5">
-                  <a href="" className="text-decoration-none side-link">
+                <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                  <Link to="" className="text-decoration-none side-link">
                     <BsFillChatRightFill className="side-icon fs-4 me-2" />
                     Messagerie
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
-            <div className="w-100 mt-5">
-              <Button variant="primary" className="">
+            <div className="w-100 mt-1 py-3">
+              <Button variant="" className="btnDecon">
                 Déconnexion
               </Button>
             </div>

@@ -11,8 +11,6 @@ import Socialmedia from "../../../Assets/social-media.png";
 import Growth from "../../../Assets/growth.png";
 
 
-
-
 const Marketing = () => {
 
   const [show, setShow] = useState(false);
@@ -73,7 +71,7 @@ const Marketing = () => {
               <Card.Title>Introduction au marketing digital</Card.Title>
               <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link
-                to=""
+                to="/sous-domaine-marketing/developpement"
                 className="join d-flex right-0"
               >
                 <button
@@ -106,7 +104,7 @@ const Marketing = () => {
               <Card.Title>Se démarquer sur les réseaux sociaux</Card.Title>
               <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link
-                to=""
+                to="/sous-domaine-marketing/booter"
                 className="join d-flex right-0"
               >
                 <button
