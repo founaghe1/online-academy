@@ -76,12 +76,13 @@ import Quizzinitialisation from "./components/ComponentApprenant/VoirCours/Quizz
 import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
 import CoachsRoutes from "./components/Routes/CoachsRoutes";
 import ApprenantRoutes from "./components/Routes/ApprenantRoutes";
+import AdminRoutes from './components/Routes/AdminRoutes';
 
 // import Qestion from "./components/VoirCours/Voircourphp"
 function App() {
 
   const [user, setUser] = useState(null); // État de l'utilisateur (null pour non connecté)
-  const [authorizedRoles, setAuthorizedRoles] = useState(['apprenant']);
+  const [authorizedRoles, setAuthorizedRoles] = useState(['coach']);
 
   // Déterminez les itinéraires autorisés en fonction du rôle de l'utilisateur
     let userRoutes = null;
@@ -89,9 +90,8 @@ function App() {
       userRoutes = <CoachsRoutes />;
     } else if (authorizedRoles.includes('apprenant')) {
       userRoutes = <ApprenantRoutes />;
-    // } else if (authorizedRoles.includes('professeur')) {
-    //   userRoutes = <ProfesseurRoutes />;
-    // }
+    } else if (authorizedRoles.includes('admin')) {
+      userRoutes = <AdminRoutes />;
     }
 
   return (
