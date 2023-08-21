@@ -23,11 +23,6 @@ const Admin = () => {
  
   return (
     <>
-    
-    
-    
-
-
     <div className="vh-100">
       <div className="container">
         <Navbar expand="lg" className="bg-body-tertiary text-dark">

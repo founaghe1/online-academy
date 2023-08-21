@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
-// import Admin from './components/admin/Admin';
+import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Login from './components/ComponentCoach/login/Login';
 // import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
@@ -69,7 +69,7 @@ import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
 function App() {
   return (
     <div className='App'>
-      {/* <Admin /> */}
+      <Admin />
       {/* <Dashboard  /> */}
       {/* <Login /> */}
       {/* <StudentDashboard /> */}
@@ -83,8 +83,6 @@ function App() {
       {/* <ListeApprenants/> */}
       {/* <NotificationsCoachs/> */}
       {/* <ChatPage /> */}
-      
-      
       {/* <Router>
         <Routes>
           <Route exact path="/" element={<Domain />} />
@@ -93,7 +91,6 @@ function App() {
           <Route path="/design" element={<Design />} />
         </Routes>
       </Router> */}
-
       {/* Routes Yagouba */}
 
       {/* <Router>
@@ -115,7 +112,7 @@ function App() {
 
       {/* nini Routes */}
 
-      <Router>
+      {/* <Router>
         <Routes>
           <Route exact path='/' element={<Domain />} />
           <Route path="/programmation" element={<Programmation />} />
@@ -170,7 +167,7 @@ function App() {
           <Route path='/initialisation' element={<Quizzinitialisation />} />
           <Route path='/pro' element={<Quizzpro />} />
         </Routes>
-      </Router>
+      </Router> */}
 
       {/* <Modale />
       <Coure />  */}
