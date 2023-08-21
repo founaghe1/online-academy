@@ -4,7 +4,7 @@ import Admin from './components/admin/Admin';
 function App() {
   return (
     <div className="App">
-      <Admin/>
+      <Admin />
     </div>
   );
 }

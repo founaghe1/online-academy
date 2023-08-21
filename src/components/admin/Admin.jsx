@@ -46,10 +46,18 @@ const Admin = () => {
                     <Modal.Body className="my-5">
                       <div className="row align-items-baseline">
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                          <FloatingLabel controlId="floatingInput" label="Prénom">
+                            <Form.Control
+                              type="text"
+                              placeholder="Baba"
+                            />
+                          </FloatingLabel>
+                        </div>
+                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
                           <FloatingLabel controlId="floatingInput" label="Nom">
                             <Form.Control
                               type="text"
-                              placeholder="Baba Thiam"
+                              placeholder="Thiam"
                             />
                           </FloatingLabel>
                         </div>
@@ -163,6 +171,7 @@ const Admin = () => {
             <thead>
               <tr>
                 <th>Profil</th>
+                <th>Prénom</th>
                 <th>Nom</th>
                 <th>Email</th>
                 <th>Mot de passe</th>
@@ -180,6 +189,7 @@ const Admin = () => {
                   />
                 </td>
                 <td>Mark</td>
+                <td>Zukerberg</td>
                 <td>mark@gmail.com</td>
                 <td>mark123</td>
                 <td>coach</td>
@@ -201,6 +211,7 @@ const Admin = () => {
                   />
                 </td>
                 <td>Jacob</td>
+                <td>Bourbon</td>
                 <td>jacob@gmail.com</td>
                 <td>mark123</td>
                 <td>étudiant</td>
@@ -222,6 +233,7 @@ const Admin = () => {
                   />
                 </td>
                 <td>Larry</td>
+                <td>Swagger</td>
                 <td>larry@gmail.com</td>
                 <td>mark123</td>
                 <td>coach</td>
@@ -243,6 +255,7 @@ const Admin = () => {
                   />
                 </td>
                 <td>Mark</td>
+                <td>Zukerberg</td>
                 <td>mark@gmail.com</td>
                 <td>mark123</td>
                 <td>coach</td>
@@ -264,6 +277,7 @@ const Admin = () => {
                   />
                 </td>
                 <td>Jacob</td>
+                <td>Bourbon</td>
                 <td>jacob@gmail.com</td>
                 <td>mark123</td>
                 <td>étudiant</td>
@@ -285,6 +299,7 @@ const Admin = () => {
                   />
                 </td>
                 <td>Larry</td>
+                <td>Swagger</td>
                 <td>larry@gmail.com</td>
                 <td>mark123</td>
                 <td>coach</td>
