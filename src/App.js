@@ -47,7 +47,7 @@ import ApprenantRoutes from "./components/Routes/ApprenantRoutes";
 function App() {
 
   const [user, setUser] = useState(null); // État de l'utilisateur (null pour non connecté)
-  const [authorizedRoles, setAuthorizedRoles] = useState(['apprenant']);
+  const [authorizedRoles, setAuthorizedRoles] = useState(['coach']);
 
   // Déterminez les itinéraires autorisés en fonction du rôle de l'utilisateur
     let userRoutes = null;
