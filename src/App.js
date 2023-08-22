@@ -1,5 +1,5 @@
 import './App.css';
-//import Admin from './components/ComponentAdmin/admin/Admin';
+import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
 //import Login from './components/ComponentCoach/login/Login';
@@ -64,6 +64,9 @@ import QuizzPhotos from "./components/ComponentApprenant/VoirCours/QuizzPhotos";
 import Quizzullustrator from "./components/ComponentApprenant/VoirCours/Quizzullustrator";
 import Quizzinitialisation from "./components/ComponentApprenant/VoirCours/Quizzinitialisation";
 import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
+import Html from './components/Certification/Html'
+import Css from './components/Certification/Css';
+import Certification from './components/Certification/Certification'
 
 // import Qestion from "./components/VoirCours/Voircourphp"
 function App() {
@@ -86,13 +89,13 @@ function App() {
       
       
   
-      <BrowserRouter>
+      <Router>
         <Routes >
           <Route path='/' element={<Certification />}/>
           <Route path='/html' element={<Html />}/>
           <Route path='/css' element={<Css />}/>
         </Routes>
-      </BrowserRouter>
+      </Router>
       
       {/* <Router>
         <Routes>
