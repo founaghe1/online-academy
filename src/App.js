@@ -2,7 +2,7 @@ import './App.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
 import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Login from './components/ComponentCoach/login/Login';
+import Login from './components/ComponentCoach/login/Login';
 // import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
 // import SideBar from './components/ComponentCoach/SideBar/Sidebar';
 import Navbar from './components/ComponentCoach/NavBar/Navbar';
@@ -69,7 +69,7 @@ import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
 function App() {
   return (
     <div className='App'>
-      <Admin />
+      {/* <Admin /> */}
       {/* <Dashboard  /> */}
       {/* <Login /> */}
       {/* <StudentDashboard /> */}
@@ -169,8 +169,8 @@ function App() {
         </Routes>
       </Router> */}
 
-      {/* <Modale />
-      <Coure />  */}
+       {/* <Modal /> */}
+      <Cour />  
 
       {/* <BrowserRouter>
       <Routes>

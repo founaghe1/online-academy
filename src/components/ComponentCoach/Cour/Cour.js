@@ -2,7 +2,7 @@
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import React from "react";
@@ -15,27 +15,216 @@ import { DiJavascript1 } from "react-icons/di";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
 import "./modal.css";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  deleteDoc,
+  updateDoc,
+  doc,
+} from "firebase/firestore";
+import { db } from "../Cour/Configurefirebase.js";
+
 
 function Coure() {
-   const [show, setShow] = useState(false);
+  const [newCours, setNewCours] = useState("");
+   const [newDebut, setNewDebut] = useState("");
+  const [newDurée, setNewDurée] = useState("");
+  const [newurl, setNewurl] = useState("");
+  const [cours, setCours] = useState([]);
+  
+  // setCours({
+  //   newCours: "",
+  //   newDurée: "",
+  // });
 
-   const handleClose = () => setShow(false);
-   const handleShow = () => setShow(true);
+  const usersCollectionRef = collection(db, "cours");
+
+  const enregistre = async () => {
+    await addDoc(usersCollectionRef, { Cours: newCours, Durée: newDurée,Debut:newDebut,url:newurl });
+    setNewDurée("");
+    setNewCours("");
+  };
+  console.log(enregistre);
+   const deleteUser = async (id) => {
+     const userDoc = doc(usersCollectionRef, id);
+     await deleteDoc(userDoc);
+   };
+   const updateUser = async (id) => {
+     const userDoc = doc(usersCollectionRef, id);
+     await updateDoc(userDoc, userDoc);
+   };
+
+  useEffect(() => {
+    const getUsers = async () => {
+      const data = await getDocs(usersCollectionRef);
+      setCours(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      // if (newCours === "" || newDurée === "") {
+      //   alert("Veuillez remplir tous les champs du formulaire.");
+      //   return false;
+      // }
+    };
+
+    getUsers();
+  }, []);
+ 
+
+  
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
-    <div className="coursbg">
-      <h1 className='bg-info w-25 text-center ms-3 rounded text-light pb-4'>Cours</h1>
-      <div className='container bg-light'>
-        <Table responsive className='table mt-5'>
-          <thead>
-            <tr className="text-center">
-              <th>Course Name</th>
-              <th>Debut</th>
-              <th>Durée</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody className="text-center">
-            <tr>
+    <>
+      <div className='d-flex justify-content-end  coursbg pe-5 mt-5'>
+        <Button variant='' onClick={handleShow} className='but'>
+          Ajouter
+        </Button>
+      </div>
+
+      <div className='coursbg'>
+        <Modal show={show} onHide={handleClose} id='videchamp'>
+          <Modal.Header closeButton className='for'>
+            <Modal.Title>Ajout Cours</Modal.Title>
+          </Modal.Header>
+
+          <Form className='for p-3'>
+            <Form.Group
+              as={Row}
+              className='mb-3'
+              controlId='formPlaintextPassword'
+            >
+              <Form.Label column sm='2'>
+                url
+              </Form.Label>
+              <Col sm='10'>
+                <Form.Control
+                  type='file' accept=".png,.jpg,.jpeg"
+                  placeholder='debut cour'
+                  name='image'
+                  id='image'
+                  onChange={(e) => setNewurl(e.target.value)}
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              as={Row}
+              className='mb-3'
+              controlId='formPlaintextPassword'
+            >
+              <Form.Label column sm='2'>
+                Cours
+              </Form.Label>
+              <Col sm='10'>
+                <Form.Select
+                  aria-label='Default select example'
+                  value={newCours}
+                  onChange={(e) => setNewCours(e.target.value)}
+                >
+                  <option></option>
+                  <option value='Web Design'>Web Design</option>
+                  <option value='Development Basisc'>Development Basisc</option>
+                  <option value='Data with python'>Data with python</option>
+                  <option value='Html Basisc'>Html Basisc</option>
+                  <option value='Javscript Basisc'>Javscript Basisc</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              as={Row}
+              className='mb-3'
+              controlId='formPlaintextPassword'
+            >
+              <Form.Label column sm='2'>
+                Debut
+              </Form.Label>
+              <Col sm='10'>
+                <Form.Control
+                  type='debut'
+                  placeholder='debut cour'
+                  onChange={(e) => setNewDebut(e.target.value)}
+                  id='cour'
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              as={Row}
+              className='mb-3'
+              controlId='formPlaintextPassword'
+            >
+              <Form.Label column sm='2'>
+                Durée
+              </Form.Label>
+              <Col sm='10'>
+                <Form.Control
+                  type='number'
+                  placeholder='dure'
+                  onChange={(e) => setNewDurée(e.target.value)}
+                />
+              </Col>
+            </Form.Group>
+          </Form>
+          {/* <Modal.Footer>
+           <Button variant='' onClick={handleClose}  className="but">
+             Ajouter
+           </Button>
+         </Modal.Footer> */}
+          <button
+            type='button'
+            className='btn but w-25 ms-auto '
+            onClick={enregistre}
+          >
+            Enregistre
+          </button>
+        </Modal>
+        <h1 className='bg-info w-25 text-center ms-3 rounded text-light pb-4'>
+          Cours
+        </h1>
+        <div className='container bg-light'>
+          <Table responsive className='table mt-5'>
+            <thead>
+              <tr className='text-center'>
+                <th>url</th>
+                <th>Cours</th>
+                <th>Debut</th>
+                <th>Durée</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody className='text-center'>
+              {cours.map((user, index) => {
+                return (
+                  <tr key={user.id}>
+                    {/* <th>{index + 1}</th> */}
+                    <td>{user.url}</td>
+                    <td>{user.Cours}</td>
+                    <td>{user.Debut}</td>
+                    <td>{user.Durée}</td>
+
+                    {/* <td>{user.statut}</td> */}
+                    <td>
+                      <button
+                        onClick={() => {
+                          updateUser(user.id);
+                        }}
+                        className='btn btn-primary text-left-0'
+                      >
+                        editer
+                      </button>
+
+                      <button
+                        onClick={() => {
+                          deleteUser(user.id);
+                        }}
+                        className='btn btn-danger text-left-50'
+                      >
+                        supprimer
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+              {/* <tr>
               <td className=''>
                 <div className='d-flex justify-content-evenly align-items-center'>
                   <div
@@ -63,9 +252,9 @@ function Coure() {
                     className='text-white'
                   >
                     <FiEdit />
-                  </Button>
+                  </Button> 
 
-                  <Modal show={show} onHide={handleClose} animation={false}>
+                   <Modal show={show} onHide={handleClose} animation={false}>
                     <Modal.Header closeButton>
                       <Modal.Title>Ajout cour</Modal.Title>
                     </Modal.Header>
@@ -529,11 +718,12 @@ function Coure() {
                   </button>
                 </div>
               </td>
-            </tr>
-          </tbody>
-        </Table>
+            </tr> */}
+            </tbody>
+          </Table>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
