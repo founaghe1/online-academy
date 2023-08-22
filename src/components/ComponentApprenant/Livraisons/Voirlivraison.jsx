@@ -5,10 +5,10 @@ const Voirlivraison = () => {
   return (
     <>
       <div className="container">
-        <div class="d-flex justify-content-end mt-5">
+        <div className="d-flex justify-content-end mt-5">
           <button
             type="button"
-            class="btn btn-cart shadow mb-5 mt-3"
+            className="btn btn-cart shadow mb-5 mt-3"
             data-bs-toggle="modal"
             data-bs-target="#mod1"
           >

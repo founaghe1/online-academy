@@ -116,7 +116,7 @@ function Voircourphp() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/php' className='join '>
+              <Link to='/cch/dashboard/cours/php-Quizz' className='join '>
                 <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>
