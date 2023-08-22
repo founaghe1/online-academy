@@ -1,33 +1,38 @@
 import './App.css';
-import Admin from './components/ComponentAdmin/admin/Admin';
+//import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
-import Login from './components/ComponentCoach/login/Login';
-import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
-import SideBar from './components/ComponentCoach/SideBar/Sidebar';
-import Navbar from './components/ComponentCoach/NavBar/Navbar';
-import Layout from './components/ComponentCoach/Layout/Layout';
+//import Login from './components/ComponentCoach/login/Login';
+//import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
+//import SideBar from './components/ComponentCoach/SideBar/Sidebar';
+//import Navbar from './components/ComponentCoach/NavBar/Navbar';
+//import Layout from './components/ComponentCoach/Layout/Layout';
 
 // Coach
-import Domain from './components/ComponentCoach/Domain/Domain';
-import Programmation from './components/ComponentCoach/Domain/Programmation';
-import Marketing from './components/ComponentCoach/Domain/Marketing';
-import Design from './components/ComponentCoach/Domain/Design';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
-import Chat from './components/ComponentCoach/Chat/Chat.jsx';
-import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
-import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
+//import Domain from './components/ComponentCoach/Domain/Domain';
+//import Programmation from './components/ComponentCoach/Domain/Programmation';
+//import Marketing from './components/ComponentCoach/Domain/Marketing';
+//import Design from './components/ComponentCoach/Domain/Design';
+//import {BrowserRouter} from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+// import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
+// import Chat from './components/ComponentCoach/Chat/Chat.jsx';
+// import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
+// import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
 
-// Apprenants
-import StudentDashboard from './components/ComponentApprenant/StudentDashboard/StudentDashboard';
-import Dashboards from './components/ComponentCoach/Dashboard/Dashboards';
-import DomainApprt from './components/ComponentApprenant/DomainApprnt/DomainApprt';
-import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/ProgrammationApprt';
-import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
-import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
+// // Apprenants
+// import StudentDashboard from './components/ComponentApprenant/StudentDashboard/StudentDashboard';
+ //import Dashboards from './components/ComponentCoach/Dashboard/Dashboards';
+ //import DomainApprt from './components/ComponentApprenant/DomainApprnt/DomainApprt';
+// import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/ProgrammationApprt';
+// import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
+// import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
 
-import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
+//import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
+import Certification from './components/Certification/Certification';
+ //import Card from './components/Certification/Card';
+import Html from './components/Certification/Html';
+import Css from './components/Certification/Css';
 
 function App() {
   return (
@@ -40,11 +45,21 @@ function App() {
 
       {/* <ForgotPW/> */}
       {/* <Livraison /> */}
-      <Voirlivraison />      
+      {/* <Voirlivraison />       */}
       {/* <Chat/> */}
       {/* <ListeApprenants/> */}
       {/* <NotificationsCoachs/> */}
+      {/* <Card /> */}
       
+      
+  
+      <BrowserRouter>
+        <Routes >
+          <Route path='/' element={<Certification />}/>
+          <Route path='/html' element={<Html />}/>
+          <Route path='/css' element={<Css />}/>
+        </Routes>
+      </BrowserRouter>
       
       {/* <Router>
         <Routes>
