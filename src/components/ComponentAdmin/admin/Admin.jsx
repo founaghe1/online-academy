@@ -12,6 +12,8 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
+
+
 import { BsPencilSquare, BsTrash } from "react-icons/bs";
 
 const Admin = () => {
@@ -20,7 +22,8 @@ const Admin = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
- 
+ const [user, setUser] = useState ([]);
+ const [newNom, setNewNom] = useState ('');
   return (
     <>
     
@@ -305,6 +308,8 @@ const Admin = () => {
                 </td>
               </tr>
             </tbody>
+
+          
           </Table>
         </div>
       </div>
