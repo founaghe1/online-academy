@@ -99,8 +99,8 @@ function App() {
     <>
       <Router>
         {userRoutes}
-
-        <Router>
+        
+        {/* <Router>
         <Routes>
           <Route exact path='/' element={<Domain />} />
           <Route path="/programmation" element={<Programmation />} />
@@ -155,13 +155,13 @@ function App() {
           <Route path='/initialisation' element={<Quizzinitialisation />} />
           <Route path='/pro' element={<Quizzpro />} />
         </Routes>
-      </Router>
+      </Router> */}
       </Router>
 
     </>
 
     // <div className='App'>
-    //   {/* <Admin /> */}
+      // <Admin /> 
     //   {/* <Dashboard  /> */}
     //   {/* <Login /> */}
     //   {/* <StudentDashboard /> */}
