@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/js/bootstrap.min.js'
 import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
