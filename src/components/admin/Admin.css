@@ -1,6 +1,14 @@
-.add, .logout, .save{
+.add, .logout{
     background-color: #8a70d6;
+    color: black;
     font-weight: bold;
+}
+.add:hover{
+    background-color: #8a70d6;
+    color: black;
+}
+.logout:hover{
+    background-color: #8a70d6;
 }
 .selectModal{
     padding: 15px;

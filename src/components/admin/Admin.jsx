@@ -1,25 +1,17 @@
 import React from "react";
-import './Admin.css'
+import "./Admin.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import {AiOutlineSearch} from 'react-icons/ai';
+import { AiOutlineSearch } from "react-icons/ai";
 import Table from "react-bootstrap/Table";
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
+// import { useState } from "react";
 import { BsPencilSquare, BsTrash } from "react-icons/bs";
 
 const Admin = () => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   return (
     <div className="vh-100">
       <div className="container">
@@ -32,84 +24,101 @@ const Admin = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
                 <Nav.Link href="#home">
-                  <Button
-                    className="btn btn-secondary text-dark add"
-                    onClick={handleShow}
+                  <button
+                    type="button"
+                    className="add btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
                   >
                     Ajouter
-                  </Button>
+                  </button>
 
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Ajout étudiant ou coach </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body className="my-5">
-                      <div className="row align-items-baseline">
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                          <FloatingLabel controlId="floatingInput" label="Prénom">
-                            <Form.Control
-                              type="text"
-                              placeholder="Baba"
-                            />
-                          </FloatingLabel>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                          <FloatingLabel controlId="floatingInput" label="Nom">
-                            <Form.Control
-                              type="text"
-                              placeholder="Thiam"
-                            />
-                          </FloatingLabel>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                          <FloatingLabel
-                            controlId="floatingInput"
-                            label="Email"
+                  <div
+                    className="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h1
+                            className="modal-title fs-5"
+                            id="exampleModalLabel"
                           >
-                            <Form.Control
-                              type="email"
-                              placeholder="baba@gmail.com"
-                            />
-                          </FloatingLabel>
+                            Ajout nouveau coach ou étudiant
+                          </h1>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
                         </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                          <FloatingLabel
-                            controlId="floatingInput"
-                            label="Mot de passe"
-                          >
-                            <Form.Control
-                              type="password"
-                              placeholder="*********"
-                            />
-                          </FloatingLabel>
+                        <div className="modal-body">
+                          <form>
+                            <div className="form-floating mb-3">
+                              <input
+                                type="text"
+                                className="form-control"
+                                id="floatingInput"
+                                placeholder="Prénom"
+                              />
+                              <label for="floatingInput">Prénom</label>
+                            </div>
+                            <div className="form-floating mb-3">
+                              <input
+                                type="text"
+                                className="form-control"
+                                id="floatingInput"
+                                placeholder="Nom"
+                              />
+                              <label for="floatingInput">Nom</label>
+                            </div>
+                            <div className="form-floating mb-3">
+                              <input
+                                type="email"
+                                className="form-control"
+                                id="floatingInput"
+                                placeholder="name@example.com"
+                              />
+                              <label for="floatingInput">Email</label>
+                            </div>
+                            <div className="form-floating mb-3">
+                              <input
+                                type="password"
+                                className="form-control"
+                                id="floatingPassword"
+                                placeholder="Password"
+                              />
+                              <label for="floatingPassword">Mot de passe</label>
+                            </div>
+                            <select
+                              className="form-select"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Statut de l'utilusateur</option>
+                              <option value="1">Proffesseur</option>
+                              <option value="2">Etudiant</option>
+                            </select>
+                          </form>
                         </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                          <Form.Select
-                            aria-label="Default select example"
-                            className="selectModal"
+                        <div className="modal-footer">
+                          <button
+                            type="button"
+                            className="btn btn-secondary"
+                            data-bs-dismiss="modal"
                           >
-                            <option>Statut</option>
-                            <option value="1">Proffesseurs</option>
-                            <option value="2">Etudiants</option>
-                          </Form.Select>
+                            Fermer
+                          </button>
+                          <button type="submit" className="btn btn-primary">
+                            Ajouter
+                          </button>
                         </div>
                       </div>
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button
-                        className="btn btn-secondary text-dark fw-bold"
-                        onClick={handleClose}
-                      >
-                        Fermer
-                      </Button>
-                      <Button
-                        className="btn btn-secondary text-dark save"
-                        onClick={handleClose}
-                      >
-                        Enregistrer
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
+                    </div>
+                  </div>
                 </Nav.Link>
                 <Nav.Link href="#link">
                   <button className="btn btn-secondary text-dark logout">
@@ -171,7 +180,6 @@ const Admin = () => {
             <thead>
               <tr>
                 <th>Profil</th>
-                <th>Prénom</th>
                 <th>Nom</th>
                 <th>Email</th>
                 <th>Mot de passe</th>
@@ -189,7 +197,6 @@ const Admin = () => {
                   />
                 </td>
                 <td>Mark</td>
-                <td>Zukerberg</td>
                 <td>mark@gmail.com</td>
                 <td>mark123</td>
                 <td>coach</td>
@@ -211,7 +218,6 @@ const Admin = () => {
                   />
                 </td>
                 <td>Jacob</td>
-                <td>Bourbon</td>
                 <td>jacob@gmail.com</td>
                 <td>mark123</td>
                 <td>étudiant</td>
@@ -233,7 +239,6 @@ const Admin = () => {
                   />
                 </td>
                 <td>Larry</td>
-                <td>Swagger</td>
                 <td>larry@gmail.com</td>
                 <td>mark123</td>
                 <td>coach</td>
@@ -255,7 +260,6 @@ const Admin = () => {
                   />
                 </td>
                 <td>Mark</td>
-                <td>Zukerberg</td>
                 <td>mark@gmail.com</td>
                 <td>mark123</td>
                 <td>coach</td>
@@ -277,7 +281,6 @@ const Admin = () => {
                   />
                 </td>
                 <td>Jacob</td>
-                <td>Bourbon</td>
                 <td>jacob@gmail.com</td>
                 <td>mark123</td>
                 <td>étudiant</td>
@@ -299,7 +302,6 @@ const Admin = () => {
                   />
                 </td>
                 <td>Larry</td>
-                <td>Swagger</td>
                 <td>larry@gmail.com</td>
                 <td>mark123</td>
                 <td>coach</td>
