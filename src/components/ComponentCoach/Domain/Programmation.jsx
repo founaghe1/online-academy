@@ -14,31 +14,31 @@ import Csharp from "../../../Assets/c-sharp.png";
 const Programmation = () => {
 
   return (
-    <div className="container-fluid">
+    <div className='container-fluid'>
       <h1>Les sous-domaines de la Programmation</h1>
 
-      <div className="row">
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-6 d-flex justify-content-center mt-4">
-          <Card
-            style={{ width: "15rem" }}
-            className="_grid item1 orangeclair shadow"
+      <div className='row'>
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-6 d-flex justify-content-center mt-4'>
+          <Link
+            to='/sous-domaine-programmation/html/css'
+            className='join d-flex right-0'
           >
-            <div className="img_card p-4 d-flex orange">
-              <Card.Img
-                variant="top"
-                className="img-fluid"
-                src={HTMLCSS}
-              />
-            </div>
-            <Card.Body>
-              <Card.Title>HTML/CSS</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
-              <Link
-                to=""
-                className="join d-flex right-0"
-              >
-                <button
-                  className="orange d-flex justify-content-center align-items-center"
+            <Card
+              style={{ width: "15rem" }}
+              className='_grid item1 orangeclair shadow'
+            >
+              <div className='img_card p-4 d-flex orange'>
+                <Card.Img variant='top' className='img-fluid' src={HTMLCSS} />
+              </div>
+              <Card.Body>
+                <Card.Title>HTML/CSS</Card.Title>
+                <p className='cours text-black text-center'>
+                  Le HTML est donc un langage de balisage, Le CSS (Cascading
+                  Style Sheets, aussi appelées feuilles de style)
+                </p>
+
+                {/* <button
+                  className='orange d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -46,32 +46,33 @@ const Programmation = () => {
                   }}
                 >
                   <MdOutlineKeyboardArrowRight />
-                </button>
-              </Link>
-            </Card.Body>
-          </Card>
+                </button> */}
+              </Card.Body>
+            </Card>
+          </Link>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
-          <Card
-            style={{ width: "15rem" }}
-            className="_grid item2 violetclair shadow"
+
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
+          <Link
+            to='/sous-domaine-programmation/boostrap'
+            className='join d-flex right-0'
           >
-            <div className="img_card p-4 d-flex violet">
-              <Card.Img
-                variant="top"
-                className="img-fluid"
-                src={Bootstrap}
-              />
-            </div>
-            <Card.Body>
-              <Card.Title>CSS</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
-              <Link
-                to=""
-                className="join d-flex right-0"
-              >
-                <button
-                  className="violet d-flex justify-content-center align-items-center"
+            <Card
+              style={{ width: "15rem" }}
+              className='_grid item2 violetclair shadow'
+            >
+              <div className='img_card p-4 d-flex violet'>
+                <Card.Img variant='top' className='img-fluid' src={Bootstrap} />
+              </div>
+              <Card.Body>
+                <Card.Title>BOOSTRAP</Card.Title>
+                <p className='cours text-black text-center'>
+                  Bootstrap est un framework CSS. Un framework correspond à un
+                  ensemble de librairies regroupées
+                </p>
+
+                {/* <button
+                  className='violet d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -79,29 +80,36 @@ const Programmation = () => {
                   }}
                 >
                   <MdOutlineKeyboardArrowRight />
-                </button>
-              </Link>
-            </Card.Body>
-          </Card>
+                </button> */}
+              </Card.Body>
+            </Card>
+          </Link>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
-          <Card
-            style={{ width: "15rem" }}
-            className="_grid item3 blueclair shadow"
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
+          <Link
+            to='/sous-domaine-programmation/js'
+            className='join d-flex right-0'
           >
-            <div className="img_card p-4 d-flex blue">
-              <Card.Img
-                variant="top"
-                className="img-fluid"
-                src={Javascript}
-              />
-            </div>
-            <Card.Body>
-              <Card.Title>JAVASCRIPT</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span> </Card.Text>
-              <Link to="" className="join d-flex right-0">
-                <button
-                  className="blue d-flex justify-content-center align-items-center"
+            <Card
+              style={{ width: "15rem" }}
+              className='_grid item3 blueclair shadow'
+            >
+              <div className='img_card p-4 d-flex blue'>
+                <Card.Img
+                  variant='top'
+                  className='img-fluid'
+                  src={Javascript}
+                />
+              </div>
+              <Card.Body>
+                <Card.Title>JAVASCRIPT</Card.Title>
+                <p className='cours text-black text-center'>
+                  JavaScript est un langage de programmation utilisé par les
+                  développeurs pour concevoir des sites web interactif.
+                </p>
+
+                {/* <button
+                  className='blue d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -109,29 +117,32 @@ const Programmation = () => {
                   }}
                 >
                   <MdOutlineKeyboardArrowRight />
-                </button>
-              </Link>
-            </Card.Body>
-          </Card>
+                </button> */}
+              </Card.Body>
+            </Card>
+          </Link>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
-          <Card
-            style={{ width: "15rem" }}
-            className="_grid item3 orangeclair shadow"
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
+          <Link
+            to='/sous-domaine-programmation/php'
+            className='join d-flex right-0'
           >
-            <div className="img_card p-4 d-flex orange">
-              <Card.Img
-                variant="top"
-                className="img-fluid"
-                src={PHP}
-              />
-            </div>
-            <Card.Body>
-              <Card.Title>PHP</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
-              <Link to="" className="join d-flex right-0">
-                <button
-                  className="orange d-flex justify-content-center align-items-center"
+            <Card
+              style={{ width: "15rem" }}
+              className='_grid item3 orangeclair shadow'
+            >
+              <div className='img_card p-4 d-flex orange'>
+                <Card.Img variant='top' className='img-fluid' src={PHP} />
+              </div>
+              <Card.Body>
+                <Card.Title>PHP</Card.Title>
+                <p className='cours text-black text-center'>
+                  PHP est un langage de script côté serveur. Il est utilisé pour
+                  développer des sites web statiques ou dynamiques ou des
+                </p>
+
+                {/* <button
+                  className='orange d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -139,29 +150,32 @@ const Programmation = () => {
                   }}
                 >
                   <MdOutlineKeyboardArrowRight />
-                </button>
-              </Link>
-            </Card.Body>
-          </Card>
+                </button> */}
+              </Card.Body>
+            </Card>
+          </Link>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
-          <Card
-            style={{ width: "15rem" }}
-            className="_grid item3 orangeclair shadow"
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
+          <Link
+            to='/sous-domaine-programmation/diago'
+            className='join d-flex right-0'
           >
-            <div className="img_card p-4 d-flex orange">
-              <Card.Img
-                variant="top"
-                className="img-fluid"
-                src={Django}
-              />
-            </div>
-            <Card.Body>
-              <Card.Title>PHP</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
-              <Link to="" className="join d-flex right-0">
+            <Card
+              style={{ width: "15rem" }}
+              className='_grid item3 orangeclair shadow'
+            >
+              <div className='img_card p-4 d-flex orange'>
+                <Card.Img variant='top' className='img-fluid' src={Django} />
+              </div>
+              <Card.Body>
+                <Card.Title>Django</Card.Title>
+                <p className='cours text-black text-center'>
+                  Django est un framework Python de haut niveau, permettant un
+                  développement rapide de sites internet, sécurisés,
+                </p>
+
                 <button
-                  className="orange d-flex justify-content-center align-items-center"
+                  className='orange d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -170,28 +184,32 @@ const Programmation = () => {
                 >
                   <MdOutlineKeyboardArrowRight />
                 </button>
-              </Link>
-            </Card.Body>
-          </Card>
+              </Card.Body>
+            </Card>
+          </Link>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
-          <Card
-            style={{ width: "15rem" }}
-            className="_grid item3 orangeclair shadow"
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
+          <Link
+            to='/sous-domaine-programmation/c'
+            className='join d-flex right-0'
           >
-            <div className="img_card p-4 d-flex orange">
-              <Card.Img
-                variant="top"
-                className="img-fluid"
-                src={Csharp}
-              />
-            </div>
-            <Card.Body>
-              <Card.Title>PHP</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut <span>Voir plus</span></Card.Text>
-              <Link to="" className="join d-flex right-0">
-                <button
-                  className="orange d-flex justify-content-center align-items-center"
+            <Card
+              style={{ width: "15rem" }}
+              className='_grid item3 orangeclair shadow'
+            >
+              <div className='img_card p-4 d-flex orange'>
+                <Card.Img variant='top' className='img-fluid' src={Csharp} />
+              </div>
+              <Card.Body>
+                <Card.Title>C++</Card.Title>
+                <p className='cours text-black'>
+                  Le C++ est un langage de programmation : il permet d'écrire
+                  des programmes informatiques, pour créer des applications
+                  mobiles
+                </p>
+
+                {/* <button
+                  className='orange d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -199,10 +217,10 @@ const Programmation = () => {
                   }}
                 >
                   <MdOutlineKeyboardArrowRight />
-                </button>
-              </Link>
-            </Card.Body>
-          </Card>
+                </button> */}
+              </Card.Body>
+            </Card>
+          </Link>
         </div>
       </div>
     </div>

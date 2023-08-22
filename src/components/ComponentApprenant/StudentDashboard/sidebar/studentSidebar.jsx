@@ -16,7 +16,7 @@ function Sidebar() {
 
   return (
     <>
-      <div className="sticky-top">
+      <div className="sticky-top shadow-end">
         <div className="d-lg-none d-flex justify-content-between align-items-center">
         <div>
           <Button variant="primary" className="d-lg-none" onClick={handleShow}>
@@ -40,30 +40,30 @@ function Sidebar() {
             <h5>Menu</h5>
             <div className="d-flex justify-content-center align-items-center">
               <ul className="list-unstyled">
-                <li className="mb-4 fs-5">
+                <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
                   <a href="" className="text-decoration-none side-link">
                     <BiSolidDashboard className="side-icon fs-4 me-2" />Dashboard
                   </a>
                 </li>
-                <li className="mb-4 fs-5">
+                <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
                   <a href="" className="text-decoration-none side-link">
                     <BiSolidBookReader className="side-icon fs-4 me-2" />
                     Cours
                   </a>
                 </li>
-                <li className="mb-4 fs-5">
+                <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
                   <a href="" className="text-decoration-none side-link">
                     <BiUpload className="side-icon fs-4 me-2" />
                     Livraisons
                   </a>
                 </li>
-                <li className="mb-4 fs-5">
+                <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
                   <a href="" className="text-decoration-none side-link">
                     <FaChalkboardTeacher className="side-icon fs-4 me-2" />
                     Coachs
                   </a>
                 </li>
-                <li className="mb-4 fs-5">
+                <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
                   <a href="" className="text-decoration-none side-link">
                     <BsFillChatRightFill className="side-icon fs-4 me-2" />
                     Messagerie
@@ -71,8 +71,8 @@ function Sidebar() {
                 </li>
               </ul>
             </div>
-            <div className="w-100 mt-5">
-              <Button variant="primary" className="">
+            <div className="w-100 mt-5 py-3">
+              <Button variant="" className="btnDecon">
                 Déconnexion
               </Button>
             </div>

@@ -6,12 +6,9 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./domain.css";
 import { Link } from "react-router-dom";
-
 import Indtomark from "../../../Assets/digitalMarketing.png";
 import Socialmedia from "../../../Assets/social-media.png";
 import Growth from "../../../Assets/growth.png";
-
-
 
 
 const Marketing = () => {
@@ -74,7 +71,7 @@ const Marketing = () => {
               <Card.Title>Introduction au marketing digital</Card.Title>
               <Card.Text>10 sous-domaines</Card.Text>
               <Link
-                to=""
+                to="/sous-domaine-marketing/developpement"
                 className="join d-flex right-0"
               >
                 <button
@@ -107,7 +104,7 @@ const Marketing = () => {
               <Card.Title>Se démarquer sur les réseaux sociaux</Card.Title>
               <Card.Text>07 sous-domaines</Card.Text>
               <Link
-                to=""
+                to="/sous-domaine-marketing/booter"
                 className="join d-flex right-0"
               >
                 <button
@@ -139,7 +136,7 @@ const Marketing = () => {
             <Card.Body>
               <Card.Title>Comment Booster ses Stats</Card.Title>
               <Card.Text>08 sous-domaines</Card.Text>
-              <Link to="" className="join d-flex right-0">
+              <Link to="/sous-domaine-marketing/etude" className="join d-flex right-0">
                 <button
                   className="blue d-flex justify-content-center align-items-center"
                   style={{

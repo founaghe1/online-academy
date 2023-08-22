@@ -75,7 +75,7 @@ const Design = () => {
               <Card.Title>Appremdre Adobe Photoshop</Card.Title>
               <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link
-                to=""
+                to="/sous-domaine-design/photo"
                 className="join d-flex right-0"
               >
                 <button
@@ -108,7 +108,7 @@ const Design = () => {
               <Card.Title>Apprendre Adobe Illustrator</Card.Title>
               <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
               <Link
-                to=""
+                to="/sous-domaine-design/ulis"
                 className="join d-flex right-0"
               >
                 <button
@@ -140,7 +140,7 @@ const Design = () => {
             <Card.Body>
               <Card.Title>Apprendre Adobe Premier Pro</Card.Title>
               <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
-              <Link to="" className="join d-flex right-0">
+              <Link to="/sous-domaine-design/pro" className="join d-flex right-0">
                 <button
                   className="blue d-flex justify-content-center align-items-center"
                   style={{
@@ -170,7 +170,7 @@ const Design = () => {
             <Card.Body>
               <Card.Title>Initiation au 3D</Card.Title>
               <Card.Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Card.Text>
-              <Link to="" className="join d-flex right-0">
+              <Link to="/sous-domaine-design/initia" className="join d-flex right-0">
                 <button
                   className="blue d-flex justify-content-center align-items-center"
                   style={{

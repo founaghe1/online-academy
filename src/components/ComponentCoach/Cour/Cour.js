@@ -26,7 +26,7 @@ function Coure() {
       <h1 className='bg-info w-25 text-center ms-3 rounded text-light pb-4'>Cours</h1>
       <div className='container bg-light'>
         <Table responsive className='table mt-5'>
-          <thead> 
+          <thead>
             <tr className="text-center">
               <th>Course Name</th>
               <th>Debut</th>
