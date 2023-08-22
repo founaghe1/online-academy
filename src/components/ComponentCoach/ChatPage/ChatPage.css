@@ -1,0 +1,20 @@
+#img-sender{
+    width: 35px;
+}
+#messages{
+    background-color: #e9e3ff;
+}
+#chats{
+    background-color: #8970d68c;
+}
+.side-chat{
+    height: 100vh;
+    overflow-y: scroll;
+}
+#response-input textarea{
+    width: 300px;
+}
+#messageItem{
+    width: 250px;
+    height: 50px;
+}

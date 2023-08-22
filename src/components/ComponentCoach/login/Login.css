@@ -1,0 +1,19 @@
+.login-card{
+    width: 500px;
+}
+.title, .forgotPW, .icon{
+    color: #8a70d6;
+}
+.logo{
+    width: 150px;
+}
+.login-btn{
+    background:#a023e8 ;
+}
+.login-btn .Link{
+    text-decoration: none !important ;
+    color: aliceblue;
+}
+.login-btn:hover{
+    background-color: #8a70d6;
+}
