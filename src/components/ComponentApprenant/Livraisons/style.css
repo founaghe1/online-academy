@@ -1,29 +1,8 @@
-.icon{
-    font-size: 40px;
-    color: #8e70d6;
-}
-
-.cart-liv .card-header{
-    background-color: #8e70d6;
-    color: black;
-    height: 100px;
-    text-align: start !important;
-
-} 
-
-.title{
-    font-size: 25px;
-    color: #8e70d6;
-
-}
-
 .btn-ca{
-    background-color: #8e70d6;
+    background-color: #8e70d6 !important;
     color: white;  
     font-size: 20px;
     font-weight: 500;
-    height: 50px !important;
-    width: 200px !important;
 }
 
 .btn-ca:hover{
@@ -33,22 +12,22 @@
     font-weight: 500;
 }
 
-.btn-car1{
+.btn-car{
     background-color: gray;
     color: white;  
     font-size: 18px;
     font-weight: 300;
-    height: 40px !important;
-    width: 150px !important;
+    /* height: 40px !important; */
+    width: 130px !important;
 }
 
-.btn-car1:hover{
+.btn-car:hover{
     background-color: gray !important;
     color: white !important;  
     font-size: 18px;
     font-weight: 300;
-    height: 40px !important;
-    width: 150px !important;
+    /* height: 40px !important; */
+    width: 130px !important;
 }
 
 .btn-cart1{
@@ -56,19 +35,19 @@
     color: white;  
     font-size: 18px;
     font-weight: 300;
-    height: 40px !important;
-    width: 180px !important;
+    /* height: 40px !important; */
+    /* width: 180px !important; */
 }
 .btn-cart1:hover{
     background-color: #8e70d6;
     color: white;  
     font-size: 18px;
     font-weight: 300;
-    height: 40px !important;
-    width: 180px !important;
+    /* height: 40px !important;
+    width: 180px !important; */
 }
 
-.btn-cartt{
+/* .btn-cartt{
     background-color: white;
     color: red;
     border: 2px solid red;  
@@ -81,7 +60,7 @@
     border: 2px solid red;  
     font-size: 16px;
     font-weight: 300;
-}
+} */
 
 #mod1{
     background-color: white;

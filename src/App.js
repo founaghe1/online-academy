@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
-import Admin from './components/ComponentAdmin/admin/Admin';
+//import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
 //import Login from './components/ComponentCoach/login/Login';
@@ -10,70 +10,70 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 //import Layout from './components/ComponentCoach/Layout/Layout';
 
 // Coach
-import Domain from './components/ComponentCoach/Domain/Domain';
-import Programmation from './components/ComponentCoach/Domain/Programmation';
-import Marketing from './components/ComponentCoach/Domain/Marketing';
-import Design from './components/ComponentCoach/Domain/Design';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
-import Chat from './components/ComponentCoach/Chat/Chat.jsx';
-import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
-import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
-import ListeApprenants from './components/ComponentCoach/ListeApprenants/ListeApprenants'
+//import Domain from './components/ComponentCoach/Domain/Domain';
+//import Programmation from './components/ComponentCoach/Domain/Programmation';
+// import Marketing from './components/ComponentCoach/Domain/Marketing';
+// import Design from './components/ComponentCoach/Domain/Design';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import NotificationsCoachs from './components/ComponentCoach/NotificationsCoachs/NotificationsCoachs'
+// import Chat from './components/ComponentCoach/Chat/Chat.jsx';
+// import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
+// import AjoutCours from './components/ComponentCoach/AjoutCours/AjoutCours';
+// import ListeApprenants from './components/ComponentCoach/ListeApprenants/ListeApprenants'
 
 // Apprenants
-import StudentDashboard from './components/ComponentApprenant/StudentDashboard/StudentDashboard';
-import Dashboard from './components/ComponentCoach/Dashboard/Dashboard';
-import DomainApprt from './components/ComponentApprenant/DomainApprnt/DomainApprt';
+// import StudentDashboard from './components/ComponentApprenant/StudentDashboard/StudentDashboard';
+// import Dashboard from './components/ComponentCoach/Dashboard/Dashboard';
+// import DomainApprt from './components/ComponentApprenant/DomainApprnt/DomainApprt';
 
-import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/ProgrammationApprt';
-import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
-import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
-
-
-import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
-import ChatPage from './components/ComponentCoach/ChatPage/ChatPage';
+// import ProgrammationApprt from './components/ComponentApprenant/DomainApprnt/ProgrammationApprt';
+// import MarketingApprt from './components/ComponentApprenant/DomainApprnt/MarketingApprt';
+// import DesignApprt from './components/ComponentApprenant/DomainApprnt/DesignApprt';
 
 
-import Modal from "./components/ComponentCoach/Cour/Modal";
-import Cour from "./components/ComponentCoach/Cour/Cour";
-import Voircour from "./components/ComponentApprenant/VoirCours/VoirCour";
-import CourBoostrap from "./components/ComponentApprenant/VoirCours/CourBoostrap";
-import Voircourjs from "./components/ComponentApprenant/VoirCours/VoircourJS"
-import Voircourphp from "./components/ComponentApprenant/VoirCours/Voircourphp"
-import Voircourdiago from "./components/ComponentApprenant/VoirCours/Voircourdiago"
-import Voircourc from "./components/ComponentApprenant/VoirCours/Voircousc++"
-import Booter from "./components/ComponentApprenant/VoirCours/Courbooster";
-import Potoshop from "./components/ComponentApprenant/VoirCours/Voircourdegiadop";
-import Ulistration from "./components/ComponentApprenant/VoirCours/ulistratindesi";
-import PRO from "./components/ComponentApprenant/VoirCours/Designpro";
-import Initialisation from "./components/ComponentApprenant/VoirCours/ulistratindesi";
-import Analysemarche from "./components/ComponentApprenant/VoirCours/VoirMarkmarche";
-import Etude from "./components/ComponentApprenant/VoirCours/Voircourmarketud";
-import Voircourdevelop from "./components/ComponentApprenant/VoirCours/Voircourmarkdevelo";
-// import Livraison from './components/Livraisons/Livraison';
-import Quizzes from "./components/ComponentApprenant/VoirCours/Quizzes";
-import QuizzBoostrap from "./components/ComponentApprenant/VoirCours/QuizzBoostrap";
-import QuizzJs from "./components/ComponentApprenant/VoirCours/QuizzJs";
-import QuizzPhp from "./components/ComponentApprenant/VoirCours/QuizzPhp";
-import Quizzdjango from "./components/ComponentApprenant/VoirCours/Quizzdjango";
-import QuizzC from "./components/ComponentApprenant/VoirCours/QuizzC++";
-import QuizzMarketinDigital from "./components/ComponentApprenant/VoirCours/QuizzMarketinDigital";
-import Quizzresauxsocia from "./components/ComponentApprenant/VoirCours/Quizzresauxsocia";
-import QuizzBooter from "./components/ComponentApprenant/VoirCours/QuizzBooter";
-import QuizzPhotos from "./components/ComponentApprenant/VoirCours/QuizzPhotos";
-import Quizzullustrator from "./components/ComponentApprenant/VoirCours/Quizzullustrator";
-import Quizzinitialisation from "./components/ComponentApprenant/VoirCours/Quizzinitialisation";
-import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
-import Html from './components/Certification/Html'
-import Css from './components/Certification/Css';
-import Certification from './components/Certification/Certification'
+ import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
+// import ChatPage from './components/ComponentCoach/ChatPage/ChatPage';
+
+
+// import Modal from "./components/ComponentCoach/Cour/Modal";
+// import Cour from "./components/ComponentCoach/Cour/Cour";
+// import Voircour from "./components/ComponentApprenant/VoirCours/VoirCour";
+// import CourBoostrap from "./components/ComponentApprenant/VoirCours/CourBoostrap";
+// import Voircourjs from "./components/ComponentApprenant/VoirCours/VoircourJS"
+// import Voircourphp from "./components/ComponentApprenant/VoirCours/Voircourphp"
+// import Voircourdiago from "./components/ComponentApprenant/VoirCours/Voircourdiago"
+// import Voircourc from "./components/ComponentApprenant/VoirCours/Voircousc++"
+// import Booter from "./components/ComponentApprenant/VoirCours/Courbooster";
+// import Potoshop from "./components/ComponentApprenant/VoirCours/Voircourdegiadop";
+// import Ulistration from "./components/ComponentApprenant/VoirCours/ulistratindesi";
+// import PRO from "./components/ComponentApprenant/VoirCours/Designpro";
+// import Initialisation from "./components/ComponentApprenant/VoirCours/ulistratindesi";
+// import Analysemarche from "./components/ComponentApprenant/VoirCours/VoirMarkmarche";
+// import Etude from "./components/ComponentApprenant/VoirCours/Voircourmarketud";
+// import Voircourdevelop from "./components/ComponentApprenant/VoirCours/Voircourmarkdevelo";
+// import Livraison from './components/ComponentCoach/LivraisonCoach/Livraison';
+// import Quizzes from "./components/ComponentApprenant/VoirCours/Quizzes";
+// import QuizzBoostrap from "./components/ComponentApprenant/VoirCours/QuizzBoostrap";
+// import QuizzJs from "./components/ComponentApprenant/VoirCours/QuizzJs";
+// import QuizzPhp from "./components/ComponentApprenant/VoirCours/QuizzPhp";
+// import Quizzdjango from "./components/ComponentApprenant/VoirCours/Quizzdjango";
+// import QuizzC from "./components/ComponentApprenant/VoirCours/QuizzC++";
+// import QuizzMarketinDigital from "./components/ComponentApprenant/VoirCours/QuizzMarketinDigital";
+// import Quizzresauxsocia from "./components/ComponentApprenant/VoirCours/Quizzresauxsocia";
+// import QuizzBooter from "./components/ComponentApprenant/VoirCours/QuizzBooter";
+// import QuizzPhotos from "./components/ComponentApprenant/VoirCours/QuizzPhotos";
+// import Quizzullustrator from "./components/ComponentApprenant/VoirCours/Quizzullustrator";
+// import Quizzinitialisation from "./components/ComponentApprenant/VoirCours/Quizzinitialisation";
+// import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
+// import Html from './components/Certification/Html'
+// import Css from './components/Certification/Css';
+// import Certification from './components/Certification/Certification'
 
 // import Qestion from "./components/VoirCours/Voircourphp"
 function App() {
   return (
     <div className='App'>
-      <Admin />
+      {/* <Admin /> */}
       {/* <Dashboard  /> */}
       {/* <Login /> */}
       {/* <StudentDashboard /> */}
@@ -82,7 +82,7 @@ function App() {
 
       {/* <ForgotPW/> */}
       {/* <Livraison /> */}
-      {/* <Voirlivraison />       */}
+      <Voirlivraison />      
       {/* <Chat/> */}
       {/* <ListeApprenants/> */}
       {/* <NotificationsCoachs/> */}
@@ -90,13 +90,13 @@ function App() {
       
       
   
-      <Router>
+      {/* <Router>
         <Routes >
           <Route path='/' element={<Certification />}/>
           <Route path='/html' element={<Html />}/>
           <Route path='/css' element={<Css />}/>
         </Routes>
-      </Router>
+      </Router> */}
       
       {/* <Router>
         <Routes>

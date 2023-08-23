@@ -1,14 +1,61 @@
-import React from "react";
+import React,{useState} from "react";
+import './style.css'
 import CartLive from "./CartLive";
+import { db } from "../../firebase/Firebase";
+
+//firebase
+
+
 
 const Voirlivraison = () => {
+
+  const [title, setTitle] = useState('');     
+  const [subtitle, setSubtitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [images, setImages] = useState([]);
+  const [imageUrls, setImageUrls] = useState([]);
+
+  const imageSelect = e => {
+    const selectImages = Array.from(e.target.files); 
+    setImages(selectImages);
+};
+
+
+const ajoutImage = () => {
+  const uploadPromises = images.map(image => {
+    const uploadTask = db.ref(`images/${image.name}`).put(image);
+    return uploadTask;
+  })
+
+  Promise.all(uploadPromises)
+      .then(results => {
+        const downloadUrlPromises = results.map(result =>
+          result.ref.getDownloadURL()
+        );
+        return Promise.all(downloadUrlPromises);
+      })
+      .then(urls => {
+        setImageUrls(urls);
+        return db.collection('livraison').add({
+          title,
+          subtitle,
+          description,
+          imageUrls: urls,
+        });
+      })
+      .catch(error => {
+        console.error('Error uploading content: ', error);
+      });
+    };
+
+  
   return (
     <>
       <div className="container">
         <div class="d-flex justify-content-end mt-5">
           <button
             type="button"
-            class="btn btn-cart shadow mb-5 mt-3"
+            class="btn btn-ca shadow mb-5 mt-3"
             data-bs-toggle="modal"
             data-bs-target="#mod1"
           >
@@ -39,7 +86,7 @@ const Voirlivraison = () => {
               </div>
               <div class="modal-body">
                 <form action="">
-                  <select
+                  {/* <select
                     class="form-select shadow rounded border border-warning p-3 mb-4"
                     aria-label="Default select example"
                   >
@@ -47,41 +94,37 @@ const Voirlivraison = () => {
                     <option value="1">Tache 1</option>
                     <option value="2">tache 2</option>
                     <option value="3">Tache 3</option>
-                  </select>
+                  </select> */}
+                  <div className="shadow rounded border border-warning p-3 mb-4">
+                    <input className="form-control" type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="entrer le titre" />
+                  </div>
+                  <div className="shadow rounded border border-warning p-3 mb-4">
+                    <input className="form-control" type="text" value={subtitle} onChange={e => setSubtitle(e.target.value)} placeholder="entrer le titre" />
+                  </div>
                   <div class="mb-4 border border-warning">
                     <input
                       type="text"
-                      class="form-control  shadow  rounded p-3"
+                      className="form-control  shadow  rounded p-3" value={imageUrls} onChange={e => setImageUrls(e.target.value)} 
                       id="exampleFormControlInput1"
-                      placeholder="Lien de Deploiment"
-                    />
+                      placeholder="Lien de Deploiment"/>
                   </div>
                   <div class="mb-4">
-                    <textarea
-                      class="form-control  shadow rounded border border-warning"
+                    <textarea value={description}
+                      className="form-control  shadow rounded border border-warning"
+                      onChange={e => setDescription(e.target.value)}
                       placeholder="Description"
-                      id="exampleFormControlTextarea1"
                       rows="3"
                     ></textarea>
                   </div>
                   <div className="d-flex justify-content-center  shadow bg-body rounded mb-5 p-4 border border-warning">
-                    <button
-                      type="button"
-                      class="btn btn-cap rounded p-2 btn-lg"
-                    >
-                      <a className="nav-link" href="#">
-                        Ajouter images
-                      </a>
-                    </button>
-                    <div className="cap p-4"></div>
+                    <input type="file" multiple onChange={imageSelect} placeholder="Ajouter Images"/>
+                    {/* <button type="button"className="btn btn-cap rounded p-2 btn-lg">Ajouter Images</button> */}
+                    <div className="cap p-4">
+
+                    </div>
                   </div>
                   <div className="mb-3 d-grid">
-                    <button
-                      type="button"
-                      className="btn btn-lg rounded btn-send"
-                    >
-                      Envoyer
-                    </button>
+                    <button type="button" className="btn btn-lg rounded btn-send" onClick={ajoutImage}> Envoyer</button>
                   </div>
                 </form>
               </div>

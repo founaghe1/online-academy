@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {GrView} from 'react-icons/gr'
 import {FcAcceptDatabase} from 'react-icons/fc'
 import img1 from '../../../Assets/img3.webp'
 import './style.css'
+
+
 
 const CartLive = () => {
   return (
@@ -17,7 +19,7 @@ const CartLive = () => {
           </div>
           <div className="d-flex justify-content-between align-items-center mb-2">
             <div className="col d-flex justify-content-between align-items-center">
-            <button type="button" className="btn btn-car1 btn-sm" data-bs-toggle="modal" data-bs-target="#modal0">
+            <button type="button" className="btn btn-car btn-sm" data-bs-toggle="modal" data-bs-target="#modal0">
                 <GrView className='me-2'/>Voir</button>
             </div>
            <div className="col d-flex justify-content-between align-items-center">

@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import img from './img6.jpeg' 
 import {GrView} from 'react-icons/gr'
 import {FcAcceptDatabase} from 'react-icons/fc'
 import {TbPlayerEject} from 'react-icons/tb'
+
 
 const Cart = () => {
   return (
@@ -11,7 +12,7 @@ const Cart = () => {
             <h3 className="">Tache</h3>
             <p className="">Some quick example text </p>
             <div className="">
-            <img src={img} className="img-fluid mb-3" alt="..." />
+              <img src={img} className="img-fluid mb-3" alt="..." />
           </div>
           <div className="d-flex justify-content-between mb-2">
               <div className="col-md-4 col-sm-4 d-flex justify-content-between">

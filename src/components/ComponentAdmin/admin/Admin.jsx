@@ -14,6 +14,7 @@ import Modal from "react-bootstrap/Modal";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { BsPencilSquare, BsTrash } from "react-icons/bs";
 import {BiSolidLeftArrow , BiSolidRightArrow} from 'react-icons/bi'
+
 // firebase
 import { db } from "../../firebase/Firebase";
 import { getDocs, collection, addDoc } from "firebase/firestore";
@@ -162,39 +163,6 @@ const onSubmitUsers = async () =>{
 
   return (
     <>
-<<<<<<< HEAD
-    <div className="vh-100">
-      <div className="container">
-        <Navbar expand="lg" className="bg-body-tertiary text-dark">
-          <Container>
-            <Navbar.Brand href="#home" className="fs-1 text-bold">
-              Admin
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ms-auto">
-                <Nav.Link href="#home">
-                  <Button
-                    className="btn btn-secondary text-light add"
-                    onClick={handleShow}
-                  >
-                    Ajouter
-                  </Button>
-
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Ajout étudiant ou coach </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body className="my-5">
-                      <div className="row align-items-baseline">
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                          <FloatingLabel controlId="floatingInput" label="Nom">
-                            <Form.Control
-                              type="text"
-                              placeholder="Baba Thiam"
-                            />
-                          </FloatingLabel>
-=======
       <div className="vh-100">
         <div className="container">
           <Navbar expand="lg" className="bg-body-tertiary text-dark">
@@ -280,7 +248,6 @@ const onSubmitUsers = async () =>{
                               
                             </Form.Select>
                           </div>
->>>>>>> 0c02336a9cc91c930948e12c370b5ebb15d502c8
                         </div>
                       </Modal.Body>
                       <Modal.Footer>
