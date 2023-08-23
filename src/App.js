@@ -69,9 +69,9 @@ import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
 function App() {
   return (
     <div className='App'>
-      <Admin />
+      {/* <Admin /> */}
       {/* <Dashboard  /> */}
-      {/* <Login /> */}
+      <Login />
       {/* <StudentDashboard /> */}
 
       {/* <AjoutCours /> */}
