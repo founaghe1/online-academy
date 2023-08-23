@@ -202,6 +202,7 @@ const Admin = () => {
 
   // recuperer le nombre de coach
   const countCoaches = usersList.filter((user) => user.status === "Coach").length ;
+  
   // recuperer le nombre d'apprenant
   const countApprenant = usersList.filter((user) => user.status === "Apprenant").length ;
 
