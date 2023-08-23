@@ -15,7 +15,7 @@ import {
   updateDoc,
   doc,
 } from "firebase/firestore";
-import { db } from "../Cour/Configurefirebase.js";
+import { db } from "../../firebase/Firebase";
 
 function Modale() {
   const [newCours, setNewCours] = useState("");

@@ -22,58 +22,73 @@ import {
   deleteDoc,
   updateDoc,
   doc,
+  onSnapshot,
+  query,
 } from "firebase/firestore";
-import { db } from "../Cour/Configurefirebase.js";
-
+import { db } from "../../firebase/Firebase";
 
 function Coure() {
   const [newCours, setNewCours] = useState("");
-   const [newDebut, setNewDebut] = useState("");
+  const [newDebut, setNewDebut] = useState("");
   const [newDurée, setNewDurée] = useState("");
   const [newurl, setNewurl] = useState("");
   const [cours, setCours] = useState([]);
-  
-  // setCours({
-  //   newCours: "",
-  //   newDurée: "",
-  // });
 
   const usersCollectionRef = collection(db, "cours");
+  const Cours = newCours;
+  const Durée = newDurée;
+
+  const newcours = { Cours, Durée };
+
+  const createUser = async () => {
+    await addDoc(usersCollectionRef,{
+      Cours:Cours,
+      Durée:Durée,
+    } );
+
+  };
+  console.log(createUser);
 
   const enregistre = async () => {
-    await addDoc(usersCollectionRef, { Cours: newCours, Durée: newDurée,Debut:newDebut,url:newurl });
-    setNewDurée("");
+    await addDoc(usersCollectionRef, {
+      Cours: newCours,
+      Durée: newDurée,
+      Debut: newDebut,
+      url: newurl,
+    });
     setNewCours("");
+    setNewDurée("");
   };
   console.log(enregistre);
-   const deleteUser = async (id) => {
-     const userDoc = doc(usersCollectionRef, id);
-     await deleteDoc(userDoc);
-   };
-   const updateUser = async (id) => {
-     const userDoc = doc(usersCollectionRef, id);
-     await updateDoc(userDoc, userDoc);
-   };
+  const deleteUser = async (id) => {
+    const userDoc = doc(usersCollectionRef, id);
+    await deleteDoc(userDoc);
+  };
+  const updateUser = async (id) => {
+    const userDoc = doc(usersCollectionRef, id);
+    await updateDoc(userDoc, newcours);
+  };
 
   useEffect(() => {
-    const getUsers = async () => {
-      const data = await getDocs(usersCollectionRef);
-      setCours(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      // if (newCours === "" || newDurée === "") {
-      //   alert("Veuillez remplir tous les champs du formulaire.");
-      //   return false;
-      // }
-    };
-
-    getUsers();
+    const q = query(collection(db, "cours"));
+    onSnapshot(q, (querySnapshot) => {
+      const cours = [];
+      querySnapshot.forEach((doc) => {
+        cours.push(doc.data().Cours, doc.data().Durée);
+      });
+      const getUsers = async () => {
+        const data = await getDocs(usersCollectionRef);
+        setCours(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      };
+      getUsers();
+    });
   }, []);
- 
 
-  
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const onClose = () => setShow(false);
   return (
     <>
       <div className='d-flex justify-content-end  coursbg pe-5 mt-5'>
@@ -99,7 +114,8 @@ function Coure() {
               </Form.Label>
               <Col sm='10'>
                 <Form.Control
-                  type='file' accept=".png,.jpg,.jpeg"
+                  type='file'
+                  accept='.png,.jpg,.jpeg'
                   placeholder='debut cour'
                   name='image'
                   id='image'
@@ -136,29 +152,12 @@ function Coure() {
               controlId='formPlaintextPassword'
             >
               <Form.Label column sm='2'>
-                Debut
-              </Form.Label>
-              <Col sm='10'>
-                <Form.Control
-                  type='debut'
-                  placeholder='debut cour'
-                  onChange={(e) => setNewDebut(e.target.value)}
-                  id='cour'
-                />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              as={Row}
-              className='mb-3'
-              controlId='formPlaintextPassword'
-            >
-              <Form.Label column sm='2'>
                 Durée
               </Form.Label>
               <Col sm='10'>
                 <Form.Control
                   type='number'
-                  placeholder='dure'
+                  placeholder=''
                   onChange={(e) => setNewDurée(e.target.value)}
                 />
               </Col>
@@ -169,13 +168,25 @@ function Coure() {
              Ajouter
            </Button>
          </Modal.Footer> */}
-          <button
-            type='button'
-            className='btn but w-25 ms-auto '
-            onClick={enregistre}
-          >
-            Enregistre
-          </button>
+          <div className='row ms-auto'>
+            <button
+              type='button'
+              className='btn but  m-4'
+              id='annule'
+              onClick={onClose}
+            >
+              Annuler
+            </button>
+
+            <button
+              type='button'
+              className='btn but m-4 '
+              id='enreg'
+              onClick={enregistre}
+            >
+              Enregistrer
+            </button>
+          </div>
         </Modal>
         <h1 className='bg-info w-25 text-center ms-3 rounded text-light pb-4'>
           Cours
@@ -187,7 +198,7 @@ function Coure() {
                 <th>url</th>
                 <th>Cours</th>
                 <th>Debut</th>
-                <th>Durée</th>
+                <th>Durée(heures)</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -209,16 +220,19 @@ function Coure() {
                         }}
                         className='btn btn-primary text-left-0'
                       >
-                        editer
+                        <FiEdit />
                       </button>
 
                       <button
-                        onClick={() => {
-                          deleteUser(user.id);
-                        }}
-                        className='btn btn-danger text-left-50'
+                        className='btn btn-danger text-left-50 m-2'
+                        onClick={() =>
+                          deleteUser(user.id, {
+                            newCours: "",
+                            newDurée: "",
+                          })
+                        }
                       >
-                        supprimer
+                        <RiDeleteBinLine />
                       </button>
                     </td>
                   </tr>

@@ -7,7 +7,7 @@ import Login from './components/ComponentCoach/login/Login';
 // import SideBar from './components/ComponentCoach/SideBar/Sidebar';
 import Navbar from './components/ComponentCoach/NavBar/Navbar';
 import Layout from './components/ComponentCoach/Layout/Layout';
-
+import { BrowserRouter } from "react-router-dom";
 // Coach
 import Domain from './components/ComponentCoach/Domain/Domain';
 import Programmation from './components/ComponentCoach/Domain/Programmation';
@@ -64,6 +64,7 @@ import QuizzPhotos from "./components/ComponentApprenant/VoirCours/QuizzPhotos";
 import Quizzullustrator from "./components/ComponentApprenant/VoirCours/Quizzullustrator";
 import Quizzinitialisation from "./components/ComponentApprenant/VoirCours/Quizzinitialisation";
 import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
+import Edite from "./components/ComponentCoach/Cour/Edite"
 
 // import Qestion from "./components/VoirCours/Voircourphp"
 function App() {
@@ -108,7 +109,6 @@ function App() {
 
       {/* domApprenant Component*/}
       {/* <DomainApprt /> */}
-
 
       {/* nini Routes */}
 
@@ -169,16 +169,16 @@ function App() {
         </Routes>
       </Router> */}
 
-       {/* <Modal /> */}
-      <Cour />  
+      {/* <Modal /> */}
+      <Cour />
 
-      {/* <BrowserRouter>
-      <Routes>
-          <Route exact path='/' element={<Voirquizze />} />
-          <Route path='/question' element={<Qestion />} />
+      <BrowserRouter>
+        <Routes>
+          {/* <Route exact path='/' element={<Voirquizze />} />
+          <Route path='/question' element={<Qestion />} /> */}
+          <Route path='/edite:id' element={<Edite />} />
         </Routes>
-      </BrowserRouter> */}
-
+      </BrowserRouter>
     </div>
   );
 }
