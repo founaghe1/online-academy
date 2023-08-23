@@ -100,7 +100,7 @@ function PRO() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/pro' className='join '>
+              <Link to='/cch/dashboard/cours/apprendre-adobe-premier-pro-Quizz' className='join '>
                 <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>

@@ -104,7 +104,7 @@ function Initialisation() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/initialisation' className='join '>
+              <Link to='/cch/dashboard/cours/apprendre-adobe-photoshop-Quizz' className='join '>
                 <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>

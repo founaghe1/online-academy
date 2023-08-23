@@ -7,6 +7,7 @@ import logo from "../../../../medias/rrr.jpeg"
 import { BiSolidDashboard, BiSolidBookReader, BiUpload } from "react-icons/bi";
 import {FaChalkboardTeacher} from "react-icons/fa"
 import {BsFillChatRightFill} from "react-icons/bs"
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [show, setShow] = useState(false);
@@ -41,37 +42,37 @@ function Sidebar() {
             <div className="d-flex justify-content-center align-items-center">
               <ul className="list-unstyled">
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <a href="" className="text-decoration-none side-link">
-                    <BiSolidDashboard className="side-icon fs-4 me-2" />Dashboard
-                  </a>
+                  <Link to="/cch/dashboard" className="text-decoration-none side-link">
+                      <BiSolidDashboard className="side-icon fs-4 me-2" />Dashboard
+                  </Link>
                 </li>
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <a href="" className="text-decoration-none side-link">
-                    <BiSolidBookReader className="side-icon fs-4 me-2" />
-                    Cours
-                  </a>
+                  <Link to="/cch/dashboard/cours" className="text-decoration-none side-link">
+                      <BiSolidBookReader className="side-icon fs-4 me-2" />
+                      Cours
+                  </Link>
                 </li>
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <a href="" className="text-decoration-none side-link">
+                  <Link to="/cch/dashboard/livraison" className="text-decoration-none side-link">
                     <BiUpload className="side-icon fs-4 me-2" />
                     Livraisons
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <a href="" className="text-decoration-none side-link">
+                  <Link to="" className="text-decoration-none side-link">
                     <FaChalkboardTeacher className="side-icon fs-4 me-2" />
                     Coachs
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <a href="" className="text-decoration-none side-link">
+                  <Link to="" className="text-decoration-none side-link">
                     <BsFillChatRightFill className="side-icon fs-4 me-2" />
                     Messagerie
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
-            <div className="w-100 mt-5 py-3">
+            <div className="w-100 mt-1 py-3">
               <Button variant="" className="btnDecon">
                 Déconnexion
               </Button>

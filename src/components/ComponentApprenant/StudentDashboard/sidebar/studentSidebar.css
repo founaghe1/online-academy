@@ -24,6 +24,7 @@
 .menuLi{
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+    margin: 0px 0px 15px !important;
 }
 .menuLi:hover {
     background-color: #a023e8;
@@ -36,4 +37,8 @@
 }
 .menuLi:hover .side-link{
     color: aliceblue;
+}
+
+.btnDecon{
+    background-color: #fff;
 }

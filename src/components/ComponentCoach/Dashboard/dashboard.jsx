@@ -2,8 +2,10 @@ import React from 'react'
 // import NavBar from '../NavBar/Navbar'
 // import SideBar from '../SideBar/Sidebar'
 // import Modale from '../Cour/Modal'
-import Coure from '../Cour/Cour'
-import PageAccueilCoach from '../pageAccueilCoach/PageAccueilCoach'
+import Coure from '../Cour/Cour';
+import Domain from '../Domain/Domain';
+
+
 const Dashboard = () => {
   return (
     <>
@@ -15,7 +17,7 @@ const Dashboard = () => {
           <div className="col-lg-12">
             <div className="row  ">
               {/* <NavBar /> */}
-              <PageAccueilCoach />
+              <Domain />
               {/* <Modale /> */}
               <Coure />
             </div>

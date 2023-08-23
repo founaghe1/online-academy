@@ -15,7 +15,17 @@
 
 .btnPrecedn,
 .btnSuiv{
+    background-color: #ffffff !important;
+    color: #6c48ee !important;
+    border: 3px solid #792be8 !important;
+}
+.btnPrecedn:hover,
+.btnSuiv:hover{
     background-color: #792be8 !important;
     color: #e9e3ff !important;
-    border: none !important;
+}
+
+.nbrPages{
+    background-color: #792be8;
+
 }

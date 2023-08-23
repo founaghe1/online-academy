@@ -104,7 +104,7 @@ function Voircour() {
                 <h1>QUIZZ</h1>
                <p className="fs-4">Apres avoir suivi les cours les quizzes sont obligatoires cliqué sur le button pour demarer</p>
               </Card.Body>
-              <Link to='/question' className='join '>
+              <Link to='/cch/dashboard/cours/html-css-Quizz' className='join '>
                 <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>

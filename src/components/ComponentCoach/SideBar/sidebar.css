@@ -1,10 +1,11 @@
-/* ul {
+ul {
     margin: 0;
     padding: 0;
 }
 
 ul li a:hover {
     cursor: pointer;
+    color: #fff !important;
 }
 
 
@@ -18,7 +19,7 @@ ul li a:hover {
 }
 
 .sideBar li a:hover {
-    background-color: #8a70d6; 
+    background-color: #8a70d6;
     color:#fff!important ;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -35,6 +36,11 @@ ul li a:hover {
 .btn{
     background-color: #8a70d6;
 }
+
+a{
+    text-decoration: none !important;
+    color: #8a70d6 !important;
+}
 @media only screen and (max-width: 425px) {
     .logo img {
         width: 50px;
@@ -48,7 +54,7 @@ ul li a:hover {
         margin-left: 25px;
         font-size: 20px;
     }
-} */
+}
 .side-link{
     color: #424040;
 }

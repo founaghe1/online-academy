@@ -25,15 +25,23 @@ const Admin = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-// fireBase
-const [usersList, setUsersList] = useState([]);
-const [newUsersNom, setNewUsersNom] = useState("")
-const [newUsersPrenom, setNewUsersPrenom] = useState("")
-const [newUsersEmail, setNewUsersEmail] = useState("")
-const [newUsersMdp, setNewUsersMdp] = useState("")
-const [newUsersStatus, setNewUsersStatus] = useState("")
-// fetch users list
-const usersCollectionRef = collection(db, 'users')
+  // filter
+  const [filterName, setFilterName] = useState("");
+  const [selectedStatus, setSelectedStatus] = useState("Tout");
+
+  // paginnation
+  const [currentPage, setCurrentPage] = useState(1);
+  const usersPerPage = 5; // Nombre d'utilisateurs par page
+
+  // fireBase
+  const [usersList, setUsersList] = useState([]);
+  const [newUsersNom, setNewUsersNom] = useState("")
+  const [newUsersPrenom, setNewUsersPrenom] = useState("")
+  const [newUsersEmail, setNewUsersEmail] = useState("")
+  const [newUsersMdp, setNewUsersMdp] = useState("")
+  const [newUsersStatus, setNewUsersStatus] = useState("")
+  // fetch users list
+  const usersCollectionRef = collection(db, 'users')
 
 const getUsersList = async () =>{
   try{
@@ -77,89 +85,26 @@ const onSubmitUsers = async () =>{
 
 
 
-  // filter
-
-  const [filterName, setFilterName] = useState("");
   
-  
-
-  const [selectedStatus, setSelectedStatus] = useState("Tout");
-
-  // paginnation
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 5; // Nombre d'utilisateurs par page
 
   // filter
-  // const utilisateurs = ([
-  //   {
-  //     nom: "Mohamed",
-  //     email: "Moha@gmail.com",
-  //     motDePasse: "moha123",
-  //     statut: "coach",
-  //   },
-  //   {
-  //     nom: "Jacob",
-  //     email: "jacob@gmail.com",
-  //     motDePasse: "jacob1425",
-  //     statut: "étudiant",
-  //   },
-  //   {
-  //     nom: "Larry",
-  //     email: "larry@gmail.com",
-  //     motDePasse: "larry",
-  //     statut: "coach",
-  //   },
-  //   {
-  //     nom: "Mark",
-  //     email: "mark@gmail.com",
-  //     motDePasse: "mark1245",
-  //     statut: "étudiant",
-  //   },
-  //   {
-  //     nom: "marieame",
-  //     email: "marie@gmail.com",
-  //     motDePasse: "marie@14253",
-  //     statut: "coach",
-  //   },
-  //   {
-  //     nom: "Ali",
-  //     email: "alib@gmail.com",
-  //     motDePasse: "alia0.12",
-  //     statut: "étudiant",
-  //   },
-  //   {
-  //     nom: "kali",
-  //     email: "kali@gmail.com",
-  //     motDePasse: "kalia123",
-  //     statut: "coach",
-  //   },
-  //   {
-  //     nom: "Mark",
-  //     email: "markiss@gmail.com",
-  //     motDePasse: "mark1245",
-  //     statut: "étudiant",
-  //   },
-  // ]);
-
   
+  const filteredUsers = usersList
+  .filter((user) => {
+    const nameMatch = user.nom
+      .toLowerCase()
+      .includes(filterName.toLowerCase());
 
-  // const filteredUsers = utilisateurs
-  //   .filter((user) => {
-  //     const nameMatch = user.nom
-  //       .toLowerCase()
-  //       .includes(filterName.toLowerCase());
-
-  //     if (selectedStatus === "Tout") {
-  //       return nameMatch;
-  //     } else {
-  //       return (
-  //         nameMatch &&
-  //         user.statut.toLowerCase() === selectedStatus.toLowerCase()
-  //       );
-  //     }
-  //   })
-  //   .slice((currentPage - 1) * usersPerPage, currentPage * usersPerPage);
+    if (selectedStatus === "Tout") {
+      return nameMatch;
+    } else {
+      return (
+        nameMatch &&
+        user.status.toLowerCase() === selectedStatus.toLowerCase()
+      );
+    }
+  })
+  .slice((currentPage - 1) * usersPerPage, currentPage * usersPerPage);
 
   return (
     <>
@@ -319,7 +264,7 @@ const onSubmitUsers = async () =>{
                 >
                   <option value="Tout">Tout</option>
                   <option value="Coach">coachs</option>
-                  <option value="étudiant">etudiants</option>
+                  <option value="Apprenant">etudiants</option>
                 </Form.Select>
               </div>
             </div>
@@ -339,8 +284,8 @@ const onSubmitUsers = async () =>{
               </thead>
               <tbody>
                 
-                {usersList.map((user) => (
-                  <tr >
+                {filteredUsers.map((user, index) => (
+                  <tr key={index}>
                     <td>{/* Affichage du profil */}</td>
                     <td>{user.nom}</td>
                     <td>{user.prenom}</td>
@@ -368,15 +313,17 @@ const onSubmitUsers = async () =>{
                 disabled={currentPage === 1}
                 onClick={() => setCurrentPage(currentPage - 1)}
               >
-               <BiSolidLeftArrow /> Précédent
+               <BiSolidLeftArrow /> 
+               <BiSolidLeftArrow /> 
               </button>
-              <span className="fw-bold d-flex justify-content-center align-items-center">Page{`(s)`} {currentPage}</span>
+              <span className="fw-bold d-flex justify-content-center align-items-center px-3  nbrPages rounded text-light mx-1"> {currentPage}</span>
               <button
                 className="btn btn-secondary btnSuiv shadow d-flex justify-content-center align-items-center"
-                disabled={usersList.length < usersPerPage}
+                disabled={filteredUsers.length < usersPerPage}
                 onClick={() => setCurrentPage(currentPage + 1)}
               >
-                Suivant <BiSolidRightArrow />
+                <BiSolidRightArrow />
+                <BiSolidRightArrow />
               </button>
             </div>
           </div>

@@ -16,7 +16,7 @@ const Marketing = () => {
       <div className='row'>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-marketing/etude'
+            to='/cch/dashboard/cours/introduction-au-marketing-digital'
             className='join d-flex right-0'
           >
             <Card
@@ -39,7 +39,7 @@ const Marketing = () => {
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-marketing/developpement'
+            to='/cch/dashboard/cours/se-démarquer-sur-les-réseaux sociaux'
             className='join d-flex right-0'
           >
             <Card
@@ -62,7 +62,7 @@ const Marketing = () => {
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-marketing/booter'
+            to='/cch/dashboard/cours/comment-booster-ses-stats'
             className='join d-flex right-0'
           >
             <Card
