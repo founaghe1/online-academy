@@ -38,6 +38,7 @@ const Admin = () => {
 
   // Modale Edite
   const [editModalOpen, setEditModalOpen] = useState(false);
+  
   // État pour suivre les données de l'utilisateur en cours d'édition
   const [editingUser, setEditingUser] = useState({
     nom: "",
@@ -50,6 +51,7 @@ const Admin = () => {
   // filter
   const [filterName, setFilterName] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("Tout");
+
 
   // paginnation
   const [currentPage, setCurrentPage] = useState(1);
