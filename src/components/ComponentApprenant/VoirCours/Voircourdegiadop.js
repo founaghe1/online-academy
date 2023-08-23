@@ -97,7 +97,7 @@ function Potoshop() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/photo' className='join '>
+              <Link to='/cch/dashboard/cours/initiation-au-3D-Quizz' className='join '>
                 <button className='btn butt btn-primary'>Demarer</button>
               </Link>
             </Card>

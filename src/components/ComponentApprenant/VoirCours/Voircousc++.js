@@ -104,7 +104,7 @@ function Voircourc() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/c++' className='join '>
+              <Link to='/cch/dashboard/cours/csharp-Quizz' className='join '>
                 <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>

@@ -16,7 +16,7 @@ const Design = () => {
 
       <div className='row'>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4'>
-          <Link to='/sous-domaine-design/photo' className='join d-flex right-0'>
+          <Link to='/cch/dashboard/cours/apprendre-adobe-photoshop' className='join d-flex right-0'>
             <Card
               style={{ width: "15rem" }}
               className='_grid item1 orangeclair shadow'
@@ -25,7 +25,7 @@ const Design = () => {
                 <Card.Img variant='top' className='img-fluid' src={Photoshop} />
               </div>
               <Card.Body>
-                <Card.Title>Appremdre Adobe Photoshop</Card.Title>
+                <Card.Title>Apprendre Adobe Photoshop</Card.Title>
                 <p className='cours'>
                   Adobe Photoshop est un logiciel que nous aimons tous utiliser
                   pour créer des effets sur nos images.
@@ -35,7 +35,7 @@ const Design = () => {
           </Link>
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4'>
-          <Link to='/sous-domaine-design/ulis' className='join d-flex right-0'>
+          <Link to='/cch/dashboard/cours/apprendre-adobe-illustrator' className='join d-flex right-0'>
             <Card
               style={{ width: "15rem" }}
               className='_grid item2 violetclair shadow'
@@ -59,7 +59,7 @@ const Design = () => {
           </Link>
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4'>
-          <Link to='/sous-domaine-design/pro' className='join d-flex right-0'>
+          <Link to='/cch/dashboard/cours/apprendre-adobe-premier-pro' className='join d-flex right-0'>
             <Card
               style={{ width: "15rem" }}
               className='_grid item3 blueclair shadow'
@@ -83,7 +83,7 @@ const Design = () => {
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-design/initia'
+            to='/cch/dashboard/cours/initiation-au-3D'
             className='join d-flex right-0'
           >
             <Card

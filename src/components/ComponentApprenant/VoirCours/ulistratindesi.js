@@ -65,7 +65,7 @@ function Ulistration() {
             </Card>
           </Col>
         </Row>
-        <Row className='justify-content-center align-items-center'>
+        <Row className='mt-5 justify-content-center align-items-center'>
           <Col md={12} sm={12} lg={12}>
             <Card style={{ width: "45rem" }} className='car mx-auto'>
               <Card.Body>
@@ -103,7 +103,7 @@ function Ulistration() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/ullustrator' className='join '>
+              <Link to='/cch/dashboard/cours/apprendre-adobe-illustrator-Quizz' className='join '>
                 <button className='btn btn-primary'>Demarer</button>
               </Link>
             </Card>

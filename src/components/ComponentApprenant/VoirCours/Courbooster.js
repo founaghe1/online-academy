@@ -100,7 +100,7 @@ function Booter() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/booter' className='join '>
+              <Link to='/cch/dashboard/cours/comment-booster-ses-stats-Quizz' className='join '>
                 <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>

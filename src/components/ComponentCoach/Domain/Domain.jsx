@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const Marketing = () => {
   return (
-    <div className="container">
+    <div className="container domain">
       <h1>Domaines de formation</h1>
       <div className="join pt-3">
       <button className="add_domain rounded-3" >
@@ -36,7 +36,7 @@ const Marketing = () => {
               <Card.Title>Programmation</Card.Title>
               <Card.Text>10 sous-domaines</Card.Text>
               <Link
-                to="/programmation"
+                to="/cch/dashboard/domain/programmation"
                 className="join d-flex right-0"
               >
                 <button
@@ -69,7 +69,7 @@ const Marketing = () => {
               <Card.Title>Marketing</Card.Title>
               <Card.Text>07 sous-domaines</Card.Text>
               <Link
-                to="/marketing"
+                to="/cch/dashboard/domain/marketing"
                 className="join d-flex right-0"
               >
                 <button
@@ -101,7 +101,7 @@ const Marketing = () => {
             <Card.Body>
               <Card.Title>Design</Card.Title>
               <Card.Text>08 sous-domaines</Card.Text>
-              <Link to="/design" className="join d-flex right-0">
+              <Link to="/cch/dashboard/domain/design" className="join d-flex right-0">
                 <button
                   className="blue d-flex justify-content-center align-items-center"
                   style={{
