@@ -13,6 +13,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { BsPencilSquare, BsTrash } from "react-icons/bs";
+import { AiFillEye } from "react-icons/ai";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 // firebase
 import { db } from "../../firebase/Firebase";
@@ -25,6 +26,10 @@ import {
   updateDoc,
 } from "firebase/firestore";
 
+// toast notification
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Admin = () => {
   const [show, setShow] = useState(false);
 
@@ -35,14 +40,12 @@ const Admin = () => {
   const [editModalOpen, setEditModalOpen] = useState(false);
   // État pour suivre les données de l'utilisateur en cours d'édition
   const [editingUser, setEditingUser] = useState({
-    
     nom: "",
     prenom: "",
     email: "",
     mdp: "",
-    status: ""
+    status: "",
   });
-
 
   // filter
   const [filterName, setFilterName] = useState("");
@@ -51,6 +54,9 @@ const Admin = () => {
   // paginnation
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 5; // Nombre d'utilisateurs par page
+
+  // voir infos user
+  const [viewingUser, setViewingUser] = useState(null);
 
   // fireBase
   const [usersList, setUsersList] = useState([]);
@@ -98,7 +104,9 @@ const Admin = () => {
       setNewUsersStatus("");
 
       getUsersList();
-      alert("User added successfully");
+      toast.success("User added successfull !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       // window.location.reload();
     } catch (err) {
       console.error(err);
@@ -110,7 +118,9 @@ const Admin = () => {
     const userDoc = doc(db, "users", id);
     await deleteDoc(userDoc);
     getUsersList();
-    alert("Utilisateur supprimé avec succés");
+    toast.success("User deleted successfull !", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   };
 
   // filter
@@ -157,28 +167,47 @@ const Admin = () => {
   };
 
   // Fonction pour mettre à jour l'utilisateur
-  
+
   const updateUser = async () => {
-    const userDocRef = doc(db, 'users', editingUser.id);
+    const userDocRef = doc(db, "users", editingUser.id);
     try {
       await updateDoc(userDocRef, {
         nom: editingUser.nom,
         prenom: editingUser.prenom,
         email: editingUser.email,
         mdp: editingUser.mdp,
-        status: editingUser.status
+        status: editingUser.status,
       });
 
       getUsersList(); // Rafraîchir la liste des utilisateurs après la mise à jour
       closeEditModal();
-      alert('User updated successfully');
+      toast.success("User updated successfull !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     } catch (err) {
       console.error(err);
     }
   };
 
+
+  // Fonction pour ouvrir la fenêtre modale de vue
+  const openViewModal = (user) => {
+    setViewingUser(user);
+  };
+
+  // Fonction pour fermer la fenêtre modale de vue
+  const closeViewModal = () => {
+    setViewingUser(null);
+  };
+
+  // recuperer le nombre de coach
+  const countCoaches = usersList.filter((user) => user.status === "Coach").length ;
+  // recuperer le nombre d'apprenant
+  const countApprenant = usersList.filter((user) => user.status === "Apprenant").length ;
+
   return (
     <>
+      <ToastContainer />
       <div className="vh-100">
         <div className="container">
           <Navbar expand="lg" className="bg-body-tertiary text-dark">
@@ -264,8 +293,8 @@ const Admin = () => {
                               }
                             >
                               <option value="status">Statut</option>
-                              <option value="coach">Coach</option>
-                              <option value="apprenant">Apprenant</option>
+                              <option value="Coach">Coach</option>
+                              <option value="Apprenant">Apprenant</option>
                             </Form.Select>
                           </div>
                         </div>
@@ -300,7 +329,7 @@ const Admin = () => {
               <Card className="carte shadow-lg mb-3">
                 <Card.Body>
                   <p className="fs-4">
-                    <span className="nombre fs-1 fw-bold">6</span> Coachs
+                    <span className="nombre fs-1 fw-bold"> {countCoaches} </span> Coachs
                   </p>
                 </Card.Body>
               </Card>
@@ -309,7 +338,7 @@ const Admin = () => {
               <Card className="carte shadow-lg mb-3">
                 <Card.Body>
                   <p className="fs-4">
-                    <span className="nombre fs-1 fw-bold">125</span> Etudiants
+                    <span className="nombre fs-1 fw-bold"> {countApprenant} </span> Etudiants
                   </p>
                 </Card.Body>
               </Card>
@@ -366,7 +395,7 @@ const Admin = () => {
                     <td>{user.email}</td>
                     <td>{user.mdp}</td>
                     <td>{user.status}</td>
-                    <td className="d-flex gap-3">
+                    <td className="d-flex justify-content-center gap-3">
                       <button
                         className="btn btn-primary text-dark"
                         onClick={() => openEditModal(user)}
@@ -378,6 +407,12 @@ const Admin = () => {
                         onClick={() => deleteUser(user.id)}
                       >
                         <BsTrash className="text-light fw-bold fs-5" />
+                      </button>
+                      <button
+                        className="btn btn-danger text-dark"
+                        onClick={() => openViewModal(user)}
+                      >
+                        <AiFillEye className="text-light fw-bold fs-5" />
                       </button>
                     </td>
                   </tr>
@@ -411,6 +446,7 @@ const Admin = () => {
           </div>
         </div>
       </div>
+
       {/* Editing Modal */}
       <Modal show={editModalOpen} onHide={closeEditModal}>
         <Modal.Header closeButton>
@@ -479,6 +515,40 @@ const Admin = () => {
           </Button>
           <Button variant="primary" onClick={updateUser}>
             Mettre à jour
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      {/* Voir Modal */}
+      <Modal show={viewingUser !== null} onHide={closeViewModal}>
+        <Modal.Header >
+          <Modal.Title className="w-100 h-100 modalviewTitle rounded text-light pt-2"> <h3 className="text-center w-100">Détails de l'utilisateur</h3> </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {viewingUser && (
+            <div className="ps-5 modalview text-light rounded py-3">
+              <p>
+                <strong>Nom :</strong> {viewingUser.nom}
+              </p>
+              <p>
+                <strong>Prénom :</strong> {viewingUser.prenom}
+              </p>
+              <p>
+                <strong>Email :</strong> {viewingUser.email}
+              </p>
+              <p>
+                <strong>Mot de passe :</strong> {viewingUser.mdp}
+              </p>
+              <p>
+                <strong>Statut :</strong> {viewingUser.status}
+              </p>
+              
+            </div>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={closeViewModal}>
+            Fermer
           </Button>
         </Modal.Footer>
       </Modal>
