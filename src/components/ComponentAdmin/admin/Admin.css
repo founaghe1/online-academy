@@ -12,3 +12,10 @@
 .img-profil{
     width: 35px;
 }
+
+.btnPrecedn,
+.btnSuiv{
+    background-color: #792be8 !important;
+    color: #e9e3ff !important;
+    border: none !important;
+}

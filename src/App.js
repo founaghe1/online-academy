@@ -69,7 +69,7 @@ import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
 function App() {
   return (
     <div className='App'>
-      <Admin />
+      {/* <Admin /> */}
       {/* <Dashboard  /> */}
       {/* <Login /> */}
       {/* <StudentDashboard /> */}
@@ -80,7 +80,7 @@ function App() {
       {/* <Livraison /> */}
       {/* <Voirlivraison />       */}
       {/* <Chat/> */}
-      {/* <ListeApprenants/> */}
+      <ListeApprenants/>
       {/* <NotificationsCoachs/> */}
       {/* <ChatPage /> */}
       
@@ -114,7 +114,6 @@ function App() {
 
 
       {/* nini Routes */}
-      
       {/* <Router>
         <Routes>
           <Route exact path='/' element={<Domain />} />
