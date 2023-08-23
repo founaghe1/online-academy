@@ -33,6 +33,7 @@ function Coure() {
   const [newDurée, setNewDurée] = useState("");
   const [newurl, setNewurl] = useState("");
   const [cours, setCours] = useState([]);
+  const [editeopen, setediteopen]= useState(false);
 
   const usersCollectionRef = collection(db, "cours");
   const Cours = newCours;

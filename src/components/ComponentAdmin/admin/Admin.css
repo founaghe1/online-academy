@@ -15,11 +15,6 @@
 
 .btnPrecedn,
 .btnSuiv{
-<<<<<<< HEAD
-    background-color: #792be8 !important;
-    color: #e9e3ff !important;
-    border: none !important;
-=======
     background-color: #ffffff !important;
     color: #6c48ee !important;
     border: 3px solid #792be8 !important;
@@ -33,5 +28,4 @@
 .nbrPages{
     background-color: #792be8;
 
->>>>>>> b05e5ea6a1e54d8cbec660bf98040623bf0b5e60
 }
