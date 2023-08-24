@@ -77,6 +77,7 @@ import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
 import CoachsRoutes from "./components/Routes/CoachsRoutes";
 import ApprenantRoutes from "./components/Routes/ApprenantRoutes";
 import AdminRoutes from './components/Routes/AdminRoutes';
+import { FirebaseApp } from 'firebase/app';
 
 // import Qestion from "./components/VoirCours/Voircourphp"
 function App() {

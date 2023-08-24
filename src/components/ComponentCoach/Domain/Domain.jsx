@@ -6,10 +6,18 @@ import Marketer from "../../../Assets/content-strategy.png";
 import Designer from "../../../Assets/web-design.png";
 import "./domain.css";
 import { Link } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import Firebase from "../../../Firebase"
 
-
-
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+const querySnapshot = await getDocs(collection(db, "Domain"));
+querySnapshot.forEach((doc) => {
+  console.log(`${doc.id} => ${doc.data()}`);
+});
 const Marketing = () => {
+
+
   return (
     <div className="container domain">
       <h1>Domaines de formation</h1>
