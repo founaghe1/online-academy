@@ -15,6 +15,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { BsPencilSquare, BsTrash } from "react-icons/bs";
 import { AiFillEye } from "react-icons/ai";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
+
 // firebase
 import { db } from "../../firebase/Firebase";
 import {
@@ -38,20 +39,23 @@ const Admin = () => {
 
   // Modale Edite
   const [editModalOpen, setEditModalOpen] = useState(false);
-  
+
   // État pour suivre les données de l'utilisateur en cours d'édition
   const [editingUser, setEditingUser] = useState({
     nom: "",
     prenom: "",
     email: "",
     mdp: "",
+    phone: "",
+    domaine: "",
     status: "",
+    assignCoach: "",
   });
 
   // filter
   const [filterName, setFilterName] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("Tout");
-
+  const [selectedDomaine, setSelectedDomaine] = useState("Domaine");
 
   // paginnation
   const [currentPage, setCurrentPage] = useState(1);
@@ -60,6 +64,29 @@ const Admin = () => {
   // voir infos user
   const [viewingUser, setViewingUser] = useState(null);
 
+  // liste des coaches
+  const [coachesList, setCoachesList] = useState([]);
+  //état pour stocker l'ID du coach sélectionné
+  // const [selectedCoachId, setSelectedCoachId] = useState("");
+
+  const getCoachesList = async () => {
+    try {
+      const coachesData = await getDocs(collection(db, "users"));
+      const coaches = coachesData.docs
+        .map((doc) => ({ id: doc.id, ...doc.data() }))
+        .filter((user) => user.status === "Coach");
+      setCoachesList(coaches);
+      getUsersList();
+    } catch (err) {
+      console.error("Error getting coaches list: ", err);
+    }
+  };
+
+  useEffect(() => {
+    getUsersList();
+    getCoachesList();
+  }, []);
+
   // fireBase
   const [usersList, setUsersList] = useState([]);
   const [newUsersNom, setNewUsersNom] = useState("");
@@ -67,6 +94,9 @@ const Admin = () => {
   const [newUsersEmail, setNewUsersEmail] = useState("");
   const [newUsersMdp, setNewUsersMdp] = useState("");
   const [newUsersStatus, setNewUsersStatus] = useState("");
+  const [newUsersAssignCoach, setNewUsersAssignCoach] = useState("");
+  const [newUsersPhone, setNewUsersPhone] = useState("");
+  const [newUsersDomaine, setNewUsersDomaine] = useState("");
   // fetch users list
   const usersCollectionRef = collection(db, "users");
 
@@ -95,15 +125,13 @@ const Admin = () => {
         prenom: newUsersPrenom,
         email: newUsersEmail,
         mdp: newUsersMdp,
+        phone: newUsersPhone,
+        domaine: newUsersDomaine,
         status: newUsersStatus,
+        assignCoach: newUsersAssignCoach,
       });
       // Réinitialisation des champs après la soumission du formulaire
       // resetForm();
-      setNewUsersNom("");
-      setNewUsersPrenom("");
-      setNewUsersEmail("");
-      setNewUsersMdp("");
-      setNewUsersStatus("");
 
       getUsersList();
       toast.success("User added successfull !", {
@@ -131,15 +159,15 @@ const Admin = () => {
       const nameMatch = user.nom
         .toLowerCase()
         .includes(filterName.toLowerCase());
+      const statusMatch =
+        selectedStatus === "Tout" ||
+        user.status.toLowerCase() === selectedStatus.toLowerCase();
 
-      if (selectedStatus === "Tout") {
-        return nameMatch;
-      } else {
-        return (
-          nameMatch &&
-          user.status.toLowerCase() === selectedStatus.toLowerCase()
-        );
-      }
+      const domaineMatch =
+        selectedDomaine === "Domaine" ||
+        user.domaine.toLowerCase() === selectedDomaine.toLowerCase();
+
+      return nameMatch && statusMatch && domaineMatch;
     })
     .slice((currentPage - 1) * usersPerPage, currentPage * usersPerPage);
 
@@ -151,7 +179,10 @@ const Admin = () => {
       prenom: user.prenom,
       email: user.email,
       mdp: user.mdp,
+      phone: user.phone,
+      domaine: user.domaine,
       status: user.status,
+      assignCoach: user.assignCoach,
     });
     setEditModalOpen(true);
   };
@@ -164,7 +195,10 @@ const Admin = () => {
       prenom: "",
       email: "",
       mdp: "",
+      phone: "",
+      domaine: "",
       status: "",
+      assignCoach: "",
     });
   };
 
@@ -178,7 +212,10 @@ const Admin = () => {
         prenom: editingUser.prenom,
         email: editingUser.email,
         mdp: editingUser.mdp,
+        phone: editingUser.phone,
+        domaine: editingUser.domaine,
         status: editingUser.status,
+        assignCoach: editingUser.assignCoach,
       });
 
       getUsersList(); // Rafraîchir la liste des utilisateurs après la mise à jour
@@ -191,7 +228,6 @@ const Admin = () => {
     }
   };
 
-
   // Fonction pour ouvrir la fenêtre modale de vue
   const openViewModal = (user) => {
     setViewingUser(user);
@@ -202,10 +238,19 @@ const Admin = () => {
     setViewingUser(null);
   };
 
-  // recuperer le nombre de coach
-  const countCoaches = usersList.filter((user) => user.status === "Coach").length ;
+  // recuperer le nombre de Users
+  const countUsers = usersList.filter(
+    (user) => user.status === "Coach" || user.status === "Apprenant"
+  ).length;
+
+  // recuperer le nombre d'Coach
+  const countCoaches = usersList.filter(
+    (user) => user.status === "Coach"
+  ).length;
   // recuperer le nombre d'apprenant
-  const countApprenant = usersList.filter((user) => user.status === "Apprenant").length ;
+  const countApprenant = usersList.filter(
+    (user) => user.status === "Apprenant"
+  ).length;
 
   return (
     <>
@@ -287,6 +332,36 @@ const Admin = () => {
                             </FloatingLabel>
                           </div>
                           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Phone number"
+                            >
+                              <Form.Control
+                                type="text"
+                                placeholder="+221..."
+                                onChange={(e) =>
+                                  setNewUsersPhone(e.target.value)
+                                }
+                              />
+                            </FloatingLabel>
+                          </div>
+                          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                            <Form.Select
+                              aria-label="Default select example"
+                              className="selectModal"
+                              onChange={(e) =>
+                                setNewUsersDomaine(e.target.value)
+                              }
+                            >
+                              <option value="Domaine">Domain</option>
+                              <option value="Programmation">
+                                Programmation
+                              </option>
+                              <option value="Marketing">Marketing</option>
+                              <option value="Design">Design</option>
+                            </Form.Select>
+                          </div>
+                          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
                             <Form.Select
                               aria-label="Default select example"
                               className="selectModal"
@@ -299,6 +374,25 @@ const Admin = () => {
                               <option value="Apprenant">Apprenant</option>
                             </Form.Select>
                           </div>
+                          <Form.Group controlId="formAssignCoach">
+                            <Form.Control
+                              as="select"
+                              value={newUsersAssignCoach}
+                              onChange={(e) =>
+                                setNewUsersAssignCoach(e.target.value)
+                              }
+                            >
+                              <option> Assignez un coach </option>
+                              {coachesList.map((coach) => (
+                                <option
+                                  key={coach.id}
+                                  value={`${coach.nom} ${coach.prenom}`}
+                                >
+                                  {coach.nom} {coach.prenom}
+                                </option>
+                              ))}
+                            </Form.Control>
+                          </Form.Group>
                         </div>
                       </Modal.Body>
                       <Modal.Footer>
@@ -328,19 +422,39 @@ const Admin = () => {
           </Navbar>
           <div className="row my-3">
             <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <Card className="carte shadow-lg mb-3">
+              <Card className="carte userCard shadow-lg mb-3">
                 <Card.Body>
-                  <p className="fs-4">
-                    <span className="nombre fs-1 fw-bold"> {countCoaches} </span> Coachs
+                  <p className="fs-4 text-success d-flex justify-content-start align-items-center">
+                    <span className="nombre fs-1 fw-bold me-3">
+                      {" "}
+                      {countUsers}{" "}
+                    </span>{" "}
+                    Utilisateurs
                   </p>
                 </Card.Body>
               </Card>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <Card className="carte shadow-lg mb-3">
+              <Card className="carte coachCard shadow-lg mb-3">
                 <Card.Body>
-                  <p className="fs-4">
-                    <span className="nombre fs-1 fw-bold"> {countApprenant} </span> Etudiants
+                  <p className="fs-4 text-success d-flex justify-content-start align-items-center">
+                    <span className="nombre fs-1 fw-bold me-3">
+                      {countCoaches}
+                    </span>
+                    Coachs
+                  </p>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <Card className="carte apprenantCard shadow-lg mb-3">
+                <Card.Body>
+                  <p className="fs-4 text-success d-flex justify-content-start align-items-center">
+                    <span className="nombre fs-1 fw-bold me-3">
+                      {" "}
+                      {countApprenant}{" "}
+                    </span>{" "}
+                    Apprenants
                   </p>
                 </Card.Body>
               </Card>
@@ -350,16 +464,30 @@ const Admin = () => {
             <div className="d-flex justify-content-between align-items-center">
               {/* input Cherche */}
               <div>
-                <InputGroup.Text id="basic-addon1">
-                  <AiOutlineSearch />
-                  <Form.Control
-                    placeholder="Rechercher par nom"
+                
+                <div class="InputContainer">
+                  <input
+                    placeholder="Rechercher par prenom"
+                    id="input"
+                    className="input"
                     value={filterName}
+                    type="text"
                     onChange={(e) => setFilterName(e.target.value)}
-                    aria-label="Rechercher"
-                    aria-describedby="basic-addon1"
                   />
-                </InputGroup.Text>
+                </div>
+              </div>
+              <div>
+                <Form.Select
+                  className="shadow-lg"
+                  aria-label="Default select example"
+                  value={selectedDomaine}
+                  onChange={(e) => setSelectedDomaine(e.target.value)}
+                >
+                  <option value="Domaine">Domaines</option>
+                  <option value="Programmation">Programmation</option>
+                  <option value="Marketing">Marketing Disital</option>
+                  <option value="Design">Design</option>
+                </Form.Select>
               </div>
               <div>
                 <Form.Select
@@ -376,30 +504,34 @@ const Admin = () => {
             </div>
           </div>
           <div className="row">
-            <Table striped bordered hover responsive>
+            <Table striped bordered hover responsive className="rounded">
               <thead>
                 <tr className="text-center">
-                  <th>Profil</th>
                   <th>Nom</th>
                   <th>Prenom</th>
                   <th>Email</th>
                   <th>Mot de passe</th>
+                  <th>Phone Number</th>
+                  <th>Domaines</th>
                   <th>Statut</th>
+                  <th>Assign Coach</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody className="text-center">
                 {filteredUsers.map((user, index) => (
                   <tr key={index}>
-                    <td>{/* Affichage du profil */}</td>
                     <td>{user.nom}</td>
                     <td>{user.prenom}</td>
                     <td>{user.email}</td>
                     <td>{user.mdp}</td>
+                    <td>{user.phone}</td>
+                    <td>{user.domaine}</td>
                     <td>{user.status}</td>
+                    <td>{user.assignCoach}</td>
                     <td className="d-flex justify-content-center gap-3">
                       <button
-                        className="btn btn-primary text-dark"
+                        className="btn btn-warning text-dark"
                         onClick={() => openEditModal(user)}
                       >
                         <BsPencilSquare className="text-light fw-bold fs-5" />
@@ -411,7 +543,7 @@ const Admin = () => {
                         <BsTrash className="text-light fw-bold fs-5" />
                       </button>
                       <button
-                        className="btn btn-danger text-dark"
+                        className="btn btn-info text-dark"
                         onClick={() => openViewModal(user)}
                       >
                         <AiFillEye className="text-light fw-bold fs-5" />
@@ -496,6 +628,30 @@ const Admin = () => {
                 }
               />
             </Form.Group>
+            <Form.Group controlId="formPhone">
+              <Form.Label>Phone number</Form.Label>
+              <Form.Control
+                type="text"
+                value={editingUser.phone}
+                onChange={(e) =>
+                  setEditingUser({ ...editingUser, phone: e.target.value })
+                }
+              />
+            </Form.Group>
+            <Form.Group controlId="formDom">
+              <Form.Label>Domaine</Form.Label>
+              <Form.Control
+                as="select"
+                value={editingUser.domaine}
+                onChange={(e) =>
+                  setEditingUser({ ...editingUser, domaine: e.target.value })
+                }
+              >
+                <option value="Programmtion">Programmtion</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Design">Design</option>
+              </Form.Control>
+            </Form.Group>
             <Form.Group controlId="formStatus">
               <Form.Label>Statut</Form.Label>
               <Form.Control
@@ -507,6 +663,29 @@ const Admin = () => {
               >
                 <option value="Coach">Coach</option>
                 <option value="Apprenant">Apprenant</option>
+              </Form.Control>
+            </Form.Group>
+            <Form.Group controlId="formAssCoa">
+              <Form.Label>Assign Coach</Form.Label>
+              <Form.Control
+                as="select"
+                value={editingUser.assignCoach}
+                onChange={(e) =>
+                  setEditingUser({
+                    ...editingUser,
+                    assignCoach: e.target.value,
+                  })
+                }
+              >
+                <option> Assignez un coach </option>
+                {coachesList.map((coach) => (
+                  <option
+                    key={coach.id}
+                    value={` ${coach.nom} ${coach.prenom} `}
+                  >
+                    {coach.nom} {coach.prenom}
+                  </option>
+                ))}
               </Form.Control>
             </Form.Group>
           </Form>
@@ -523,8 +702,11 @@ const Admin = () => {
 
       {/* Voir Modal */}
       <Modal show={viewingUser !== null} onHide={closeViewModal}>
-        <Modal.Header >
-          <Modal.Title className="w-100 h-100 modalviewTitle rounded text-light pt-2"> <h3 className="text-center w-100">Détails de l'utilisateur</h3> </Modal.Title>
+        <Modal.Header>
+          <Modal.Title className="w-100 h-100 modalviewTitle rounded text-light pt-2">
+            {" "}
+            <h3 className="text-center w-100">Détails de l'utilisateur</h3>{" "}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {viewingUser && (
@@ -542,9 +724,17 @@ const Admin = () => {
                 <strong>Mot de passe :</strong> {viewingUser.mdp}
               </p>
               <p>
+                <strong>Phone Number:</strong> {viewingUser.phone}
+              </p>
+              <p>
+                <strong>Domaines:</strong> {viewingUser.domaine}
+              </p>
+              <p>
                 <strong>Statut :</strong> {viewingUser.status}
               </p>
-              
+              <p>
+                <strong>Assign Coach :</strong> {viewingUser.assignCoach}
+              </p>
             </div>
           )}
         </Modal.Body>
