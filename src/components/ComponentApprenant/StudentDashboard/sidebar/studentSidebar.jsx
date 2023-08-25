@@ -42,18 +42,18 @@ function Sidebar() {
             <div className="d-flex justify-content-center align-items-center">
               <ul className="list-unstyled">
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <Link to="/cch/dashboard" className="text-decoration-none side-link">
+                  <Link to="/apprenant/dashboard" className="text-decoration-none side-link">
                       <BiSolidDashboard className="side-icon fs-4 me-2" />Dashboard
                   </Link>
                 </li>
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <Link to="/cch/dashboard/cours" className="text-decoration-none side-link">
+                  <Link to="/apprenant/dashboard/cours" className="text-decoration-none side-link">
                       <BiSolidBookReader className="side-icon fs-4 me-2" />
                       Cours
                   </Link>
                 </li>
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <Link to="/cch/dashboard/livraison" className="text-decoration-none side-link">
+                  <Link to="/apprenant/dashboard/livraison" className="text-decoration-none side-link">
                     <BiUpload className="side-icon fs-4 me-2" />
                     Livraisons
                   </Link>
