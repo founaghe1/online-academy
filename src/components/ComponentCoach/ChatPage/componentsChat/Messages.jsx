@@ -35,7 +35,7 @@ const Messages = () => {
           </Offcanvas.Title>
         </Offcanvas.Header>
           <h5 className="text-secondary ps-3">Vos messages</h5>
-        <Offcanvas.Body>
+        <Offcanvas.Body id='les-messages'>
           <div>
             <MessageItem />
             <MessageItem />

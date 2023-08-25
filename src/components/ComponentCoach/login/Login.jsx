@@ -32,15 +32,15 @@ const Login = () => {
                 aria-describedby="basic-addon1"
               />
             </InputGroup>
-            <InputGroup className="mb-2">
+            <InputGroup className="mb-2 w-auto">
               <InputGroup.Text id="basic-addon2">
-                <AiFillLock className="fw-bold icon fs-4" />
+                <AiOutlineUser className="fw-bold icon fs-4" />
               </InputGroup.Text>
               <Form.Control
                 type="password"
                 placeholder="Mot de passe"
                 aria-label="Mot de passe"
-                aria-describedby="basic-addon1"
+                aria-describedby="basic-addon2"
               />
             </InputGroup>
             <div className="mb-5">
