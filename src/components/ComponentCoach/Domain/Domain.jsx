@@ -6,25 +6,56 @@ import Marketer from "../../../Assets/content-strategy.png";
 import Designer from "../../../Assets/web-design.png";
 import "./domain.css";
 import { Link } from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
-import Firebase from "../../../Firebase"
+import { useState } from "react";
+import { firestore } from "../../firebase/Firebase";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
-// Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
-const querySnapshot = await getDocs(collection(db, "Domain"));
-querySnapshot.forEach((doc) => {
-  console.log(`${doc.id} => ${doc.data()}`);
-});
-const Marketing = () => {
+
+
+const Domain = () => {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
 
   return (
     <div className="container domain">
       <h1>Domaines de formation</h1>
       <div className="join pt-3">
-      <button className="add_domain rounded-3" >
+        <button className="add_domain rounded-3" onClick={handleShow}>
           <span>Ajouter</span>
         </button>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Ajout sous-domaine</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="add_file">
+              <label htmlFor="illustration">Image du domaine :</label>
+              <input
+                type="file"
+                id="illustration"
+                name="illustration"
+                accept="image/png, image/jpeg"
+              />
+            </div>
+            <div class="input-wrapper">
+              <label htmlFor="name_dom"></label>
+              <input type="text" id="name_dom" name="name_dom" placeholder="Entrer le nom du domaine" class="name_dom" />
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Annuler
+            </Button>
+            <Button variant="default" style={{backgroundColor: "#8a70d6", color: "white"}} onClick={handleClose}>
+              Ajouter
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
 
       <div className="row">
@@ -129,4 +160,4 @@ const Marketing = () => {
   )
 }
 
-export default Marketing
+export default Domain

@@ -18,29 +18,29 @@ const Voirlivraison = () => {
 
         {/* <!-- Modal --> */}
         <div
-          className="modal bx-shadow fade"
+          class="modal bx-shadow fade"
           id="mod1"
           tabindex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <div className="modal-dialog modal-xl">
-            <div className="modal-content">
-              <div className="modal-header shadow mb-4">
-                <h1 className="modal-title" id="exampleModalLabel">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header shadow mb-4">
+                <h1 class="modal-title" id="exampleModalLabel">
                   Envoyer mon travail
                 </h1>
                 <button
                   type="button"
-                  className="btn-close"
+                  class="btn-close"
                   data-bs-dismiss="modal"
                   aria-label="Close"
                 ></button>
               </div>
-              <div className="modal-body">
+              <div class="modal-body">
                 <form action="">
                   <select
-                    className="form-select shadow rounded border border-warning p-3 mb-4"
+                    class="form-select shadow rounded border border-warning p-3 mb-4"
                     aria-label="Default select example"
                   >
                     <option selected>Selectionner une tache</option>
@@ -48,7 +48,7 @@ const Voirlivraison = () => {
                     <option value="2">tache 2</option>
                     <option value="3">Tache 3</option>
                   </select>
-                  <div className="mb-4 border border-warning">
+                  <div class="mb-4 border border-warning">
                     <input
                       type="text"
                       class="form-control  shadow  rounded p-3"
@@ -56,7 +56,7 @@ const Voirlivraison = () => {
                       placeholder="Lien de Deploiment"
                     />
                   </div>
-                  <div className="mb-4">
+                  <div class="mb-4">
                     <textarea
                       class="form-control  shadow rounded border border-warning"
                       placeholder="Description"
