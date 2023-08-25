@@ -1,0 +1,13 @@
+.input-group{
+    width: 500px;
+}
+.search-icon, .notif-icon{
+    color: #8a70d6;
+}
+#profil img{
+    width: 70px;
+}
+.noc{
+    height: 250px;
+    overflow: scroll;
+}

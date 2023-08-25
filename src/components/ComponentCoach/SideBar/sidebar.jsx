@@ -1,64 +1,100 @@
 import React from 'react'
-import {
-  BsFillGridFill, BsCartFill,
-  BsFillStarFill,
-  BsFillCreditCard2FrontFill,
-  BsPersonCircle, BsGraphUpArrow,
-  BsGearFill, 
-} from "react-icons/bs";
 import './sidebar.css'
-import logo from "../../../medias/rrr.jpeg"
-import image from '../../../medias/dk.jpeg'
-import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
+// import { RiMenuUnfoldFill } from "react-icons/ri";
+import logo from "../../../medias/rrr.jpeg";
+import { BiSolidDashboard, BiSolidBookReader, BiUpload } from "react-icons/bi";
+import { PiStudentBold } from "react-icons/pi";
+import { BsFillChatRightFill } from "react-icons/bs";
+import {useState}  from "react";
+import { Link } from 'react-router-dom';
 
-const sidebar = () => {
+const Sidebar = () => {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
   return (
     <>
-       <div className='fixed-top sideBar'>
-                <ul className='list-unstyled text-muted'>
+      <div className="sticky-top">
+        <div className="d-lg-none d-flex justify-content-between align-items-center">
+          <div>
+            <Button
+              variant="menuBtn"
+              className="d-lg-none menuBtn px-4 fw-bold"
+              onClick={handleShow}
+            >
+              {/* <RiMenuUnfoldFill className="fs-4 fw-bold" /> */}
+              Menu
+            </Button>
+          </div>
+          <div>
+            <h1>Dasboard</h1>
+          </div>
+        </div>
 
-                    <li className='logo ms-5'>
-                        <img src={logo} className='w-75 ' alt="" />
-                    </li>
-                    <li className='liste'>
-                        <a href='/' className='nav-link active my-3' aria-current="page">
-                            <BsFillGridFill className='fs-3 mb-3'/>
-                            <span className='mx-2 d-none d-sm-inline fs-3'>
-                                Dashboard
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href='../Domain/Coach/Domain' className='nav-link my-3'>
-                            <BsCartFill className='fs-4 mb-3'/>
-                            <span className='mx-2 d-none d-sm-inline fs-4 mt-5'>
-                                Domaines
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href='/' className='nav-link my-3'>
-                            <BsFillStarFill className='fs-4 mb-3'/>
-                            <span className='mx-2 d-none d-sm-inline fs-4 mt-5'>
-                                Livraisons
-                            </span>
-                        </a>
-                    </li>
-                    <br />
-                    <div class="card imgcard ms-4 border-none pb-5">
-                        <img src={image} alt="" className='w-80'/> 
-                        <div class="card-body rounded-3 shadow">
-                            <h5 class="card-title text-center">Card title</h5>
-                            <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn">Go somewhere</a>
-                        </div>
-                    </div>
+        <Offcanvas show={show} onHide={handleClose} responsive="lg">
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title></Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <div className="vh-100 border-end">
+              <div className="d-flex justify-content-center align-items-center">
+                <img src={logo} alt="" className="img-fluid mb-3 side-logo" />
+              </div>
+              <h5>Menu</h5>
+              <div className="d-flex justify-content-center align-items-center">
+                <ul className="list-unstyled">
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                    <Link to="/cch/dashboard" className="text-decoration-none side-link">
+                        <BiSolidDashboard className="side-icon fs-4 me-2" />
+                        Dashboard
+                     
+                    </Link>
+                  </li>
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                    <Link to="/cch/dashboard/domain" className="text-decoration-none side-link">
+                        
+                        <BiSolidBookReader className="side-icon fs-4 me-2" />
+                        Domaines
+                       
+                    </Link>
+                  </li>
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                    <Link to="/cch/dashboard/livraison" className="text-decoration-none side-link">
+                        <BiUpload className="side-icon fs-4 me-2" />
+                        Livraisons
+                    </Link>
+                  </li>
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                    <Link to="/cch/dashboard/list_apprenants" className="text-decoration-none side-link">
+                        <PiStudentBold className="side-icon fs-4 me-2" />
+                        Ètudiants
+                    </Link>
+                  </li>
+                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                    <Link to="/cch/dashboard/messagerie" className="text-decoration-none side-link">
+                      <BsFillChatRightFill className="side-icon fs-4 me-2" />
+                      Messagerie
+                    </Link>
+                  </li>
                 </ul>
+              </div>
+              <div className="w-100 mt-5">
+                <Link to="/cch/dashboard/messagerie">
+                  <Button variant="primary" className="">
+                    Déconnexion
+                  </Button>
+                </Link>
+              </div>
             </div>
-      
-
+          </Offcanvas.Body>
+        </Offcanvas>
+      </div>
     </>
-  )
+  );
 }
 
-export default sidebar
+export default Sidebar
