@@ -41,9 +41,12 @@ import QuizzPhotos from '../ComponentApprenant/VoirCours/QuizzPhotos';
 function ApprenantRoutes() {
   return (
     <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/forgotPW" element={<ForgotPW />} />
-        <Route path="/cch/dashboard/*" element={<ApprenentLayout />} />
+        <Route path="/" element={<LayoutApp />} >
+            <Route index element={<StudentDashboard />} />
+            <Route path="/livraison" element={<Voirlivraison />} />
+            <Route path="/cours" element={<Sousdomain />} />
+            <Route path="/cours/*" element={<TachesRoutes />} />
+          </Route>  
     </Routes>
   )
 }
@@ -51,12 +54,7 @@ function ApprenantRoutes() {
 function ApprenentLayout() {
     return (
       <Routes>
-          <Route path="/" element={<LayoutApp />} >
-            <Route index element={<StudentDashboard />} />
-            <Route path="/livraison" element={<Voirlivraison />} />
-            <Route path="/cours" element={<Sousdomain />} />
-            <Route path="/cours/*" element={<TachesRoutes />} />
-          </Route>  
+          
       </Routes>
     );
   }

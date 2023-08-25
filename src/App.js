@@ -82,27 +82,45 @@ import { FirebaseApp } from 'firebase/app';
 
 function App() {
 
-  const [user, setUser] = useState(null); // État de l'utilisateur (null pour non connecté)
-  const [authorizedRoles, setAuthorizedRoles] = useState(['coach']);
+  // const [user, setUser] = useState(null); // État de l'utilisateur (null pour non connecté)
+  // const [authorizedRoles, setAuthorizedRoles] = useState([]);
 
-  // Déterminez les itinéraires autorisés en fonction du rôle de l'utilisateur
-    let userRoutes = null;
-    if (authorizedRoles.includes('coach')) {
-      userRoutes = <CoachsRoutes />;
-    } else if (authorizedRoles.includes('apprenant')) {
-      userRoutes = <ApprenantRoutes />;
-    } else if (authorizedRoles.includes('admin')) {
-      userRoutes = <AdminRoutes />;
-    }
+  // // Déterminez les itinéraires autorisés en fonction du rôle de l'utilisateur
+  //   let userRoutes = null;
+  //   if (authorizedRoles.includes('coach')) {
+  //     userRoutes = <CoachsRoutes />;
+  //   } else if (authorizedRoles.includes('apprenant')) {
+  //     userRoutes = <ApprenantRoutes />;
+  //   } else if (authorizedRoles.includes('admin')) {
+  //     userRoutes = <AdminRoutes />;
+  //   }
 
   return (
 
     <>
       <Router>
+        {/* <Login />
         {userRoutes}
+        
+        <Admin />  */}
+        
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/forgotPW' element={<ForgotPW />} />
+          <Route path='/cch/dashboard/*' element={<CoachsRoutes />} />
+          <Route path='/app/dashboard/*' element={<ApprenantRoutes />} />
+          <Route path='/admin/dashboard/' element={<AdminRoutes />} />
+        </Routes>
       </Router>
+      <Admin /> 
+      {/* <Router>
+        <Switch>
+          <Route path='/' Component={Login} />
+          <PrivateRoute />
+        </Switch>
+      </Router> */}
 
-      {/* <Login /> */}
+      
 
     </>
 

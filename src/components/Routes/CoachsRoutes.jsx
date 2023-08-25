@@ -17,43 +17,47 @@ import ChatPage from "../ComponentCoach/ChatPage/ChatPage";
 function CoachsRoutes() {
   return (
     <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/forgotPW" element={<ForgotPW />} />
-        <Route path="/cch/dashboard/*" element={<CoachLayout />} />
-    </Routes>
-  );
-}
-
-function CoachLayout() {
-  return (
-    <Routes>
         <Route path="/" element={<Layout />} >
           <Route index element={<Dashboard />} />
-          <Route path="/Livraison" element={<Livraison />} />
+          <Route path="/livraison" element={<Livraison />} />
           <Route path="/list_apprenants" element={<ListeApprenants />} />
           <Route path="/messagerie" element={<ChatPage />} />
           <Route path="/domain/*" element={<DomCchRoutes />} />
         </Route>  
     </Routes>
-    // <>
-    //   <div className="container-fluid">
-    //     <div className="row">
-    //       <div className="col-lg-2">
-    //         <Sidebar />
-    //       </div>
-    //       <div className="col-lg-10">
-    //         <div className="row bg-primary-subtle ">
-    //           <Navbar />
-    //         </div>
-    //         <Outlet />
-    //       </div>
-    //     </div>
-    //   </div>
-
-      
-    // </>
   );
 }
+
+// function CoachLayout() {
+//   return (
+//     <Routes>
+//         <Route path="/" element={<Layout />} >
+//           <Route index element={<Dashboard />} />
+//           <Route path="/Livraison" element={<Livraison />} />
+//           <Route path="/list_apprenants" element={<ListeApprenants />} />
+//           <Route path="/messagerie" element={<ChatPage />} />
+//           <Route path="/domain/*" element={<DomCchRoutes />} />
+//         </Route>  
+//     </Routes>
+//     // <>
+//     //   <div className="container-fluid">
+//     //     <div className="row">
+//     //       <div className="col-lg-2">
+//     //         <Sidebar />
+//     //       </div>
+//     //       <div className="col-lg-10">
+//     //         <div className="row bg-primary-subtle ">
+//     //           <Navbar />
+//     //         </div>
+//     //         <Outlet />
+//     //       </div>
+//     //     </div>
+//     //   </div>
+
+      
+//     // </>
+//   );
+// }
 
 function DomCchRoutes() {
   return (
