@@ -25,7 +25,10 @@ import {
   deleteDoc,
   doc,
   updateDoc,
+  setDoc
 } from "firebase/firestore";
+import { auth } from "../../firebase/Firebase";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 // toast notification
 import { ToastContainer, toast } from "react-toastify";
@@ -119,8 +122,11 @@ const Admin = () => {
   }, []);
 
   const onSubmitUsers = async () => {
+    
     try {
-      await addDoc(usersCollectionRef, {
+      // Enregistrement dans l'authentification
+    const userCreateAuth = await createUserWithEmailAndPassword(auth, newUsersEmail, newUsersMdp);
+      await setDoc(doc(usersCollectionRef, userCreateAuth.user.uid) , {
         nom: newUsersNom,
         prenom: newUsersPrenom,
         email: newUsersEmail,
@@ -129,9 +135,9 @@ const Admin = () => {
         domaine: newUsersDomaine,
         status: newUsersStatus,
         assignCoach: newUsersAssignCoach,
+        id: userCreateAuth.user.uid,
       });
-      // Réinitialisation des champs après la soumission du formulaire
-      // resetForm();
+      
 
       getUsersList();
       toast.success("User added successfull !", {
