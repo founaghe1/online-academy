@@ -49,7 +49,7 @@ const Login = () => {
         // Rediriger en fonction du rôle de l'utilisateur
         
         if (status === "Coach") {
-          navigate("/coach/dasboard");
+          navigate("/coach/dashboard");
           alert('coach')
         } else if (status === "Apprenant") {
           navigate('/apprenant/dashboard');
