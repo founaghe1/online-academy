@@ -105,7 +105,7 @@ function App() {
           <Route exact path="/" element={<Login />}/>
           <Route path='/coach/dashboard/*' element={ <CoachsRoutes /> } />
           <Route path='/apprenant/dashboard/*' element={ <ApprenantRoutes /> } />
-          <Route path='/admin/dashboard/*' element={ <AdminRoutes /> } />
+          <Route path='/admin/dashboard/' element={ <AdminRoutes /> } />
         </Routes>
       </Router>
 
