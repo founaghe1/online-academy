@@ -55,7 +55,7 @@ const Login = () => {
           navigate('/apprenant/dashboard');
           alert('Apprenant')
         } else if (status === "Admin") {
-          navigate('/admin/dasboard');
+          navigate('/admin/dashboard');
           alert('Admin')
         } else {
           alert("Rôle non reconnu");
