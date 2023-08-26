@@ -32,7 +32,7 @@ body{
 .add_domain::before {
     content: "";
     background: black;
-    color: black;
+    color: white;
     width: 120%;
     left: -10%;
     transform: skew(30deg);

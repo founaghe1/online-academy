@@ -58,3 +58,9 @@
     background-color: rgb(255, 255, 255);
     color: black;
 }
+.notif-icon{
+    cursor: pointer;
+}
+.dropdown-item .update-profil:hover {
+  color: blue;
+}

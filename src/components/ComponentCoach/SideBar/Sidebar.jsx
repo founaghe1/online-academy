@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 // import { RiMenuUnfoldFill } from "react-icons/ri";
 import logo from "../../../medias/rrr.jpeg";
-import { BiSolidDashboard, BiSolidBookReader, BiUpload } from "react-icons/bi";
+import { BiSolidDashboard, BiSolidBookReader, BiUpload, BiLogOut } from "react-icons/bi";
 import { PiStudentBold } from "react-icons/pi";
 import { BsFillChatRightFill } from "react-icons/bs";
 import {useState}  from "react";
@@ -38,12 +38,11 @@ const Sidebar = () => {
           <Offcanvas.Header closeButton>
             <Offcanvas.Title></Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body>
+          <Offcanvas.Body className='side-coach-menu'>
             <div className="vh-100 border-end">
               <div className="d-flex justify-content-center align-items-center">
                 <img src={logo} alt="" className="img-fluid mb-3 side-logo" />
               </div>
-              <h5>Menu</h5>
               <div className="d-flex justify-content-center align-items-center">
                 <ul className="list-unstyled">
                   <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">

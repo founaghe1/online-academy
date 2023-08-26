@@ -105,7 +105,7 @@ const Login = () => {
             </InputGroup>
             <InputGroup className="mb-2 w-auto">
               <InputGroup.Text id="basic-addon2">
-                <AiFillLock className="fw-bold icon fs-4" />
+                <AiOutlineUser className="fw-bold icon fs-4" />
               </InputGroup.Text>
               <Form.Control
                 type="password"

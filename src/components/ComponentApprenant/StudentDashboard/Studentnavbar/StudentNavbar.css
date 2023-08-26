@@ -5,9 +5,12 @@
     color: #8a70d6;
 }
 #profil img{
-    width: 70px;
+    width: 40px;
 }
 .noc{
     height: 250px;
     overflow: scroll;
+}
+.dropdown-item .update-profil:hover {
+  color: blue;
 }
