@@ -49,13 +49,13 @@ const Login = () => {
         // Rediriger en fonction du rôle de l'utilisateur
         
         if (status === "Coach") {
-          navigate('/coach/dasboard');
+          navigate("/coach/dasboard");
           alert('coach')
         } else if (status === "Apprenant") {
           navigate('/apprenant/dashboard');
           alert('Apprenant')
         } else if (status === "Admin") {
-          navigate('/admin/dashboard');
+          navigate("/admin/dashboard");
           alert('Admin')
         } else {
           alert("Rôle non reconnu");
