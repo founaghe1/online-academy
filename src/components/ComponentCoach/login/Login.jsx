@@ -104,7 +104,7 @@ const Login = () => {
                   Mot de passe oublié ?
               </Link>
             </div>
-            <Link to="/cch/dashboard/" >
+            <Link to="" >
               <button onClick={handleLogin}  className="login-btn btn text-light fw-bold w-100">
                 Connection
               </button>

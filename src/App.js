@@ -109,10 +109,10 @@ function App() {
           <Route path='/forgotPW' element={<ForgotPW />} />
           <Route path='/cch/dashboard/*' element={<CoachsRoutes />} />
           <Route path='/app/dashboard/*' element={<ApprenantRoutes />} />
-          <Route path='/admin/dashboard/' element={<AdminRoutes />} />
+          <Route path='/admin/dashboard/' element={<Admin />} />
         </Routes>
       </Router>
-      <Admin /> 
+      {/* <Admin />  */}
       {/* <Router>
         <Switch>
           <Route path='/' Component={Login} />
