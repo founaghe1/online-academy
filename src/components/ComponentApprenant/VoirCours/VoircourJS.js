@@ -106,7 +106,7 @@ function Voircourjs() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/javascrip' className='join '>
+              <Link to='/cch/dashboard/cours/javascript-Quizz' className='join '>
                 <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>

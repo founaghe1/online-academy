@@ -8,6 +8,10 @@ import { AiOutlineUser, AiFillLock } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+
+
+  
+
   return (
     <div className="vh-100 d-flex justify-content-center align-items-center">
       <Card className="px-3 mx-3 py-3 login-card">
@@ -28,8 +32,8 @@ const Login = () => {
                 aria-describedby="basic-addon1"
               />
             </InputGroup>
-            <InputGroup className="mb-3 w-auto">
-              <InputGroup.Text id="basic-addon1">
+            <InputGroup className="mb-2">
+              <InputGroup.Text id="basic-addon2">
                 <AiFillLock className="fw-bold icon fs-4" />
               </InputGroup.Text>
               <Form.Control
@@ -40,13 +44,17 @@ const Login = () => {
               />
             </InputGroup>
             <div className="mb-5">
-              <a href="../ForgotPW/ForgotPW.jsx" className="forgotPW">
-                Mot de passe oublié ?
-              </a>
+              <Link to="/forgotPW">
+                <a href="../ForgotPW/ForgotPW.jsx" className="forgotPW">
+                  Mot de passe oublié ?
+                </a>
+              </Link>
             </div>
-            <button className="login-btn btn text-light fw-bold w-100" >
-              <Link to="/layout/dashboard" className="Link">Connection</Link>
-            </button>
+            <Link to="/cch/dashboard">
+              <button className="login-btn btn text-light fw-bold w-100" >
+                Connection
+              </button>
+            </Link>
           </form>
         </Card.Body>
       </Card>

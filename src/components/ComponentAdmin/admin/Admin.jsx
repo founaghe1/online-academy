@@ -33,6 +33,54 @@ const Admin = () => {
   const usersPerPage = 5; // Nombre d'utilisateurs par page
 
   // fireBase
+  // fetch users list
+  const usersCollectionRef = collection(db, 'users')
+
+const getUsersList = async () =>{
+  try{
+    const data = await getDocs(usersCollectionRef);
+    const filteredData = data.docs.map((doc) => ({
+      id: doc.id, ...doc.data()
+    }))
+    setUsersList(filteredData);
+  }catch(err){
+    console.error("Error getting documents: ", err);
+  }
+};
+
+useEffect(() =>{
+  // call the function here to fetch all the user list in realtime
+  getUsersList();
+}, []);
+
+const onSubmitUsers = async () =>{
+  try{
+    await addDoc(usersCollectionRef, {
+      nom : newUsersNom, prenom :  newUsersPrenom, email : newUsersEmail, mdp : newUsersMdp, status : newUsersStatus
+    });
+    // Réinitialisation des champs après la soumission du formulaire
+    // resetForm();
+    setNewUsersNom('');
+    setNewUsersPrenom('');
+    setNewUsersEmail('');
+    setNewUsersMdp('');
+    setNewUsersStatus('');
+
+    getUsersList();
+    alert('User added successfully');
+    // window.location.reload();
+
+
+  } catch(err){
+    console.error(err);
+  }
+}
+
+
+
+  
+
+  // fireBase
   const [usersList, setUsersList] = useState([]);
   const [newUsersNom, setNewUsersNom] = useState("")
   const [newUsersPrenom, setNewUsersPrenom] = useState("")
@@ -40,70 +88,37 @@ const Admin = () => {
   const [newUsersMdp, setNewUsersMdp] = useState("")
   const [newUsersStatus, setNewUsersStatus] = useState("")
   // fetch users list
-  const usersCollectionRef = collection(db, 'users')
 
-  const getUsersList = async () => {
-    try {
-      const data = await getDocs(usersCollectionRef);
-      const filteredData = data.docs.map((doc) => ({
-        id: doc.id, ...doc.data()
-      }))
-      setUsersList(filteredData);
-    } catch (err) {
-      console.error("Error getting documents: ", err);
-    }
-  };
 
   useEffect(() => {
     // call the function here to fetch all the user list in realtime
     getUsersList();
   }, []);
 
-  const onSubmitUsers = async () => {
-    try {
-      await addDoc(usersCollectionRef, {
-        nom: newUsersNom, prenom: newUsersPrenom, email: newUsersEmail, mdp: newUsersMdp, status: newUsersStatus
-      });
-      // Réinitialisation des champs après la soumission du formulaire
-      // resetForm();
-      setNewUsersNom('');
-      setNewUsersPrenom('');
-      setNewUsersEmail('');
-      setNewUsersMdp('');
-      setNewUsersStatus('');
-
-      getUsersList();
-      alert('User added successfully');
-      // window.location.reload();
-
-
-    } catch (err) {
-      console.error(err);
-    }
-  }
+  
 
 
 
 
 
   // filter
-
+  
   const filteredUsers = usersList
-    .filter((user) => {
-      const nameMatch = user.nom
-        .toLowerCase()
-        .includes(filterName.toLowerCase());
+  .filter((user) => {
+    const nameMatch = user.nom
+      .toLowerCase()
+      .includes(filterName.toLowerCase());
 
-      if (selectedStatus === "Tout") {
-        return nameMatch;
-      } else {
-        return (
-          nameMatch &&
-          user.status.toLowerCase() === selectedStatus.toLowerCase()
-        );
-      }
-    })
-    .slice((currentPage - 1) * usersPerPage, currentPage * usersPerPage);
+    if (selectedStatus === "Tout") {
+      return nameMatch;
+    } else {
+      return (
+        nameMatch &&
+        user.status.toLowerCase() === selectedStatus.toLowerCase()
+      );
+    }
+  })
+  .slice((currentPage - 1) * usersPerPage, currentPage * usersPerPage);
 
   return (
     <>
@@ -282,7 +297,7 @@ const Admin = () => {
                 </tr>
               </thead>
               <tbody>
-
+                
                 {filteredUsers.map((user, index) => (
                   <tr key={index}>
                     <td>{/* Affichage du profil */}</td>
@@ -312,8 +327,8 @@ const Admin = () => {
                 disabled={currentPage === 1}
                 onClick={() => setCurrentPage(currentPage - 1)}
               >
-                <BiSolidLeftArrow />
-                <BiSolidLeftArrow />
+               <BiSolidLeftArrow /> 
+               <BiSolidLeftArrow /> 
               </button>
               <span className="fw-bold d-flex justify-content-center align-items-center px-3  nbrPages rounded text-light mx-1"> {currentPage}</span>
               <button

@@ -99,7 +99,7 @@ function CourBoostrap() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/quiss' className='join '>
+              <Link to='/cch/dashboard/cours/bootstrap-Quizz' className='join '>
                 <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>

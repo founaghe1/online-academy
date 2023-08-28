@@ -102,7 +102,7 @@ function Voircourdevelop() {
                   cliqué sur le button pour demarer
                 </p>
               </Card.Body>
-              <Link to='/resaux' className='join '>
+              <Link to='/cch/dashboard/cours/se-démarquer-sur-les-réseaux sociaux-Quizz' className='join '>
                 <button className='butt btn btn-primary'>Demarer</button>
               </Link>
             </Card>
