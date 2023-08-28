@@ -88,7 +88,7 @@ function Sidebar() {
                     </Link>
                   </li>
                   <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                    <Link to="" className="text-decoration-none side-link">
+                    <Link to="/dashboard/messagerie" className="text-decoration-none side-link">
                       <BsFillChatRightFill className="side-icon fs-4 me-2" />
                       Messagerie
                     </Link>

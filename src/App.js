@@ -77,6 +77,7 @@ import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
 import CoachsRoutes from "./components/Routes/CoachsRoutes";
 import ApprenantRoutes from "./components/Routes/ApprenantRoutes";
 import AdminRoutes from './components/Routes/AdminRoutes';
+import Messagerie from './components/ComponentApprenant/ChatPage/ChatPage'
 
 // import Qestion from "./components/VoirCours/Voircourphp"
 function App() {
@@ -95,11 +96,12 @@ function App() {
     }
 
   return (
-
     <>
       <Router>
         {userRoutes}
-        
+        <Routes>
+          <Route path="/dashboad/messagerie" element={<Messagerie/>} />
+        </Routes>
         {/* <Router>
         <Routes>
           <Route exact path='/' element={<Domain />} />
@@ -157,11 +159,10 @@ function App() {
         </Routes>
       </Router> */}
       </Router>
-
     </>
 
     // <div className='App'>
-      // <Admin /> 
+    // <Admin />
     //   {/* <Dashboard  /> */}
     //   {/* <Login /> */}
     //   {/* <StudentDashboard /> */}
@@ -175,8 +176,7 @@ function App() {
     //   {/* <ListeApprenants/> */}
     //   {/* <NotificationsCoachs/> */}
     //   {/* <ChatPage /> */}
-      
-      
+
     //   {/* <Router>
     //     <Routes>
     //       <Route exact path="/" element={<Domain />} />
@@ -208,10 +208,7 @@ function App() {
     // //   {/* <ListeApprenants/> */}
     // //   {/* <NotificationsCoachs/> */}
 
-
     //   {/* nini Routes */}
-
-       
 
     //   {/* <Modale />
     //   <Coure />  */}
