@@ -21,32 +21,6 @@ import { db } from "../../firebase/Firebase";
    const [coach, setCoach] = useState([]);
    const [users, setUsers] = useState([]);
     const [usersList, setUsersList] = useState([]);
-    // const [newUsersNom, setNewUsersNom] = useState("");
-    // const [newUsersPrenom, setNewUsersPrenom] = useState("");
-    // const [newUsersEmail, setNewUsersEmail] = useState("");
-    // const [newUsersMdp, setNewUsersMdp] = useState("");
-    // const [newUsersStatus, setNewUsersStatus] = useState("");
-    // const [newUsersAssignCoach, setNewUsersAssignCoach] = useState("");
-    // const [newUsersPhone, setNewUsersPhone] = useState("");
-    // const [newUsersDomaine, setNewUsersDomaine] = useState("");
-  // const usersCollectionRef = collection(db, "users");
-  //   const getUsersList = async () => {
-  //     try {
-  //       const data = await getDocs(usersCollectionRef);
-  //       const filteredData = data.docs.map((doc) => ({
-  //         id: doc.id,
-  //         ...doc.data(),
-  //       }));
-  //       setUsersList(filteredData);
-  //     } catch (err) {
-  //       console.error("Error getting documents: ", err);
-  //     }
-  //   };
-
-  //   useEffect(() => {
-  //     // call the function here to fetch all the user list in realtime
-  //     getUsersList();
-  //   }, []);
 
    // filter
    const [filterName, setFilterName] = useState("");
