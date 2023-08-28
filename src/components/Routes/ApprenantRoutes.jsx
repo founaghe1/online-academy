@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from "react-router-dom";
+import { Router, Route, Routes } from "react-router-dom";
 import Domain from '../ComponentApprenant/DomainApprnt/DomainApprt';
 import Programmation from '../ComponentApprenant/DomainApprnt/ProgrammationApprt';
 import Marketing from '../ComponentApprenant/DomainApprnt/MarketingApprt';
@@ -38,19 +38,11 @@ import Voircourdegiadop from '../ComponentApprenant/VoirCours/Voircourdegiadop';
 import QuizzPhotos from '../ComponentApprenant/VoirCours/QuizzPhotos';
 
 
+
 function ApprenantRoutes() {
   return (
+    
     <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/forgotPW" element={<ForgotPW />} />
-        <Route path="/cch/dashboard/*" element={<ApprenentLayout />} />
-    </Routes>
-  )
-}
-
-function ApprenentLayout() {
-    return (
-      <Routes>
           <Route path="/" element={<LayoutApp />} >
             <Route index element={<StudentDashboard />} />
             <Route path="/livraison" element={<Voirlivraison />} />
@@ -58,8 +50,22 @@ function ApprenentLayout() {
             <Route path="/cours/*" element={<TachesRoutes />} />
           </Route>  
       </Routes>
-    );
-  }
+    
+  )
+}
+
+// function ApprenentLayout() {
+//     return (
+//       // <Routes>
+//       //     <Route path="/" element={<LayoutApp />} >
+//       //       <Route index element={<StudentDashboard />} />
+//       //       <Route path="/livraison" element={<Voirlivraison />} />
+//       //       <Route path="/cours" element={<Sousdomain />} />
+//       //       <Route path="/cours/*" element={<TachesRoutes />} />
+//       //     </Route>  
+//       // </Routes>
+//     );
+//   }
 
 
 function TachesRoutes() {
