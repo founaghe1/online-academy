@@ -5,7 +5,7 @@ import logo from "../../../medias/rrr.jpeg";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { AiOutlineUser, AiFillLock } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, json, useNavigate } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
 import { auth, db } from "../../firebase/Firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -13,16 +13,22 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 // toast notification
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import StudentNavbar from "../../ComponentApprenant/StudentDashboard/Studentnavbar/StudentNavbar";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [mdp, setPassword] = useState("");
   const [userStatus, setUserStatus] = useState("");
+  const [userFullName, setUserFullName] = useState(""); 
+  const [userEmail, setUserEmail] = useState("");
+  
   
   // Utiliser la fonction de navigation
   const navigate = useNavigate();
   
-  const handleLogin = async () => {
+  
+  const handleLogin = async (e) => {
+    e.preventDefault();
     
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -37,14 +43,22 @@ const Login = () => {
       // Récupérer les informations de l'utilisateur depuis Firestore
       const userDocRef = doc(db, "users", userUid);
       const userDocSnapshot = await getDoc(userDocRef);
-
+      
       if (userDocSnapshot.exists()) {
         const userData = userDocSnapshot.data();
         const status = userData.status;
+        localStorage.setItem("users", JSON.stringify(userData))
         setUserStatus(status);
-
+        const userFullNam = `${userData.prenom} ${userData.nom}`;
+        const userEmail = userData.email;
+        setUserFullName(userFullNam);
+        setUserEmail(userEmail);
+        
+        console.log(userFullNam);
+        
+        
         // Afficher un message de bienvenue avec le nom et le prénom
-      const welcomeMessage = `Bienvenue ${userData.prenom} ${userData.nom} !`;
+       const welcomeMessage = `Bienvenue ${userData.prenom} ${userData.nom} !`;
       
        
 
@@ -71,16 +85,23 @@ const Login = () => {
         } else {
           alert("Rôle non reconnu");
         }
+        
       }
     } catch (error) {
       console.error("Erreur de connexion : ", error.code);
       alert("Erreur de connexion" + error.code);
     }
+    
   };
 
+  console.log("Utilisateur: " + userFullName + userEmail);
+  console.log(userFullName);
+  console.log(userFullName);
+  
   return (
     <>
     <ToastContainer />
+    {userFullName && userEmail && (<StudentNavbar fullName={userFullName} email={userEmail} />)}
     <div className="vh-100 d-flex justify-content-center align-items-center">
       
       <Card className="px-3 mx-3 py-3 login-card">
@@ -121,11 +142,11 @@ const Login = () => {
                   Mot de passe oublié ?
               </Link>
             </div>
-            <Link to="/cch/dashboard/" >
+            <Link>
               <button onClick={handleLogin}  className="login-btn btn text-light fw-bold w-100">
                 Connection
               </button>
-              </Link>
+            </Link>
           </form>
         </Card.Body>
       </Card>

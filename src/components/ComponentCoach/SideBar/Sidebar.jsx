@@ -9,11 +9,26 @@ import { PiStudentBold } from "react-icons/pi";
 import { BsFillChatRightFill } from "react-icons/bs";
 import {useState}  from "react";
 import { Link } from 'react-router-dom';
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase/Firebase";
 
 const Sidebar = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    // function deconnection
+  const navigate = useNavigate();
+
+  const logOut = async () =>{
+    try{
+      await  signOut(auth)
+      navigate("/")
+    }catch{
+      alert("Erreur de deconnection, veuillez verifier votre connection");
+    }
+  }
 
   return (
     <>
@@ -82,7 +97,9 @@ const Sidebar = () => {
               </div>
               <div className="w-100 mt-5">
                 <Link to="/coach/dashboard/messagerie">
-                  <Button variant="primary" className="">
+                  <Button variant="primary" className=""
+                    onClick={logOut}
+                  >
                     Déconnexion
                   </Button>
                 </Link>

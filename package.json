@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@auth0/auth0-react": "^2.2.1",
     "@mui/material": "^5.14.5",
     "@mui/x-data-grid": "^6.11.2",
     "@testing-library/jest-dom": "^5.17.0",
