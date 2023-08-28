@@ -5,7 +5,8 @@ import { useState } from "react";
 import "./StudentNavbar.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoMdNotifications } from "react-icons/io";
-import logo from "../sidebar/logo.png";
+import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
 
 const StudentNavbar = () => {
   const [show, setShow] = useState(false);
@@ -109,9 +110,91 @@ const StudentNavbar = () => {
                     <p class="dropdown-item">babathiam0000@gmail</p>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">
+                    {/* <a class="dropdown-item" href="#">
                       <span className="update-profil">Modifer profil</span>
-                    </a>
+                    </a> */}
+                    <Button
+                      className="btn btn-secondary text-white add ms-3"
+                      onClick={handleShow}
+                    >
+                      Modifer profil
+                    </Button>
+
+                    <Modal show={show} onHide={handleClose}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>
+                          <h3>Modifier le profil</h3>
+                        </Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body className="my-3">
+                        <div className=" d-flex justify-content-center align-items-center mb-3">
+                          <div>
+                            <a href="">
+                              <img
+                                src="https://avatars.dicebear.com/v2/male/55c6a0641adadaa4af04809a28329ec4.svg"
+                                class="rounded-circle shadow"
+                                alt=""
+                                width="80"
+                              />
+                            </a>
+                          </div>
+                        </div>
+                        <div className="row align-items-baseline">
+                          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Nom"
+                            >
+                              <Form.Control
+                                type="text"
+                                placeholder="princesse"
+                              />
+                            </FloatingLabel>
+                          </div>
+                          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Prenom"
+                            >
+                              <Form.Control
+                                type="text"
+                                placeholder="princesse"
+                              />
+                            </FloatingLabel>
+                          </div>
+                          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Email"
+                            >
+                              <Form.Control
+                                type="email"
+                                placeholder="princesse@gmail.com"
+                              />
+                            </FloatingLabel>
+                          </div>
+                          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                            <FloatingLabel
+                              controlId="floatingInput"
+                              label="Mot de passe"
+                            >
+                              <Form.Control
+                                type="password"
+                                placeholder="*********"
+                              />
+                            </FloatingLabel>
+                          </div>
+                        </div>
+                      </Modal.Body>
+                      <Modal.Footer>
+                        <Button className="btnFermer  " onClick={handleClose}>
+                          Fermer
+                        </Button>
+                        <Button className="saveBtn" onClick={handleClose}>
+                          Enregistrer
+                        </Button>
+                      </Modal.Footer>
+                    </Modal>
                   </li>
                   <li>
                     <hr class="dropdown-divider" />

@@ -38,7 +38,7 @@ function Sidebar() {
           </div>
         </div>
 
-        <Offcanvas show={show} onHide={handleClose} responsive="lg">
+        <Offcanvas id="studentSidebar" show={show} onHide={handleClose} responsive="lg">
           <Offcanvas.Header closeButton>
             <Offcanvas.Title></Offcanvas.Title>
           </Offcanvas.Header>
@@ -48,7 +48,7 @@ function Sidebar() {
                 <img
                   src={logo}
                   alt="logo"
-                  className="img-fluid mb-3 "
+                  className="img-fluid mb-3 logo"
                   id="side-student-logo"
                 />
               </div>

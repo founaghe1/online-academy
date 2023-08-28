@@ -35,7 +35,7 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <Offcanvas show={show} onHide={handleClose} responsive="lg">
+        <Offcanvas id="sidebarCoach" show={show} onHide={handleClose} responsive="lg">
           <Offcanvas.Header closeButton>
             <Offcanvas.Title></Offcanvas.Title>
           </Offcanvas.Header>

@@ -42,6 +42,14 @@
 .btnDecon{
     background-color: #fff;
 }
+#studentSidebar .logo{
+    height: 100px;
+}
+@media only screen and (max-width: 990px) {
+    #studentSidebar{
+        width: 250px;
+    }
+}
 
 .sidebare::-webkit-scrollbar {
   width: 5px; /* Largeur de la barre de défilement */
