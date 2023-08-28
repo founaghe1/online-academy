@@ -11,8 +11,8 @@ const CourCard = () => {
       <div className="container">
         <div className="row mt-3">
           <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-3">
-            <div class="card shadow-lg cour-number">
-              <div class="card-body">
+            <div className="card shadow-lg cour-number">
+              <div className="card-body">
                 <p>
                   <span className="fs-1 fw-bold">21</span> Cours
                 </p>
@@ -20,8 +20,8 @@ const CourCard = () => {
             </div>
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-3">
-            <div class="card shadow-lg cour-start">
-              <div class="card-body">
+            <div className="card shadow-lg cour-start">
+              <div className="card-body">
                 <p>
                   <span className="fs-1 fw-bold">10</span> Cours commencés
                 </p>
@@ -29,8 +29,8 @@ const CourCard = () => {
             </div>
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-3">
-            <div class="card shadow-lg cour-done">
-              <div class="card-body">
+            <div className="card shadow-lg cour-done">
+              <div className="card-body">
                 <p>
                   <span className="fs-1 fw-bold">2</span> Cours terminés
                 </p>

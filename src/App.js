@@ -77,36 +77,26 @@ import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
 import CoachsRoutes from "./components/Routes/CoachsRoutes";
 import ApprenantRoutes from "./components/Routes/ApprenantRoutes";
 import AdminRoutes from './components/Routes/AdminRoutes';
+import RoutesPrive from './components/Routes/RoutesPrive';
 
 
 
 function App() {
-
-  // const [user, setUser] = useState(null); // État de l'utilisateur (null pour non connecté)
-  // const [authorizedRoles, setAuthorizedRoles] = useState(['admin']);
-
-  // // Déterminez les itinéraires autorisés en fonction du rôle de l'utilisateur
-  //   let userRoutes = null;
-  //   if (authorizedRoles.includes('coach')) {
-  //     userRoutes = <CoachsRoutes />;
-  //   } else if (authorizedRoles.includes('apprenant')) {
-  //     userRoutes = <ApprenantRoutes />;
-  //   } else if (authorizedRoles.includes('admin')) {
-  //     userRoutes = <AdminRoutes />;
-  //   }
-
+  const user = JSON.parse(localStorage.getItem("users")) || null
+ 
   return (
 
     <>
       <Router>
-        {/* {userRoutes} */}
-        {/* <Login /> */}
-        {/* <Admin />  */}
         <Routes>
           <Route exact path="/" element={<Login />}/>
-          <Route path='/coach/dashboard/*' element={ <CoachsRoutes /> } />
-          <Route path='/apprenant/dashboard/*' element={ <ApprenantRoutes /> } />
-          <Route path='/admin/dashboard' element={ <Admin /> } />
+          <Route path="/apprenant/dashboard/*" element={<RoutesPrive status={["Apprenant"] } ><ApprenantRoutes /></RoutesPrive>}></Route>
+          <Route path="/coach/dashboard/*" element={<RoutesPrive status={["Coach"] } ><CoachsRoutes /></RoutesPrive>}></Route>
+          <Route path="/admin/dashboard" element={<RoutesPrive status={["Admin"] } ><Admin /></RoutesPrive>}></Route>
+          
+          {/* <Route path='/coach/dashboard/*' element={ <CoachsRoutes /> } /> */}
+          {/* {user?.status === "Apprenant" ? <Route path='/apprenant/dashboard/*' element={user?.status === "Apprenant" ?  <ApprenantRoutes /> :""}/>:<Route exact path="/" element={<Login />}/>} */}
+          {/* <Route path='/admin/dashboard' element={ <Admin /> } /> */}
         </Routes>
       </Router>
 

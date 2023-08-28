@@ -9,6 +9,10 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { useState } from "react";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase/Firebase";
+
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -20,6 +24,23 @@ const Navbar = () => {
 
   const handleClosenoc = () => setShownoc(false);
   const handleShownoc = () => setShownoc(true);
+
+  // function deconnection
+  const navigate = useNavigate();
+
+  const user = JSON.parse(localStorage.getItem("users")) || null
+  
+
+  const logOut = async () =>{
+    try{
+      await  signOut(auth)
+      localStorage.removeItem("users")
+      navigate("/", {replace: true})
+    }catch(error){
+      alert("Erreur de deconnection, veuillez verifier votre connection");
+      console.error(error)
+    }
+  }
 
   return (
     <nav>
@@ -112,10 +133,10 @@ const Navbar = () => {
                   </button>
                   <ul class="dropdown-menu">
                     <li>
-                      <p class="dropdown-item">Baba Thiam</p>
+                      <p class="dropdown-item">{user.prenom} {user.nom}</p>
                     </li>
                     <li>
-                      <p class="dropdown-item">babathiam0000@gmail</p>
+                      <p class="dropdown-item">{user.email}</p>
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">
@@ -215,6 +236,7 @@ const Navbar = () => {
                         <button
                           type="button"
                           class="btn btn-danger border border-0"
+                          onClick={logOut}
                         >
                           Deconnexion
                         </button>

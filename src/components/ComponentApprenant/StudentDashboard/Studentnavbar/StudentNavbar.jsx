@@ -5,24 +5,47 @@ import { useState } from "react";
 import "./StudentNavbar.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoMdNotifications } from "react-icons/io";
-import logo from "../sidebar/logo.png";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../../firebase/Firebase";
+
 
 const StudentNavbar = () => {
+ 
+  const user = JSON.parse(localStorage.getItem("users")) || null
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const navigate = useNavigate();
+
+  const logOut = async () =>{
+    try{
+      await  signOut(auth)
+      localStorage.removeItem("users")
+      navigate("/", {replace: true})
+    }catch(error){
+      alert("Erreur de deconnection, veuillez verifier votre connection");
+      console.error(error)
+    }
+  }
+  
+
+  console.log("fullName:" + user?.nom);
+  console.log("email:" + user?.email);
+
   return (
     <div className="container-fluid mt-3">
       <div className="row">
         <div className="d-flex justify-content-end align-items-center gap-5">
-          <div class="input-group">
-            <span class="input-group-text" id="basic-addon1">
+          <div className="input-group">
+            <span className="input-group-text" id="basic-addon1">
               <AiOutlineSearch className="fs-4 fw-bold search-icon" />
             </span>
             <input
               type="search"
-              class="form-control"
+              className="form-control"
               placeholder="Recherche"
               aria-label="Recherche"
               aria-describedby="basic-addon1"
@@ -88,10 +111,10 @@ const StudentNavbar = () => {
               </div>
             </div>
             <div id="profil">
-              <div class="btn-group">
+              <div className="btn-group">
                 <button
                   type="button"
-                  class="btn btn-primary dropdown-toggle rounded-pill"
+                  className="btn btn-primary dropdown-toggle rounded-pill"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
@@ -101,29 +124,16 @@ const StudentNavbar = () => {
                     className="rounded-circle"
                   />
                 </button>
-                <ul class="dropdown-menu">
+                <ul className="dropdown-menu">
                   <li>
-                    <p class="dropdown-item">Baba Thiam</p>
+                    <p className="dropdown-item">nom: {user?.prenom} {user?.nom}</p>
                   </li>
                   <li>
-                    <p class="dropdown-item">babathiam0000@gmail</p>
+                    <p className="dropdown-item">email: {user?.email}</p>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <a className="dropdown-item" href="#">
                       <span className="update-profil">Modifer profil</span>
-                    </a>
-                  </li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <button
-                        type="button"
-                        class="btn btn-danger border border-0"
-                      >
-                        Deconnexion
-                      </button>
                     </a>
                   </li>
                 </ul>
