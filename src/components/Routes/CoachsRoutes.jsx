@@ -17,9 +17,13 @@ import ChatPage from "../ComponentCoach/ChatPage/ChatPage";
 function CoachsRoutes() {
   return (
     <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/forgotPW" element={<ForgotPW />} />
-        <Route path="/cch/dashboard/*" element={<CoachLayout />} />
+        <Route path="/" element={<Layout />} >
+          <Route index element={<Dashboard />} />
+          <Route path="/Livraison" element={<Livraison />} />
+          <Route path="/list_apprenants" element={<ListeApprenants />} />
+          <Route path="/messagerie" element={<ChatPage />} />
+          <Route path="/domain/*" element={<DomCchRoutes />} />
+        </Route>  
     </Routes>
   );
 }

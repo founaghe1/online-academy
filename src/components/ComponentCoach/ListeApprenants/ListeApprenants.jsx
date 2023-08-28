@@ -14,7 +14,7 @@ import {
   query,
 } from "firebase/firestore";
 
-import { db } from "../../Firebase/Firebase";
+import { db } from "../../firebase/Firebase";
 
 const ListApprenants = () => {
   const [Apprenant, setApprenant] = useState([]);
