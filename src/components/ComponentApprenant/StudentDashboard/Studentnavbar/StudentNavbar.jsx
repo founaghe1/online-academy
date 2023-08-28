@@ -7,33 +7,82 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { IoMdNotifications } from "react-icons/io";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../../firebase/Firebase";
+import { auth, db } from "../../../firebase/Firebase";
+import { updateProfile, updateEmail } from "firebase/auth";
+import { doc, updateDoc } from "firebase/firestore";
 
 
 const StudentNavbar = () => {
- 
-  const user = JSON.parse(localStorage.getItem("users")) || null
-  const [show, setShow] = useState(false);
+  const [users, setUsers] = useState(JSON.parse(localStorage.getItem("users")) || null);
+  const user = JSON.parse(localStorage.getItem("users")) || null;
+  const [show, setShow] = useState();
+  // const [showEdit, setShowEdite] = useState(false);
+  const [editing, setEditing] = useState(false); 
+  const [editedUser, setEditedUser] = useState(user); 
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const navigate = useNavigate();
 
-  const logOut = async () =>{
-    try{
-      await  signOut(auth)
-      localStorage.removeItem("users")
-      navigate("/", {replace: true})
-    }catch(error){
+  const logOut = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem("users");
+      navigate("/", { replace: true });
+    } catch (error) {
       alert("Erreur de deconnection, veuillez verifier votre connection");
-      console.error(error)
+      console.error(error);
     }
-  }
-  
+  };
 
-  console.log("fullName:" + user?.nom);
-  console.log("email:" + user?.email);
+
+  // modif profile
+
+  const handleEdit = () => {
+    setEditing(true);
+    setShow(true);
+  };
+
+   // Define a function to update the user state
+   const updateUser = (newUser) => {
+    setUsers(newUser);
+    localStorage.setItem("users", JSON.stringify(newUser));
+    
+    const userDocRef = doc(db, "users", auth.currentUser.uid); // Change "users" to the actual collection name
+    updateDoc(userDocRef, {
+      prenom: newUser.prenom,
+      nom: newUser.nom,
+      email: newUser.email,
+      
+    });
+  };
+
+
+
+
+  const handleSave = async () => {
+    try {
+
+        // Update email in Firebase Auth
+        if (editedUser.email !== user.email) {
+          await updateEmail(auth.currentUser, editedUser.email);
+        }
+
+      await updateProfile(auth.currentUser, {
+        displayName: editedUser.prenom + " " + editedUser.nom +" "+ editedUser.email,
+      });
+      
+
+      updateUser(editedUser); // Update user state
+
+      setEditing(false);
+      setShow(false);
+    } catch (error) {
+      console.error("Error updating profile:", error);
+    }
+  };
+
 
   return (
     <div className="container-fluid mt-3">
@@ -110,6 +159,7 @@ const StudentNavbar = () => {
                 </Modal>
               </div>
             </div>
+            
             <div id="profil">
               <div className="btn-group">
                 <button
@@ -125,16 +175,72 @@ const StudentNavbar = () => {
                   />
                 </button>
                 <ul className="dropdown-menu">
+                  {editing ? (
+                    <li>
+                      <input
+                        type="text"
+                        value={editedUser?.prenom}
+                        onChange={(e) =>
+                          setEditedUser({
+                            ...editedUser,
+                            prenom: e.target.value,
+                          })
+                        }
+                      />
+                      <input
+                        type="text"
+                        value={editedUser?.nom}
+                        onChange={(e) =>
+                          setEditedUser({
+                            ...editedUser,
+                            nom: e.target.value,
+                          })
+                        }
+                      />
+                      <input
+                        type="text"
+                        value={editedUser?.email}
+                        onChange={(e) =>
+                          setEditedUser({
+                            ...editedUser,
+                            email: e.target.value,
+                          })
+                        }
+                      />
+                    </li>
+
+                  ) : (
+                    <li>
+                      <p className="dropdown-item">
+                        {user?.prenom} {user?.nom}
+                      </p>
+                      <p className="dropdown-item">
+                        {user?.email}
+                      </p>
+                    </li>
+                  )}
+                  
                   <li>
-                    <p className="dropdown-item">nom: {user?.prenom} {user?.nom}</p>
-                  </li>
-                  <li>
-                    <p className="dropdown-item">email: {user?.email}</p>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <span className="update-profil">Modifer profil</span>
+                    <a className="dropdown-item" onClick={handleEdit}>
+                      <span className="update-profil">Modifier profil</span>
                     </a>
+                  </li>
+                  <li className="ps-3 mt-2">
+                    {editing ? (
+                      <button
+                        className="btn btn-success text-light"
+                        onClick={handleSave}
+                      >
+                        Enregistrer
+                      </button>
+                    ) : (
+                      <button
+                        className="btn btn-danger text-light logout"
+                        onClick={logOut}
+                      >
+                        Déconnexion
+                      </button>
+                    )}
                   </li>
                 </ul>
               </div>

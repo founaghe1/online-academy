@@ -94,10 +94,7 @@ const Login = () => {
     
   };
 
-  console.log("Utilisateur: " + userFullName + userEmail);
-  console.log(userFullName);
-  console.log(userFullName);
-  
+
   return (
     <>
     <ToastContainer />
