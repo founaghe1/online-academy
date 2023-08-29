@@ -33,7 +33,7 @@ import { createUserWithEmailAndPassword, updateProfile, updateEmail  } from "fir
 
 // toast notification
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css"
 
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -168,6 +168,21 @@ const Admin = () => {
       position: toast.POSITION.TOP_RIGHT,
     });
   };
+
+ 
+  // fetch users list
+
+
+  useEffect(() => {
+    // call the function here to fetch all the user list in realtime
+    getUsersList();
+  }, []);
+
+  
+
+
+
+
 
   // filter
   const filteredUsers = usersList
