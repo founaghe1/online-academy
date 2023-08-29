@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"
-import { getAuth, updateProfile, updateEmail } from "firebase/auth";
+import { getFirestore, collection, doc, updateDoc } from "firebase/firestore"
+import { getAuth, updateProfile, updateEmail, sendPasswordResetEmail } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAQGwZ3Hm3ORR8DW_aaKwj0WIW42emoWzM",
@@ -18,5 +18,5 @@ export const db = getFirestore(app);
 // Obtenir l'instance d'authentification
 const auth = getAuth(app);
 
-export { auth };
+export {  auth, collection, doc, updateDoc, sendPasswordResetEmail  };
 export { updateProfile, updateEmail }

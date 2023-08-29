@@ -135,9 +135,11 @@ const Login = () => {
               />
             </InputGroup>
             <div className="mb-5">
-              <Link to="/forgotPW">
+              
+                <a href="../ForgotPW/ForgotPW.jsx">
                   Mot de passe oublié ?
-              </Link>
+                </a>
+              
             </div>
             <Link>
               <button onClick={handleLogin}  className="login-btn btn text-light fw-bold w-100">

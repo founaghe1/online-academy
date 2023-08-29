@@ -78,6 +78,7 @@ import CoachsRoutes from "./components/Routes/CoachsRoutes";
 import ApprenantRoutes from "./components/Routes/ApprenantRoutes";
 import AdminRoutes from './components/Routes/AdminRoutes';
 import RoutesPrive from './components/Routes/RoutesPrive';
+import ReinsitialisationPW from './components/ComponentCoach/ForgotPW/ReinsitialisationPW';
 
 
 
@@ -87,6 +88,9 @@ function App() {
   return (
 
     <>
+      {/* <ReinsitialisationPW />
+      <ForgotPW/> */}
+      
       <Router>
         <Routes>
           <Route exact path="/" element={<Login />}/>
@@ -97,6 +101,7 @@ function App() {
           {/* <Route path='/coach/dashboard/*' element={ <CoachsRoutes /> } /> */}
           {/* {user?.status === "Apprenant" ? <Route path='/apprenant/dashboard/*' element={user?.status === "Apprenant" ?  <ApprenantRoutes /> :""}/>:<Route exact path="/" element={<Login />}/>} */}
           {/* <Route path='/admin/dashboard' element={ <Admin /> } /> */}
+        
         </Routes>
       </Router>
 

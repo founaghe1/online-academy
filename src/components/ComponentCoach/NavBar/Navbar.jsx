@@ -11,10 +11,12 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase/Firebase";
-
+import { auth, db } from "../../firebase/Firebase";
+import { updateProfile, updateEmail } from "firebase/auth";
+import { doc, updateDoc } from "firebase/firestore";
 
 const Navbar = () => {
+  const [users, setUsers] = useState(JSON.parse(localStorage.getItem("users")) || null);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -24,23 +26,68 @@ const Navbar = () => {
 
   const handleClosenoc = () => setShownoc(false);
   const handleShownoc = () => setShownoc(true);
+  
+  const user = JSON.parse(localStorage.getItem("users")) || null;
+
+  // const [showEdit, setShowEdite] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [editedUser, setEditedUser] = useState(user);
 
   // function deconnection
   const navigate = useNavigate();
-
-  const user = JSON.parse(localStorage.getItem("users")) || null
   
-
-  const logOut = async () =>{
-    try{
-      await  signOut(auth)
-      localStorage.removeItem("users")
-      navigate("/", {replace: true})
-    }catch(error){
+  
+  const logOut = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem("users");
+      navigate("/", { replace: true });
+    } catch (error) {
       alert("Erreur de deconnection, veuillez verifier votre connection");
-      console.error(error)
+      console.error(error);
     }
-  }
+  };
+
+  // modif profile
+
+  const handleEdit = () => {
+    setEditing(true);
+    setShow(true);
+  };
+
+  // Define a function to update the user state
+  const updateUser = (newUser) => {
+    setUsers(newUser);
+    localStorage.setItem("users", JSON.stringify(newUser));
+
+    const userDocRef = doc(db, "users", auth.currentUser.uid); // Change "users" to the actual collection name
+    updateDoc(userDocRef, {
+      prenom: newUser.prenom,
+      nom: newUser.nom,
+      email: newUser.email,
+    });
+  };
+
+  const handleSave = async () => {
+    try {
+      // Update email in Firebase Auth
+      if (editedUser.email !== user.email) {
+        await updateEmail(auth.currentUser, editedUser.email);
+      }
+
+      await updateProfile(auth.currentUser, {
+        displayName:
+          editedUser.prenom + " " + editedUser.nom + " " + editedUser.email,
+      });
+
+      updateUser(editedUser); // Update user state
+
+      setEditing(false);
+      setShow(false);
+    } catch (error) {
+      console.error("Error updating profile:", error);
+    }
+  };
 
   return (
     <nav>
@@ -131,116 +178,70 @@ const Navbar = () => {
                       className="rounded-circle"
                     />
                   </button>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <p class="dropdown-item">{user.prenom} {user.nom}</p>
-                    </li>
-                    <li>
-                      <p class="dropdown-item">{user.email}</p>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        {/* <span className="update-profil">Modifer profil</span> */}
-                        <Button
-                          className="btn btn-secondary text-white add "
-                          onClick={handleShow}
-                        >
-                          Modifer profil
-                        </Button>
+                  <ul className="dropdown-menu">
+                    {editing ? (
+                      <li>
+                        <input
+                          type="text"
+                          value={editedUser?.prenom}
+                          onChange={(e) =>
+                            setEditedUser({
+                              ...editedUser,
+                              prenom: e.target.value,
+                            })
+                          }
+                        />
+                        <input
+                          type="text"
+                          value={editedUser?.nom}
+                          onChange={(e) =>
+                            setEditedUser({
+                              ...editedUser,
+                              nom: e.target.value,
+                            })
+                          }
+                        />
+                        <input
+                          type="text"
+                          value={editedUser?.email}
+                          onChange={(e) =>
+                            setEditedUser({
+                              ...editedUser,
+                              email: e.target.value,
+                            })
+                          }
+                        />
+                      </li>
+                    ) : (
+                      <li>
+                        <p className="dropdown-item">
+                          {user?.prenom} {user?.nom}
+                        </p>
+                        <p className="dropdown-item">{user?.email}</p>
+                      </li>
+                    )}
 
-                        <Modal show={show} onHide={handleClose}>
-                          <Modal.Header closeButton>
-                            <Modal.Title>
-                              <h3>Modifier le profil</h3>
-                            </Modal.Title>
-                          </Modal.Header>
-                          <Modal.Body className="my-3">
-                            <div className=" d-flex justify-content-center align-items-center mb-3">
-                              <div>
-                                <a href="">
-                                  <img
-                                    src="https://avatars.dicebear.com/v2/male/55c6a0641adadaa4af04809a28329ec4.svg"
-                                    class="rounded-circle shadow"
-                                    alt=""
-                                    width="80"
-                                  />
-                                </a>
-                              </div>
-                            </div>
-                            <div className="row align-items-baseline">
-                              <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                                <FloatingLabel
-                                  controlId="floatingInput"
-                                  label="Nom"
-                                >
-                                  <Form.Control
-                                    type="text"
-                                    placeholder="princesse"
-                                  />
-                                </FloatingLabel>
-                              </div>
-                              <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                                <FloatingLabel
-                                  controlId="floatingInput"
-                                  label="Prenom"
-                                >
-                                  <Form.Control
-                                    type="text"
-                                    placeholder="princesse"
-                                  />
-                                </FloatingLabel>
-                              </div>
-                              <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                                <FloatingLabel
-                                  controlId="floatingInput"
-                                  label="Email"
-                                >
-                                  <Form.Control
-                                    type="email"
-                                    placeholder="princesse@gmail.com"
-                                  />
-                                </FloatingLabel>
-                              </div>
-                              <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                                <FloatingLabel
-                                  controlId="floatingInput"
-                                  label="Mot de passe"
-                                >
-                                  <Form.Control
-                                    type="password"
-                                    placeholder="*********"
-                                  />
-                                </FloatingLabel>
-                              </div>
-                            </div>
-                          </Modal.Body>
-                          <Modal.Footer>
-                            <Button
-                              className="btnFermer  "
-                              onClick={handleClose}
-                            >
-                              Fermer
-                            </Button>
-                            <Button className="saveBtn" onClick={handleClose}>
-                              Enregistrer
-                            </Button>
-                          </Modal.Footer>
-                        </Modal>
+                    <li>
+                      <a className="dropdown-item" onClick={handleEdit}>
+                        <span className="update-profil">Modifier profil</span>
                       </a>
                     </li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
+                    <li className="ps-3 mt-2">
+                      {editing ? (
                         <button
-                          type="button"
-                          class="btn btn-danger border border-0"
+                          className="btn btn-success text-light"
+                          onClick={handleSave}
+                        >
+                          Enregistrer
+                        </button>
+                      ) : (
+                        <button
+                          className="btn btn-danger text-light logout"
                           onClick={logOut}
                         >
-                          Deconnexion
+                          Déconnexion
                         </button>
-                      </a>
+                      )}
                     </li>
                   </ul>
                 </div>
