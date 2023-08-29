@@ -11,6 +11,8 @@ import { auth, db } from "../../../firebase/Firebase";
 import { updateProfile, updateEmail } from "firebase/auth";
 import { doc, updateDoc } from "firebase/firestore";
 
+import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
 
 const StudentNavbar = () => {
   const [users, setUsers] = useState(JSON.parse(localStorage.getItem("users")) || null);

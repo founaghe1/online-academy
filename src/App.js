@@ -86,7 +86,6 @@ function App() {
   const user = JSON.parse(localStorage.getItem("users")) || null
  
   return (
-
     <>
       {/* <ReinsitialisationPW />
       <ForgotPW/> */}
@@ -106,7 +105,7 @@ function App() {
     </>
 
     // <div className='App'>
-      // <Admin /> 
+    // <Admin />
     //   {/* <Dashboard  /> */}
       // {/* <Login /> */}
     //   {/* <StudentDashboard /> */}
@@ -120,8 +119,7 @@ function App() {
     //   {/* <ListeApprenants/> */}
     //   {/* <NotificationsCoachs/> */}
     //   {/* <ChatPage /> */}
-      
-      
+
     //   {/* <Router>
     //     <Routes>
     //       <Route exact path='/' element={<Domain />} />
