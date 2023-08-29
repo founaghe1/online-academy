@@ -4,11 +4,11 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/ComponentCoach/login/Login';
-import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
-import SideBar from './components/ComponentCoach/SideBar/Sidebar';
+// import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
+// import SideBar from './components/ComponentCoach/SideBar/Sidebar';
 import Navbar from './components/ComponentCoach/NavBar/Navbar';
 import Layout from './components/ComponentCoach/Layout/Layout';
-
+import { BrowserRouter } from "react-router-dom";
 // Coach
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Domain from './components/Domain/Domain';
@@ -45,7 +45,7 @@ import ChatPage from './components/ComponentCoach/ChatPage/ChatPage';
 
 
 import Modal from "./components/ComponentCoach/Cour/Modal";
-import Cour from "./components/ComponentCoach/Cour/Cour";
+import Coure from "./components/ComponentCoach/Cour/Cour";
 import Voircour from "./components/ComponentApprenant/VoirCours/VoirCour";
 import CourBoostrap from "./components/ComponentApprenant/VoirCours/CourBoostrap";
 import Voircourjs from "./components/ComponentApprenant/VoirCours/VoircourJS"
@@ -97,10 +97,6 @@ function App() {
           <Route path="/apprenant/dashboard/*" element={<RoutesPrive status={["Apprenant"] } ><ApprenantRoutes /></RoutesPrive>}></Route>
           <Route path="/coach/dashboard/*" element={<RoutesPrive status={["Coach"] } ><CoachsRoutes /></RoutesPrive>}></Route>
           <Route path="/admin/dashboard" element={<RoutesPrive status={["Admin"] } ><Admin /></RoutesPrive>}></Route>
-          
-          {/* <Route path='/coach/dashboard/*' element={ <CoachsRoutes /> } /> */}
-          {/* {user?.status === "Apprenant" ? <Route path='/apprenant/dashboard/*' element={user?.status === "Apprenant" ?  <ApprenantRoutes /> :""}/>:<Route exact path="/" element={<Login />}/>} */}
-          {/* <Route path='/admin/dashboard' element={ <Admin /> } /> */}
         
         </Routes>
       </Router>
@@ -128,37 +124,114 @@ function App() {
       
     //   {/* <Router>
     //     <Routes>
-    //       <Route exact path="/" element={<Domain />} />
+    //       <Route exact path='/' element={<Domain />} />
     //       <Route path="/programmation" element={<Programmation />} />
     //       <Route path="/marketing" element={<Marketing />} />
     //       <Route path="/design" element={<Design />} />
+    //       <Route
+    //         path='/sous-domaine-marketing/developpement'
+    //         element={<Voircourdevelop />}
+    //       />
+    //       <Route path='/sous-domaine-marketing/booter' element={<Booter />} />
+    //       <Route path='/sous-domaine-marketing/etude' element={<Etude />} />
+    //       <Route path='/sous-domaine-design' element={<Design />} />
+    //       <Route path='/sous-domaine-design/photo' element={<Potoshop />} />
+    //       <Route path='/sous-domaine-design/ulis' element={<Ulistration />} />
+    //       <Route path='/sous-domaine-design/pro' element={<PRO />} />
+    //       <Route
+    //         path='/sous-domaine-design/initia'
+    //         element={<Initialisation />}
+    //       />
+    //       <Route
+    //         path='/sous-domaine-programmation/html/css'
+    //         element={<Voircour />}
+    //       />
+    //       <Route
+    //         path='/sous-domaine-programmation/boostrap'
+    //         element={<CourBoostrap />}
+    //       />
+    //       <Route
+    //         path='/sous-domaine-programmation/js'
+    //         element={<Voircourjs />}
+    //       />
+    //       <Route
+    //         path='/sous-domaine-programmation/php'
+    //         element={<Voircourphp />}
+    //       />
+    //       <Route
+    //         path='/sous-domaine-programmation/diago'
+    //         element={<Voircourdiago />}
+    //       />
+    //       <Route path='/sous-domaine-programmation/c' element={<Voircourc />} />
+    //       <Route path='/question' element={<Quizzes />} />
+    //       <Route path='/quiss' element={<QuizzBoostrap />} />
+    //       <Route path='/javascrip' element={<QuizzJs />} />
+    //       <Route path='/php' element={<QuizzPhp />} />
+    //       <Route path='/django' element={<Quizzdjango />} />
+    //       <Route path='/c++' element={<QuizzC />} />
+    //       <Route path='/digital' element={<QuizzMarketinDigital />} />
+    //       <Route path='/resaux' element={<Quizzresauxsocia />} />
+    //       <Route path='/booter' element={<QuizzBooter />} />
+    //       <Route path='/photo' element={<QuizzPhotos />} />
+    //       <Route path='/ullustrator' element={<Quizzullustrator />} />
+    //       <Route path='/initialisation' element={<Quizzinitialisation />} />
+    //       <Route path='/pro' element={<Quizzpro />} />
     //     </Routes>
     //   </Router> */}
+    //   {/* </Router> */}
 
-    //   {/* Routes Yagouba */}
+    //  {/* </> */}
 
-    //   {/* <Router>
-    //     <Routes>
-    //       <Route path='/' element={<Login />} />
-    //       <Route path="/layout" element={ <Layout />}>
-    //         <Route path='/layout/dashboard' element={<Dashboard />} />
-    //         <Route path='/layout/dashboard/domain' element={<DomainApprt />} />
-    //       </Route>
-    //     </Routes>
-    //   </Router> */}
+    
+    // {/* //   // <Admin />  */}
+    //   {/* <Dashboard  /> */}
+    //     {/* <Login /> */}
+    //     {/* <StudentDashboard /> */}
 
-    //   {/* <Dashboard  />bakelitraining */}
-    //   {/* <Login /> */}
+    //     {/* <AjoutCours /> */}
 
-    // //   {/* <ForgotPW/> */}
-    // //   {/* <Livraison /> */}
-    // //   {/* <Voirlivraison />       */}
-    // //   {/* <Chat/> */}
-    // //   {/* <ListeApprenants/> */}
-    // //   {/* <NotificationsCoachs/> */}
+    //     {/* <ForgotPW/> */}
+    //     {/* <Livraison /> */}
+    //     {/* <Voirlivraison />       */}
+    //     {/* <Chat/> */}
+    //     {/* <ListeApprenants/> */}
+    //     {/* <NotificationsCoachs/> */}
+    //     {/* <ChatPage /> */}
+      
+      
+        // {/* <Router>
+        //   <Routes>
+        //     <Route exact path="/" element={<Domain />} />
+        //     <Route path="/programmation" element={<Programmation />} />
+        //     <Route path="/marketing" element={<Marketing />} />
+        //     <Route path="/design" element={<Design />} />
+        //   </Routes>
+        // </Router> */}
+
+        // {/* Routes Yagouba */}
+
+        // {/* <Router>
+        //   <Routes>
+        //     <Route path='/' element={<Login />} />
+        //     <Route path="/layout" element={ <Layout />}>
+        //       <Route path='/layout/dashboard' element={<Dashboard />} />
+        //       <Route path='/layout/dashboard/domain' element={<DomainApprt />} />
+        //     </Route>
+        //   </Routes>
+        // </Router> */}
+
+        // {/* <Dashboard  />bakelitraining */}
+        // {/* <Login /> */}
+
+        //  {/* <ForgotPW/> */}
+        //  {/* <Livraison /> */}
+        //  {/* <Voirlivraison />       */}
+        //  {/* <Chat/> */}
+        //  {/* <ListeApprenants/> */}
+        //  {/* <NotificationsCoachs/> */}
 
 
-    //   {/* nini Routes */}
+        // {/* nini Routes */}
 
       //  {/* <Router>
       //   <Routes>
@@ -217,18 +290,19 @@ function App() {
       //   </Routes>
       // </Router> */}
 
-    //   {/* <Modale />
-    //   <Coure />  */}
+    //  {/* <Modale />  */}
+      //  <Coure /> 
+        
 
-    //   {/* <BrowserRouter>
-    //   <Routes>
-    //       <Route exact path='/' element={<Voirquizze />} />
-    //       <Route path='/question' element={<Qestion />} />
-    //     </Routes>
-    //   </BrowserRouter> */}
+    // {/* //   <BrowserRouter>
+    // //   <Routes>
+    // //       <Route exact path='/' element={<Voirquizze />} />
+    // //       <Route path='/question' element={<Qestion />} />
+    // //     </Routes>
+    // //   </BrowserRouter> */}
 
-    // </div>
-  );
+    
+  )
 }
 
 export default App;

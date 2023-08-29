@@ -4,6 +4,7 @@ import React from 'react'
 // import Modale from '../Cour/Modal'
 import Coure from '../Cour/Cour';
 import Domain from '../Domain/Domain';
+import Sidebar from '../SideBar/Sidebar';
 
 
 const Dashboard = () => {
@@ -12,7 +13,7 @@ const Dashboard = () => {
       <div className="container-fluid">
         <div className="row">
           {/* <div className="col-lg-2">
-            <SideBar />
+            <Sidebar />
           </div> */}
           <div className="col-lg-12">
             <div className="row  ">
