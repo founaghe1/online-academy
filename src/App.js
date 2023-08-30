@@ -176,39 +176,39 @@ function App() {
     //       <Route path='/pro' element={<Quizzpro />} />
     //     </Routes>
     //   </Router> */}
-    //   {/* </Router> */}
+      //  {/* </Router>
 
-    //  {/* </> */}
+      // {/* </> */}
 
     
-    // {/* //   // <Admin />  */}
-    //   {/* <Dashboard  /> */}
-    //     {/* <Login /> */}
-    //     {/* <StudentDashboard /> */}
+    //  {/*     <Admin />  */}
+    //    {/* <Dashboard  /> */}
+    //      {/* <Login /> */}
+    //      {/* <StudentDashboard /> */}
 
-    //     {/* <AjoutCours /> */}
+    //      {/* <AjoutCours /> */}
 
-    //     {/* <ForgotPW/> */}
-    //     {/* <Livraison /> */}
-    //     {/* <Voirlivraison />       */}
-    //     {/* <Chat/> */}
-    //     {/* <ListeApprenants/> */}
-    //     {/* <NotificationsCoachs/> */}
-    //     {/* <ChatPage /> */}
+    //      {/* <ForgotPW/> */}
+    //      {/* <Livraison /> */}
+    //      {/* <Voirlivraison />       */}
+    //      {/* <Chat/> */}
+    //      {/* <ListeApprenants/> */}
+    //      {/* <NotificationsCoachs/> */}
+    //      {/* <ChatPage /> */}
       
       
-        // {/* <Router>
-        //   <Routes>
-        //     <Route exact path="/" element={<Domain />} />
-        //     <Route path="/programmation" element={<Programmation />} />
-        //     <Route path="/marketing" element={<Marketing />} />
-        //     <Route path="/design" element={<Design />} />
-        //   </Routes>
-        // </Router> */}
+    //      {/* <Router> */}
+    //     {/* //   <Routes>
+    //     //     <Route exact path="/" element={<Domain />} />
+    //     //     <Route path="/programmation" element={<Programmation />} />
+    //     //     <Route path="/marketing" element={<Marketing />} />
+    //     //     <Route path="/design" element={<Design />} />
+    //     //   </Routes>
+    //     // </Router> */} 
 
-        // {/* Routes Yagouba */}
+    //      {/* Routes Yagouba */}
 
-        // {/* <Router>
+        //  {/* <Router>
         //   <Routes>
         //     <Route path='/' element={<Login />} />
         //     <Route path="/layout" element={ <Layout />}>
@@ -218,18 +218,19 @@ function App() {
         //   </Routes>
         // </Router> */}
 
-        // {/* <Dashboard  />bakelitraining */}
-        // {/* <Login /> */}
+        //  {/* <Dashboard  />bakelitraining */}
+        //  {/* <Login /> */}
 
-        //  {/* <ForgotPW/> */}
-        //  {/* <Livraison /> */}
-        //  {/* <Voirlivraison />       */}
-        //  {/* <Chat/> */}
-        //  {/* <ListeApprenants/> */}
-        //  {/* <NotificationsCoachs/> */}
+        //   {/* <ForgotPW/> */}
+        //   {/* <Livraison /> */}
+        //   {/* <Voirlivraison />       */}
+        //   {/* <Chat/> */}
+        //   {/* <ListeApprenants/> */}
+        //   {/* <NotificationsCoachs/> */}
+          //  < ListCoach />
 
 
-        // {/* nini Routes */}
+        //  {/* nini Routes */}
 
       //  {/* <Router>
       //   <Routes>
@@ -292,12 +293,12 @@ function App() {
       //  <Coure /> 
         
 
-    // {/* //   <BrowserRouter>
-    // //   <Routes>
-    // //       <Route exact path='/' element={<Voirquizze />} />
-    // //       <Route path='/question' element={<Qestion />} />
-    // //     </Routes>
-    // //   </BrowserRouter> */}
+    //  {/* /* //   <BrowserRouter>
+    // // //   <Routes>
+    // // //       <Route exact path='/' element={<Voirquizze />} />
+    // // //       <Route path='/question' element={<Qestion />} />
+    // // //     </Routes>
+    // // //   </BrowserRouter> */ */}
 
     
   )

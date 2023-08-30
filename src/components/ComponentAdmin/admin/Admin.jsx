@@ -16,7 +16,6 @@ import { BsPencilSquare, BsTrash } from "react-icons/bs";
 import { AiFillEye } from "react-icons/ai";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 
-
 // firebase
 import {
   getDocs,
@@ -129,6 +128,7 @@ const Admin = () => {
   // }, []);
 
   const onSubmitUsers = async () => {
+    
     try {
       // Enregistrement dans l'authentification
       const userCreateAuth = await createUserWithEmailAndPassword(
@@ -752,7 +752,7 @@ const handleEdit = () => {
                 <BiSolidLeftArrow />
               </button>
               <span className="fw-bold d-flex justify-content-center align-items-center px-3  nbrPages rounded text-light mx-1">
-                {" "}
+                
                 {currentPage}
               </span>
               <button
