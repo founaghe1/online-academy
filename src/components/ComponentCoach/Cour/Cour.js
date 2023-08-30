@@ -2,538 +2,419 @@
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import React from "react";
 import Table from "react-bootstrap/Table";
-import { SiMaterialdesignicons } from "react-icons/si";
-import { MdDeveloperMode } from "react-icons/md";
-import { TbBrandPython } from "react-icons/tb";
-import { BsFiletypeHtml } from "react-icons/bs";
-import { DiJavascript1 } from "react-icons/di";
+
 import { RiDeleteBinLine } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
 import "./modal.css";
+// import ReactPlayer from "react-player";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  deleteDoc,
+  updateDoc,
+  doc,
+  onSnapshot,
+  query,
+} from "firebase/firestore";
+import { db } from "../../firebase/Firebase";
+// toast notification
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ReactPlayer from "react-player";
 
 function Coure() {
-   const [show, setShow] = useState(false);
+  const [usersList, setUsersList] = useState([]);
+  const [newCours, setNewCours] = useState("");
+  const [newDebut, setNewDebut] = useState("");
+  const [newDurée, setNewDurée] = useState("");
+  const [newurl, setNewurl] = useState("");
+  const [cours, setCours] = useState([]);
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [editingUser, setEditingUser] = useState({
+    Cours: "",
+    Durée: "",
+    url: "",
+  });
+  const usersCollectionRef = collection(db, "cours");
 
-   const handleClose = () => setShow(false);
-   const handleShow = () => setShow(true);
+  const getUsersList = async () => {
+    try {
+      const data = await getDocs(usersCollectionRef);
+      const filteredData = data.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setUsersList(filteredData);
+    } catch (err) {
+      console.error("Error getting documents: ", err);
+    }
+  };
+
+  const openEditModal = (user) => {
+    setEditingUser({
+      id: user.id,
+      Cours: user.Cours,
+      Durée: user.Durée,
+      url: user.url,
+    });
+    setEditModalOpen(true);
+  };
+  // fonction pour fermer la fenêtre modale d'édition
+  const closeEditModal = () => {
+    setEditModalOpen(false);
+    setEditingUser({
+      Cours: "",
+      Durée: "",
+      url: "",
+    });
+  };
+
+  // Fonction pour mettre à jour l'utilisateur
+
+  const enregistre = async () => {
+    if (newCours === "" || newDurée === "" || newurl === "") {
+      alert("Veuillez remplir tous les champs du formulaire.");
+      return false;
+    }
+    await addDoc(usersCollectionRef, {
+      Cours: newCours,
+      Durée: newDurée,
+      Debut: newDebut,
+      url: newurl,
+    });
+    setNewCours("");
+    setNewDurée("");
+    setNewurl("");
+    window.location.reload();
+  };
+  
+  console.log(enregistre);
+  const deleteUser = async (id) => {
+    const userDoc = doc(usersCollectionRef, id);
+    await deleteDoc(userDoc);
+  };
+
+  
+
+  const updateUser = async () => {
+    const userDocRef = doc(db, "cours", editingUser.id);
+    try {
+      await updateDoc(userDocRef, {
+        Cours: editingUser.Cours,
+        Durée: editingUser.Durée,
+        url: editingUser.url,
+      });
+      getUsersList(); // Rafraîchir la liste des utilisateurs après la mise à jour
+      closeEditModal();
+      toast.success("User updated successfull !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    // call the function here to fetch all the user list in realtime
+    getUsersList();
+  }, []);
+
+  useEffect(() => {
+    const q = query(collection(db, "cours"));
+    onSnapshot(q, (querySnapshot) => {
+      const cours = [];
+      querySnapshot.forEach((doc) => {
+        cours.push(doc.data().Cours, doc.data().Durée, doc.data().Durée);
+      });
+      const getUsers = async () => {
+        
+       
+        const data = await getDocs(usersCollectionRef);
+        setCours(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      };
+      getUsers();
+      
+    });
+  }, []);
+ 
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const onClose = () => setShow(false);
   return (
-    <div className="coursbg">
-      <h1 className='bg-info w-25 text-center ms-3 rounded text-light pb-4'>Cours</h1>
-      <div className='container bg-light'>
-        <Table responsive className='table mt-5'>
-          <thead>
-            <tr className="text-center">
-              <th>Course Name</th>
-              <th>Debut</th>
-              <th>Durée</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody className="text-center">
-            <tr>
-              <td className=''>
-                <div className='d-flex justify-content-evenly align-items-center'>
-                  <div
-                    className='icon1 icon d-flex justify-content-center align-items-center p-2  '
-                    style={{ borderRadius: "8%" }}
-                  >
-                    <div>
-                      <SiMaterialdesignicons className='fs-5  mb-1 sir' />
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      <span>Web Design</span>
-                    </p>
-                  </div>
-                </div>
-              </td>
-              <td>8h 15mn</td>
-              <td>15h</td>
-              <td>
-                <div className='d-flex justify-content-center gap-2 text-center  '>
-                  <Button
-                    variant='info'
-                    onClick={handleShow}
-                    className='text-white'
-                  >
-                    <FiEdit />
-                  </Button>
-
-                  <Modal show={show} onHide={handleClose} animation={false}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Ajout cour</Modal.Title>
-                    </Modal.Header>
-                    <Form className='for p-3'>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Photo
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Control
-                            type='file'
-                            placeholder='debut cour'
-                            name='image'
-                            id='image'
-                          />
-                        </Col>
-                      </Form.Group>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Cours
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Select aria-label='Default select example'>
-                            <option>Cours</option>
-                            <option value='1'>Web Design</option>
-                            <option value='2'>Development Basisc</option>
-                            <option value='3'>Data with python</option>
-                            <option value='3'>Html Basisc</option>
-                            <option value='3'>Javscript Basisc</option>
-                          </Form.Select>
-                        </Col>
-                      </Form.Group>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Durée
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Control
-                            type='number'
-                            placeholder='debut cour'
-                          />
-                        </Col>
-                      </Form.Group>
-                    </Form>
-                    <Modal.Footer>
-                      <Button variant='' onClick={handleClose} className='but'>
-                        Modifier
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                  <button type='button' className='btn btn-danger bg-danger'>
-                    <RiDeleteBinLine />
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td className=''>
-                <div className='d-flex justify-content-evenly align-items-center  '>
-                  <div
-                    className='icon2 icon d-flex justify-content-center align-items-center p-2  ms-4 '
-                    style={{ borderRadius: "8%" }}
-                  >
-                    <div>
-                      <MdDeveloperMode className='fs-5  mb-1 sir1 ' />
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      <span>Development Basisc</span>
-                    </p>
-                  </div>
-                </div>
-              </td>
-              <td>8h 15mn</td>
-              <td>15h</td>
-              <td>
-                <div className='d-flex justify-content-center gap-2 text-center  '>
-                  <Button
-                    variant='info'
-                    onClick={handleShow}
-                    className='text-white'
-                  >
-                    <FiEdit />
-                  </Button>
-
-                  <Modal show={show} onHide={handleClose} animation={false}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Ajout cour</Modal.Title>
-                    </Modal.Header>
-                    <Form className='for p-3'>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Photo
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Control
-                            type='file'
-                            placeholder='debut cour'
-                            name='image'
-                            id='image'
-                          />
-                        </Col>
-                      </Form.Group>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Cours
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Select aria-label='Default select example'>
-                            <option>Cours</option>
-                            <option value='1'>Web Design</option>
-                            <option value='2'>Development Basisc</option>
-                            <option value='3'>Data with python</option>
-                            <option value='3'>Html Basisc</option>
-                            <option value='3'>Javscript Basisc</option>
-                          </Form.Select>
-                        </Col>
-                      </Form.Group>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Durée
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Control
-                            type='number'
-                            placeholder='debut cour'
-                          />
-                        </Col>
-                      </Form.Group>
-                    </Form>
-                    <Modal.Footer>
-                      <Button variant='' onClick={handleClose} className='but'>
-                        Modifier
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                  <button type='button' className='btn btn-danger'>
-                    <RiDeleteBinLine />
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td className=''>
-                <div className='d-flex justify-content-evenly align-items-center  '>
-                  <div
-                    className='icon3 icon d-flex justify-content-center align-items-center p-2  ms-3 '
-                    style={{ borderRadius: "8%" }}
-                  >
-                    <div>
-                      <TbBrandPython className='fs-5  mb-1 sir2 ' />
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      <span>Data with python</span>
-                    </p>
-                  </div>
-                </div>
-              </td>
-              <td>8h 15mn</td>
-              <td>15h</td>
-              <td>
-                <div className='d-flex justify-content-center gap-2 text-center  '>
-                  <Button
-                    variant='info'
-                    onClick={handleShow}
-                    className='text-white'
-                  >
-                    <FiEdit />
-                  </Button>
-
-                  <Modal show={show} onHide={handleClose} animation={false}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Ajout cour</Modal.Title>
-                    </Modal.Header>
-                    <Form className='for p-3'>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Photo
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Control
-                            type='file'
-                            placeholder='debut cour'
-                            name='image'
-                            id='image'
-                          />
-                        </Col>
-                      </Form.Group>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Cours
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Select aria-label='Default select example'>
-                            <option>Cours</option>
-                            <option value='1'>Web Design</option>
-                            <option value='2'>Development Basisc</option>
-                            <option value='3'>Data with python</option>
-                            <option value='3'>Html Basisc</option>
-                            <option value='3'>Javscript Basisc</option>
-                          </Form.Select>
-                        </Col>
-                      </Form.Group>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Durée
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Control
-                            type='number'
-                            placeholder='debut cour'
-                          />
-                        </Col>
-                      </Form.Group>
-                    </Form>
-                    <Modal.Footer>
-                      <Button variant='' onClick={handleClose} className='but'>
-                        Modifier
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                  <button type='button' className='btn btn-danger'>
-                    <RiDeleteBinLine />
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td className=''>
-                <div className='d-flex justify-content-evenly align-items-center  '>
-                  <div
-                    className='icon4 icon d-flex justify-content-center align-items-center p-2   '
-                    style={{ borderRadius: "8%" }}
-                  >
-                    <div>
-                      <BsFiletypeHtml className='fs-5  mb-1 sir3 ' />
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      <span>Html Basisc</span>
-                    </p>
-                  </div>
-                </div>
-              </td>
-              <td>8h 15mn</td>
-              <td>15h</td>
-              <td>
-                <div className='d-flex justify-content-center gap-2 text-center  '>
-                  <Button
-                    variant='info'
-                    onClick={handleShow}
-                    className='text-white'
-                  >
-                    <FiEdit />
-                  </Button>
-
-                  <Modal show={show} onHide={handleClose} animation={false}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Ajout cour</Modal.Title>
-                    </Modal.Header>
-                    <Form className='for p-3'>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Photo
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Control
-                            type='file'
-                            placeholder='debut cour'
-                            name='image'
-                            id='image'
-                          />
-                        </Col>
-                      </Form.Group>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Cours
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Select aria-label='Default select example'>
-                            <option>Cours</option>
-                            <option value='1'>Web Design</option>
-                            <option value='2'>Development Basisc</option>
-                            <option value='3'>Data with python</option>
-                            <option value='3'>Html Basisc</option>
-                            <option value='3'>Javscript Basisc</option>
-                          </Form.Select>
-                        </Col>
-                      </Form.Group>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Durée
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Control
-                            type='number'
-                            placeholder='debut cour'
-                          />
-                        </Col>
-                      </Form.Group>
-                    </Form>
-                    <Modal.Footer>
-                      <Button variant='' onClick={handleClose} className='but'>
-                        Modifier
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                  <button type='button' className='btn btn-danger'>
-                    <RiDeleteBinLine />
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td className=''>
-                <div className='d-flex justify-content-evenly align-items-center  '>
-                  <div
-                    className='icon5 icon d-flex justify-content-center align-items-center p-2 ms-2   '
-                    style={{ borderRadius: "8%" }}
-                  >
-                    <div>
-                      <DiJavascript1 className='fs-5  mb-1 sir4 ' />
-                    </div>
-                  </div>
-                  <div>
-                    <p>
-                      <span>Javscript Basisc</span>
-                    </p>
-                  </div>
-                </div>
-              </td>
-              <td>8h 15mn</td>
-              <td>15h</td>
-              <td>
-                <div className='d-flex justify-content-center gap-2 text-center  '>
-                  <Button
-                    variant='info'
-                    onClick={handleShow}
-                    className='text-white'
-                  >
-                    <FiEdit />
-                  </Button>
-
-                  <Modal show={show} onHide={handleClose} animation={false}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Ajout cour</Modal.Title>
-                    </Modal.Header>
-                    <Form className='for p-3'>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Photo
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Control
-                            type='file'
-                            placeholder='debut cour'
-                            name='image'
-                            id='image'
-                          />
-                        </Col>
-                      </Form.Group>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Cours
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Select aria-label='Default select example'>
-                            <option>Cours</option>
-                            <option value='1'>Web Design</option>
-                            <option value='2'>Development Basisc</option>
-                            <option value='3'>Data with python</option>
-                            <option value='3'>Html Basisc</option>
-                            <option value='3'>Javscript Basisc</option>
-                          </Form.Select>
-                        </Col>
-                      </Form.Group>
-                      <Form.Group
-                        as={Row}
-                        className='mb-3'
-                        controlId='formPlaintextPassword'
-                      >
-                        <Form.Label column sm='2'>
-                          Durée
-                        </Form.Label>
-                        <Col sm='10'>
-                          <Form.Control
-                            type='number'
-                            placeholder='debut cour'
-                          />
-                        </Col>
-                      </Form.Group>
-                    </Form>
-                    <Modal.Footer>
-                      <Button variant='' onClick={handleClose} className='but'>
-                        Modifier
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                  <button type='button' className='btn btn-danger'>
-                    <RiDeleteBinLine />
-                  </button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </Table>
+    <>
+      <div className='d-flex justify-content-end  coursbg pe-5 mt-5'>
+        <Button variant='' onClick={handleShow} className='but'>
+          Ajouter
+        </Button>
       </div>
-    </div>
+
+      <div className='coursbg'>
+        <Modal show={show} onHide={handleClose} id='videchamp'>
+          <Modal.Header closeButton className='for '>
+            <Modal.Title>Ajout Taches</Modal.Title>
+          </Modal.Header>
+
+          <Form className='for p-3'>
+            <Form.Group
+              as={Row}
+              className='mb-3'
+              controlId='formPlaintextPassword'
+            >
+              <Form.Label column sm='2' className='label'>
+                VIDEO
+              </Form.Label>
+              <Col sm='10'>
+                <Form.Control
+                  type='url'
+                  placeholder=''
+                  name='image'
+                  id='image'
+                  onChange={(e) => setNewurl(e.target.value)}
+                  className='inpu'
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              as={Row}
+              className='mb-3'
+              controlId='formPlaintextPassword'
+            >
+              <Form.Label column sm='2' className='label'>
+                NOM COURS
+              </Form.Label>
+              <Col sm='10'>
+                <Form.Select
+                  aria-label='Default select example'
+                  value={newCours}
+                  onChange={(e) => setNewCours(e.target.value)}
+                  className='inpu'
+                >
+                  <option></option>
+                  <option value='Web Design'>Web Design</option>
+                  <option value='Development Basisc'>Development Basisc</option>
+                  <option value='Data with python'>Data with python</option>
+                  <option value='Html Basisc'>Html Basisc</option>
+                  <option value='Javscript Basisc'>Javscript Basisc</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              as={Row}
+              className='mb-3'
+              controlId='formPlaintextPassword'
+            >
+              <Form.Label column sm='2' className='label'>
+                DUREE
+              </Form.Label>
+              <Col sm='10'>
+                <Form.Control
+                  type='number'
+                  placeholder=''
+                  onChange={(e) => setNewDurée(e.target.value)}
+                  className='inpu'
+                />
+              </Col>
+            </Form.Group>
+          </Form>
+
+          <div className='row ms-auto'>
+            <button
+              type='button'
+              className='btn but  m-4'
+              id='annule'
+              onClick={onClose}
+            >
+              Annuler
+            </button>
+
+            <button
+              type='button'
+              className='btn but m-4 '
+              id='enreg'
+              onClick={enregistre}
+            >
+              Enregistrer
+            </button>
+          </div>
+        </Modal>
+        <h1 className='bg-info w-25 text-center ms-3 rounded text-light pb-4'>
+          Taches
+        </h1>
+        <div className='container'>
+          <div className=''>
+            <div className='row'>
+              {cours.map((user, index) => {
+                return (
+                  <div className='col-4'>
+                    <div class='car mt-4 '>
+                      <p key={user.id}>
+                        {/* <th>{index + 1}</th> */}
+                        <span>
+                          <ReactPlayer
+                            url={user.url}
+                            controls
+                            width='100%'
+                            height='350px'
+                          />
+                        </span>
+                        <p>{user.Cours}</p>
+                        <p>{user.Debut}</p>
+                        <p>{user.Durée}h</p>
+
+                        <p className='icon d-flex justify-content-center align-items-center '>
+                          <div className='ms-auto'>
+                            <button
+                              onClick={() => openEditModal(user)}
+                              className='btn btn-primary text-left-0'
+                            >
+                              <FiEdit />
+                            </button>
+
+                            <button
+                              className='btn btn-danger text-left-50 m-2'
+                              onClick={() =>
+                                deleteUser(user.id, {
+                                  newCours: "",
+                                  newDurée: "",
+                                })
+                              }
+                            >
+                              <RiDeleteBinLine />
+                            </button>
+                          </div>
+                        </p>
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          {/* <Table responsive className='table mt-5'>
+            <thead>
+              <tr className='text-center'>
+                <th>url</th>
+                <th>Cours</th>
+                <th>Debut</th>
+                <th>Durée(heures)</th>
+                <th>Action</th>
+              </tr>
+            </thead> */}
+
+          {/* Editing Modal */}
+          <div className='coursbg '>
+            <Modal
+              show={editModalOpen}
+              onHide={closeEditModal}
+              id='videchamp '
+              className='bg-red'
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>Modifier Tache</Modal.Title>
+              </Modal.Header>
+              <Modal.Body className="bg-red"> 
+                <Form>
+                  <Form.Group
+                    as={Row}
+                    className='mb-3'
+                    controlId='formPlaintextPassword'
+                  >
+                    <Form.Label column sm='2'>
+                      VIDEO
+                    </Form.Label>
+                    <Col sm='10'>
+                      <Form.Control
+                        type='url'
+                        placeholder=''
+                        name='url'
+                        id='image'
+                        className='in'
+                        onChange={(e) => setNewurl(e.target.value)}
+                      />
+                    </Col>
+                  </Form.Group>
+                  <Form.Group
+                    as={Row}
+                    className='mb-3'
+                    controlId='formPlaintextPassword'
+                  >
+                    <Form.Label column sm='2'>
+                      NOM COURS
+                    </Form.Label>
+                    <Col sm='10'>
+                      <Form.Select
+                        aria-label='Default select example'
+                        type='cours'
+                        className='in'
+                        value={editingUser.Cours}
+                        onChange={(e) =>
+                          setEditingUser({
+                            ...editingUser,
+                            Cours: e.target.value,
+                          })
+                        }
+                      >
+                        <option></option>
+                        <option value='Web Design'>Web Design</option>
+                        <option value='Development Basisc'>
+                          Development Basisc
+                        </option>
+                        <option value='Data with python'>
+                          Data with python
+                        </option>
+                        <option value='Html Basisc'>Html Basisc</option>
+                        <option value='Javscript Basisc'>
+                          Javscript Basisc
+                        </option>
+                      </Form.Select>
+                    </Col>
+                  </Form.Group>
+                  <Form.Group
+                    as={Row}
+                    className='mb-3'
+                    controlId='formPlaintextPassword'
+                  >
+                    <Form.Label column sm='2'>
+                      DUREE
+                    </Form.Label>
+                    <Col sm='10'>
+                      <Form.Control
+                        type='number'
+                        className='in'
+                        value={editingUser.Durée}
+                        onChange={(e) =>
+                          setEditingUser({
+                            ...editingUser,
+                            Durée: e.target.value,
+                          })
+                        }
+                      />
+                    </Col>
+                  </Form.Group>
+                </Form>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant='secondary' onClick={closeEditModal}>
+                  Annuler
+                </Button>
+                <Button variant='primary' onClick={updateUser}>
+                  Modifier
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 

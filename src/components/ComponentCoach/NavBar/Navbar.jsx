@@ -9,8 +9,17 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { useState } from "react";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth, db } from "../../firebase/Firebase";
+import { updateProfile, updateEmail } from "firebase/auth";
+import { doc, updateDoc } from "firebase/firestore";
+import utilisateur from "../../../Assets/utilisateur.png";
 
 const Navbar = () => {
+  const [users, setUsers] = useState(
+    JSON.parse(localStorage.getItem("users")) || null
+  );
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -20,6 +29,67 @@ const Navbar = () => {
 
   const handleClosenoc = () => setShownoc(false);
   const handleShownoc = () => setShownoc(true);
+
+  const user = JSON.parse(localStorage.getItem("users")) || null;
+
+  // const [showEdit, setShowEdite] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [editedUser, setEditedUser] = useState(user);
+
+  // function deconnection
+  const navigate = useNavigate();
+
+  const logOut = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem("users");
+      navigate("/", { replace: true });
+    } catch (error) {
+      alert("Erreur de deconnection, veuillez verifier votre connection");
+      console.error(error);
+    }
+  };
+
+  // modif profile
+
+  const handleEdit = () => {
+    setEditing(true);
+    setShow(true);
+  };
+
+  // Define a function to update the user state
+  const updateUser = (newUser) => {
+    setUsers(newUser);
+    localStorage.setItem("users", JSON.stringify(newUser));
+
+    const userDocRef = doc(db, "users", auth.currentUser.uid); // Change "users" to the actual collection name
+    updateDoc(userDocRef, {
+      prenom: newUser.prenom,
+      nom: newUser.nom,
+      email: newUser.email,
+    });
+  };
+
+  const handleSave = async () => {
+    try {
+      // Update email in Firebase Auth
+      if (editedUser.email !== user.email) {
+        await updateEmail(auth.currentUser, editedUser.email);
+      }
+
+      await updateProfile(auth.currentUser, {
+        displayName:
+          editedUser.prenom + " " + editedUser.nom + " " + editedUser.email,
+      });
+
+      updateUser(editedUser); // Update user state
+
+      setEditing(false);
+      setShow(false);
+    } catch (error) {
+      console.error("Error updating profile:", error);
+    }
+  };
 
   return (
     <nav>
@@ -40,155 +110,134 @@ const Navbar = () => {
             </div>
             <div className="d-flex justify-content-end align-items-center gap-3">
               <div>
-                {/* Modal pour notifs */}
-                <IoMdNotifications
-                  className="notif-icon fs-2 fw-bold"
-                  onClick={handleShownoc}
-                />
-                <div
-                  className="modal show"
-                  style={{ display: "block", position: "initial" }}
-                >
-                  <Modal show={shownoc} onHide={handleClosenoc}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>
-                        <h3>Notifications</h3>
-                      </Modal.Title>
-                    </Modal.Header>
-
-                    <Modal.Body className="noc">
-                      <h4>
-                        <span>Online-Academy</span>
-                      </h4>
-                      <p>
-                        Modal body text goes here. Modal body text goes here
-                        Modal body text goes here Modal body text goes here{" "}
-                      </p>
-                      <p className="d-flex justify-content-end fw-bold">
-                        {" "}
-                        16 Aout 2023, 11:19
-                      </p>
-
-                      <h4>
-                        <span>Online-Academy</span>
-                      </h4>
-                      <p>
-                        Modal body text goes here. Modal body text goes here
-                        Modal body text goes here Modal body text goes here{" "}
-                      </p>
-                      <p className="d-flex justify-content-end fw-bold">
-                        {" "}
-                        14 Aout 2023, 17:53
-                      </p>
-
-                      <h4>
-                        <span>Online-Academy</span>
-                      </h4>
-                      <p>
-                        Modal body text goes here. Modal body text goes here
-                        Modal body text goes here Modal body text goes here{" "}
-                      </p>
-                      <p className="d-flex justify-content-end fw-bold">
-                        {" "}
-                        14 Aout 2023, 18:02
-                      </p>
-                    </Modal.Body>
-                  </Modal>
-                </div>
-              </div>
-              <div id="profil">
-                <div className="d-flex align-items-center">
-                  <img src={avatar} class="rounded-circle " alt="" width="50" />
-                  <p className="d-none d-sm-inline">
-                    <br />
-                    <span>Bb Yacine</span>
-                    <br />
-                    <span>ydk@gmail.com</span>
-                  </p>
-                  <div class="dropdown d-lg-none d-md-none">
-                    <ul class="dropdown-menu dropdown-menu-end">
+                <button type="button"
+                  class="btn   rounded-pill mb-3  iconotif"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  {/* Modal pour notifs */}
+                  <IoMdNotifications
+                    className="notif-icon fs-2 fw-bold"
+                    onClick={handleShownoc}
+                  />
+                  <div
+                    className="modal show"
+                    style={{ display: "block", position: "initial" }}
+                  >
+                    <ul class="dropdown-menu noc">
                       <li>
-                        <a class="dropdown-item" href="/">
-                          Bb Yacine
-                        </a>
+                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
+                          <p>Modal body text goes here. Modal body text goes here <br /> </p>
+                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
                       </li>
+                      <hr />
                       <li>
-                        <a class="dropdown-item" href="/">
-                          ydk@gmail.com
-                        </a>
+                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
+                          <p>Modal body text goes here. Modal body text goes here </p>
+                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                      </li>
+                      <hr />
+                      <li>
+                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
+                          <p>Modal body text goes here. Modal body text goes here </p>
+                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                      </li>
+                      <hr />
+                       <li>
+                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
+                          <p>Modal body text goes here. Modal body text goes here </p>
+                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
                       </li>
                     </ul>
+                  
                   </div>
-                  <Button className="text-white add ms-3" onClick={handleShow}>
-                    <PiPencilSimpleLineDuotone className="fs-4 text-white" />
-                  </Button>
+                </button>
+              </div>
+              <div id="profil">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btntoggle dropdown-toggle rounded-3 mb-3"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img src={utilisateur} alt="" className="rounded-circle" />
+                  </button>
+                  <ul className="dropdown-menu profil shadow">
+                    {editing ? (
+                      <li>
+                        <input
+                          type="text"
+                          className="profilEdi ps-2"
+                          value={editedUser?.prenom}
+                          onChange={(e) =>
+                            setEditedUser({
+                              ...editedUser,
+                              prenom: e.target.value,
+                            })
+                          }
+                        />
+                        <input
+                          type="text"
+                          className="profilEdi ps-2 my-2"
+                          value={editedUser?.nom}
+                          onChange={(e) =>
+                            setEditedUser({
+                              ...editedUser,
+                              nom: e.target.value,
+                            })
+                          }
+                        />
+                        <input
+                          type="text"
+                          className="profilEdi ps-2"
+                          value={editedUser?.email}
+                          onChange={(e) =>
+                            setEditedUser({
+                              ...editedUser,
+                              email: e.target.value,
+                            })
+                          }
+                        />
+                      </li>
+                    ) : (
+                      <>
+                        <p className="px-3">
+                          {user?.prenom} {user?.nom}
+                        </p>
+                        <p className="px-3">{user?.email}</p>
+                      </>
+                    )}
 
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>
-                        <h3>Modifier le profil</h3>
-                      </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body className="my-3">
-                      <div className=" d-flex justify-content-center align-items-center mb-3">
-                        <div>
-                          <a href="">
-                            <img
-                              src={avatar}
-                              class="rounded-circle shadow"
-                              alt=""
-                              width="80"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="row align-items-baseline">
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                          <FloatingLabel controlId="floatingInput" label="Nom">
-                            <Form.Control type="text" placeholder="princesse" />
-                          </FloatingLabel>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                          <FloatingLabel
-                            controlId="floatingInput"
-                            label="Prenom"
-                          >
-                            <Form.Control type="text" placeholder="princesse" />
-                          </FloatingLabel>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                          <FloatingLabel
-                            controlId="floatingInput"
-                            label="Email"
-                          >
-                            <Form.Control
-                              type="email"
-                              placeholder="princesse@gmail.com"
-                            />
-                          </FloatingLabel>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-                          <FloatingLabel
-                            controlId="floatingInput"
-                            label="Mot de passe"
-                          >
-                            <Form.Control
-                              type="password"
-                              placeholder="*********"
-                            />
-                          </FloatingLabel>
-                        </div>
-                      </div>
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button className="btnFermer  " onClick={handleClose}>
-                        Fermer
-                      </Button>
-                      <Button className="saveBtn" onClick={handleClose}>
-                        Enregistrer
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
+                    <li className="ps-3 pt-2 ">
+                      {editing ? (
+                        ""
+                      ) : (
+                        <button
+                          className="btn btnModif text-light"
+                          onClick={() => setEditing(!editing)}
+                        >
+                          Modifier profil
+                        </button>
+                      )}
+                    </li>
+                    <li className="ps-3 mt-2">
+                      {editing ? (
+                        <button
+                          className="btn btn-success text-light"
+                          onClick={handleSave}
+                        >
+                          Enregistrer
+                        </button>
+                      ) : (
+                        <button
+                          className="btn btn-danger text-light logout"
+                          onClick={logOut}
+                        >
+                          Déconnexion
+                        </button>
+                      )}
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

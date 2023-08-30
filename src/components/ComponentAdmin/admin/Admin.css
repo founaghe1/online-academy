@@ -27,5 +27,73 @@
 
 .nbrPages{
     background-color: #792be8;
-
 }
+
+.modalviewTitle,
+.modalview{
+    background-color: #8a70d6;
+}
+
+.apprenantCard{
+    background-color: rgba(127, 217, 255, 0.392) !important;
+    border: 3px solid cornflowerblue !important;
+}
+.coachCard{
+    background-color: #9e41ef49 !important;
+    border: 3px solid cornflowerblue !important;
+}
+.userCard{
+    background-color:#f3daba8d !important;
+    border: 3px solid cornflowerblue !important;
+}
+
+
+.InputContainer {
+    width: 210px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,rgb(227, 213, 255),rgb(255, 231, 231));
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+  }
+  
+  .input {
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    caret-color: rgb(255, 81, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    padding-left: 15px;
+    letter-spacing: 0.8px;
+    color: rgb(19, 19, 19);
+    font-size: 13.4px;
+  }
+
+
+  .btntoggle{
+    background-color: #0cb6d800 !important;
+    border: none ;
+}
+
+.profilEdi{
+    border: 2px solid rgb(0, 174, 255);
+    border-radius: 5px ;
+}
+
+.btnModif{
+    background:#8a70d6 !important;
+}
+.btnModif:hover{
+    background :rgb(112, 214, 154) !important;;
+}
+
+.profil{
+    border: none!important;
+}
+  
