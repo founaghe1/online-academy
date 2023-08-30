@@ -20,7 +20,7 @@ const Programmation = () => {
       <div className='row'>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-6 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/html/css'
+            to='/coach/dashboard/domain/programmation/html-css'
             className='join d-flex right-0'
           >
             <Card
@@ -54,7 +54,7 @@ const Programmation = () => {
 
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/boostrap'
+            to='/coach/dashboard/domain/programmation/bootstrap'
             className='join d-flex right-0'
           >
             <Card
@@ -87,7 +87,7 @@ const Programmation = () => {
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/js'
+            to='/coach/dashboard/domain/programmation/javascript'
             className='join d-flex right-0'
           >
             <Card
@@ -124,7 +124,7 @@ const Programmation = () => {
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/php'
+            to='/coach/dashboard/domain/programmation/PHP'
             className='join d-flex right-0'
           >
             <Card
@@ -157,7 +157,7 @@ const Programmation = () => {
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/diago'
+            to='/coach/dashboard/domain/programmation/django'
             className='join d-flex right-0'
           >
             <Card
@@ -190,7 +190,7 @@ const Programmation = () => {
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/c'
+            to='/coach/dashboard/domain/programmation/c++'
             className='join d-flex right-0'
           >
             <Card

@@ -27,7 +27,7 @@ const ProgressCard = () => {
           </div>
           <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-3 d-flex justify-content-center align-items-center">
             <Button variant="primary" className="btnReprendre">
-              Reprendre
+              Continuer
             </Button>
           </div>
         </div>

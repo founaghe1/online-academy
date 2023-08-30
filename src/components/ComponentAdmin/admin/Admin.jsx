@@ -25,14 +25,17 @@ import {
   deleteDoc,
   doc,
   updateDoc,
-  setDoc
+  setDoc,
 } from "firebase/firestore";
 import { auth } from "../../firebase/Firebase";
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 // toast notification
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Admin = () => {
   const [show, setShow] = useState(false);
@@ -116,17 +119,21 @@ const Admin = () => {
     }
   };
 
-  useEffect(() => {
-    // call the function here to fetch all the user list in realtime
-    getUsersList();
-  }, []);
+  // useEffect(() => {
+  //   // call the function here to fetch all the user list in realtime
+  //   getUsersList();
+  // }, []);
 
   const onSubmitUsers = async () => {
     
     try {
       // Enregistrement dans l'authentification
-    const userCreateAuth = await createUserWithEmailAndPassword(auth, newUsersEmail, newUsersMdp);
-      await setDoc(doc(usersCollectionRef, userCreateAuth.user.uid) , {
+      const userCreateAuth = await createUserWithEmailAndPassword(
+        auth,
+        newUsersEmail,
+        newUsersMdp
+      );
+      await setDoc(doc(usersCollectionRef, userCreateAuth.user.uid), {
         nom: newUsersNom,
         prenom: newUsersPrenom,
         email: newUsersEmail,
@@ -137,7 +144,6 @@ const Admin = () => {
         assignCoach: newUsersAssignCoach,
         id: userCreateAuth.user.uid,
       });
-      
 
       getUsersList();
       toast.success("User added successfull !", {
@@ -257,6 +263,21 @@ const Admin = () => {
   const countApprenant = usersList.filter(
     (user) => user.status === "Apprenant"
   ).length;
+
+  // function deconnection
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("users")) || null;
+
+  const logOut = async () =>{
+    try{
+      await  signOut(auth)
+      localStorage.removeItem("users")
+      navigate("/", {replace: true})
+    }catch(error){
+      alert("Erreur de deconnection, veuillez verifier votre connection");
+      console.error(error)
+    }
+  }
 
   return (
     <>
@@ -394,6 +415,7 @@ const Admin = () => {
                                 <option
                                   key={coach.id}
                                   value={`${coach.nom} ${coach.prenom}`}
+                                  onLoad={useEffect}
                                 >
                                   {coach.nom} {coach.prenom}
                                 </option>
@@ -418,11 +440,46 @@ const Admin = () => {
                       </Modal.Footer>
                     </Modal>
                   </Nav.Link>
+
                   <Nav.Link href="#link">
-                    <button className="btn btn-danger text-light logout">
+                    <button
+                      className="btn btn-danger text-light logout"
+                      onClick={logOut}
+                    >
                       Déconnection
                     </button>
                   </Nav.Link>
+                  <div id="profil" className="pe-3 me-5">
+                    <div className="btn-group">
+                      <button
+                        type="button"
+                        className="btn btn-primary dropdown-toggle rounded-pill"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <img
+                          src="https://avatars.dicebear.com/v2/male/55c6a0641adadaa4af04809a28329ec4.svg"
+                          alt=""
+                          className="rounded-circle"
+                        />
+                      </button>
+                      <ul className="dropdown-menu pe-5">
+                        <li>
+                          <p className="dropdown-item">nom: {user?.prenom} {user?.nom} </p>
+                        </li>
+                        <li>
+                          <p className="dropdown-item">email: {user?.email}</p>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            <span className="update-profil">
+                              Modifer profil
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -471,7 +528,6 @@ const Admin = () => {
             <div className="d-flex justify-content-between align-items-center">
               {/* input Cherche */}
               <div>
-                
                 <div className="InputContainer">
                   <input
                     placeholder="Rechercher par prenom"

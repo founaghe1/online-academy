@@ -4,16 +4,31 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 // import { RiMenuUnfoldFill } from "react-icons/ri";
 import logo from "../../../medias/rrr.jpeg";
-import { BiSolidDashboard, BiSolidBookReader, BiUpload } from "react-icons/bi";
+import { BiSolidDashboard, BiSolidBookReader, BiUpload, BiLogOut } from "react-icons/bi";
 import { PiStudentBold } from "react-icons/pi";
 import { BsFillChatRightFill } from "react-icons/bs";
 import {useState}  from "react";
 import { Link } from 'react-router-dom';
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase/Firebase";
 
 const Sidebar = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    // function deconnection
+  const navigate = useNavigate();
+
+  const logOut = async () =>{
+    try{
+      await  signOut(auth)
+      navigate("/")
+    }catch{
+      alert("Erreur de deconnection, veuillez verifier votre connection");
+    }
+  }
 
   return (
     <>
@@ -38,12 +53,11 @@ const Sidebar = () => {
           <Offcanvas.Header closeButton>
             <Offcanvas.Title></Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body>
+          <Offcanvas.Body className='side-coach-menu'>
             <div className="vh-100 border-end">
               <div className="d-flex justify-content-center align-items-center">
                 <img src={logo} alt="" className="img-fluid mb-3 side-logo" />
               </div>
-              <h5>Menu</h5>
               <div className="d-flex justify-content-center align-items-center">
                 <ul className="list-unstyled">
                   <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
@@ -83,7 +97,9 @@ const Sidebar = () => {
               </div>
               <div className="w-100 mt-5">
                 <Link to="/coach/dashboard/messagerie">
-                  <Button variant="primary" className="">
+                  <Button variant="primary" className=""
+                    onClick={logOut}
+                  >
                     Déconnexion
                   </Button>
                 </Link>

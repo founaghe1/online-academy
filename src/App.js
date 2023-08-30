@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import './App.css';
-import 'bootstrap/dist/js/bootstrap.min.js'
-import Admin from './components/ComponentAdmin/admin/Admin';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './components/ComponentCoach/login/Login';
+/** @format */
+
+import React, { useState } from "react";
+import "./App.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import Admin from "./components/ComponentAdmin/admin/Admin";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Login from "./components/ComponentCoach/login/Login";
 // import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
 // import SideBar from './components/ComponentCoach/SideBar/Sidebar';
-import Navbar from './components/ComponentCoach/NavBar/Navbar';
-import Layout from './components/ComponentCoach/Layout/Layout';
-import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/ComponentCoach/NavBar/Navbar";
+import Layout from "./components/ComponentCoach/Layout/Layout";
 // Coach
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Domain from './components/Domain/Domain';
@@ -39,19 +40,17 @@ import ProgrammationApprt from "./components/ComponentApprenant/DomainApprnt/Pro
 import MarketingApprt from "./components/ComponentApprenant/DomainApprnt/MarketingApprt";
 import DesignApprt from "./components/ComponentApprenant/DomainApprnt/DesignApprt";
 
-
-import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
-import ChatPage from './components/ComponentCoach/ChatPage/ChatPage';
-
+import Voirlivraison from "./components/ComponentApprenant/Livraisons/Voirlivraison";
+import ChatPage from "./components/ComponentCoach/ChatPage/ChatPage";
 
 import Modal from "./components/ComponentCoach/Cour/Modal";
 import Coure from "./components/ComponentCoach/Cour/Cour";
 import Voircour from "./components/ComponentApprenant/VoirCours/VoirCour";
 import CourBoostrap from "./components/ComponentApprenant/VoirCours/CourBoostrap";
-import Voircourjs from "./components/ComponentApprenant/VoirCours/VoircourJS"
-import Voircourphp from "./components/ComponentApprenant/VoirCours/Voircourphp"
-import Voircourdiago from "./components/ComponentApprenant/VoirCours/Voircourdiago"
-import Voircourc from "./components/ComponentApprenant/VoirCours/Voircousc++"
+import Voircourjs from "./components/ComponentApprenant/VoirCours/VoircourJS";
+import Voircourphp from "./components/ComponentApprenant/VoirCours/Voircourphp";
+import Voircourdiago from "./components/ComponentApprenant/VoirCours/Voircourdiago";
+import Voircourc from "./components/ComponentApprenant/VoirCours/Voircousc++";
 import Booter from "./components/ComponentApprenant/VoirCours/Courbooster";
 import Potoshop from "./components/ComponentApprenant/VoirCours/Voircourdegiadop";
 import Ulistration from "./components/ComponentApprenant/VoirCours/ulistratindesi";
@@ -76,46 +75,59 @@ import Quizzinitialisation from "./components/ComponentApprenant/VoirCours/Quizz
 import Quizzpro from "./components/ComponentApprenant/VoirCours/Quizzpro";
 import CoachsRoutes from "./components/Routes/CoachsRoutes";
 import ApprenantRoutes from "./components/Routes/ApprenantRoutes";
-import AdminRoutes from './components/Routes/AdminRoutes';
-import ListCoach from './components/ComponentCoach/ListCoach/ListCoach'
-
+import AdminRoutes from "./components/Routes/AdminRoutes";
+import RoutesPrive from "./components/Routes/RoutesPrive";
+import RecupereCours from "./components/ComponentCoach/Recuperationcour/RecupereCoursHtmlCss";
+// import RecupcourMarket from "./components/ComponentCoach/Recuperationcour/RecupcourMarket";
 
 function App() {
-
-  // const [user, setUser] = useState(null); // État de l'utilisateur (null pour non connecté)
-  // const [authorizedRoles, setAuthorizedRoles] = useState(['admin']);
-
-  // // Déterminez les itinéraires autorisés en fonction du rôle de l'utilisateur
-  //   let userRoutes = null;
-  //   if (authorizedRoles.includes('coach')) {
-  //     userRoutes = <CoachsRoutes />;
-  //   } else if (authorizedRoles.includes('apprenant')) {
-  //     userRoutes = <ApprenantRoutes />;
-  //   } else if (authorizedRoles.includes('admin')) {
-  //     userRoutes = <AdminRoutes />;
-  //   }
+  const user = JSON.parse(localStorage.getItem("users")) || null;
 
   return (
+    <>
+      {/* <RecupcourMarket /> */}
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<Login />} />
+          <Route
+            path='/apprenant/dashboard/*'
+            element={
+              <RoutesPrive status={["Apprenant"]}>
+                <ApprenantRoutes />
+              </RoutesPrive>
+            }
+          ></Route>
+          <Route
+            path='/coach/dashboard/*'
+            element={
+              <RoutesPrive status={["Coach"]}>
+                <CoachsRoutes />
+              </RoutesPrive>
+            }
+          ></Route>
+          <Route
+            path='/admin/dashboard'
+            element={
+              <RoutesPrive status={["Admin"]}>
+                <Admin />
+              </RoutesPrive>
+            }
+          ></Route>
 
-    // <>
-      //   <Router>
-       
-      //     <Route exact path="/" element={<Login />}/>
-      //     <Route path='/coach/dashboard/*' element={ <CoachsRoutes /> } />
-      //     <Route path='/apprenant/dashboard/*' element={ <ApprenantRoutes /> } />
-      //     <Route path='/admin/dashboard' element={ <Admin /> } />
-       
-      //  </Router>  */}
-
-      
+          {/* <Route path='/coach/dashboard/*' element={ <CoachsRoutes /> } /> */}
+          {/* {user?.status === "Apprenant" ? <Route path='/apprenant/dashboard/*' element={user?.status === "Apprenant" ?  <ApprenantRoutes /> :""}/>:<Route exact path="/" element={<Login />}/>} */}
+          {/* <Route path='/admin/dashboard' element={ <Admin /> } /> */}
+        </Routes>
+      </Router>
+    </>
 
     // </>
-/* 
+    /* 
     // // <div className='App'>
     //   // <Admin />  */
     //   {/* <Dashboard  /> */}
-    //    {/* <Login /> */}
-    //    {/* <StudentDashboard /> */}
+    // {/* <Login /> */}
+    //   {/* <StudentDashboard /> */}
 
     //   {/* <AjoutCours /> */}
 
@@ -126,8 +138,7 @@ function App() {
     //    {/* <ListeApprenants/> */}
     //    {/* <NotificationsCoachs/> */}
     //    {/* <ChatPage /> */}
-      
-      
+
     //    {/* <Router>
     //     <Routes>
     //       <Route exact path='/' element={<Domain />} />
@@ -184,11 +195,10 @@ function App() {
     //       <Route path='/pro' element={<Quizzpro />} />
     //     </Routes>
     //   </Router> */}
-      //  {/* </Router>
+    //  {/* </Router>
 
-      // {/* </> */}
+    // {/* </> */}
 
-    
     //  {/*     <Admin />  */}
     //    {/* <Dashboard  /> */}
     //      {/* <Login /> */}
@@ -203,8 +213,7 @@ function App() {
     //      {/* <ListeApprenants/> */}
     //      {/* <NotificationsCoachs/> */}
     //      {/* <ChatPage /> */}
-      
-      
+
     //      {/* <Router> */}
     //     {/* //   <Routes>
     //     //     <Route exact path="/" element={<Domain />} />
@@ -212,40 +221,39 @@ function App() {
     //     //     <Route path="/marketing" element={<Marketing />} />
     //     //     <Route path="/design" element={<Design />} />
     //     //   </Routes>
-    //     // </Router> */} 
+    //     // </Router> */}
 
     //      {/* Routes Yagouba */}
 
-        //  {/* <Router>
-        //   <Routes>
-        //     <Route path='/' element={<Login />} />
-        //     <Route path="/layout" element={ <Layout />}>
-        //       <Route path='/layout/dashboard' element={<Dashboard />} />
-        //       <Route path='/layout/dashboard/domain' element={<DomainApprt />} />
-        //     </Route>
-        //   </Routes>
-        // </Router> */}
+    //  {/* <Router>
+    //   <Routes>
+    //     <Route path='/' element={<Login />} />
+    //     <Route path="/layout" element={ <Layout />}>
+    //       <Route path='/layout/dashboard' element={<Dashboard />} />
+    //       <Route path='/layout/dashboard/domain' element={<DomainApprt />} />
+    //     </Route>
+    //   </Routes>
+    // </Router> */}
 
-        //  {/* <Dashboard  />bakelitraining */}
-        //  {/* <Login /> */}
+    //  {/* <Dashboard  />bakelitraining */}
+    //  {/* <Login /> */}
 
-        //   {/* <ForgotPW/> */}
-        //   {/* <Livraison /> */}
-        //   {/* <Voirlivraison />       */}
-        //   {/* <Chat/> */}
-        //   {/* <ListeApprenants/> */}
-        //   {/* <NotificationsCoachs/> */}
-           < ListCoach />
+    //   {/* <ForgotPW/> */}
+    //   {/* <Livraison /> */}
+    //   {/* <Voirlivraison />       */}
+    //   {/* <Chat/> */}
+    //   {/* <ListeApprenants/> */}
+    //   {/* <NotificationsCoachs/> */}
+    // < ListCoach />
 
+    //  {/* nini Routes */}
 
-        //  {/* nini Routes */}
-
-        // {/* <Router>
-      //   <Routes>
-      //     <Route exact path='/' element={<Domain />} />
-      //     <Route path="/programmation" element={<Programmation />} />
-      //     <Route path="/marketing" element={<Marketing />} />
-      //     <Route path="/design" element={<Design />} />
+    // {/* <Router>
+    //   <Routes>
+    //     <Route exact path='/' element={<Domain />} />
+    //     <Route path="/programmation" element={<Programmation />} />
+    //     <Route path="/marketing" element={<Marketing />} />
+    //     <Route path="/design" element={<Design />} />
     //       <Route
     //         path='/sous-domaine-marketing/developpement'
     //         element={<Voircourdevelop />}
@@ -297,10 +305,9 @@ function App() {
     //     </Routes>
     //   </Router> */}
 
-    // {/* //  <Modale /> 
+    // {/* //  <Modale />
 
-      //  <Coure /> 
-        
+    //  <Coure />
 
     //  {/* /* //   <BrowserRouter>
     // // //   <Routes>
@@ -309,8 +316,84 @@ function App() {
     // // //     </Routes>
     // // //   </BrowserRouter> */ */}
 
-    
-  )
+    // //   {/* <ForgotPW/> */}
+    // //   {/* <Livraison /> */}
+    // //   {/* <Voirlivraison />       */}
+    // //   {/* <Chat/> */}
+    // //   {/* <ListeApprenants/> */}
+    // //   {/* <NotificationsCoachs/> */}
+
+    //   {/* nini Routes */}
+
+    //  {/* <Router>
+    //   <Routes>
+    //     <Route exact path='/' element={<Domain />} />
+    //     <Route path="/programmation" element={<Programmation />} />
+    //     <Route path="/marketing" element={<Marketing />} />
+    //     <Route path="/design" element={<Design />} />
+    //     <Route
+    //       path='/sous-domaine-marketing/developpement'
+    //       element={<Voircourdevelop />}
+    //     />
+    //     <Route path='/sous-domaine-marketing/booter' element={<Booter />} />
+    //     <Route path='/sous-domaine-marketing/etude' element={<Etude />} />
+    //     <Route path='/sous-domaine-design' element={<Design />} />
+    //     <Route path='/sous-domaine-design/photo' element={<Potoshop />} />
+    //     <Route path='/sous-domaine-design/ulis' element={<Ulistration />} />
+    //     <Route path='/sous-domaine-design/pro' element={<PRO />} />
+    //     <Route
+    //       path='/sous-domaine-design/initia'
+    //       element={<Initialisation />}
+    //     />
+    //     <Route
+    //       path='/sous-domaine-programmation/html/css'
+    //       element={<Voircour />}
+    //     />
+    //     <Route
+    //       path='/sous-domaine-programmation/boostrap'
+    //       element={<CourBoostrap />}
+    //     />
+    //     <Route
+    //       path='/sous-domaine-programmation/js'
+    //       element={<Voircourjs />}
+    //     />
+    //     <Route
+    //       path='/sous-domaine-programmation/php'
+    //       element={<Voircourphp />}
+    //     />
+    //     <Route
+    //       path='/sous-domaine-programmation/diago'
+    //       element={<Voircourdiago />}
+    //     />
+    //     <Route path='/sous-domaine-programmation/c' element={<Voircourc />} />
+    //     <Route path='/question' element={<Quizzes />} />
+    //     <Route path='/quiss' element={<QuizzBoostrap />} />
+    //     <Route path='/javascrip' element={<QuizzJs />} />
+    //     <Route path='/php' element={<QuizzPhp />} />
+    //     <Route path='/django' element={<Quizzdjango />} />
+    //     <Route path='/c++' element={<QuizzC />} />
+    //     <Route path='/digital' element={<QuizzMarketinDigital />} />
+    //     <Route path='/resaux' element={<Quizzresauxsocia />} />
+    //     <Route path='/booter' element={<QuizzBooter />} />
+    //     <Route path='/photo' element={<QuizzPhotos />} />
+    //     <Route path='/ullustrator' element={<Quizzullustrator />} />
+    //     <Route path='/initialisation' element={<Quizzinitialisation />} />
+    //     <Route path='/pro' element={<Quizzpro />} />
+    //   </Routes>
+    // </Router> */}
+
+    //   {/* <Modale />
+    //   <Coure />  */}
+
+    //   {/* <BrowserRouter>
+    //   <Routes>
+    //       <Route exact path='/' element={<Voirquizze />} />
+    //       <Route path='/question' element={<Qestion />} />
+    //     </Routes>
+    //   </BrowserRouter> */}
+
+    // </div>
+  );
 }
 
 export default App;
