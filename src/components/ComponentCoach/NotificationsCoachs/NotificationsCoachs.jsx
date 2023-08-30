@@ -2,14 +2,36 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './NotificationsCoachs.css'
 const NotificationsCoachs = () => {
 
   const [show, setShow] = useState(false);
+   
 
+   const [notifications, setNotifications] = useState([
+    {
+      id: 1,
+      title: 'Notification 1',
+      content: 'Contenu de la notification 1',
+      timestamp: '14 Aout 2023, 17:53',
+    },
+    {
+      id: 2,
+      title: 'Notification 2',
+      content: 'Contenu de la notification 2',
+      timestamp: '14 Aout 2023, 18:02',
+    },
+    // ... autres notifications
+  ]);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleNotification = () => {
+    toast.success('Notification affichée avec succès !');
+  };
+ 
   return (
     <>
        <div
@@ -66,6 +88,8 @@ const NotificationsCoachs = () => {
 
    
       </Modal.Dialog>
+       {/* Ajoutez le ToastContainer en bas de votre composant */}
+       <ToastContainer />
     </div>
     </>
   )

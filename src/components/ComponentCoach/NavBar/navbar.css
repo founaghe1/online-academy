@@ -36,7 +36,7 @@
     border: 3px solid #a023e8;
 }
 .add:hover{
-    background:#920fac !important;
+    /* background:#920fac !important; */
     border: 3px solid #a023e8;
 }
 
@@ -60,7 +60,20 @@
 }
 .notif-icon{
     cursor: pointer;
+    color: white;
+    
 }
 .dropdown-item .update-profil:hover {
-  color: blue;
+  color: white;
+}
+.noc{
+    height: 200px;
+    overflow: scroll;
+}
+.iconoti{
+    background-color: transparent !important;
+   
+}
+.dropdown{
+    color: white ;
 }
