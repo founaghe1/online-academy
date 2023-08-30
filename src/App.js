@@ -40,7 +40,7 @@ import MarketingApprt from "./components/ComponentApprenant/DomainApprnt/Marketi
 import DesignApprt from "./components/ComponentApprenant/DomainApprnt/DesignApprt";
 
 
-// import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
+ import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
 // import ChatPage from './components/ComponentCoach/ChatPage/ChatPage';
 
 
@@ -157,7 +157,7 @@ function App() {
         </Routes>
       </Router> */}
       </Router>
-    {/* <Voirlivraison /> */}
+    <Voirlivraison />
 
             
     </>
