@@ -14,9 +14,12 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase/Firebase";
 import { updateProfile, updateEmail } from "firebase/auth";
 import { doc, updateDoc } from "firebase/firestore";
+import utilisateur from "../../../Assets/utilisateur.png";
 
 const Navbar = () => {
-  const [users, setUsers] = useState(JSON.parse(localStorage.getItem("users")) || null);
+  const [users, setUsers] = useState(
+    JSON.parse(localStorage.getItem("users")) || null
+  );
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -26,7 +29,7 @@ const Navbar = () => {
 
   const handleClosenoc = () => setShownoc(false);
   const handleShownoc = () => setShownoc(true);
-  
+
   const user = JSON.parse(localStorage.getItem("users")) || null;
 
   // const [showEdit, setShowEdite] = useState(false);
@@ -35,8 +38,7 @@ const Navbar = () => {
 
   // function deconnection
   const navigate = useNavigate();
-  
-  
+
   const logOut = async () => {
     try {
       await signOut(auth);
@@ -168,21 +170,18 @@ const Navbar = () => {
                 <div class="btn-group">
                   <button
                     type="button"
-                    class="btn btn-primary dropdown-toggle rounded-pill mb-3"
+                    class="btn btntoggle dropdown-toggle rounded-3 mb-3"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <img
-                      src="https://avatars.dicebear.com/v2/male/55c6a0641adadaa4af04809a28329ec4.svg"
-                      alt=""
-                      className="rounded-circle"
-                    />
+                    <img src={utilisateur} alt="" className="rounded-circle" />
                   </button>
-                  <ul className="dropdown-menu">
+                  <ul className="dropdown-menu profil shadow">
                     {editing ? (
                       <li>
                         <input
                           type="text"
+                          className="profilEdi ps-2"
                           value={editedUser?.prenom}
                           onChange={(e) =>
                             setEditedUser({
@@ -193,6 +192,7 @@ const Navbar = () => {
                         />
                         <input
                           type="text"
+                          className="profilEdi ps-2 my-2"
                           value={editedUser?.nom}
                           onChange={(e) =>
                             setEditedUser({
@@ -203,6 +203,7 @@ const Navbar = () => {
                         />
                         <input
                           type="text"
+                          className="profilEdi ps-2"
                           value={editedUser?.email}
                           onChange={(e) =>
                             setEditedUser({
@@ -213,18 +214,25 @@ const Navbar = () => {
                         />
                       </li>
                     ) : (
-                      <li>
-                        <p className="dropdown-item">
+                      <>
+                        <p className="px-3">
                           {user?.prenom} {user?.nom}
                         </p>
-                        <p className="dropdown-item">{user?.email}</p>
-                      </li>
+                        <p className="px-3">{user?.email}</p>
+                      </>
                     )}
 
-                    <li>
-                      <a className="dropdown-item" onClick={handleEdit}>
-                        <span className="update-profil">Modifier profil</span>
-                      </a>
+                    <li className="ps-3 pt-2 ">
+                      {editing ? (
+                        ""
+                      ) : (
+                        <button
+                          className="btn btnModif text-light"
+                          onClick={() => setEditing(!editing)}
+                        >
+                          Modifier profil
+                        </button>
+                      )}
                     </li>
                     <li className="ps-3 mt-2">
                       {editing ? (
