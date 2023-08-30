@@ -110,65 +110,49 @@ const StudentNavbar = () => {
             />
           </div>
           <div className="d-flex justify-content-end align-items-center gap-3">
-            <div>
-              {/* Modal pour notifs */}
-
-              <IoMdNotifications
-                className="notif-icon fs-4 fw-bold"
-                onClick={handleShow}
-              />
-              <div
-                className="modal show"
-                style={{ display: "block", position: "initial" }}
-              >
-                <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>
-                      <h3>Notifications</h3>
-                    </Modal.Title>
-                  </Modal.Header>
-
-                  <Modal.Body className="noc">
-                    <h4>
-                      <span>Online-Academy</span>
-                    </h4>
-                    <p>
-                      Modal body text goes here. Modal body text goes here Modal
-                      body text goes here Modal body text goes here{" "}
-                    </p>
-                    <p className="d-flex justify-content-end fw-bold">
-                      {" "}
-                      16 Aout 2023, 11:19
-                    </p>
-
-                    <h4>
-                      <span>Online-Academy</span>
-                    </h4>
-                    <p>
-                      Modal body text goes here. Modal body text goes here Modal
-                      body text goes here Modal body text goes here{" "}
-                    </p>
-                    <p className="d-flex justify-content-end fw-bold">
-                      {" "}
-                      14 Aout 2023, 17:53
-                    </p>
-
-                    <h4>
-                      <span>Online-Academy</span>
-                    </h4>
-                    <p>
-                      Modal body text goes here. Modal body text goes here Modal
-                      body text goes here Modal body text goes here{" "}
-                    </p>
-                    <p className="d-flex justify-content-end fw-bold">
-                      {" "}
-                      14 Aout 2023, 18:02
-                    </p>
-                  </Modal.Body>
-                </Modal>
+          <div>
+                <button type="button"
+                  class="btn   rounded-pill mb-3  iconotif"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  {/* Modal pour notifs */}
+                  <IoMdNotifications
+                    className="notif-icon fs-2 fw-bold"
+                    onClick={handleShow}
+                  />
+                  <div
+                    className="modal show"
+                    style={{ display: "block", position: "initial" }}
+                  >
+                    <ul class="dropdown-menu noc">
+                      <li>
+                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
+                          <p>Modal body text goes here. Modal body text goes here <br /> </p>
+                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                      </li>
+                      <hr />
+                      <li>
+                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
+                          <p>Modal body text goes here. Modal body text goes here </p>
+                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                      </li>
+                      <hr />
+                      <li>
+                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
+                          <p>Modal body text goes here. Modal body text goes here </p>
+                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                      </li>
+                      <hr />
+                       <li>
+                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
+                          <p>Modal body text goes here. Modal body text goes here </p>
+                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                      </li>
+                    </ul>
+                  
+                  </div>
+                </button>
               </div>
-            </div>
-            
             <div id="profil">
               <div className="btn-group">
                 <button

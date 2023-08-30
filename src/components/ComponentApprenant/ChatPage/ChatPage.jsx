@@ -3,7 +3,6 @@ import './ChatPage.css'
 import Messages from './componentsChat/Messages'
 import Chat from './componentsChat/Chat'
 import { BiArrowBack } from 'react-icons/bi'
-
 const ChatPage = () => {
   return (
     <div className="container-fluid">
