@@ -36,6 +36,8 @@ import Designpro from '../ComponentApprenant/VoirCours/Designpro';
 import Quizzpro from '../ComponentApprenant/VoirCours/Quizzpro';
 import Voircourdegiadop from '../ComponentApprenant/VoirCours/Voircourdegiadop';
 import QuizzPhotos from '../ComponentApprenant/VoirCours/QuizzPhotos';
+import ChatPage from '../ComponentCoach/ChatPage/ChatPage';
+import ListCoach from '../ComponentCoach/ListCoach/ListCoach'
 
 
 
@@ -48,6 +50,8 @@ function ApprenantRoutes() {
             <Route path="/livraison" element={<Voirlivraison />} />
             <Route path="/cours" element={<Sousdomain />} />
             <Route path="/cours/*" element={<TachesRoutes />} />
+            <Route path='/messagerie' element={<ChatPage />} />
+            <Route path='/coach' element={<ListCoach /> } />
           </Route>  
       </Routes>
     

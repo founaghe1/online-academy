@@ -111,7 +111,7 @@ const Navbar = () => {
             <div className="d-flex justify-content-end align-items-center gap-3">
               <div>
                 <button type="button"
-                  class="btn   rounded-pill mb-3  iconotif"
+                  class="btn rounded-pill mb-3  iconotif"
                   data-bs-toggle="dropdown"
                   aria-expanded="false">
                   {/* Modal pour notifs */}
