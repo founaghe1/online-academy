@@ -3,7 +3,6 @@ import './App.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
 //import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js'
 //import Login from './components/ComponentCoach/login/Login';
 //import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
 //import SideBar from './components/ComponentCoach/SideBar/Sidebar';
@@ -41,7 +40,7 @@ import MarketingApprt from "./components/ComponentApprenant/DomainApprnt/Marketi
 import DesignApprt from "./components/ComponentApprenant/DomainApprnt/DesignApprt";
 
 
- import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
+// import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
 // import ChatPage from './components/ComponentCoach/ChatPage/ChatPage';
 
 
@@ -158,7 +157,9 @@ function App() {
         </Routes>
       </Router> */}
       </Router>
+    {/* <Voirlivraison /> */}
 
+            
     </>
 
     // <div className='App'>
@@ -177,7 +178,6 @@ function App() {
     //   {/* <NotificationsCoachs/> */}
     //   {/* <ChatPage /> */}
       
-      
     //   {/* <Router>
     //     <Routes>
     //       <Route exact path="/" element={<Domain />} />
@@ -189,25 +189,25 @@ function App() {
 
     //   {/* Routes Yagouba */}
 
-    //   {/* <Router>
-    //     <Routes>
-    //       <Route path='/' element={<Login />} />
-    //       <Route path="/layout" element={ <Layout />}>
-    //         <Route path='/layout/dashboard' element={<Dashboard />} />
-    //         <Route path='/layout/dashboard/domain' element={<DomainApprt />} />
-    //       </Route>
-    //     </Routes>
-    //   </Router> */}
+      // {/* <Router>
+      //   <Routes>
+      //     <Route path='/' element={<Login />} />
+      //     <Route path="/layout" element={ <Layout />}>
+      //       <Route path='/layout/dashboard' element={<Dashboard />} />
+      //       <Route path='/layout/dashboard/domain' element={<DomainApprt />} />
+      //     </Route>
+      //   </Routes>
+      // </Router> */}
 
-    //   {/* <Dashboard  />bakelitraining */}
-    //   {/* <Login /> */}
+      // {/* <Dashboard  />bakelitraining */}
+      // {/* <Login /> */}
 
-    // //   {/* <ForgotPW/> */}
-    // //   {/* <Livraison /> */}
-    // //   {/* <Voirlivraison />       */}
-    // //   {/* <Chat/> */}
-    // //   {/* <ListeApprenants/> */}
-    // //   {/* <NotificationsCoachs/> */}
+      // {/* <ForgotPW/> */}
+      // {/* <Livraison /> */}
+      // {/* <Voirlivraison />       */}
+      // {/* <Chat/> */}
+      // {/* <ListeApprenants/> */}
+      // {/* <NotificationsCoachs/> */}
 
 
     //   {/* nini Routes */}

@@ -1,43 +1,105 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import { GrView } from "react-icons/gr";
 import { FcAcceptDatabase } from "react-icons/fc";
-import img1 from "../../../Assets/img3.webp";
 import "./style.css";
-
-
+import { db } from "../../firebase/Firebase";
+import { addDoc, collection, getDocs} from "firebase/firestore";
 
 const CartLive = () => {
+
+  const [cartliv, setCartliv] = useState([]);
+  const [cartlivs, setCartlivs] = useState([]);
+  //commentaire
+  const [comment, setComment] = useState([])
+  const [comments, setComments] = useState([])
+
+  const unsubscribe = collection(db, 'livraison')
+
+  const getLivraison = async () =>{
+    try {
+      const data = await getDocs(unsubscribe);
+      const filteredData = data.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setCartliv(filteredData);
+      setCartlivs(filteredData);
+    } catch (err) {
+      console.error("Error getting documents: ", err);
+    }
+  }
+
+  useEffect(() => {
+    getLivraison();
+   }, []);
+
+//ajouter commentaire
+    const commentRef = collection(db, 'commentaire')
+    const handleSubmit = (e) =>{
+  e.preventDefault();
+
+    addDoc(commentRef,{
+      comment
+    });
+    setComment('');
+}
+
+    const getComment =async () =>{
+      try{
+      const data =await getDocs(commentRef);
+          const comData = data.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+
+          setComment(comData);
+         setComments(comData);
+        }catch (err) {
+          console.error("Error getting documents: ", err);
+        }
+    }
+
+    useEffect(() => {
+      getComment();
+
+       }, []);
+
+
   return (
-    <div>
-      <div class="card cart-liv mb-5">
-        <div class="">
-          <h3 class="">Tache</h3>
-          <p class="">Some quick example text </p>
+    <div className="row">
+        {cartliv.map((content) => (
+      <div className="col-md-4">
+          <div className="card mb-5 p-3 shadow hover" key={content.id}>
+            <h4 className="card-title">{content.title}</h4>
+            <span className="text-info">{content.description}</span>
+            <a className="nav-link mt-2 mb-3">{content.lien}</a>
+            <div className="">
+                {content.image && (
+                    <img variant="top" className="img-fluid d-flex orange"
+                        src={content.image}
+                    />
+                  )}
+            </div>
+            <div class="d-flex justify-content-between mt-3 mb-3">
+            <div className="col-md-6">
+              <button type="button" className="btn btn-lg text-white btn-secondary d-flex justify-content-center align-items-center"
+               data-bs-toggle="modal" data-bs-target="#modal0">
+                <GrView className="me-2 text-white"/>Livrable
+              </button>
+            </div>
+            <div className="col-md-6">
+              <button type="button" className="btn btn-success btn-lg text-white d-flex justify-content-center align-items-center"
+               data-bs-toggle="modal" data-bs-target="#modal1">
+                  <FcAcceptDatabase className="me-2"/> Commentaire
+              </button>
+            </div>
         </div>
-        <div class="">
-          <img src={img1} className="img-fluid mb-3" alt="..." />
-        </div>
-        <div class="d-flex justify-content-between aling-items-center">
-          <button
-            type="button"
-            className="btn btn-sm btn-car"
-            data-bs-toggle="modal"
-            data-bs-target="#modal0"
-          >
-            <GrView />
-            Voir
-          </button>
-          <button
-            type="button"
-            className="btn btn-sm btn-cart"
-            data-bs-toggle="modal"
-            data-bs-target="#modal1"
-          >
-            <FcAcceptDatabase />
-            Commentaire
-          </button>
-        </div>
+          </div>
       </div>
+        ))}
+        
+
       {/* <!-- Modal --> */}
       <div
         class="modal fade"
@@ -60,12 +122,17 @@ const CartLive = () => {
               ></button>
             </div>
             <div class="modal-body">
-              <img
-                src={img1}
-                className="card-img-top"
-                height="550px"
-                alt="..."
-              />
+              {cartlivs.map((contents) =>(
+                   <div className="" key={contents.id}>
+                    <div className="">
+                    {contents.image && (
+                    <img variant="top" className="img-fluid d-flex orange"
+                        src={contents.image}
+                    />
+                  )}
+                  </div>
+              </div>
+              ))}
             </div>
             <div class="modal-footer"></div>
           </div>
@@ -97,13 +164,23 @@ const CartLive = () => {
                 <h3 className="">Tache</h3>
                 <p className="">Some quick example text </p>
               </div>
-              <div class="mb-4 border border-warning">
-                <input
-                  type="text"
-                  class="form-control  rounded p-3"
-                  id="exampleFormControlInput1"
-                  placeholder="Commentaire"
-                />
+              <div class="mb-4 ">
+                    <form onSubmit={handleSubmit} className="d-flex ">
+                    <input className="p-2 me-3 rounded"
+                      value={comment}
+                      onChange={e => setComment(e.target.value)}
+                      placeholder="Write a comment..."
+                    />
+                    <button className="btn btn-success" type="submit">commenter</button>
+                  </form>
+              </div>
+              <div className="mt-3">
+                  {comments.map(commenter => (
+                    <div key={commenter.id}>
+                      <p>{commenter.comment}</p>
+                      {/* Display additional comment details here */}
+                    </div>
+                  ))}
               </div>
             </div>
             <div class="modal-footer"></div>

@@ -1,61 +1,72 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import './style.css'
 import CartLive from "./CartLive";
-import { db } from "../../firebase/Firebase";
+
 
 //firebase
-
+import {db, storage} from "../../firebase/Firebase";
+import {collection, addDoc} from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 
 const Voirlivraison = () => {
+  
+  const [file, setFile] = useState(null);
+  const [url, setURL] = useState("");
+  // const [livraisons, setLivraisons] = useState([])
 
   const [title, setTitle] = useState('');     
-  const [subtitle, setSubtitle] = useState('');
   const [description, setDescription] = useState('');
-  const [images, setImages] = useState([]);
-  const [imageUrls, setImageUrls] = useState([]);
+  const [lien, setLien] = useState([]);
 
-  const imageSelect = e => {
-    const selectImages = Array.from(e.target.files); 
-    setImages(selectImages);
-};
+  const docImageRef = collection(db, 'livraison');
+//ajout image sue le storage
+  function handleChange(e) {
+    if (e.target.files[0])
+        setFile(e.target.files[0]);
+  }
+//ajouter les info sur le firestore
+  const handleLivre = async (e) =>{
+    e.preventDefault();
 
+    try{
+        const path = `/images/${file.name}`;
+        const refs =  ref(storage, path);
+        uploadBytes(refs, file).then(() =>{
+          getDownloadURL(ref(storage, refs)).then((url) =>{
+            addDoc(docImageRef, {
+              title,
+              description,
+              lien,
+              image : url
+      
+            })
+            // const data = url;
+            // setURL(data)
+          })
+        })   
 
-const ajoutImage = () => {
-  const uploadPromises = images.map(image => {
-    const uploadTask = db.ref(`images/${image.name}`).put(image);
-    return uploadTask;
-  })
+      //vider les champs
+        setTitle('');
+        setDescription('');
+        setFile('')
+        setLien('');
 
-  Promise.all(uploadPromises)
-      .then(results => {
-        const downloadUrlPromises = results.map(result =>
-          result.ref.getDownloadURL()
-        );
-        return Promise.all(downloadUrlPromises);
-      })
-      .then(urls => {
-        setImageUrls(urls);
-        return db.collection('livraison').add({
-          title,
-          subtitle,
-          description,
-          imageUrls: urls,
-        });
-      })
-      .catch(error => {
-        console.error('Error uploading content: ', error);
-      });
-    };
+        //alert de l'ajout
+        alert('la livraison est passe');
 
-  
+      }catch(err){
+        console.error(err);
+      }
+  }
+
   return (
     <>
       <div className="container">
         <div className="d-flex justify-content-end mt-5">
           <button
             type="button"
-            className="btn btn-cart shadow mb-5 mt-3"
+            className="btn btn-ca shadow mb-5 p-2 mt-3"
             data-bs-toggle="modal"
             data-bs-target="#mod1"
           >
@@ -86,45 +97,36 @@ const ajoutImage = () => {
               </div>
               <div class="modal-body">
                 <form action="">
-                  {/* <select
-                    class="form-select shadow rounded border border-warning p-3 mb-4"
-                    aria-label="Default select example"
-                  >
-                    <option selected>Selectionner une tache</option>
-                    <option value="1">Tache 1</option>
-                    <option value="2">tache 2</option>
-                    <option value="3">Tache 3</option>
-                  </select> */}
-                  <div className="shadow rounded border border-warning p-3 mb-4">
-                    <input className="form-control" type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="entrer le titre" />
-                  </div>
-                  <div className="shadow rounded border border-warning p-3 mb-4">
-                    <input className="form-control" type="text" value={subtitle} onChange={e => setSubtitle(e.target.value)} placeholder="entrer le titre" />
+                  <div className=" mb-4">
+                    <select class="form-select rounded border border-warning p-3" aria-label="Default select example" name='tache'
+                     value={title} onChange={(e)=> setTitle(e.target.value)}>
+                      <option selected>Choisir une tâche</option>
+                      <option value="Tâche 1">Tâche 1</option>
+                      <option value="Tâche 2">Tâche 2</option>
+                      <option value="Tâche 3">Tâche 3</option>
+                    </select>
                   </div>
                   <div class="mb-4 border border-warning">
                     <input
                       type="text"
-                      className="form-control  shadow  rounded p-3" value={imageUrls} onChange={e => setImageUrls(e.target.value)} 
+                      className="form-control  rounded p-3" 
+                      value={lien} onChange={e => setLien(e.target.value)} 
                       id="exampleFormControlInput1"
                       placeholder="Lien de Deploiment"/>
                   </div>
                   <div class="mb-4">
                     <textarea value={description}
-                      className="form-control  shadow rounded border border-warning"
+                      className="form-control rounded border border-warning"
                       onChange={e => setDescription(e.target.value)}
                       placeholder="Description"
                       rows="3"
                     ></textarea>
                   </div>
-                  <div className="d-flex justify-content-center  shadow bg-body rounded mb-5 p-4 border border-warning">
-                    <input type="file" multiple onChange={imageSelect} placeholder="Ajouter Images"/>
-                    {/* <button type="button"className="btn btn-cap rounded p-2 btn-lg">Ajouter Images</button> */}
-                    <div className="cap p-4">
-
-                    </div>
+                  <div className="d-flex justify-content-center  bg-body rounded mb-5 p-4 border border-warning">
+                      <input type="file" className="border border-danger rounded p-3" multiple onChange={handleChange} placeholder="Ajouter Images"/>
                   </div>
                   <div className="mb-3 d-grid">
-                    <button type="button" className="btn btn-lg rounded btn-send" onClick={ajoutImage}> Envoyer</button>
+                    <button type="button" className="btn btn-lg rounded btn-send" onClick={handleLivre}> Envoyer</button>
                   </div>
                 </form>
               </div>
@@ -134,18 +136,7 @@ const ajoutImage = () => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-md-3">
-            <CartLive />
-          </div>
-          <div className="col-md-3">
-            <CartLive />
-          </div>
-          <div className="col-md-3">
-            <CartLive />
-          </div>
-          <div className="col-md-3">
-            <CartLive />
-          </div>
+              <CartLive />
         </div>
       </div>
     </>

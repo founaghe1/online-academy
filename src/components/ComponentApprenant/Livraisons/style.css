@@ -1,66 +1,40 @@
 .btn-ca{
     background-color: #8e70d6 !important;
-    color: white;  
+    color: white; 
     font-size: 20px;
     font-weight: 500;
+    
 }
+
 
 .btn-ca:hover{
     background-color: #8e70d6 !important;
-    color: white !important;  
+    color: white; 
     font-size: 20px;
     font-weight: 500;
 }
 
+
 .btn-car{
-    background-color: gray;
+    background-color: gray !important;
     color: white;  
-    font-size: 18px;
-    font-weight: 300;
-    /* height: 40px !important; */
-    width: 130px !important;
+   
 }
 
 .btn-car:hover{
     background-color: gray !important;
     color: white !important;  
-    font-size: 18px;
-    font-weight: 300;
-    /* height: 40px !important; */
-    width: 130px !important;
 }
 
-.btn-cart1{
-    background-color: #8e70d6;
+.btn-cart{
+    background-color: #8e70d6 !important;
     color: white;  
-    font-size: 18px;
-    font-weight: 300;
-    /* height: 40px !important; */
-    /* width: 180px !important; */
+   
 }
-.btn-cart1:hover{
-    background-color: #8e70d6;
-    color: white;  
-    font-size: 18px;
-    font-weight: 300;
-    /* height: 40px !important;
-    width: 180px !important; */
+.btn-cart:hover{
+    background-color: #70afd6 !important;
+    color: white;
 }
-
-/* .btn-cartt{
-    background-color: white;
-    color: red;
-    border: 2px solid red;  
-    font-size: 16px;
-    font-weight: 300;
-}
-.btn-cartt:hover{
-    background-color: white;
-    color: red;
-    border: 2px solid red;  
-    font-size: 16px;
-    font-weight: 300;
-} */
 
 #mod1{
     background-color: white;

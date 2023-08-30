@@ -29,18 +29,16 @@ const Livraison = () => {
         </div>
         <div className="row">
           <h3 className="title mt-5">Livraisons</h3>
-          <div className="col-md-3">
+          <div className="col-md-4">
             <Cart />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-4">
             <Cart />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-4">
             <Cart />
           </div>
-          <div className="col-md-3">
-            <Cart />
-          </div>
+          
         </div>
       </div>
     </div>

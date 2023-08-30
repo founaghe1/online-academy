@@ -19,6 +19,7 @@ import {BiSolidLeftArrow , BiSolidRightArrow} from 'react-icons/bi'
 import { db } from "../../firebase/Firebase";
 import { getDocs, collection, addDoc } from "firebase/firestore";
 
+
 const Admin = () => {
   const [show, setShow] = useState(false);
 
@@ -40,6 +41,7 @@ const Admin = () => {
   const [newUsersEmail, setNewUsersEmail] = useState("")
   const [newUsersMdp, setNewUsersMdp] = useState("")
   const [newUsersStatus, setNewUsersStatus] = useState("")
+  
   // fetch users list
   const usersCollectionRef = collection(db, 'users')
 
