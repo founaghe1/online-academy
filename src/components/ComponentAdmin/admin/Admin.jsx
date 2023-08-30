@@ -18,7 +18,6 @@ import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 
 
 // firebase
-import { db } from "../../firebase/Firebase";
 import {
   getDocs,
   collection,
@@ -28,7 +27,7 @@ import {
   updateDoc,
   setDoc,
 } from "firebase/firestore";
-import { auth } from "../../firebase/Firebase";
+import { auth, db } from "../../firebase/Firebase";
 import { createUserWithEmailAndPassword, updateProfile, updateEmail  } from "firebase/auth";
 
 // toast notification
