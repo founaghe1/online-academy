@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
-import Admin from './components/ComponentAdmin/admin/Admin';
+//import Admin from './components/ComponentAdmin/admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/ComponentCoach/login/Login';
 // import ForgotPW from './components/ComponentCoach/ForgotPW/ForgotPW'
@@ -40,8 +40,8 @@ import MarketingApprt from "./components/ComponentApprenant/DomainApprnt/Marketi
 import DesignApprt from "./components/ComponentApprenant/DomainApprnt/DesignApprt";
 
 
-import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
-import ChatPage from './components/ComponentCoach/ChatPage/ChatPage';
+// import Voirlivraison from './components/ComponentApprenant/Livraisons/Voirlivraison';
+// import ChatPage from './components/ComponentCoach/ChatPage/ChatPage';
 
 
 import Modal from "./components/ComponentCoach/Cour/Modal";
@@ -79,6 +79,7 @@ import ApprenantRoutes from "./components/Routes/ApprenantRoutes";
 import AdminRoutes from './components/Routes/AdminRoutes';
 import RoutesPrive from './components/Routes/RoutesPrive';
 import ReinsitialisationPW from './components/ComponentCoach/ForgotPW/ReinsitialisationPW';
+import Admin from './components/ComponentAdmin/admin/Admin';
 
 
 
@@ -99,6 +100,7 @@ function App() {
         
         </Routes>
       </Router>
+    {/* <Voirlivraison /> */}
 
       
 
@@ -119,7 +121,6 @@ function App() {
     //   {/* <ListeApprenants/> */}
     //   {/* <NotificationsCoachs/> */}
     //   {/* <ChatPage /> */}
-
     //   {/* <Router>
     //     <Routes>
     //       <Route exact path='/' element={<Domain />} />

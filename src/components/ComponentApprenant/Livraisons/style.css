@@ -1,62 +1,39 @@
-.icon{
-    font-size: 40px;
-    color: #8e70d6;
+.btn-ca{
+    background-color: #8e70d6 !important;
+    color: white; 
+    font-size: 20px;
+    font-weight: 500;
+    
 }
 
-.cart-liv .card-header{
-    background-color: #8e70d6;
-    color: black;
-    height: 100px;
-    text-align: start !important;
 
-} 
-
-.title{
-    font-size: 25px;
-    color: #8e70d6;
-
+.btn-ca:hover{
+    background-color: #8e70d6 !important;
+    color: white; 
+    font-size: 20px;
+    font-weight: 500;
 }
+
 
 .btn-car{
-    background-color: gray;
+    background-color: gray !important;
     color: white;  
-    font-size: 16px;
-    font-weight: 300;
+   
 }
 
 .btn-car:hover{
     background-color: gray !important;
     color: white !important;  
-    font-size: 16px;
-    font-weight: 300;
 }
 
 .btn-cart{
-    background-color: #8e70d6;
+    background-color: #8e70d6 !important;
     color: white;  
-    font-size: 16px;
-    font-weight: 300;
+   
 }
 .btn-cart:hover{
-    background-color: #8e70d6;
-    color: white;  
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.btn-cartt{
-    background-color: white;
-    color: red;
-    border: 2px solid red;  
-    font-size: 16px;
-    font-weight: 300;
-}
-.btn-cartt:hover{
-    background-color: white;
-    color: red;
-    border: 2px solid red;  
-    font-size: 16px;
-    font-weight: 300;
+    background-color: #70afd6 !important;
+    color: white;
 }
 
 #mod1{
@@ -74,7 +51,7 @@
 
 .btn-cap{
     background-color: #cf70d6;
-    color: white;
+    /* color: white; */
     font-size: 20px;
     font-weight: 600;
     padding: 15px;
@@ -92,7 +69,6 @@
     color: white;
     font-size: 20px;
     font-weight: 600;
-    padding: 15px;
 }
 .btn-send:hover{
     background-color: #8e70d6;
