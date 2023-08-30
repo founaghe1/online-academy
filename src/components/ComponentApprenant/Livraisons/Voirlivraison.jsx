@@ -10,6 +10,11 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 
 const Voirlivraison = () => {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   
   const [file, setFile] = useState(null);
   const [url, setURL] = useState("");
@@ -65,10 +70,11 @@ const Voirlivraison = () => {
       <div className="container">
         <div className="d-flex justify-content-end mt-5">
           <button
+            onClick={handleShow}
             type="button"
             className="btn btn-ca shadow mb-5 p-2 mt-3"
             data-bs-toggle="modal"
-            data-bs-target="#mod1"
+            data-bs-target="#modal"
           >
             Envoyer mon travail
           </button>
@@ -77,10 +83,11 @@ const Voirlivraison = () => {
         {/* <!-- Modal --> */}
         <div
           class="modal bx-shadow fade"
-          id="mod1"
+          id="modal"
           tabindex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
+          show={show} onHide={handleClose}
         >
           <div class="modal-dialog modal-xl">
             <div class="modal-content">
