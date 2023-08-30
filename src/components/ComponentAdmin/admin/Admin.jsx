@@ -670,7 +670,7 @@ const Admin = () => {
                 >
                   <option value="Domaine">Domaines</option>
                   <option value="Programmation">Programmation</option>
-                  <option value="Marketing">Marketing Disital</option>
+                  <option value="Marketing">Marketing Digital</option>
                   <option value="Design">Design</option>
                 </Form.Select>
               </div>

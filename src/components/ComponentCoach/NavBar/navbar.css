@@ -36,10 +36,17 @@
     border: 3px solid #a023e8;
 }
 .add:hover{
-    background:#920fac !important;
+    /* background:#920fac !important; */
     border: 3px solid #a023e8;
 }
-
+.iconotif{
+    background-color: transparent !important;
+    border: none!important ;
+}
+.noc{
+   height: 200px !important;
+    overflow:scroll;
+}
 .btnFermer{
     background-color: transparent !important;
     border: 3px solid #a023e8;
@@ -60,6 +67,8 @@
 }
 .notif-icon{
     cursor: pointer;
+    color: rgb(138, 18, 224);
+    
 }
 .btntoggle{
     background-color: #0cb6d800 !important;

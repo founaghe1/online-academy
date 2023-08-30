@@ -2,6 +2,8 @@ import React from 'react'
 import { Table } from "react-bootstrap";
 import { AiOutlineSearch } from "react-icons/ai";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { useState, useEffect } from "react";
@@ -43,7 +45,7 @@ const ListApprenants = () => {
   // filter
   const [filterName, setFilterName] = useState("");
   //  const [selectedStatus, setSelectedStatus] = useState("Tout");
-  //  const [selectedDomaine, setSelectedDomaine] = useState("Domaine");
+   const [selectedDomaine, setSelectedDomaine] = useState("Domaine");
 
   // paginnation
   const [currentPage, setCurrentPage] = useState(1);
@@ -71,9 +73,11 @@ const ListApprenants = () => {
         .toLowerCase()
         .includes(filterName.toLowerCase());
 
+        const domaineMatch =
+        selectedDomaine === "Domaine" ||
+        user.domaine.toLowerCase() === selectedDomaine.toLowerCase();
 
-
-      return nameMatch;
+      return nameMatch && domaineMatch;
     })
     .slice((currentPage - 1) * usersPerPage, currentPage * usersPerPage);
 
@@ -85,6 +89,7 @@ const ListApprenants = () => {
     <>
       <div className='container'>
         <h3 className='text-center mt-4'>Listes des Apprenants</h3><br />
+        <div className='d-flex justify-content-between'>
         <div class='input-group'>
           <span class='input-group-text' id='basic-addon1'>
             <AiOutlineSearch className='fs-4 fw-bold search-icon' />
@@ -99,6 +104,22 @@ const ListApprenants = () => {
             onChange={(e) => setFilterName(e.target.value)}
           />
         </div>
+        <br />
+        <div className=''>
+                <Form.Select
+                  className="shadow-lg selec"
+                  aria-label="Default select example"
+                  value={selectedDomaine}
+                  onChange={(e) => setSelectedDomaine(e.target.value)}
+                >
+                  <option value="Domaine">Domaines</option>
+                  <option value="Programmation">Programmation</option>
+                  <option value="Marketing">Marketing Digital</option>
+                  <option value="Design">Design</option>
+                </Form.Select>
+              </div>
+        </div>
+       
         <br />
         <Table striped bordered hover responsive>
           <thead className='pro'>
