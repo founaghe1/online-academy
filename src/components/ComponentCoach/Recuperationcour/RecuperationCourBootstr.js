@@ -128,7 +128,7 @@ const [usersList, setUsersList] = useState([]);
 
   return (
     <>
-      <h1>Cours</h1>
+      <h1>Cours Bootstrap</h1>
       <div className='container'>
         <div className='row'>
           {cours.map((user, id) => {
@@ -237,7 +237,7 @@ const [usersList, setUsersList] = useState([]);
                       <option value='illustrator'>Design Illustrator </option>
                       <option value='pro'>Design Premierpro</option>
                       <option value='initiation'>Design Initiatiat</option>
-                      <option value='digitale'>Marketing-digitale</option>
+                      <option value='digitale'>Marketing digitale</option>
                       <option value='reseaux'>Marketing reseaux sociaux</option>
                       <option value='Booster'>Marketing Booster</option>
                     </Form.Select>
@@ -275,7 +275,7 @@ const [usersList, setUsersList] = useState([]);
                       <option value='illustrator'>Design Illustrator </option>
                       <option value='pro'>Design Premierpro</option>
                       <option value='initiation'>Design Initiatiat</option>
-                      <option value='digitale'>Marketing-digitale</option>
+                      <option value='digitale'>Marketing digitale</option>
                       <option value='reseaux'>Marketing reseaux sociaux</option>
                       <option value='Booster'>Marketing Booster</option>
                     </Form.Select>

@@ -122,7 +122,7 @@ import "react-toastify/dist/ReactToastify.css";
      const onClose = () => setShow(false);
      return (
        <>
-         <h1>Cours Javasrcipt</h1>
+         <h1>Cours Django</h1>
          <div className='container'>
            <div className='row'>
              {cours.map((user, id) => {
@@ -231,7 +231,7 @@ import "react-toastify/dist/ReactToastify.css";
                          <option value='illustrator'>Design Illustrator</option>
                          <option value='pro'>Design Premierpro</option>
                          <option value='initiation'>Design Initiatiat</option>
-                         <option value='digitale'>Marketing-digitale</option>
+                         <option value='digitale'>Marketing digitale</option>
                          <option value='reseaux'>
                            Marketing reseaux sociaux
                          </option>
@@ -274,7 +274,7 @@ import "react-toastify/dist/ReactToastify.css";
                          </option>
                          <option value='pro'>Design Premierpro</option>
                          <option value='initiation'>Design Initiatiat</option>
-                         <option value='digitale'>marketing-digitale</option>
+                         <option value='digitale'>marketing digitale</option>
                          <option value='reseaux'>
                            Marketing reseaux sociaux
                          </option>

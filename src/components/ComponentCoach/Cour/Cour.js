@@ -161,7 +161,7 @@ function Coure() {
       <div className=''>
         <div className='cotainer-fluid  justify-content-end  coursbg pe-5 mt-5'>
           <Button variant='' onClick={handleShow} className='but'>
-            Ajouter
+            Ajouter Cours
           </Button>
         </div>
 
@@ -289,36 +289,36 @@ function Coure() {
             Taches
           </h1> */}
           <div className='container'>
-            {/* <div className=''>
-              <div className='row'>
-                {cours.map((user, index) => {
+             {/* <div className=''> */}
+              {/* <div className='row'> */}
+                {/* {cours.map((user, index) => {
                   return (
                     <div className='col-lg-4 col-md-4'>
                       <div class='car mt-4 '>
-                        <p key={user.id}>
-                          {/* <th>{index + 1}</th> */}
-                          {/* <span>
+                        <p key={user.id}> */}
+                         {/* <th>{index + 1}</th> 
+                          <span>
                             <ReactPlayer
                               url={user.url}
                               controls
                               width='100%'
                               height='350px'
                             />
-                          </span>
+                          </span> 
                           <p>{user.Domaine}</p>
                           <p>{user.SousDomaine}</p>
                           <p>{user.Debut}</p>
-                          <p>{user.Durée}heure</p>
+                          <p>{user.Durée}heure</p> */}
 
-                          <p className='icon d-flex justify-content-center align-items-center '>
+                          {/* <p className='icon d-flex justify-content-center align-items-center '>
                             <div className='ms-auto'>
                               <button
                                 onClick={() => openEditModal(user)}
                                 className='btn btn-primary text-left-0'
                               >
                                 <FiEdit />
-                              </button> */}
-{/* 
+                              </button> 
+
                               <button
                                 className='btn btn-danger text-left-50 m-2'
                                 onClick={() =>
@@ -326,20 +326,20 @@ function Coure() {
                                     newDomaine: "",
                                     newSousDomaine: "",
                                     newDurée: "",
-                                  }) */}
-                    {/* //             }
-                    //           >
-                    //             <RiDeleteBinLine />
-                    //           </button>
-                    //         </div>
-                    //       </p>
-                    //     </p>
-                    //   </div>
-                    // </div> */}
-                  {/* );
-                })} */}
-              {/* </div> */}
-            {/* // </div> */} 
+                                  }) 
+                                }
+                             >
+                               <RiDeleteBinLine />
+                             </button>
+                           </div>
+                         </p> */}
+                       {/* </p> */}
+                      {/* </div> 
+                   </div> */}
+                  {/* ); */}
+                {/* })}  */}
+             {/* </div>  */}
+          {/* </div>  */}
             {/* <Table responsive className='table mt-5'>
             <thead>
               <tr className='text-center'>

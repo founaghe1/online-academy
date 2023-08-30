@@ -234,7 +234,7 @@ import "react-toastify/dist/ReactToastify.css";
                      <option value='illustrator'>Design Illustrator </option>
                      <option value='Design pro'>Design Premierpro</option>
                      <option value='initiation'>Design Initiatiat</option>
-                     <option value='digitale'>Marketing-digitale</option>
+                     <option value='digitale'>Marketing digitale</option>
                      <option value='reseaux'>Marketing reseaux sociaux</option>
                      <option value='Booster'>Marketing Booster</option>
                    </Form.Select>
@@ -272,7 +272,7 @@ import "react-toastify/dist/ReactToastify.css";
                      <option value='illustrator'>Design Illustrator </option>
                      <option value='pro'>Design Premierpro</option>
                      <option value='initiation'>Design Initiatiat</option>
-                     <option value='digitale'>Marketing-digitale</option>
+                     <option value='digitale'>Marketing digitale</option>
                      <option value='reseaux'>Marketing reseaux sociaux</option>
                      <option value='Booster'>Marketing Booster</option>
                    </Form.Select>

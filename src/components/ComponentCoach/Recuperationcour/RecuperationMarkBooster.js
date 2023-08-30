@@ -233,7 +233,7 @@ const RecuperationMarkBooster = () => {
                       <option value='illustrator'>Design Illustrator </option>
                       <option value='pro'>Design Premierpro</option>
                       <option value='initiation'>Design Initiatiat</option>
-                      <option value='digitale'>Marketing-digitale</option>
+                      <option value='digitale'>Marketing digitale</option>
                       <option value='reseaux'>Marketing reseaux sociaux</option>
                       <option value='Booster'>Marketing Booster</option>
                     </Form.Select>
@@ -271,7 +271,7 @@ const RecuperationMarkBooster = () => {
                       <option value='illustrator'>Design Illustrator </option>
                       <option value='pro'>Design Premierpro</option>
                       <option value='initiation'>Design Initiatiat</option>
-                      <option value='digitale'>Marketing-digitale</option>
+                      <option value='digitale'>Marketing digitale</option>
                       <option value='reseaux'>Marketing reseaux sociaux</option>
                       <option value='Booster'>Marketing Booster</option>
                     </Form.Select>
