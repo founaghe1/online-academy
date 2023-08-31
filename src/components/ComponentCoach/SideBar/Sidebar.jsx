@@ -95,9 +95,9 @@ const Sidebar = () => {
                   </li>
                 </ul>
               </div>
-              <div className="w-100 mt-5">
+              <div className="w-100 mt-5 " >
                 <Link to="/coach/dashboard/messagerie">
-                  <Button variant="primary" className=""
+                  <Button className="dec"
                     onClick={logOut}
                   >
                     Déconnexion
