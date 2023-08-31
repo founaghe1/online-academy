@@ -12,21 +12,21 @@ import Csharp from "../../../Assets/c-sharp.png";
 
 const Programmation = () => {
   return (
-    <div className="container-fluid">
+    <div className='container-fluid'>
       <h1>Les sous-domaines de la Programmation</h1>
 
-      <div className="row">
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-6 d-flex justify-content-center mt-4">
+      <div className='row'>
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-6 d-flex justify-content-center mt-4'>
           <Link
-            to="/cch/dashboard/cours/html-css"
-            className="join d-flex right-0"
+            to='/coach/dashboard/domain/programmation/bootstrap'
+            className='join d-flex right-0'
           >
             <Card
               style={{ width: "15rem" }}
-              className="_grid item1 orangeclair shadow"
+              className='_grid item1 orangeclair shadow'
             >
-              <div className="img_card p-4 d-flex orange">
-                <Card.Img variant="top" className="img-fluid" src={HTMLCSS} />
+              <div className='img_card p-4 d-flex orange'>
+                <Card.Img variant='top' className='img-fluid' src={HTMLCSS} />
               </div>
               <Card.Body>
                 <Card.Title>HTML/CSS</Card.Title>
@@ -38,17 +38,17 @@ const Programmation = () => {
             </Card>
           </Link>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to="/cch/dashboard/cours/bootstrap"
-            className="join d-flex right-0"
+            to='/cch/dashboard/cours/bootstrap'
+            className='join d-flex right-0'
           >
             <Card
               style={{ width: "15rem" }}
-              className="_grid item2 violetclair shadow"
+              className='_grid item2 violetclair shadow'
             >
-              <div className="img_card p-4 d-flex violet">
-                <Card.Img variant="top" className="img-fluid" src={Bootstrap} />
+              <div className='img_card p-4 d-flex violet'>
+                <Card.Img variant='top' className='img-fluid' src={Bootstrap} />
               </div>
               <Card.Body>
                 <Card.Title>Bootstrap</Card.Title>
@@ -60,19 +60,19 @@ const Programmation = () => {
             </Card>
           </Link>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to="/cch/dashboard/cours/javascript"
-            className="join d-flex right-0"
+            to='/cch/dashboard/cours/javascript'
+            className='join d-flex right-0'
           >
             <Card
               style={{ width: "15rem" }}
-              className="_grid item3 blueclair shadow"
+              className='_grid item3 blueclair shadow'
             >
-              <div className="img_card p-4 d-flex blue">
+              <div className='img_card p-4 d-flex blue'>
                 <Card.Img
-                  variant="top"
-                  className="img-fluid"
+                  variant='top'
+                  className='img-fluid'
                   src={Javascript}
                 />
               </div>
@@ -86,14 +86,14 @@ const Programmation = () => {
             </Card>
           </Link>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
-          <Link to="/cch/dashboard/cours/php" className="join d-flex right-0">
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
+          <Link to='/cch/dashboard/cours/php' className='join d-flex right-0'>
             <Card
               style={{ width: "15rem" }}
-              className="_grid item3 orangeclair shadow"
+              className='_grid item3 orangeclair shadow'
             >
-              <div className="img_card p-4 d-flex orange">
-                <Card.Img variant="top" className="img-fluid" src={PHP} />
+              <div className='img_card p-4 d-flex orange'>
+                <Card.Img variant='top' className='img-fluid' src={PHP} />
               </div>
               <Card.Body>
                 <Card.Title>PHP</Card.Title>
@@ -105,17 +105,17 @@ const Programmation = () => {
             </Card>
           </Link>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to="/cch/dashboard/cours/django"
-            className="join d-flex right-0"
+            to='/cch/dashboard/cours/django'
+            className='join d-flex right-0'
           >
             <Card
               style={{ width: "15rem" }}
-              className="_grid item3 orangeclair shadow"
+              className='_grid item3 orangeclair shadow'
             >
-              <div className="img_card p-4 d-flex orange">
-                <Card.Img variant="top" className="img-fluid" src={Django} />
+              <div className='img_card p-4 d-flex orange'>
+                <Card.Img variant='top' className='img-fluid' src={Django} />
               </div>
               <Card.Body>
                 <Card.Title>DJANGO</Card.Title>
@@ -127,17 +127,17 @@ const Programmation = () => {
             </Card>
           </Link>
         </div>
-        <div className="_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to="/cch/dashboard/cours/csharp"
-            className="join d-flex right-0"
+            to='/cch/dashboard/cours/csharp'
+            className='join d-flex right-0'
           >
             <Card
               style={{ width: "15rem" }}
-              className="_grid item3 orangeclair shadow"
+              className='_grid item3 orangeclair shadow'
             >
-              <div className="img_card p-4 d-flex orange">
-                <Card.Img variant="top" className="img-fluid" src={Csharp} />
+              <div className='img_card p-4 d-flex orange'>
+                <Card.Img variant='top' className='img-fluid' src={Csharp} />
               </div>
               <Card.Body>
                 <Card.Title>C#</Card.Title>
