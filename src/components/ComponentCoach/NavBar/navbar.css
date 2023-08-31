@@ -36,10 +36,17 @@
     border: 3px solid #a023e8;
 }
 .add:hover{
-    background:#920fac !important;
+    /* background:#920fac !important; */
     border: 3px solid #a023e8;
 }
-
+.iconotif{
+    background-color: transparent !important;
+    border: none!important ;
+}
+.noc{
+   height: 200px !important;
+    overflow:scroll;
+}
 .btnFermer{
     background-color: transparent !important;
     border: 3px solid #a023e8;
@@ -60,7 +67,26 @@
 }
 .notif-icon{
     cursor: pointer;
+    color: rgb(138, 18, 224);
+    
 }
-.dropdown-item .update-profil:hover {
-  color: blue;
+.btntoggle{
+    background-color: #0cb6d800 !important;
+    border: none ;
+}
+
+.profilEdi{
+    border: 2px solid rgb(0, 174, 255);
+    border-radius: 5px ;
+}
+
+.btnModif{
+    background:#8a70d6 !important;
+}
+.btnModif:hover{
+    background :rgb(112, 214, 154) !important;;
+}
+
+.profil{
+    border: none!important;
 }

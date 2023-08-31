@@ -9,49 +9,49 @@ import { Link } from "react-router-dom";
 
 const Marketing = () => {
   return (
-    <div className='container domain'>
-      <div className='join pt-3 d-flex justify-content-between align-items-center'>
+    <div className="container domain">
+      <div className="join pt-3 d-flex justify-content-between align-items-center">
         <h1>Domaines de formation</h1>
 
         <button
-          type='button'
-          class='btn btn-primary add_domain rounded-3 color-light'
-          data-bs-toggle='modal'
-          data-bs-target='#modalAjouter'
+          type="button"
+          class="btn btn-primary add_domain rounded-3 color-light"
+          data-bs-toggle="modal"
+          data-bs-target="#modalAjouter"
         >
           <span>Ajouter</span>
         </button>
 
         <div
-          class='modal fade'
-          id='modalAjouter'
-          tabindex='-1'
-          aria-labelledby='exampleModalLabel'
-          aria-hidden='true'
+          class="modal fade"
+          id="modalAjouter"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
         >
-          <div class='modal-dialog'>
-            <div class='modal-content'>
-              <div class='modal-header'>
-                <h1 class='modal-title fs-5' id='exampleModalLabel'>
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
                   Modal title
                 </h1>
                 <button
-                  type='button'
-                  class='btn-close'
-                  data-bs-dismiss='modal'
-                  aria-label='Close'
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
                 ></button>
               </div>
-              <div class='modal-body'>...</div>
-              <div class='modal-footer'>
+              <div class="modal-body">...</div>
+              <div class="modal-footer">
                 <button
-                  type='button'
-                  class='btn btn-secondary'
-                  data-bs-dismiss='modal'
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
                 >
                   Close
                 </button>
-                <button type='button' class='btn btn-primary'>
+                <button type="button" class="btn btn-primary">
                   Save changes
                 </button>
               </div>
@@ -143,8 +143,8 @@ const Marketing = () => {
               <Card.Title>Design</Card.Title>
               <Card.Text>08 sous-domaines</Card.Text>
               <Link
-                to='/coach/dashboard/domain/design'
-                className='join d-flex right-0'
+                to="/cch/dashboard/domain/design"
+                className="join d-flex right-0"
               >
                 <button
                   className='blue d-flex justify-content-center align-items-center'

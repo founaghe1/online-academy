@@ -15,9 +15,9 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { BsPencilSquare, BsTrash } from "react-icons/bs";
 import { AiFillEye } from "react-icons/ai";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
+import utlisateur from '../../../Assets/utilisateur.png'
 
 // firebase
-import { db } from "../../firebase/Firebase";
 import {
   getDocs,
   collection,
@@ -27,8 +27,12 @@ import {
   updateDoc,
   setDoc,
 } from "firebase/firestore";
-import { auth } from "../../firebase/Firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../../firebase/Firebase";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  updateEmail,
+} from "firebase/auth";
 
 // toast notification
 import { ToastContainer, toast } from "react-toastify";
@@ -125,7 +129,6 @@ const Admin = () => {
   // }, []);
 
   const onSubmitUsers = async () => {
-    
     try {
       // Enregistrement dans l'authentification
       const userCreateAuth = await createUserWithEmailAndPassword(
@@ -164,6 +167,13 @@ const Admin = () => {
       position: toast.POSITION.TOP_RIGHT,
     });
   };
+
+  // fetch users list
+
+  useEffect(() => {
+    // call the function here to fetch all the user list in realtime
+    getUsersList();
+  }, []);
 
   // filter
   const filteredUsers = usersList
@@ -268,16 +278,67 @@ const Admin = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("users")) || null;
 
-  const logOut = async () =>{
-    try{
-      await  signOut(auth)
-      localStorage.removeItem("users")
-      navigate("/", {replace: true})
-    }catch(error){
+  const logOut = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem("users");
+      navigate("/", { replace: true });
+    } catch (error) {
       alert("Erreur de deconnection, veuillez verifier votre connection");
-      console.error(error)
+      console.error(error);
     }
-  }
+  };
+
+  // update user profile
+  const [users, setUsers] = useState(
+    JSON.parse(localStorage.getItem("users")) || null
+  );
+  const userAD = JSON.parse(localStorage.getItem("users")) || null;
+
+  // const [showEdit, setShowEdite] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [editedUser, setEditedUser] = useState(userAD);
+
+  // modif profile
+
+  const handleEdit = () => {
+    setEditing(true);
+    setShow(true);
+  };
+
+  // Define a function to update the user state
+  const updateUserAD = (newUser) => {
+    setUsers(newUser);
+    localStorage.setItem("users", JSON.stringify(newUser));
+
+    const userDocRef = doc(db, "users", auth.currentUser.uid); // Change "users" to the actual collection name
+    updateDoc(userDocRef, {
+      prenom: newUser.prenom,
+      nom: newUser.nom,
+      email: newUser.email,
+    });
+  };
+
+  const handleSave = async () => {
+    try {
+      // Update email in Firebase Auth
+      if (editedUser.email !== user.email) {
+        await updateEmail(auth.currentUser, editedUser.email);
+      }
+
+      await updateProfile(auth.currentUser, {
+        displayName:
+          editedUser.prenom + " " + editedUser.nom + " " + editedUser.email,
+      });
+
+      updateUserAD(editedUser); // Update user state
+
+      setEditing(false);
+      setShow(false);
+    } catch (error) {
+      console.error("Error updating profile:", error);
+    }
+  };
 
   return (
     <>
@@ -449,33 +510,94 @@ const Admin = () => {
                       Déconnection
                     </button>
                   </Nav.Link>
-                  <div id="profil" className="pe-3 me-5">
+                  <div id="profil">
                     <div className="btn-group">
                       <button
                         type="button"
-                        className="btn btn-primary dropdown-toggle rounded-pill"
+                        className="btn btntoggle dropdown-toggle rounded-3 mb-3"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
                         <img
-                          src="https://avatars.dicebear.com/v2/male/55c6a0641adadaa4af04809a28329ec4.svg"
+                          src={utlisateur}
                           alt=""
                           className="rounded-circle"
                         />
                       </button>
-                      <ul className="dropdown-menu pe-5">
-                        <li>
-                          <p className="dropdown-item">nom: {user?.prenom} {user?.nom} </p>
+                      <ul className="dropdown-menu profil shadow ps-1">
+                        {editing ? (
+                          <li>
+                            <input
+                              type="text"
+                              className="profilEdi ps-2"
+                              value={editedUser?.prenom}
+                              onChange={(e) =>
+                                setEditedUser({
+                                  ...editedUser,
+                                  prenom: e.target.value,
+                                })
+                              }
+                            />
+                            <input
+                              type="text"
+                              className="profilEdi ps-2 my-2"
+                              value={editedUser?.nom}
+                              onChange={(e) =>
+                                setEditedUser({
+                                  ...editedUser,
+                                  nom: e.target.value,
+                                })
+                              }
+                            />
+                            <input
+                              type="text"
+                              className="profilEdi ps-2"
+                              value={editedUser?.email}
+                              onChange={(e) =>
+                                setEditedUser({
+                                  ...editedUser,
+                                  email: e.target.value,
+                                })
+                              }
+                            />
+                          </li>
+                        ) : (
+                          <li>
+                            <p className="dropdown-item">
+                              {user?.prenom} {user?.nom}
+                            </p>
+                            <p className="dropdown-item">{user?.email}</p>
+                          </li>
+                        )}
+
+                        <li className="ps-3 pt-2 ">
+                          {editing ? (
+                            ""
+                          ) : (
+                            <button
+                              className="btn btnModif text-light"
+                              onClick={() => setEditing(!editing)}
+                            >
+                              Modifier profil
+                            </button>
+                          )}
                         </li>
-                        <li>
-                          <p className="dropdown-item">email: {user?.email}</p>
-                        </li>
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            <span className="update-profil">
-                              Modifer profil
-                            </span>
-                          </a>
+                        <li className="ps-3 mt-2">
+                          {editing ? (
+                            <button
+                              className="btn btn-success text-light"
+                              onClick={handleSave}
+                            >
+                              Enregistrer
+                            </button>
+                          ) : (
+                            <button
+                              className="btn btn-danger text-light logout"
+                              onClick={logOut}
+                            >
+                              Déconnexion
+                            </button>
+                          )}
                         </li>
                       </ul>
                     </div>
@@ -548,7 +670,7 @@ const Admin = () => {
                 >
                   <option value="Domaine">Domaines</option>
                   <option value="Programmation">Programmation</option>
-                  <option value="Marketing">Marketing Disital</option>
+                  <option value="Marketing">Marketing Digital</option>
                   <option value="Design">Design</option>
                 </Form.Select>
               </div>
@@ -629,7 +751,6 @@ const Admin = () => {
                 <BiSolidLeftArrow />
               </button>
               <span className="fw-bold d-flex justify-content-center align-items-center px-3  nbrPages rounded text-light mx-1">
-                
                 {currentPage}
               </span>
               <button
@@ -812,7 +933,5 @@ const Admin = () => {
     </>
   );
 };
-
-
 
 export default Admin;
