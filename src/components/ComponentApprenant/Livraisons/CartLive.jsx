@@ -73,10 +73,10 @@ const CartLive = () => {
         }
     }
 
-    useEffect(() => {
-      getComment();
+    // useEffect(() => {
+    //   getComment();
 
-       }, []);
+    //    });
 
 
   return (
@@ -96,15 +96,15 @@ const CartLive = () => {
             </div>
             <div class="text-center d-flex justify-content-between align-items-center mt-4 mb-3">
             <div className="">
-              <button type="button" className="btn text-white btn-outline-secondary d-flex justify-content-center align-items-center"
+              <button type="button" className="btn text-white btn-outline-info bg-info d-flex justify-content-center align-items-center"
                onClick={handleShow}>
                 <BiSolidShow className="me-2 text-white"/>Livrable
               </button>
             </div>
             <div className="">
-              <button type="button" className="btn btn-outline-success  text-white d-flex justify-content-center align-items-center"
+              <button type="button" className="btn btn-outline-success bg-success  text-white d-flex justify-content-center align-items-center"
                onClick={handlesShows}>
-                  <BiSolidShow className="me-2"/> Commentaire
+                  <BiSolidShow className="me-2 "/> Commentaire
               </button>
             </div>
           </div>
@@ -113,7 +113,7 @@ const CartLive = () => {
         ))}
          <Modal show={shows} onHide={handlesCloses}>
         <Modal.Header closeButton>
-          <Modal.Title>Commentaire</Modal.Title>
+          <Modal.Title >Commentaire</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             

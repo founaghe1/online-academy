@@ -147,15 +147,15 @@ const [usersList, setUsersList] = useState([]);
                     </span>
                     {/* <p>{user.Domaine}</p> */}
                     <div className='mt-2'>
-                    <h4 className='color'>{user.SousDomaine}</h4>
-                    <h4 className='color'>{user.Debut}</h4>
-                    <h4 className='color'>{user.Durée} heure</h4>
-                     </div>
+                      <h4 className='color'>{user.SousDomaine}</h4>
+                      <h4 className='color'>{user.Debut}</h4>
+                      <h4 className='color'>{user.Durée} heure</h4>
+                    </div>
                     <p className='icon d-flex justify-content-center align-items-center '>
                       <div className='ms-auto'>
                         <button
                           onClick={() => openEditModal(user)}
-                          className='btn btn-primary text-left-0'
+                          className='btn btn-warning text-light text-left-0'
                         >
                           <FiEdit />
                         </button>
@@ -230,7 +230,7 @@ const [usersList, setUsersList] = useState([]);
                       <option></option>
 
                       <option value='Bootatrap'>bootstrap</option>
-                      <option value='HtmlCss'>HtmlCss</option>
+                      <option value='HtmlCss'>Html Css</option>
                       <option value='Javascript'>Javascript </option>
                       <option value='PHP'>PHP </option>
                       <option value='Django'>Django </option>
@@ -268,7 +268,7 @@ const [usersList, setUsersList] = useState([]);
                       <option></option>
 
                       <option value='Bootatrap'>Bootstrap</option>
-                      <option value='HtmlCss'>HtmlCss</option>
+                      <option value='HtmlCss'>Html Css</option>
                       <option value='Javscript'>Javscript </option>
                       <option value='PHP'>PHP </option>
                       <option value='Django'>Django </option>

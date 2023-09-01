@@ -109,13 +109,19 @@ const RecuparationCour = () => {
                   <p>
                     <div>
                       {isCourseStarted ? (
-                        <button onClick={() => endCourse(courseId)}>
+                        <button
+                          className='btn good'
+                          onClick={() => endCourse(courseId)}
+                        >
                           Terminer
                         </button>
                       ) : isCourseFinished ? (
                         <p>Cours terminé.</p>
                       ) : (
-                        <button onClick={() => startCourse(courseId)}>
+                        <button
+                          className='btn good'
+                          onClick={() => startCourse(courseId)}
+                        >
                           Démarrer
                         </button>
                       )}

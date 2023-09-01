@@ -231,7 +231,7 @@ function Coure() {
                     <option></option>
 
                     <option value='Bootstrap'>Bootstrap</option>
-                    <option value='HtmlCss'>HtmlCss</option>
+                    <option value='HtmlCss'>Html Css</option>
                     <option value='Javascript'>Javascript </option>
                     <option value='PHP'>PHP </option>
                     <option value='Django'>Django </option>
@@ -289,14 +289,14 @@ function Coure() {
             Taches
           </h1> */}
           <div className='container'>
-             {/* <div className=''> */}
-              {/* <div className='row'> */}
-                {/* {cours.map((user, index) => {
+            {/* <div className=''> */}
+            {/* <div className='row'> */}
+            {/* {cours.map((user, index) => {
                   return (
                     <div className='col-lg-4 col-md-4'>
                       <div class='car mt-4 '>
                         <p key={user.id}> */}
-                         {/* <th>{index + 1}</th> 
+            {/* <th>{index + 1}</th> 
                           <span>
                             <ReactPlayer
                               url={user.url}
@@ -310,7 +310,7 @@ function Coure() {
                           <p>{user.Debut}</p>
                           <p>{user.Durée}heure</p> */}
 
-                          {/* <p className='icon d-flex justify-content-center align-items-center '>
+            {/* <p className='icon d-flex justify-content-center align-items-center '>
                             <div className='ms-auto'>
                               <button
                                 onClick={() => openEditModal(user)}
@@ -333,13 +333,13 @@ function Coure() {
                              </button>
                            </div>
                          </p> */}
-                       {/* </p> */}
-                      {/* </div> 
+            {/* </p> */}
+            {/* </div> 
                    </div> */}
-                  {/* ); */}
-                {/* })}  */}
-             {/* </div>  */}
-          {/* </div>  */}
+            {/* ); */}
+            {/* })}  */}
+            {/* </div>  */}
+            {/* </div>  */}
             {/* <Table responsive className='table mt-5'>
             <thead>
               <tr className='text-center'>
@@ -476,7 +476,11 @@ function Coure() {
                   <Button variant='secondary' onClick={closeEditModal}>
                     Annuler
                   </Button>
-                  <Button variant='primary' onClick={updateUser}>
+                  <Button
+                    variant=''
+                    className='btn-warning text-light'
+                    onClick={updateUser}
+                  >
                     Modifier
                   </Button>
                 </Modal.Footer>

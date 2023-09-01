@@ -146,12 +146,12 @@ const RecuperationMarkBooster = () => {
                       <h4 className='color'>{user.SousDomaine}</h4>
                       <h4 className='color'>{user.Debut}</h4>
                       <h4 className='color'>{user.Durée} heure</h4>
-                    </div>  
+                    </div>
                     <p className='icon d-flex justify-content-center align-items-center '>
                       <div className='ms-auto'>
                         <button
                           onClick={() => openEditModal(user)}
-                          className='btn btn-primary text-left-0'
+                          className='btn btn-warning text-light text-left-0'
                         >
                           <FiEdit />
                         </button>
