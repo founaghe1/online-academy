@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Card from "react-bootstrap/Card";
@@ -18,7 +20,7 @@ const Programmation = () => {
       <div className='row'>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-6 d-flex justify-content-center mt-4'>
           <Link
-            to='/coach/dashboard/domain/programmation/bootstrap'
+            to='/cch/dashboard/cours/html/css'
             className='join d-flex right-0'
           >
             <Card
