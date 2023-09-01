@@ -21,7 +21,7 @@ import { MdDriveFileRenameOutline } from "react-icons/md";
 const Navbar = () => {
 
   const [users, setUsers] = useState(JSON.parse(localStorage.getItem("users")) || null);
-  
+  const user = JSON.parse(localStorage.getItem("users")) || null
   const [show, setShow] = useState();
   // const [showEdit, setShowEdite] = useState(false);
   const [editing, setEditing] = useState(false);
@@ -40,7 +40,7 @@ const Navbar = () => {
   // function deconnection
   const navigate = useNavigate();
 
-  const user = JSON.parse(localStorage.getItem("users")) || null
+  
 
   const handleSave = async () => {
     try {
@@ -80,16 +80,7 @@ const Navbar = () => {
   };
 
 
-  const logOut = async () => {
-    try {
-      await signOut(auth)
-      localStorage.removeItem("users")
-      navigate("/", { replace: true })
-    } catch (error) {
-      alert("Erreur de deconnection, veuillez verifier votre connection");
-      console.error(error)
-    }
-  }
+  
 
   return (
     <nav>
@@ -198,12 +189,12 @@ const Navbar = () => {
                 <div class="btn-group">
                   <button
                     type="button"
-                    class="btn btn-primary dropdown-toggle rounded-pill mb-3"
+                    class="btn btntoggle   rounded mb-3"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     <img
-                      src="https://avatars.dicebear.com/v2/male/55c6a0641adadaa4af04809a28329ec4.svg"
+                      src={utilisateur}
                       alt=""
                       className="rounded-circle"
                     />

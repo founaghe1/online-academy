@@ -97,7 +97,7 @@ function DomCchRoutes() {
       <Route path='/design' element={<Design />} />
       <Route path='/design/photo' element={<RecuperationCourPhotosho />} />
       <Route path='/design/pro' element={<RecuperationDesigPro />} />
-      <Route
+      <Route 
         path='/design/initiation'
         element={<RecuperationCourdesiginitiat />}
       />

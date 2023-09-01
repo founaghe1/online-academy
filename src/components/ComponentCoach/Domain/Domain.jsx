@@ -143,7 +143,7 @@ const Marketing = () => {
               <Card.Title>Design</Card.Title>
               <Card.Text>08 sous-domaines</Card.Text>
               <Link
-                to="/cch/dashboard/domain/design"
+                to="/coach/dashboard/domain/design"
                 className="join d-flex right-0"
               >
                 <button
