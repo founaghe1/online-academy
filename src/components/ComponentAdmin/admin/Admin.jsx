@@ -608,37 +608,7 @@ const Admin = () => {
                       <span className="fw-bold">Déconnexion</span>
                     </button>
                   </Nav.Link>
-                  <div id="profil" className="pe-3 me-5">
-                    <div className="btn-group">
-                      <button
-                        type="button"
-                        className="btn btn-primary dropdown-toggle rounded-pill"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <img
-                          src="https://avatars.dicebear.com/v2/male/55c6a0641adadaa4af04809a28329ec4.svg"
-                          alt=""
-                          className="rounded-circle"
-                        />
-                      </button>
-                      <ul className="dropdown-menu pe-5">
-                        <li>
-                          <p className="dropdown-item">nom: {user?.prenom} {user?.nom} </p>
-                        </li>
-                        <li>
-                          <p className="dropdown-item">email: {user?.email}</p>
-                        </li>
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            <span className="update-profil">
-                              Modifer profil
-                            </span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                  
                 </Nav>
               </Navbar.Collapse>
             </Container>

@@ -33,10 +33,21 @@ ul {
     border: none;
     background-color: #8970d69e;
 }
-.btn{
-    background-color: #8a70d6;
+.dec:hover{
+    background-color:red !important;
+    border: 3px solid red !important;
+
+    /* border-radius: 2px rgb(211, 109, 109)  !important; */
+    color: #fff !important;
 }
 
+.dec{
+    background-color: transparent !important;
+    color: #8a70d6 !important;
+    border: 3px solid red !important;
+    
+
+}
 a{
     text-decoration: none !important;
     color: #8a70d6 !important;
@@ -84,7 +95,7 @@ a{
 }  
 .btnDecon:hover{
     background-color: #e60303;
-    color: aliceblue;
+    color: #a023e8;
 }
 .btnDecon{
     border: 3px solid #fe0000;
@@ -137,5 +148,5 @@ a{
 
 .closeSidb{
     cursor: pointer;
-    color: #8a70d6;
+    color: #792be8;
 }

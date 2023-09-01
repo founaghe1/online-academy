@@ -19,10 +19,15 @@ import { FiMail } from "react-icons/fi";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 
 const Navbar = () => {
-  const [users, setUsers] = useState(
-    JSON.parse(localStorage.getItem("users")) || null
-  );
-  const [show, setShow] = useState(false);
+
+  const [users, setUsers] = useState(JSON.parse(localStorage.getItem("users")) || null);
+  
+  const [show, setShow] = useState();
+  // const [showEdit, setShowEdite] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [showEditing, setShowEditing] = useState(false);  
+  const [editedUser, setEditedUser] = useState(user); 
+  
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -32,66 +37,59 @@ const Navbar = () => {
   const handleClosenoc = () => setShownoc(false);
   const handleShownoc = () => setShownoc(true);
 
-  const user = JSON.parse(localStorage.getItem("users")) || null;
-
-  // const [showEdit, setShowEdite] = useState(false);
-  const [editing, setEditing] = useState(false);
-  const [editedUser, setEditedUser] = useState(user);
-
   // function deconnection
   const navigate = useNavigate();
 
-  const logOut = async () => {
+  const user = JSON.parse(localStorage.getItem("users")) || null
+
+  const handleSave = async () => {
     try {
-      await signOut(auth);
-      localStorage.removeItem("users");
-      navigate("/", { replace: true });
+
+        // Update email in Firebase Auth
+        if (editedUser.email !== user.email) {
+          await updateEmail(auth.currentUser, editedUser.email);
+        }
+
+      await updateProfile(auth.currentUser, {
+        displayName: editedUser.prenom + " " + editedUser.nom +" "+ editedUser.email,
+      });
+      
+
+      updateUser(editedUser); // Update user state
+
+      setEditing(false);
+      // setShow(false);
+      setShowEditing(false);
     } catch (error) {
-      alert("Erreur de deconnection, veuillez verifier votre connection");
-      console.error(error);
+      console.error("Error updating profile:", error);
     }
-  };
-
-  // modif profile
-
-  const handleEdit = () => {
-    setEditing(true);
-    setShow(true);
   };
 
   // Define a function to update the user state
   const updateUser = (newUser) => {
     setUsers(newUser);
     localStorage.setItem("users", JSON.stringify(newUser));
-
+    
     const userDocRef = doc(db, "users", auth.currentUser.uid); // Change "users" to the actual collection name
     updateDoc(userDocRef, {
       prenom: newUser.prenom,
       nom: newUser.nom,
       email: newUser.email,
+      
     });
   };
 
-  const handleSave = async () => {
+
+  const logOut = async () => {
     try {
-      // Update email in Firebase Auth
-      if (editedUser.email !== user.email) {
-        await updateEmail(auth.currentUser, editedUser.email);
-      }
-
-      await updateProfile(auth.currentUser, {
-        displayName:
-          editedUser.prenom + " " + editedUser.nom + " " + editedUser.email,
-      });
-
-      updateUser(editedUser); // Update user state
-
-      setEditing(false);
-      setShow(false);
+      await signOut(auth)
+      localStorage.removeItem("users")
+      navigate("/", { replace: true })
     } catch (error) {
-      console.error("Error updating profile:", error);
+      alert("Erreur de deconnection, veuillez verifier votre connection");
+      console.error(error)
     }
-  };
+  }
 
   return (
     <nav>
@@ -200,11 +198,15 @@ const Navbar = () => {
                 <div class="btn-group">
                   <button
                     type="button"
-                    class="btn btntoggle dropdown-toggle rounded-3 mb-3"
+                    class="btn btn-primary dropdown-toggle rounded-pill mb-3"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <img src={utilisateur} alt="" className="rounded-circle" />
+                    <img
+                      src="https://avatars.dicebear.com/v2/male/55c6a0641adadaa4af04809a28329ec4.svg"
+                      alt=""
+                      className="rounded-circle"
+                    />
                   </button>
                   <ul className="dropdown-menu profil shadow">
                     {editing ? (
