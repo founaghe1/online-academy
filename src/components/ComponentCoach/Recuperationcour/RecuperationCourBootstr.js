@@ -142,13 +142,15 @@ const [usersList, setUsersList] = useState([]);
                         url={user.url}
                         controls
                         width='100%'
-                        height='350px'
+                        height='290px'
                       />
                     </span>
                     {/* <p>{user.Domaine}</p> */}
-                    <p>{user.SousDomaine}</p>
-                    <p>{user.Debut}</p>
-                    <p>{user.Durée}heure</p>
+                    <div className='mt-2'>
+                      <h4 className='color'>{user.SousDomaine}</h4>
+                      <h4 className='color'>{user.Debut}</h4>
+                      <h4 className='color'>{user.Durée} heure</h4>
+                    </div>
 
                     <p className='icon d-flex justify-content-center align-items-center '>
                       <div className='ms-auto'>

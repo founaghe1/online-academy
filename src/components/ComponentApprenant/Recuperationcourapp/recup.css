@@ -1,0 +1,4 @@
+.disabled-course {
+  opacity: 0.6; /* Réduit l'opacité pour désactiver visuellement le cours */
+  pointer-events: none; /* Empêche les interactions avec le cours */
+}

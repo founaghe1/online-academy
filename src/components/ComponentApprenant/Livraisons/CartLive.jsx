@@ -16,8 +16,8 @@ const CartLive = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handlesClose = () => setShow(false);
-  const handlesShow = () => setShow(true);
+  const handlesCloses = () => setShows(false);
+  const handlesShows = () => setShows(true);
 
 
   const [cartliv, setCartliv] = useState([]);
@@ -103,7 +103,7 @@ const CartLive = () => {
             </div>
             <div className="">
               <button type="button" className="btn btn-outline-success  text-white d-flex justify-content-center align-items-center"
-               onClick={handlesShow}>
+               onClick={handlesShows}>
                   <BiSolidShow className="me-2"/> Commentaire
               </button>
             </div>
@@ -111,14 +111,12 @@ const CartLive = () => {
         </div>
       </div>
         ))}
-         <Modal show={shows} onHide={handlesClose}>
+         <Modal show={shows} onHide={handlesCloses}>
         <Modal.Header closeButton>
           <Modal.Title>Commentaire</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <div>
-                
-              </div>
+            
               <div class="mb-4 ">
                     <form onSubmit={handleSubmit} className="d-flex ">
                     <input className="p-2 me-3 rounded"

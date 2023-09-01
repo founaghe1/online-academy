@@ -7,6 +7,7 @@ import Photoshop from "../../../Assets/photoshop.png";
 import Illustrator from "../../../Assets/illustrator.png";
 import Premierpro from "../../../Assets/premiere-pro.png";
 import Initiati3d from "../../../Assets/3d-modeling.png";
+import RecuparationCour from "../Recuperationcourapp/RecuparationCours"
 
 const Design = () => {
 
@@ -108,6 +109,7 @@ const Design = () => {
           </Link>
         </div>
       </div>
+      {/* <RecuparationCour /> */}
     </div>
   );
 }
