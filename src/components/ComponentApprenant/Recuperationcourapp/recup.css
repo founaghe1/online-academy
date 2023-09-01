@@ -2,3 +2,13 @@
   opacity: 0.6; /* Réduit l'opacité pour désactiver visuellement le cours */
   pointer-events: none; /* Empêche les interactions avec le cours */
 }
+
+.good{
+    border: 1px solid blueviolet;
+    background-color: rgb(203, 17, 213);
+    color: #fff;
+}
+.good:hover{
+   background-color: rgb(168, 94, 236);
+    color: #fff;
+}

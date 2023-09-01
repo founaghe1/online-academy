@@ -3,11 +3,12 @@
     color: #8e70d6;
 }
 
-.cart-liv .card-header{
+.cart-liv{
     background-color: #8e70d6;
-    color: black;
+    color: white;
     height: 100px;
     text-align: start !important;
+    font-weight: 500;
 
 } 
 

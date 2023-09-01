@@ -1,30 +1,33 @@
-import React,{useState, useEffect} from "react";
+import React,{useEffect, useState} from "react";
+import 'bootstrap/dist/js/bootstrap.min.js'
 import './style.css'
 import CartLive from "./CartLive";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 //firebase
 import {db, storage} from "../../firebase/Firebase";
-import {collection, addDoc} from "firebase/firestore";
+import {collection, addDoc, getDocs} from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 
 const Voirlivraison = () => {
-
   const [show, setShow] = useState(false);
+  const [livraison, setLivraison] = useState('')
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   
   const [file, setFile] = useState(null);
   const [url, setURL] = useState("");
-  // const [livraisons, setLivraisons] = useState([])
 
   const [title, setTitle] = useState('');     
   const [description, setDescription] = useState('');
   const [lien, setLien] = useState([]);
 
   const docImageRef = collection(db, 'livraison');
+
 //ajout image sue le storage
   function handleChange(e) {
     if (e.target.files[0])
@@ -54,7 +57,7 @@ const Voirlivraison = () => {
       //vider les champs
         setTitle('');
         setDescription('');
-        setFile('')
+        setFile(null)
         setLien('');
 
         //alert de l'ajout
@@ -65,47 +68,45 @@ const Voirlivraison = () => {
       }
   }
 
+  const getLivraison =async () =>{
+    try{
+    const data = await getDocs(docImageRef);
+        const livData = data.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setLivraison(livData);
+        setLivraison(livData);
+      }catch (err) {
+        console.error("Error getting documents: ", err);
+      }
+  }
+
+  useEffect(() => {
+    getLivraison();
+
+     }, []);
+  // useEffect(() =>{
+  //   handleLivre()
+  // },[])
+
   return (
     <>
-      <div className="container">
-        <div className="d-flex justify-content-end mt-5">
-          <button
-            onClick={handleShow}
-            type="button"
-            className="btn btn-ca shadow mb-5 p-2 mt-3"
-            data-bs-toggle="modal"
-            data-bs-target="#modal"
-          >
-            Envoyer mon travail
-          </button>
-        </div>
-
-        {/* <!-- Modal --> */}
-        <div
-          class="modal bx-shadow fade"
-          id="modal"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-          show={show} onHide={handleClose}
-        >
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-              <div class="modal-header shadow mb-4">
-                <h1 class="modal-title" id="exampleModalLabel">
-                  Envoyer mon travail
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <form action="">
+     <div className="d-flex justify-content-end mt-5">
+     <Button className="btn btn-ca shadow mb-5 p-2 mt-3" variant="primary" onClick={handleShow}>
+     Envoyer mon travail
+      </Button>
+     </div>
+      
+      <Modal size="lg" show={show} onHide={handleClose}>
+        <Modal.Header closeButton className="cart-liv">
+          <Modal.Title>Envoyer Mon Travail</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <form action="">
                   <div className=" mb-4">
-                    <select class="form-select rounded border border-warning p-3" aria-label="Default select example" name='tache'
+                    <select className="form-select rounded border border-warning p-3" aria-label="Default select example" name='tache'
                      value={title} onChange={(e)=> setTitle(e.target.value)}>
                       <option selected>Choisir une tâche</option>
                       <option value="Tâche 1">Tâche 1</option>
@@ -113,7 +114,7 @@ const Voirlivraison = () => {
                       <option value="Tâche 3">Tâche 3</option>
                     </select>
                   </div>
-                  <div class="mb-4 border border-warning">
+                  <div className="mb-4 border border-warning">
                     <input
                       type="text"
                       className="form-control  rounded p-3" 
@@ -121,7 +122,7 @@ const Voirlivraison = () => {
                       id="exampleFormControlInput1"
                       placeholder="Lien de Deploiment"/>
                   </div>
-                  <div class="mb-4">
+                  <div className="mb-4">
                     <textarea value={description}
                       className="form-control rounded border border-warning"
                       onChange={e => setDescription(e.target.value)}
@@ -132,15 +133,13 @@ const Voirlivraison = () => {
                   <div className="d-flex justify-content-center  bg-body rounded mb-5 p-4 border border-warning">
                       <input type="file" className="border border-danger rounded p-3" multiple onChange={handleChange} placeholder="Ajouter Images"/>
                   </div>
-                  <div className="mb-3 d-grid">
+                  <div className="d-grid">
                     <button type="button" className="btn btn-lg rounded btn-send" onClick={handleLivre}> Envoyer</button>
                   </div>
                 </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </Modal.Body>
+        
+      </Modal>
       <div className="container">
         <div className="row">
               <CartLive />

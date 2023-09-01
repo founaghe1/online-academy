@@ -154,7 +154,7 @@ import "react-toastify/dist/ReactToastify.css";
                       <div className='ms-auto'>
                         <button
                           onClick={() => openEditModal(user)}
-                          className='btn btn-primary text-left-0'
+                          className='btn btn-warning text-light text-left-0'
                         >
                           <FiEdit />
                         </button>
