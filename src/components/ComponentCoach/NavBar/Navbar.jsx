@@ -15,12 +15,19 @@ import { auth, db } from "../../firebase/Firebase";
 import { updateProfile, updateEmail } from "firebase/auth";
 import { doc, updateDoc } from "firebase/firestore";
 import utilisateur from "../../../Assets/utilisateur.png";
+import { FiMail } from "react-icons/fi";
+import { MdDriveFileRenameOutline } from "react-icons/md";
 
 const Navbar = () => {
-  const [users, setUsers] = useState(
-    JSON.parse(localStorage.getItem("users")) || null
-  );
-  const [show, setShow] = useState(false);
+
+  const [users, setUsers] = useState(JSON.parse(localStorage.getItem("users")) || null);
+  const user = JSON.parse(localStorage.getItem("users")) || null
+  const [show, setShow] = useState();
+  // const [showEdit, setShowEdite] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [showEditing, setShowEditing] = useState(false);  
+  const [editedUser, setEditedUser] = useState(user); 
+  
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -30,66 +37,50 @@ const Navbar = () => {
   const handleClosenoc = () => setShownoc(false);
   const handleShownoc = () => setShownoc(true);
 
-  const user = JSON.parse(localStorage.getItem("users")) || null;
-
-  // const [showEdit, setShowEdite] = useState(false);
-  const [editing, setEditing] = useState(false);
-  const [editedUser, setEditedUser] = useState(user);
-
   // function deconnection
   const navigate = useNavigate();
 
-  const logOut = async () => {
+  
+
+  const handleSave = async () => {
     try {
-      await signOut(auth);
-      localStorage.removeItem("users");
-      navigate("/", { replace: true });
+
+        // Update email in Firebase Auth
+        if (editedUser.email !== user.email) {
+          await updateEmail(auth.currentUser, editedUser.email);
+        }
+
+      await updateProfile(auth.currentUser, {
+        displayName: editedUser.prenom + " " + editedUser.nom +" "+ editedUser.email,
+      });
+      
+
+      updateUser(editedUser); // Update user state
+
+      setEditing(false);
+      // setShow(false);
+      setShowEditing(false);
     } catch (error) {
-      alert("Erreur de deconnection, veuillez verifier votre connection");
-      console.error(error);
+      console.error("Error updating profile:", error);
     }
-  };
-
-  // modif profile
-
-  const handleEdit = () => {
-    setEditing(true);
-    setShow(true);
   };
 
   // Define a function to update the user state
   const updateUser = (newUser) => {
     setUsers(newUser);
     localStorage.setItem("users", JSON.stringify(newUser));
-
+    
     const userDocRef = doc(db, "users", auth.currentUser.uid); // Change "users" to the actual collection name
     updateDoc(userDocRef, {
       prenom: newUser.prenom,
       nom: newUser.nom,
       email: newUser.email,
+      
     });
   };
 
-  const handleSave = async () => {
-    try {
-      // Update email in Firebase Auth
-      if (editedUser.email !== user.email) {
-        await updateEmail(auth.currentUser, editedUser.email);
-      }
 
-      await updateProfile(auth.currentUser, {
-        displayName:
-          editedUser.prenom + " " + editedUser.nom + " " + editedUser.email,
-      });
-
-      updateUser(editedUser); // Update user state
-
-      setEditing(false);
-      setShow(false);
-    } catch (error) {
-      console.error("Error updating profile:", error);
-    }
-  };
+  
 
   return (
     <nav>
@@ -110,10 +101,12 @@ const Navbar = () => {
             </div>
             <div className="d-flex justify-content-end align-items-center gap-3">
               <div>
-                <button type="button"
+                <button
+                  type="button"
                   class="btn rounded-pill mb-3  iconotif"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                  aria-expanded="false"
+                >
                   {/* Modal pour notifs */}
                   <IoMdNotifications
                     className="notif-icon fs-2 fw-bold"
@@ -125,30 +118,70 @@ const Navbar = () => {
                   >
                     <ul class="dropdown-menu noc">
                       <li>
-                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
-                          <p>Modal body text goes here. Modal body text goes here <br /> </p>
-                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                        <p class="dropdown-item">
+                          {" "}
+                          <h4>
+                            <span>Online-Academy</span>
+                          </h4>
+                          <p>
+                            Modal body text goes here. Modal body text goes here{" "}
+                            <br />{" "}
+                          </p>
+                          <p className="d-flex justify-content-end fw-bold">
+                            {" "}
+                            14 Aout 2023, 17:53
+                          </p>
+                        </p>
                       </li>
                       <hr />
                       <li>
-                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
-                          <p>Modal body text goes here. Modal body text goes here </p>
-                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                        <p class="dropdown-item">
+                          {" "}
+                          <h4>
+                            <span>Online-Academy</span>
+                          </h4>
+                          <p>
+                            Modal body text goes here. Modal body text goes here{" "}
+                          </p>
+                          <p className="d-flex justify-content-end fw-bold">
+                            {" "}
+                            14 Aout 2023, 17:53
+                          </p>
+                        </p>
                       </li>
                       <hr />
                       <li>
-                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
-                          <p>Modal body text goes here. Modal body text goes here </p>
-                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                        <p class="dropdown-item">
+                          {" "}
+                          <h4>
+                            <span>Online-Academy</span>
+                          </h4>
+                          <p>
+                            Modal body text goes here. Modal body text goes here{" "}
+                          </p>
+                          <p className="d-flex justify-content-end fw-bold">
+                            {" "}
+                            14 Aout 2023, 17:53
+                          </p>
+                        </p>
                       </li>
                       <hr />
-                       <li>
-                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
-                          <p>Modal body text goes here. Modal body text goes here </p>
-                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                      <li>
+                        <p class="dropdown-item">
+                          {" "}
+                          <h4>
+                            <span>Online-Academy</span>
+                          </h4>
+                          <p>
+                            Modal body text goes here. Modal body text goes here{" "}
+                          </p>
+                          <p className="d-flex justify-content-end fw-bold">
+                            {" "}
+                            14 Aout 2023, 17:53
+                          </p>
+                        </p>
                       </li>
                     </ul>
-                  
                   </div>
                 </button>
               </div>
@@ -156,11 +189,15 @@ const Navbar = () => {
                 <div class="btn-group">
                   <button
                     type="button"
-                    class="btn btntoggle dropdown-toggle rounded-3 mb-3"
+                    class="btn btntoggle   rounded mb-3"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <img src={utilisateur} alt="" className="rounded-circle" />
+                    <img
+                      src={utilisateur}
+                      alt=""
+                      className="rounded-circle"
+                    />
                   </button>
                   <ul className="dropdown-menu profil shadow">
                     {editing ? (
@@ -201,26 +238,24 @@ const Navbar = () => {
                       </li>
                     ) : (
                       <>
-                        <p className="px-3">
+                        <p className="dropdown-item">
+                          <span>
+                            {" "}
+                            <MdDriveFileRenameOutline className="fw-bold text-info fs-3" />{" "}
+                          </span>
                           {user?.prenom} {user?.nom}
                         </p>
-                        <p className="px-3">{user?.email}</p>
+                        <p className="dropdown-item">
+                          <span>
+                            {" "}
+                            <FiMail className="fw-bold text-info fs-3" />{" "}
+                          </span>
+                          {user?.email}
+                        </p>
                       </>
                     )}
 
                     <li className="ps-3 pt-2 ">
-                      {editing ? (
-                        ""
-                      ) : (
-                        <button
-                          className="btn btnModif text-light"
-                          onClick={() => setEditing(!editing)}
-                        >
-                          Modifier profil
-                        </button>
-                      )}
-                    </li>
-                    <li className="ps-3 mt-2">
                       {editing ? (
                         <button
                           className="btn btn-success text-light"
@@ -230,10 +265,10 @@ const Navbar = () => {
                         </button>
                       ) : (
                         <button
-                          className="btn btn-danger text-light logout"
-                          onClick={logOut}
+                          className="btn btnModif text-light"
+                          onClick={() => setEditing(!editing)}
                         >
-                          Déconnexion
+                          Modifier profil
                         </button>
                       )}
                     </li>

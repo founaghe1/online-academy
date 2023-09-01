@@ -8,6 +8,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth, db } from "../../firebase/Firebase";
 import { doc, updateDoc, collection, getDocs, query, where } from 'firebase/firestore';
+import { Link } from "react-router-dom";
 
 
 const ForgotPW = () => {
@@ -66,9 +67,11 @@ const ForgotPW = () => {
               />
             </InputGroup>
             <div className="mb-5">
-              <a href="../login/Login.jsx" className="forgotPW">
+              <Link to='/'> 
+              <a className="forgotPW">
                 Retour connexion
               </a>
+              </Link>
             </div>
             {!resetSent ? (
               <button

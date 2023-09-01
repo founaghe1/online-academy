@@ -97,13 +97,15 @@ const RecuparationCour = () => {
                       url={id.url}
                       controls
                       width='100%'
-                      height='350px'
+                      height='290px'
                     />
                   </span>
-                  <p>{id.Domaine}</p>
-                  <p>{id.SousDomaine}</p>
-                  <p>{id.Debut}</p>
-                  <p>{id.Durée}heure</p>
+                  <div className='mt-2'>
+                    <h4 className='color'>{id.SousDomaine}</h4>
+                    <h4 className='color'>{id.Debut}</h4>
+                    <h4 className='color'>{id.Durée} heure</h4>
+                  </div>
+
                   <p>
                     <div>
                       {isCourseStarted ? (
