@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d0013ec1.css",
+    "main.js": "/static/js/main.98027038.js",
+    "static/media/usersU.png": "/static/media/usersU.fbab57a01075f528ec61.png",
+    "static/media/entraineur.png": "/static/media/entraineur.b67ae40c879619cd899e.png",
+    "static/media/img6.jpeg": "/static/media/img6.fff4cb5b6bd1b82add96.jpeg",
+    "static/media/etudier.png": "/static/media/etudier.823387e26d391817bb1a.png",
+    "static/media/php.png": "/static/media/php.4990580e9b615aeebb1f.png",
+    "static/media/logo.png": "/static/media/logo.2c3d99eda9da852cbbd3.png",
+    "static/media/social-media.png": "/static/media/social-media.e55e3411079c42f61d4c.png",
+    "static/media/avatar.jpg": "/static/media/avatar.0c817c8370344f7517cf.jpg",
+    "static/media/c-sharp.png": "/static/media/c-sharp.4a32f53d425c7ad4cb05.png",
+    "static/media/programmer.png": "/static/media/programmer.174f4c18747c5e0d2868.png",
+    "static/media/content-strategy.png": "/static/media/content-strategy.abbf69ea530d45a66f6c.png",
+    "static/media/utilisateur.png": "/static/media/utilisateur.a6143582309785dca610.png",
+    "static/media/web-design.png": "/static/media/web-design.917040e5539914a7b45d.png",
+    "static/media/coding.png": "/static/media/coding.9d40326cd60c3d7b5a3a.png",
+    "static/media/3d-modeling.png": "/static/media/3d-modeling.8c0c2d2ad92b28a190a2.png",
+    "static/media/django.png": "/static/media/django.559d0c6161a6fb950f02.png",
+    "static/media/photoshop.png": "/static/media/photoshop.339f174c692e921a204a.png",
+    "static/media/growth.png": "/static/media/growth.16ab760eb1759b17c072.png",
+    "static/media/bootstrap.png": "/static/media/bootstrap.268c4375260420e8d982.png",
+    "static/media/illustrator.png": "/static/media/illustrator.c8306d9279929e8b8cfe.png",
+    "static/media/premiere-pro.png": "/static/media/premiere-pro.48fe2252b2519bbb9645.png",
+    "static/media/js.png": "/static/media/js.3dfb665e058d08c99f28.png",
+    "static/media/rrr.jpeg": "/static/media/rrr.d69c25826264a4ba1787.jpeg",
+    "static/media/digitalMarketing.png": "/static/media/digitalMarketing.58a5ab73f566b3cd5d97.png",
+    "static/media/logo.jpeg": "/static/media/logo.fac5f925c2df521e8fab.jpeg",
+    "index.html": "/index.html",
+    "main.d0013ec1.css.map": "/static/css/main.d0013ec1.css.map",
+    "main.98027038.js.map": "/static/js/main.98027038.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0013ec1.css",
+    "static/js/main.98027038.js"
+  ]
+}

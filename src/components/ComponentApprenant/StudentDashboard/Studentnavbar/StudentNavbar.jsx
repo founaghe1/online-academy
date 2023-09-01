@@ -11,6 +11,8 @@ import { auth, db } from "../../../firebase/Firebase";
 import { updateProfile, updateEmail } from "firebase/auth";
 import { doc, updateDoc } from "firebase/firestore";
 import utilisateur from '../../../../Assets/utilisateur.png'
+import { FiMail } from 'react-icons/fi'
+import { MdDriveFileRenameOutline } from 'react-icons/md'
 
 
 
@@ -206,40 +208,35 @@ const StudentNavbar = () => {
                     </li>
 
                   ) : (
-                    <li>
+                    <>
                       <p className="dropdown-item">
+                        <span> <MdDriveFileRenameOutline className="fw-bold text-info fs-3" /> </span>
                         {user?.prenom} {user?.nom}
                       </p>
                       <p className="dropdown-item">
+                        <span> <FiMail className="fw-bold text-info fs-3" /> </span>
                         {user?.email}
                       </p>
-                    </li>
+                    </>
                   )}
                   
                   <li className="ps-3 pt-2 ">
-                  {editing ? ("")  : (<button className="btn btnModif text-light" onClick={()=>setEditing(!editing)} >
-                      Modifier profil
-                    </button>)}
-                    
-                  </li>
-                  {/* <li className="ps-3 mt-2">
-                    {editing ? (
-                      <button
-                        className="btn btn-success text-light"
-                        onClick={handleSave}
-                      >
-                        Enregistrer
-                      </button>
-                    ) : (
-                      <button
-                        className="t"
-                        onClick={logOut}
-                      >
-                        Déconnexion
-                      </button>
-                    )
-                    }
-                  </li> */}
+                      {editing ? (
+                        <button
+                          className="btn btn-success text-light"
+                          onClick={handleSave}
+                        >
+                          Enregistrer
+                        </button>
+                      ) : (
+                        <button
+                          className="btn btnModif text-light"
+                          onClick={() => setEditing(!editing)}
+                        >
+                          Modifier profil
+                        </button>
+                      )}
+                    </li>
                 </ul>
               </div>
             </div>

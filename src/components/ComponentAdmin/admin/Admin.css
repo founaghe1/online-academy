@@ -1,6 +1,25 @@
-.add, .logout, .save{
+.add{
     background-color: #8a70d6;
     font-weight: bold;
+}
+.modall{
+    background-color: #8a70d6;;
+}
+.save{
+    background:#3498db !important;
+}
+.fermerbtn{
+    background-color: rgb(239, 48, 0) !important;
+}
+.logout{
+    border: 3px solid rgb(212, 5, 5);
+    background-color: transparent;
+    color: black !important;
+}
+.logout:hover{
+    border: 3px solid rgb(212, 5, 5);
+    background-color: rgb(212, 5, 5);
+    color: rgb(255, 255, 255) !important;
 }
 .selectModal{
     padding: 15px;
@@ -95,5 +114,9 @@
 
 .profil{
     border: none!important;
+}
+
+.usersU{
+    width: 60px;
 }
   

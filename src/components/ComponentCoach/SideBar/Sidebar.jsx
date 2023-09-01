@@ -1,34 +1,45 @@
-import React from 'react'
-import './sidebar.css'
+import React from "react";
+import "./sidebar.css";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 // import { RiMenuUnfoldFill } from "react-icons/ri";
 import logo from "../../../medias/rrr.jpeg";
-import { BiSolidDashboard, BiSolidBookReader, BiUpload, BiLogOut } from "react-icons/bi";
+import {
+  BiSolidDashboard,
+  BiSolidBookReader,
+  BiUpload,
+  BiLogOut,
+} from "react-icons/bi";
 import { PiStudentBold } from "react-icons/pi";
 import { BsFillChatRightFill } from "react-icons/bs";
-import {useState}  from "react";
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/Firebase";
+import { BiLogOutCircle } from "react-icons/bi";
+import { RiLogoutCircleFill  } from 'react-icons/ri'
 
 const Sidebar = () => {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-    // function deconnection
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("users")) || null;
 
-  const logOut = async () =>{
-    try{
-      await  signOut(auth)
-      navigate("/")
-    }catch{
+  const logOut = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem("users");
+      navigate("/", { replace: true });
+    } catch (error) {
       alert("Erreur de deconnection, veuillez verifier votre connection");
+      console.error(error);
     }
-  }
+  };
+
+   
 
   return (
     <>
@@ -49,60 +60,81 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <Offcanvas id="sidebarCoach" show={show} onHide={handleClose} responsive="lg">
-          <Offcanvas.Header closeButton>
+        <Offcanvas
+          id="sidebarCoach"
+          show={show}
+          onHide={handleClose}
+          responsive="lg"
+          className=""
+        >
+          <Offcanvas.Header  >
+            <div className="w-100 text-end">
+              <RiLogoutCircleFill onClick={handleClose} className="me-3 fs-1 closeSidb"/>
+            </div>
+          
             <Offcanvas.Title></Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body className='side-coach-menu'>
-            <div className="vh-100 border-end">
+          <Offcanvas.Body className="side-coach-menu">
+            <div className="vh-100 border-end ps-lg-3 pe-lg-4">
               <div className="d-flex justify-content-center align-items-center">
                 <img src={logo} alt="" className="img-fluid mb-3 side-logo" />
               </div>
               <div className="d-flex justify-content-center align-items-center">
                 <ul className="list-unstyled">
+                  <Link
+                    to="/coach/dashboard"
+                    className="text-decoration-none side-link menuLiCoach"
+                  >
+                    <li className="mb-4 fs-5  pe-4 py-1 ps-2">
+                      <BiSolidDashboard className="side-icon fs-4 me-2" />
+                      Dashboard
+                    </li>
+                  </Link>
+                  <Link
+                    to="/coach/dashboard/domain"
+                    className="text-decoration-none side-link menuLiCoach"
+                  >
+                    <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
+                      <BiSolidBookReader className="side-icon fs-4 me-2" />
+                      Domaines
+                    </li>
+                  </Link>
+                    <Link
+                      to="/coach/dashboard/livraison"
+                      className="text-decoration-none side-link menuLiCoach"
+                    >
                   <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                    <Link to="/coach/dashboard" className="text-decoration-none side-link">
-                        <BiSolidDashboard className="side-icon fs-4 me-2" />
-                        Dashboard
-                     
-                    </Link>
+                      <BiUpload className="side-icon fs-4 me-2" />
+                      Livraisons
                   </li>
-                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                    <Link to="/coach/dashboard/domain" className="text-decoration-none side-link">
-                        
-                        <BiSolidBookReader className="side-icon fs-4 me-2" />
-                        Domaines
-                       
                     </Link>
-                  </li>
+                    <Link
+                      to="/coach/dashboard/list_apprenants"
+                      className="text-decoration-none side-link menuLiCoach"
+                    >
                   <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                    <Link to="/coach/dashboard/livraison" className="text-decoration-none side-link">
-                        <BiUpload className="side-icon fs-4 me-2" />
-                        Livraisons
+                      <PiStudentBold className="side-icon fs-4 me-2" />
+                      Ètudiants
+                  </li>
                     </Link>
-                  </li>
+                    <Link
+                      to="/coach/dashboard/messagerie"
+                      className="text-decoration-none side-link menuLiCoach"
+                    >
                   <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                    <Link to="/coach/dashboard/list_apprenants" className="text-decoration-none side-link">
-                        <PiStudentBold className="side-icon fs-4 me-2" />
-                        Ètudiants
-                    </Link>
-                  </li>
-                  <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                    <Link to="/coach/dashboard/messagerie" className="text-decoration-none side-link">
                       <BsFillChatRightFill className="side-icon fs-4 me-2" />
                       Messagerie
-                    </Link>
                   </li>
+                    </Link>
                 </ul>
               </div>
-              <div className="w-100 mt-5 " >
-                <Link to="/coach/dashboard/messagerie">
-                  <Button className="dec"
-                    onClick={logOut}
-                  >
-                    Déconnexion
-                  </Button>
-                </Link>
+              <div className="w-100 mt-3 ps-sm-4 ps-md-1">
+                
+                  <button className="btn logout px-1 py-0 btnDecon" onClick={logOut}>
+                    <BiLogOutCircle className="fw-bold fs-2 me-1" />
+                    <span className="fw-bold">Déconnexion</span>
+                  </button>
+                
               </div>
             </div>
           </Offcanvas.Body>
@@ -110,6 +142,6 @@ const Sidebar = () => {
       </div>
     </>
   );
-}
+};
 
-export default Sidebar
+export default Sidebar;

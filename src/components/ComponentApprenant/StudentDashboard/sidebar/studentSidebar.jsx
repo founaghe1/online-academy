@@ -16,6 +16,8 @@ import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../../firebase/Firebase";
+import { RiLogoutCircleFill  } from 'react-icons/ri'
+import { BiLogOutCircle } from "react-icons/bi";
 
 function Sidebar() {
   const [show, setShow] = useState(false);
@@ -23,16 +25,19 @@ function Sidebar() {
     const handleShow = () => setShow(true);
 
     // function deconnection
-  const navigate = useNavigate();
-
-  const logOut = async () =>{
-    try{
-      await  signOut(auth)
-      navigate("/")
-    }catch{
-      alert("Erreur de deconnection, veuillez verifier votre connection");
-    }
-  }
+    const navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem("users")) || null;
+  
+    const logOut = async () => {
+      try {
+        await signOut(auth);
+        localStorage.removeItem("users");
+        navigate("/", { replace: true });
+      } catch (error) {
+        alert("Erreur de deconnection, veuillez verifier votre connection");
+        console.error(error);
+      }
+    };
 
   return (
     <>
@@ -52,9 +57,12 @@ function Sidebar() {
             <h1>Dasboard</h1>
           </div>
         </div>
-
-      <Offcanvas show={show} onHide={handleClose} responsive="lg">
-        <Offcanvas.Header closeButton>
+  
+      <Offcanvas show={show} onHide={handleClose} responsive="lg" id="sidebarCoach">
+        <Offcanvas.Header >
+        <div className="w-100 text-end">
+              <RiLogoutCircleFill onClick={handleClose} className="me-3 fs-1 closeSidb"/>
+            </div>
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
@@ -65,45 +73,44 @@ function Sidebar() {
             
             <div className="d-flex justify-content-center align-items-center">
               <ul className="list-unstyled">
-                <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <Link to="/apprenant/dashboard" className="text-decoration-none side-link">
+                  <Link to="/apprenant/dashboard" className="text-decoration-none side-link menuLiAppt">
+                <li className="mb-4 fs-5  pe-4 py-1 ps-2">
                       <BiSolidDashboard className="side-icon fs-4 me-2" />Dashboard
-                  </Link>
                 </li>
+                  </Link>
+                  <Link to="/apprenant/dashboard/cours" className="text-decoration-none side-link menuLiAppt">
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <Link to="/apprenant/dashboard/cours" className="text-decoration-none side-link">
                       <BiSolidBookReader className="side-icon fs-4 me-2" />
                       Cours
-                  </Link>
                 </li>
+                  </Link>
+                  <Link to="/apprenant/dashboard/livraison" className="text-decoration-none side-link menuLiAppt">
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <Link to="/apprenant/dashboard/livraison" className="text-decoration-none side-link">
                     <BiUpload className="side-icon fs-4 me-2" />
                     Livraisons
-                  </Link>
                 </li>
+                  </Link>
+                  <Link to="/apprenant/dashboard/coach" className="text-decoration-none side-link menuLiAppt">
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <Link to="/apprenant/dashboard/coach" className="text-decoration-none side-link">
                     <FaChalkboardTeacher className="side-icon fs-4 me-2" />
                     Coachs
-                  </Link>
                 </li>
+                  </Link>
+                  <Link to="/apprenant/dashboard/messagerie" className="text-decoration-none side-link menuLiAppt">
                 <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                  <Link to="/apprenant/dashboard/messagerie" className="text-decoration-none side-link">
                     <BsFillChatRightFill className="side-icon fs-4 me-2" />
                     Messagerie
-                  </Link>
                 </li>
+                  </Link>
               </ul>
             </div>
-            <div className="w-100 mt-5 ps-3 ">
-                <Link to="/coach/dashboard/messagerie">
-                  <Button className="dec"
-                    onClick={logOut}
-                  >
-                    Déconnexion
-                  </Button>
-                </Link>
+            <div className="w-100 mt-3 ps-sm-4 ps-md-1">
+                
+                  <button className="btn logout px-1 py-0 btnDecon" onClick={logOut}>
+                    <BiLogOutCircle className="fw-bold fs-2 me-1" />
+                    <span className="fw-bold">Déconnexion</span>
+                  </button>
+                
               </div>
             </div>
           </Offcanvas.Body>

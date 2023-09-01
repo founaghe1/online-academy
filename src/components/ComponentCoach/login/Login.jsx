@@ -94,7 +94,6 @@ const Login = () => {
     
   };
 
-
   return (
     <>
     <ToastContainer />
@@ -135,11 +134,11 @@ const Login = () => {
               />
             </InputGroup>
             <div className="mb-5">
-              
-                <a href="../ForgotPW/ForgotPW.jsx">
+              <Link to='/forgotpw'>
+                <a >
                   Mot de passe oublié ?
                 </a>
-              
+              </Link>
             </div>
             <Link>
               <button onClick={handleLogin}  className="login-btn btn text-light fw-bold w-100">
