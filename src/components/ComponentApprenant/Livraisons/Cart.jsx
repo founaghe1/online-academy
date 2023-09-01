@@ -52,7 +52,7 @@ const Cart = () => {
     <div className="row">
         {cartliv.map((content) => (
       <div className="col-md-4">
-          <div className="card mb-5 p-3 shadow hover" style={{width: 24 + 'rem'}} key={content.id} >
+          <div className="card mb-5 p-3 shadow hover"  key={content.id} >
             <h4 className="card-title">{content.title}</h4>
             <span className="">{content.description}</span>
             <a className="nav-link mt-2 mb-3">{content.lien}</a>
@@ -65,17 +65,17 @@ const Cart = () => {
             </div>
             <div class=" text-center d-flex justify-content-between align-items-center mt-4 mb-3">
             <div className="">
-              <button type="button" onClick={handleShow} className="btn text-white btn-outline-secondary d-flex justify-content-center align-items-center">
+              <button type="button" onClick={handleShow} className="btn text-white btn-secondary d-flex justify-content-center align-items-center">
                 <BiSolidShow className="me-2 text-white"/>voir
               </button>
             </div>
             <div className="">
-              <button type="button" className="btn btn-outline-success  text-white d-flex justify-content-center align-items-center"> 
+              <button type="button" className="btn btn-success  text-white d-flex justify-content-center align-items-center"> 
                   <FcApproval className="me-2"/> accepter
               </button>
             </div>
             <div className="">
-              <button type="button" className="btn btn-outline-danger text-white d-flex justify-content-center align-items-center">
+              <button type="button" className="btn btn-danger text-white d-flex justify-content-center align-items-center">
                   <TbPlayerEject className="me-2"/>rejeter
               </button>
             </div>

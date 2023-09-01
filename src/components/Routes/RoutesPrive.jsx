@@ -10,7 +10,7 @@ const RoutesPrive = ({ children, status = []}) => {
     if (!user) return <Navigate to="/" />
     if(status.length > 0 && ! status.includes(user.status)) return <Navigate to="/" />
   return<>
-    {children}
+    {children} 
   </>
 }
 

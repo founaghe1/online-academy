@@ -80,7 +80,7 @@ const CartLive = () => {
 
 
   return (
-    <div className="row">
+    <div className="row"> 
         {cartliv.map((content) => (
       <div className="col-md-4">
           <div className="card mb-5 p-3 shadow hover" key={content.id}>

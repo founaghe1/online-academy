@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // import Domain from '../ComponentApprenant/DomainApprnt/DomainApprt';
 // import Programmation from '../ComponentApprenant/DomainApprnt/ProgrammationApprt';
 // import Marketing from '../ComponentApprenant/DomainApprnt/MarketingApprt';
 // import Design from '../ComponentApprenant/DomainApprnt/DesignApprt';
 
-import LayoutApp from '../ComponentApprenant/Layout/LayoutApp';
+// import LayoutApp from '../ComponentApprenant/Layout/LayoutApp';
 import StudentDashboard from '../ComponentApprenant/StudentDashboard/StudentDashboard';
 // import Login from '../ComponentCoach/login/Login';
 // import ForgotPW from '../ComponentCoach/ForgotPW/ForgotPW';
@@ -45,7 +45,7 @@ import DomainApprt from "../ComponentApprenant/DomainApprnt/DomainApprt";
 // import Marketing from "../ComponentApprenant/DomainApprnt/MarketingApprt";
 // import Design from "../ComponentApprenant/DomainApprnt/DesignApprt";
 import Voirlivraison from "../ComponentApprenant/Livraisons/Voirlivraison";
-// import LayoutApp from "../ComponentApprenant/Layout/LayoutApp";
+import LayoutApp from "../ComponentApprenant/Layout/LayoutApp";
 // import StudentDashboard from "../ComponentApprenant/StudentDashboard/StudentDashboard";
 // import Login from "../ComponentCoach/login/Login";
 // import ForgotPW from "../ComponentCoach/ForgotPW/ForgotPW";
@@ -111,14 +111,15 @@ function ApprenantRoutes() {
     }); 
     // eslint-disable-next-line
   }, []);
+
   return (
     <Routes>
-      <Route path='/' element={<LayoutApp />} />
+      <Route path='/' element={<StudentDashboard />} />
         <Route index element={<StudentDashboard />} />
         <Route path='/livraison' element={<Voirlivraison />} />
         <Route path="/cours" element={<DomainApprt />} />
         {sousDomaines.map((sousDomaine) => (
-          <Route path="/domain/:domaineId" element={<Sousdomain />} />
+          <Route path="/domain/:domaineId" key={sousDomaine.id} element={<Sousdomain />} />
         ))}
         {/* <Route path='/cours/*' element={<TachesRoutes />} /> */}
         <Route path='/messagerie' element={<ChatPage />} />
