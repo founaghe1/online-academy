@@ -60,16 +60,16 @@ const Marketing = () => {
         </div>
       </div>
 
-      <div className="row">
-        <div className="_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+      <div className='row'>
+        <div className='_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Card
             style={{ width: "15rem" }}
-            className="_grid item1 orangeclair shadow"
+            className='_grid item1 orangeclair shadow'
           >
-            <div className="p-4">
+            <div className='p-4'>
               <Card.Img
-                variant="top"
-                className="img-fluid d-flex orange"
+                variant='top'
+                className='img-fluid d-flex orange'
                 src={Programmer}
               />
             </div>
@@ -77,11 +77,11 @@ const Marketing = () => {
               <Card.Title>Programmation</Card.Title>
               <Card.Text>10 sous-domaines</Card.Text>
               <Link
-                to="/cch/dashboard/domain/programmation"
-                className="join d-flex right-0"
+                to='/coach/dashboard/domain/programmation'
+                className='join d-flex right-0'
               >
                 <button
-                  className="orange d-flex justify-content-center align-items-center"
+                  className='orange d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -94,15 +94,15 @@ const Marketing = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className="_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className='_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Card
             style={{ width: "15rem" }}
-            className="_grid item2 violetclair shadow"
+            className='_grid item2 violetclair shadow'
           >
-            <div className="p-4">
+            <div className='p-4'>
               <Card.Img
-                variant="top"
-                className="img-fluid violet"
+                variant='top'
+                className='img-fluid violet'
                 src={Marketer}
               />
             </div>
@@ -110,11 +110,11 @@ const Marketing = () => {
               <Card.Title>Marketing</Card.Title>
               <Card.Text>07 sous-domaines</Card.Text>
               <Link
-                to="/cch/dashboard/domain/marketing"
-                className="join d-flex right-0"
+                to='/coach/dashboard/domain/marketing'
+                className='join d-flex right-0'
               >
                 <button
-                  className="violet d-flex justify-content-center align-items-center"
+                  className='violet d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",
@@ -127,15 +127,15 @@ const Marketing = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className="_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4">
+        <div className='_kolon col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Card
             style={{ width: "15rem" }}
-            className="_grid item3 blueclair shadow"
+            className='_grid item3 blueclair shadow'
           >
-            <div className="p-4">
+            <div className='p-4'>
               <Card.Img
-                variant="top"
-                className="img-fluid blue"
+                variant='top'
+                className='img-fluid blue'
                 src={Designer}
               />
             </div>
@@ -147,7 +147,7 @@ const Marketing = () => {
                 className="join d-flex right-0"
               >
                 <button
-                  className="blue d-flex justify-content-center align-items-center"
+                  className='blue d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
                     borderRadius: "5px",

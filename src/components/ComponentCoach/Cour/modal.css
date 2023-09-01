@@ -1,7 +1,7 @@
 .but{
     background-color: #d127ac;
     color: #fff;
-    width: 10%;
+    width: 21%;
     height: 60px;
     font-size: 30px;
     
@@ -22,12 +22,15 @@
     width: 35%;
     height: 50px;
 }
+<<<<<<< HEAD
 /* .card {
   width: 50%;
   background: white;
   padding: .4em;
   border-radius: 6px;
 } */
+=======
+>>>>>>> 0a19471959ef463cfbdb62a0972d3a3122816a43
 
 /* .card-image {
   background-color: rgb(236, 236, 236);
