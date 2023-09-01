@@ -4,8 +4,21 @@ import { BiSolidShow } from "react-icons/bi";
 import "./style.css";
 import { db } from "../../firebase/Firebase";
 import { addDoc, collection, getDocs} from "firebase/firestore";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
+
 
 const CartLive = () => {
+  const [show, setShow] = useState(false);
+  const [shows, setShows] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handlesClose = () => setShow(false);
+  const handlesShow = () => setShow(true);
+
 
   const [cartliv, setCartliv] = useState([]);
   const [cartlivs, setCartlivs] = useState([]);
@@ -84,13 +97,13 @@ const CartLive = () => {
             <div class="text-center d-flex justify-content-between align-items-center mt-4 mb-3">
             <div className="">
               <button type="button" className="btn text-white btn-outline-secondary d-flex justify-content-center align-items-center"
-               data-bs-toggle="modal" data-bs-target="#modal0">
+               onClick={handleShow}>
                 <BiSolidShow className="me-2 text-white"/>Livrable
               </button>
             </div>
             <div className="">
               <button type="button" className="btn btn-outline-success  text-white d-flex justify-content-center align-items-center"
-               data-bs-toggle="modal" data-bs-target="#modal1">
+               onClick={handlesShow}>
                   <BiSolidShow className="me-2"/> Commentaire
               </button>
             </div>
@@ -98,71 +111,13 @@ const CartLive = () => {
         </div>
       </div>
         ))}
-        
-
-      {/* <!-- Modal --> */}
-      <div
-        class="modal fade"
-        id="modal0"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Mon travail
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              {cartlivs.map((contents) =>(
-                   <div className="" key={contents.id}>
-                    <div className="">
-                    {contents.image && (
-                    <img variant="top" className="img-fluid d-flex orange"
-                        src={contents.image}
-                    />
-                  )}
-                  </div>
-              </div>
-              ))}
-            </div>
-            <div class="modal-footer"></div>
-          </div>
-        </div>
-      </div>
-      {/* <!-- Modal --> */}
-      <div
-        class="modal fade"
-        id="modal1"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Mon travail
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div>
-                <h3 className="">Tache</h3>
-                <p className="">Some quick example text </p>
+         <Modal show={shows} onHide={handlesClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Commentaire</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <div>
+                
               </div>
               <div class="mb-4 ">
                     <form onSubmit={handleSubmit} className="d-flex ">
@@ -182,11 +137,32 @@ const CartLive = () => {
                     </div>
                   ))}
               </div>
-            </div>
-            <div class="modal-footer"></div>
-          </div>
-        </div>
-      </div>
+        </Modal.Body>
+        <Modal.Footer>
+        </Modal.Footer>
+      </Modal>
+
+        {/* modal voir image */}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        {cartlivs.map((contents) =>(
+                   <div className="" key={contents.id}>
+                    <div className="">
+                    {contents.image && (
+                    <img variant="top" className="img-fluid d-flex orange"
+                        src={contents.image}
+                    />
+                  )}
+                  </div>
+              </div>
+              ))}
+        </Modal.Body>
+        <Modal.Footer>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };

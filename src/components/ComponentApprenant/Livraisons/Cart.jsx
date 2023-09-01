@@ -4,6 +4,9 @@ import '../../ComponentCoach/LivraisonCoach/styles.css'
 import {BiSolidShow} from 'react-icons/bi'
 import {FcApproval} from 'react-icons/fc'
 import {TbPlayerEject} from 'react-icons/tb'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
 
 //firebase
  import { db } from "../../firebase/Firebase";
@@ -13,6 +16,10 @@ import {TbPlayerEject} from 'react-icons/tb'
 
 
 const Cart = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const [cartliv, setCartliv] = useState([]);
   const [cartlivs, setCartlivs] = useState([]);
@@ -58,8 +65,7 @@ const Cart = () => {
             </div>
             <div class=" text-center d-flex justify-content-between align-items-center mt-4 mb-3">
             <div className="">
-              <button type="button" className="btn text-white btn-outline-secondary d-flex justify-content-center align-items-center"
-               data-bs-toggle="modal" data-bs-target="#modal0">
+              <button type="button" onClick={handleShow} className="btn text-white btn-outline-secondary d-flex justify-content-center align-items-center">
                 <BiSolidShow className="me-2 text-white"/>voir
               </button>
             </div>
@@ -76,32 +82,13 @@ const Cart = () => {
           </div>
         </div>
       </div>
-        ))}
-        
-
-      {/* <!-- Modal --> */}
-      <div
-        class="modal fade"
-        id="modal0"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Mon travail
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              {cartlivs.map((contents) =>(
+    ))}
+      <Modal size="lg" show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Mon Travail</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {cartlivs.map((contents) =>(
                    <div className="" key={contents.id}>
                     <div className="">
                     {contents.image && (
@@ -112,11 +99,8 @@ const Cart = () => {
                   </div>
               </div>
               ))}
-            </div>
-            <div class="modal-footer"></div>
-          </div>
-        </div>
-      </div>
+          </Modal.Body>
+      </Modal>
     </div>
   );
 }
