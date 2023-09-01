@@ -1,8 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.01f7f05d.css",
-    "main.js": "/static/js/main.3c936f00.js",
+    "main.css": "/static/css/main.d0013ec1.css",
+    "main.js": "/static/js/main.98027038.js",
+    "static/media/usersU.png": "/static/media/usersU.fbab57a01075f528ec61.png",
+    "static/media/entraineur.png": "/static/media/entraineur.b67ae40c879619cd899e.png",
     "static/media/img6.jpeg": "/static/media/img6.fff4cb5b6bd1b82add96.jpeg",
+    "static/media/etudier.png": "/static/media/etudier.823387e26d391817bb1a.png",
     "static/media/php.png": "/static/media/php.4990580e9b615aeebb1f.png",
     "static/media/logo.png": "/static/media/logo.2c3d99eda9da852cbbd3.png",
     "static/media/social-media.png": "/static/media/social-media.e55e3411079c42f61d4c.png",
@@ -25,11 +28,11 @@
     "static/media/digitalMarketing.png": "/static/media/digitalMarketing.58a5ab73f566b3cd5d97.png",
     "static/media/logo.jpeg": "/static/media/logo.fac5f925c2df521e8fab.jpeg",
     "index.html": "/index.html",
-    "main.01f7f05d.css.map": "/static/css/main.01f7f05d.css.map",
-    "main.3c936f00.js.map": "/static/js/main.3c936f00.js.map"
+    "main.d0013ec1.css.map": "/static/css/main.d0013ec1.css.map",
+    "main.98027038.js.map": "/static/js/main.98027038.js.map"
   },
   "entrypoints": [
-    "static/css/main.01f7f05d.css",
-    "static/js/main.3c936f00.js"
+    "static/css/main.d0013ec1.css",
+    "static/js/main.98027038.js"
   ]
 }
