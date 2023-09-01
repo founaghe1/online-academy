@@ -3,10 +3,10 @@ ul {
     padding: 0;
 }
 
-ul li a:hover {
+/* ul li a:hover {
     cursor: pointer;
     color: #fff !important;
-}
+} */
 
 
 .logo img {
@@ -18,12 +18,12 @@ ul li a:hover {
     width: 18%;
 }
 
-.sideBar li a:hover {
+/* .sideBar li a:hover {
     background-color: #8a70d6;
     color:#fff!important ;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-}
+} */
 .sideBar li a{
     margin-left: 20px;
     font-size: 14px;
@@ -55,6 +55,9 @@ a{
         font-size: 20px;
     }
 }
+.side-coach-menu{
+    width: 250px;
+}
 @media only screen and (max-width: 990px) {
     #sidebarCoach{
         width: 250px;
@@ -72,12 +75,13 @@ a{
 
 .menuBtn{
     border: 3px solid #a023e8;
+    color: aliceblue;
 }
 
 .menuBtn:hover{
     background-color: #a023e8;
     color: aliceblue;
-}
+}  
 .btnDecon:hover{
     background-color: #e60303;
     color: aliceblue;
@@ -90,17 +94,24 @@ a{
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
-.menuLi:hover {
-    background-color: #a023e8;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    transition: .7s;
+
+.menuLiCoach {
+    background:#ba0e56 !important;
+    position: relative !important;
 }
-.menuLi:hover .side-icon{
-    color: aliceblue;
+.menuLiCoach:focus::before  {
+    content:""; 
+    position: absolute !important;
+    background:#ff036c !important;
+    width: 5px !important;
+    height: 25px !important;
+    bottom: 5px;
 }
-.menuLi:hover .side-link{
-    color: aliceblue;
+.menuLi:focus .side-icon{
+    color: aliceblue !important;
+}
+.menuLi:focus .side-link{
+    color: aliceblue !important;
 }
 
 /* Styliser la barre de défilement */
@@ -122,4 +133,9 @@ a{
 /* Styling pour les coins supérieurs et inférieurs de la piste de défilement */
 .side-coach-menu::-webkit-scrollbar-corner {
   background-color: transparent; /* Couleur des coins */
+}
+
+.closeSidb{
+    cursor: pointer;
+    color: #8a70d6;
 }

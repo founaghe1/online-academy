@@ -15,6 +15,8 @@ import { auth, db } from "../../firebase/Firebase";
 import { updateProfile, updateEmail } from "firebase/auth";
 import { doc, updateDoc } from "firebase/firestore";
 import utilisateur from "../../../Assets/utilisateur.png";
+import { FiMail } from "react-icons/fi";
+import { MdDriveFileRenameOutline } from "react-icons/md";
 
 const Navbar = () => {
   const [users, setUsers] = useState(
@@ -110,10 +112,12 @@ const Navbar = () => {
             </div>
             <div className="d-flex justify-content-end align-items-center gap-3">
               <div>
-                <button type="button"
+                <button
+                  type="button"
                   class="btn rounded-pill mb-3  iconotif"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                  aria-expanded="false"
+                >
                   {/* Modal pour notifs */}
                   <IoMdNotifications
                     className="notif-icon fs-2 fw-bold"
@@ -125,30 +129,70 @@ const Navbar = () => {
                   >
                     <ul class="dropdown-menu noc">
                       <li>
-                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
-                          <p>Modal body text goes here. Modal body text goes here <br /> </p>
-                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                        <p class="dropdown-item">
+                          {" "}
+                          <h4>
+                            <span>Online-Academy</span>
+                          </h4>
+                          <p>
+                            Modal body text goes here. Modal body text goes here{" "}
+                            <br />{" "}
+                          </p>
+                          <p className="d-flex justify-content-end fw-bold">
+                            {" "}
+                            14 Aout 2023, 17:53
+                          </p>
+                        </p>
                       </li>
                       <hr />
                       <li>
-                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
-                          <p>Modal body text goes here. Modal body text goes here </p>
-                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                        <p class="dropdown-item">
+                          {" "}
+                          <h4>
+                            <span>Online-Academy</span>
+                          </h4>
+                          <p>
+                            Modal body text goes here. Modal body text goes here{" "}
+                          </p>
+                          <p className="d-flex justify-content-end fw-bold">
+                            {" "}
+                            14 Aout 2023, 17:53
+                          </p>
+                        </p>
                       </li>
                       <hr />
                       <li>
-                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
-                          <p>Modal body text goes here. Modal body text goes here </p>
-                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                        <p class="dropdown-item">
+                          {" "}
+                          <h4>
+                            <span>Online-Academy</span>
+                          </h4>
+                          <p>
+                            Modal body text goes here. Modal body text goes here{" "}
+                          </p>
+                          <p className="d-flex justify-content-end fw-bold">
+                            {" "}
+                            14 Aout 2023, 17:53
+                          </p>
+                        </p>
                       </li>
                       <hr />
-                       <li>
-                        <p class="dropdown-item">  <h4><span>Online-Academy</span></h4>
-                          <p>Modal body text goes here. Modal body text goes here </p>
-                          <p className='d-flex justify-content-end fw-bold'> 14 Aout 2023, 17:53</p></p>
+                      <li>
+                        <p class="dropdown-item">
+                          {" "}
+                          <h4>
+                            <span>Online-Academy</span>
+                          </h4>
+                          <p>
+                            Modal body text goes here. Modal body text goes here{" "}
+                          </p>
+                          <p className="d-flex justify-content-end fw-bold">
+                            {" "}
+                            14 Aout 2023, 17:53
+                          </p>
+                        </p>
                       </li>
                     </ul>
-                  
                   </div>
                 </button>
               </div>
@@ -201,26 +245,24 @@ const Navbar = () => {
                       </li>
                     ) : (
                       <>
-                        <p className="px-3">
+                        <p className="dropdown-item">
+                          <span>
+                            {" "}
+                            <MdDriveFileRenameOutline className="fw-bold text-info fs-3" />{" "}
+                          </span>
                           {user?.prenom} {user?.nom}
                         </p>
-                        <p className="px-3">{user?.email}</p>
+                        <p className="dropdown-item">
+                          <span>
+                            {" "}
+                            <FiMail className="fw-bold text-info fs-3" />{" "}
+                          </span>
+                          {user?.email}
+                        </p>
                       </>
                     )}
 
                     <li className="ps-3 pt-2 ">
-                      {editing ? (
-                        ""
-                      ) : (
-                        <button
-                          className="btn btnModif text-light"
-                          onClick={() => setEditing(!editing)}
-                        >
-                          Modifier profil
-                        </button>
-                      )}
-                    </li>
-                    <li className="ps-3 mt-2">
                       {editing ? (
                         <button
                           className="btn btn-success text-light"
@@ -230,10 +272,10 @@ const Navbar = () => {
                         </button>
                       ) : (
                         <button
-                          className="btn btn-danger text-light logout"
-                          onClick={logOut}
+                          className="btn btnModif text-light"
+                          onClick={() => setEditing(!editing)}
                         >
-                          Déconnexion
+                          Modifier profil
                         </button>
                       )}
                     </li>

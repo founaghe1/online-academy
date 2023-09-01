@@ -15,7 +15,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { BsPencilSquare, BsTrash } from "react-icons/bs";
 import { AiFillEye } from "react-icons/ai";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
-import utlisateur from '../../../Assets/utilisateur.png'
+import utlisateur from "../../../Assets/utilisateur.png";
 
 // firebase
 import {
@@ -41,6 +41,13 @@ import "react-toastify/dist/ReactToastify.css";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
+import Utilisateurs from "../../../Assets/usersU.png";
+import coachs from "../../../Assets/entraineur.png";
+import apprenants from "../../../Assets/etudier.png";
+
+import { BiLogOutCircle } from "react-icons/bi";
+import { FiMail } from "react-icons/fi";
+import { MdDriveFileRenameOutline } from "react-icons/md";
 
 const Admin = () => {
   const [show, setShow] = useState(false);
@@ -363,8 +370,10 @@ const Admin = () => {
                     </Button>
 
                     <Modal show={show} onHide={handleClose}>
-                      <Modal.Header closeButton>
-                        <Modal.Title>Ajout étudiant ou coach </Modal.Title>
+                      <Modal.Header>
+                        <Modal.Title className="text-center w-100 py-2 rounded shadow text-light modall">
+                          Ajout étudiant ou coach{" "}
+                        </Modal.Title>
                       </Modal.Header>
                       <Modal.Body className="my-5">
                         <div className="row align-items-baseline">
@@ -488,13 +497,13 @@ const Admin = () => {
                       </Modal.Body>
                       <Modal.Footer>
                         <Button
-                          className="btn btn-secondary text-dark fw-bold"
+                          className="btn btn-warning text-light fw-bold fermerbtn"
                           onClick={handleClose}
                         >
                           Fermer
                         </Button>
                         <Button
-                          className="btn btn-secondary text-dark save"
+                          className="btn text-light save"
                           onClick={onSubmitUsers}
                         >
                           Enregistrer
@@ -503,14 +512,6 @@ const Admin = () => {
                     </Modal>
                   </Nav.Link>
 
-                  <Nav.Link href="#link">
-                    <button
-                      className="btn btn-danger text-light logout"
-                      onClick={logOut}
-                    >
-                      Déconnection
-                    </button>
-                  </Nav.Link>
                   <div id="profil">
                     <div className="btn-group">
                       <button
@@ -563,27 +564,25 @@ const Admin = () => {
                             />
                           </li>
                         ) : (
-                          <li>
+                          <>
                             <p className="dropdown-item">
+                              <span>
+                                {" "}
+                                <MdDriveFileRenameOutline className="fw-bold text-info fs-3" />{" "}
+                              </span>
                               {user?.prenom} {user?.nom}
                             </p>
-                            <p className="dropdown-item">{user?.email}</p>
-                          </li>
+                            <p className="dropdown-item">
+                              <span>
+                                {" "}
+                                <FiMail className="fw-bold text-info fs-3" />{" "}
+                              </span>
+                              {user?.email}
+                            </p>
+                          </>
                         )}
 
                         <li className="ps-3 pt-2 ">
-                          {editing ? (
-                            ""
-                          ) : (
-                            <button
-                              className="btn btnModif text-light"
-                              onClick={() => setEditing(!editing)}
-                            >
-                              Modifier profil
-                            </button>
-                          )}
-                        </li>
-                        <li className="ps-3 mt-2">
                           {editing ? (
                             <button
                               className="btn btn-success text-light"
@@ -593,16 +592,22 @@ const Admin = () => {
                             </button>
                           ) : (
                             <button
-                              className="btn btn-danger text-light logout"
-                              onClick={logOut}
+                              className="btn btnModif text-light"
+                              onClick={() => setEditing(!editing)}
                             >
-                              Déconnexion
+                              Modifier profil
                             </button>
                           )}
                         </li>
                       </ul>
                     </div>
                   </div>
+                  <Nav.Link href="#link">
+                    <button className="btn logout px-1 py-0" onClick={logOut}>
+                      <BiLogOutCircle className="fw-bold fs-2 me-1" />
+                      <span className="fw-bold">Déconnexion</span>
+                    </button>
+                  </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -611,11 +616,11 @@ const Admin = () => {
             <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
               <Card className="carte userCard shadow-lg mb-3">
                 <Card.Body>
-                  <p className="fs-4 text-success d-flex justify-content-start align-items-center">
-                    <span className="nombre fs-1 fw-bold me-3">
-                      {" "}
-                      {countUsers}{" "}
-                    </span>{" "}
+                  <p className="fs-4 text-success d-flex justify-content-start align-items-center pt-3">
+                    <img src={Utilisateurs} className="usersU me-2" />
+                    <span className="nombre fs-1 fw-bold me-1">
+                      {countUsers}
+                    </span>
                     Utilisateurs
                   </p>
                 </Card.Body>
@@ -624,8 +629,9 @@ const Admin = () => {
             <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
               <Card className="carte coachCard shadow-lg mb-3">
                 <Card.Body>
-                  <p className="fs-4 text-success d-flex justify-content-start align-items-center">
-                    <span className="nombre fs-1 fw-bold me-3">
+                  <p className="fs-4 text-success d-flex justify-content-start align-items-center pt-3">
+                    <img src={coachs} className="usersU me-2" />
+                    <span className="nombre fs-1 fw-bold me-1">
                       {countCoaches}
                     </span>
                     Coachs
@@ -636,11 +642,11 @@ const Admin = () => {
             <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
               <Card className="carte apprenantCard shadow-lg mb-3">
                 <Card.Body>
-                  <p className="fs-4 text-success d-flex justify-content-start align-items-center">
-                    <span className="nombre fs-1 fw-bold me-3">
-                      {" "}
-                      {countApprenant}{" "}
-                    </span>{" "}
+                  <p className="fs-4 text-success d-flex justify-content-start align-items-center pt-3">
+                    <img src={apprenants} className="usersU me-2" />
+                    <span className="nombre fs-1 fw-bold me-1">
+                      {countApprenant}
+                    </span>
                     Apprenants
                   </p>
                 </Card.Body>
@@ -653,7 +659,7 @@ const Admin = () => {
               <div>
                 <div className="InputContainer">
                   <input
-                    placeholder="Rechercher par prenom"
+                    placeholder="Rechercher par nom"
                     id="input"
                     className="input"
                     value={filterName}
@@ -685,7 +691,6 @@ const Admin = () => {
                   <option value="Tout">Tout</option>
                   <option value="Coach">Coachs</option>
                   <option value="Apprenant">Apprenant</option>
-                  <option value="Admin">Admin</option>
                 </Form.Select>
               </div>
             </div>
@@ -769,8 +774,10 @@ const Admin = () => {
 
       {/* Editing Modal */}
       <Modal show={editModalOpen} onHide={closeEditModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modifier l'utilisateur</Modal.Title>
+        <Modal.Header>
+          <Modal.Title className="text-center w-100 py-2 rounded shadow text-light modall">
+            Modifier l'utilisateur
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -878,10 +885,14 @@ const Admin = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={closeEditModal}>
+          <Button
+            variant=" text-light"
+            className="fermerbtn"
+            onClick={closeEditModal}
+          >
             Annuler
           </Button>
-          <Button variant="primary" onClick={updateUser}>
+          <Button variant=" text-light save" onClick={updateUser}>
             Mettre à jour
           </Button>
         </Modal.Footer>

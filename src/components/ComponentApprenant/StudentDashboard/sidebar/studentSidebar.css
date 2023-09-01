@@ -26,17 +26,20 @@
     border-bottom-right-radius: 25px;
     margin: 0px 0px 15px !important;
 }
-.menuLi:hover {
+.menuLi:focus {
     background-color: #a023e8;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     transition: .7s;
 }
-.menuLi:hover .side-icon{
-    color: aliceblue;
+.menuLi1:hover {
+    background:#e11064 !important;
 }
-.menuLi:hover .side-link{
-    color: aliceblue;
+.menuLi:focus .side-icon{
+    color: aliceblue !important;
+}
+.menuLi:focus .side-link{
+    color: aliceblue !important;
 }
 
 .btnDecon{
@@ -76,4 +79,17 @@
         width: 100px;
         height: 100px;
     }
+}
+
+.menuLiAppt {
+    background:#ba0e56 !important;
+    position: relative !important;
+}
+.menuLiAppt:focus::before  {
+    content:""; 
+    position: absolute !important;
+    background:#ff036c !important;
+    width: 5px !important;
+    height: 25px !important;
+    bottom: 5px;
 }
