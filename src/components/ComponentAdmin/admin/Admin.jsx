@@ -378,6 +378,7 @@ const Admin = () => {
                               <option value="status">Statut</option>
                               <option value="Coach">Coach</option>
                               <option value="Apprenant">Apprenant</option>
+                              <option value="Admin">Admin</option>
                             </Form.Select>
                           </div>
                           <Form.Group controlId="formAssignCoach">
@@ -471,7 +472,7 @@ const Admin = () => {
               {/* input Cherche */}
               <div>
                 
-                <div class="InputContainer">
+                <div className="InputContainer">
                   <input
                     placeholder="Rechercher par prenom"
                     id="input"
@@ -505,6 +506,7 @@ const Admin = () => {
                   <option value="Tout">Tout</option>
                   <option value="Coach">Coachs</option>
                   <option value="Apprenant">Apprenant</option>
+                  <option value="Admin">Admin</option>
                 </Form.Select>
               </div>
             </div>
@@ -669,6 +671,7 @@ const Admin = () => {
               >
                 <option value="Coach">Coach</option>
                 <option value="Apprenant">Apprenant</option>
+                <option value="Admin">Admin</option>
               </Form.Control>
             </Form.Group>
             <Form.Group controlId="formAssCoa">

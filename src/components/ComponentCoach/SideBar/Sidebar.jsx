@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -48,14 +47,14 @@ const Sidebar = () => {
               <div className="d-flex justify-content-center align-items-center">
                 <ul className="list-unstyled">
                   <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                    <Link to="/cch/dashboard" className="text-decoration-none side-link">
+                    <Link to="/coach/dashboard" className="text-decoration-none side-link">
                         <BiSolidDashboard className="side-icon fs-4 me-2" />
                         Dashboard
                      
                     </Link>
                   </li>
                   <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                    <Link to="/cch/dashboard/domain" className="text-decoration-none side-link">
+                    <Link to="/coach/dashboard/domain" className="text-decoration-none side-link">
                         
                         <BiSolidBookReader className="side-icon fs-4 me-2" />
                         Domaines
@@ -63,19 +62,19 @@ const Sidebar = () => {
                     </Link>
                   </li>
                   <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                    <Link to="/cch/dashboard/livraison" className="text-decoration-none side-link">
+                    <Link to="/coach/dashboard/livraison" className="text-decoration-none side-link">
                         <BiUpload className="side-icon fs-4 me-2" />
                         Livraisons
                     </Link>
                   </li>
                   <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                    <Link to="/cch/dashboard/list_apprenants" className="text-decoration-none side-link">
+                    <Link to="/coach/dashboard/list_apprenants" className="text-decoration-none side-link">
                         <PiStudentBold className="side-icon fs-4 me-2" />
                         Ètudiants
                     </Link>
                   </li>
                   <li className="mb-4 fs-5 menuLi pe-4 py-1 ps-2">
-                    <Link to="/cch/dashboard/messagerie" className="text-decoration-none side-link">
+                    <Link to="/coach/dashboard/messagerie" className="text-decoration-none side-link">
                       <BsFillChatRightFill className="side-icon fs-4 me-2" />
                       Messagerie
                     </Link>
@@ -83,7 +82,7 @@ const Sidebar = () => {
                 </ul>
               </div>
               <div className="w-100 mt-5">
-                <Link to="/cch/dashboard/messagerie">
+                <Link to="/coach/dashboard/messagerie">
                   <Button variant="primary" className="">
                     Déconnexion
                   </Button>

@@ -99,17 +99,14 @@ function App() {
 
     <>
       <Router>
-        {/* <Login />
-        {userRoutes}
-        
-        <Admin />  */}
-        
+        {/* {userRoutes} */}
+        {/* <Login /> */}
+        {/* <Admin />  */}
         <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/forgotPW' element={<ForgotPW />} />
-          <Route path='/cch/dashboard/*' element={<CoachsRoutes />} />
-          <Route path='/app/dashboard/*' element={<ApprenantRoutes />} />
-          <Route path='/admin/dashboard/' element={<Admin />} />
+          <Route exact path="/" element={<Login />}/>
+          <Route path='/coach/dashboard/*' element={ <CoachsRoutes /> } />
+          <Route path='/apprenant/dashboard/*' element={ <ApprenantRoutes /> } />
+          <Route path='/admin/dashboard' element={ <Admin /> } />
         </Routes>
       </Router>
       {/* <Admin />  */}

@@ -1,6 +1,7 @@
-import React from "react";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import "./domain.css";
 import { Link } from "react-router-dom";
 import HTMLCSS from "../../../Assets/coding.png";
@@ -13,14 +14,52 @@ import Csharp from "../../../Assets/c-sharp.png";
 
 const Programmation = () => {
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div className='container-fluid'>
       <h1>Les sous-domaines de la Programmation</h1>
+      <div className="join pt-3">
+        <button className="add_domain rounded-3" onClick={handleShow}>
+          <span>Ajouter</span>
+        </button>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Ajout de sous-domaine</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="add_file">
+              <label htmlFor="illustration">Image du domaine :</label>
+              <input
+                type="file"
+                id="illustration"
+                name="illustration"
+                accept="image/png, image/jpeg"
+              />
+            </div>
+            <div class="input-wrapper">
+              <label htmlFor="name_dom"></label>
+              <input type="text" id="name_dom" name="name_dom" placeholder="Entrer le nom du domaine" class="name_dom" />
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Annuler
+            </Button>
+            <Button variant="default" style={{backgroundColor: "#8a70d6", color: "white"}} onClick={handleClose}>
+              Ajouter
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
 
       <div className='row'>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-6 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/html/css'
+            to='/coach/dashboard/domain/programmation/html-css'
             className='join d-flex right-0'
           >
             <Card
@@ -31,7 +70,7 @@ const Programmation = () => {
                 <Card.Img variant='top' className='img-fluid' src={HTMLCSS} />
               </div>
               <Card.Body>
-                <Card.Title>HTML/CSS</Card.Title>
+                <Card.Title>HTML - CSS</Card.Title>
                 <p className='cours text-black text-center'>
                   Le HTML est donc un langage de balisage, Le CSS (Cascading
                   Style Sheets, aussi appelées feuilles de style)
@@ -54,7 +93,7 @@ const Programmation = () => {
 
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/boostrap'
+            to='/coach/dashboard/domain/programmation/bootstrap'
             className='join d-flex right-0'
           >
             <Card
@@ -65,7 +104,7 @@ const Programmation = () => {
                 <Card.Img variant='top' className='img-fluid' src={Bootstrap} />
               </div>
               <Card.Body>
-                <Card.Title>BOOSTRAP</Card.Title>
+                <Card.Title>BOOTSTRAP</Card.Title>
                 <p className='cours text-black text-center'>
                   Bootstrap est un framework CSS. Un framework correspond à un
                   ensemble de librairies regroupées
@@ -87,7 +126,7 @@ const Programmation = () => {
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/js'
+            to='/coach/dashboard/domain/programmation/javascript'
             className='join d-flex right-0'
           >
             <Card
@@ -124,7 +163,7 @@ const Programmation = () => {
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/php'
+            to='/coach/dashboard/domain/programmation/php'
             className='join d-flex right-0'
           >
             <Card
@@ -157,7 +196,7 @@ const Programmation = () => {
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/diago'
+            to='/coach/dashboard/domain/programmation/django'
             className='join d-flex right-0'
           >
             <Card
@@ -174,7 +213,7 @@ const Programmation = () => {
                   développement rapide de sites internet, sécurisés,
                 </p>
 
-                <button
+                {/* <button
                   className='orange d-flex justify-content-center align-items-center'
                   style={{
                     fontSize: "1.8rem",
@@ -183,14 +222,14 @@ const Programmation = () => {
                   }}
                 >
                   <MdOutlineKeyboardArrowRight />
-                </button>
+                </button> */}
               </Card.Body>
             </Card>
           </Link>
         </div>
         <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
           <Link
-            to='/sous-domaine-programmation/c'
+            to='/coach/dashboard/domain/programmation/Csharp'
             className='join d-flex right-0'
           >
             <Card

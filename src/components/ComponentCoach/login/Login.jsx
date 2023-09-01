@@ -47,13 +47,16 @@ const Login = () => {
         console.log('Statut du compte: ', status);
 
         // Rediriger en fonction du rôle de l'utilisateur
-        let userRoutes = null;
+        
         if (status === "Coach") {
-          navigate("/cch/dashboard");
+          navigate("/coach/dashboard");
+          // alert('coach')
         } else if (status === "Apprenant") {
-          navigate("/app/dashboard");
+          navigate('/apprenant/dashboard');
+          // alert('Apprenant')
         } else if (status === "Admin") {
           navigate("/admin/dashboard");
+          // alert('Admin')
         } else {
           alert("Rôle non reconnu");
         }

@@ -76,6 +76,11 @@ h1 {
     margin: 1rem;
 }
 
+.input-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
 .input-wrapper .name_dom {
     background-color: #eee;
     border: none;
@@ -126,12 +131,13 @@ h1 {
     background-color: rgba(128, 128, 128, 0.372);
 }
 
-.img_card {
+.img-card-top  {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 35px;
+    width: 70%;
 }
 
 .new {
@@ -190,4 +196,13 @@ p.card-text {
 }
 .join{
     text-decoration: none !important;
+}
+
+.ike{
+    padding-left: 15px;
+}
+
+.ike svg {
+    height: 1.8em;
+    width: 1.8em;
 }
