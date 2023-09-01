@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react";
-import { GrView } from "react-icons/gr";
-import { FcAcceptDatabase } from "react-icons/fc";
+import 'bootstrap/dist/js/bootstrap.min.js'
+import { BiSolidShow } from "react-icons/bi";
 import "./style.css";
 import { db } from "../../firebase/Firebase";
 import { addDoc, collection, getDocs} from "firebase/firestore";
@@ -72,30 +72,30 @@ const CartLive = () => {
       <div className="col-md-4">
           <div className="card mb-5 p-3 shadow hover" key={content.id}>
             <h4 className="card-title">{content.title}</h4>
-            <span className="text-info">{content.description}</span>
+            <span className="">{content.description}</span>
             <a className="nav-link mt-2 mb-3">{content.lien}</a>
             <div className="">
                 {content.image && (
-                    <img variant="top" className="img-fluid d-flex orange"
+                    <img variant="top" className="img-fluid d-flex"
                         src={content.image}
                     />
                   )}
             </div>
-            <div class="d-flex justify-content-between mt-3 mb-3">
-            <div className="col-md-6">
-              <button type="button" className="btn btn-lg text-white btn-secondary d-flex justify-content-center align-items-center"
+            <div class="text-center d-flex justify-content-between align-items-center mt-4 mb-3">
+            <div className="">
+              <button type="button" className="btn text-white btn-outline-secondary d-flex justify-content-center align-items-center"
                data-bs-toggle="modal" data-bs-target="#modal0">
-                <GrView className="me-2 text-white"/>Livrable
+                <BiSolidShow className="me-2 text-white"/>Livrable
               </button>
             </div>
-            <div className="col-md-6">
-              <button type="button" className="btn btn-success btn-lg text-white d-flex justify-content-center align-items-center"
+            <div className="">
+              <button type="button" className="btn btn-outline-success  text-white d-flex justify-content-center align-items-center"
                data-bs-toggle="modal" data-bs-target="#modal1">
-                  <FcAcceptDatabase className="me-2"/> Commentaire
+                  <BiSolidShow className="me-2"/> Commentaire
               </button>
             </div>
-        </div>
           </div>
+        </div>
       </div>
         ))}
         

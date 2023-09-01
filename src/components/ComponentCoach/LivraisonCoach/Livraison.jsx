@@ -1,7 +1,7 @@
 import React from "react";
+import 'bootstrap/dist/js/bootstrap.min.js'
 import Cart from "../../ComponentApprenant/Livraisons/Cart";
 import "./styles.css";
-import { IoMdNotifications } from "react-icons/io";
 
 const Livraison = () => {
   return (
@@ -28,17 +28,10 @@ const Livraison = () => {
           </nav> */}
         </div>
         <div className="row">
-          <h3 className="title mt-5">Livraisons</h3>
-          <div className="col-md-4">
+          <h3 className="title mb-5 mt-5">Livraisons</h3>
+          <div>
             <Cart />
           </div>
-          <div className="col-md-4">
-            <Cart />
-          </div>
-          <div className="col-md-4">
-            <Cart />
-          </div>
-          
         </div>
       </div>
     </div>

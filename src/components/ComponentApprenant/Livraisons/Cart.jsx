@@ -1,101 +1,124 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
+import 'bootstrap/dist/js/bootstrap.min.js'
 import '../../ComponentCoach/LivraisonCoach/styles.css'
-import img from './img6.jpeg' 
-import {GrView} from 'react-icons/gr'
-import {FcAcceptDatabase} from 'react-icons/fc'
+import {BiSolidShow} from 'react-icons/bi'
+import {FcApproval} from 'react-icons/fc'
 import {TbPlayerEject} from 'react-icons/tb'
 
 //firebase
-// import { db } from "../../firebase/Firebase";
-// import { collection, getDocs} from "firebase/firestore";
+ import { db } from "../../firebase/Firebase";
+ import { collection, getDocs} from "firebase/firestore" 
 
 
-// const [cartliv, setCartliv] = useState([
-//   {
-//     title:"",
-//     subtitle:"",
-//     lien:"",
-//     description:"",
-//     image:""
-//   }
-// ]);
-// const unsubscribe = collection(db, 'livraison')
 
-// const getLivraison = async () =>{
-//   try {
-//     const data = await getDocs(unsubscribe);
-//     const filteredData = data.docs.map((doc) => ({
-//       id: doc.id,
-//       ...doc.data(),
-//     }));
-
-//     setCartliv(filteredData);
-//   } catch (err) {
-//     console.error("Error getting documents: ", err);
-//   }
-// }
-
-// useEffect(() => {
-
-//   getLivraison();
-
-//    }, []);
 
 const Cart = () => {
+
+  const [cartliv, setCartliv] = useState([]);
+  const [cartlivs, setCartlivs] = useState([]);
+  
+
+  const unsubscribe = collection(db, 'livraison')
+
+  const getLivraison = async () =>{
+    try {
+      const data = await getDocs(unsubscribe);
+      const filteredData = data.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setCartliv(filteredData);
+      setCartlivs(filteredData);
+    } catch (err) {
+      console.error("Error getting documents: ", err);
+    }
+  }
+
+  useEffect(() => {
+    getLivraison();
+   }, []);
+
+
+
   return (
-      <div>
-        <div className="card mb-5 p-3 shadow hover">
-        {/* {cartliv.map((content, index) => (
-          <div className="" key={content.id}>
-            <h3 className="card-title">{content.title}</h3>
-            <p className="text">{content.subtitle}</p>
-            <p className="text">{content.description}</p>
-            <p className="text">{content.lien}</p>
-             {content.image.map((url, index) => (
-            <img key={index} src={url} alt={`Image ${index}`} />
-          ))}
+    <div className="row">
+        {cartliv.map((content) => (
+      <div className="col-md-4">
+          <div className="card mb-5 p-3 shadow hover" style={{width: 24 + 'rem'}} key={content.id} >
+            <h4 className="card-title">{content.title}</h4>
+            <span className="">{content.description}</span>
+            <a className="nav-link mt-2 mb-3">{content.lien}</a>
+            <div className="">
+                {content.image && (
+                    <img variant="top" className="img-fluid card-img-top"
+                        src={content.image}
+                    />
+                  )}
+            </div>
+            <div class=" text-center d-flex justify-content-between align-items-center mt-4 mb-3">
+            <div className="">
+              <button type="button" className="btn text-white btn-outline-secondary d-flex justify-content-center align-items-center"
+               data-bs-toggle="modal" data-bs-target="#modal0">
+                <BiSolidShow className="me-2 text-white"/>voir
+              </button>
+            </div>
+            <div className="">
+              <button type="button" className="btn btn-outline-success  text-white d-flex justify-content-center align-items-center"> 
+                  <FcApproval className="me-2"/> accepter
+              </button>
+            </div>
+            <div className="">
+              <button type="button" className="btn btn-outline-danger text-white d-flex justify-content-center align-items-center">
+                  <TbPlayerEject className="me-2"/>rejeter
+              </button>
+            </div>
           </div>
-        ))} */}
-        
-        <div class="d-flex justify-content-between mt-3 mb-3">
-            <div className="col-md-4">
-              <button type="button" className="btn btn-lg text-white btn-secondary d-flex justify-content-center align-items-center"
-              data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <GrView className="me-2"/>Voir
-              </button>
-            </div>
-            <div className="col-md-4">
-              <button type="button" className="btn btn-success btn-lg text-white d-flex justify-content-center align-items-center"
-               data-bs-toggle="modal" data-bs-target="#modal1">
-                  <FcAcceptDatabase className="me-2"/> Accepter
-              </button>
-            </div>
-            <div className="col-md-4">
-                <button type="button" className="btn btn-lg text-white btn-secondary d-flex justify-content-center align-items-center">
-                  <TbPlayerEject className='me-2'/>Rejeter</button>
-            </div>
         </div>
       </div>
+        ))}
+        
 
-        {/* <!-- Modal --> */}
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      {/* <!-- Modal --> */}
+      <div
+        class="modal fade"
+        id="modal0"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog modal-xl">
-            <div class="modal-content">
+          <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Voir Livraison</h1>
-                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Mon travail
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
             <div class="modal-body">
-                <img src={img} className="card-img-top" height='550px' alt="..." />
+              {cartlivs.map((contents) =>(
+                   <div className="" key={contents.id}>
+                    <div className="">
+                    {contents.image && (
+                    <img variant="top" className="img-fluid d-flex orange"
+                        src={contents.image}
+                    />
+                  )}
+                  </div>
+              </div>
+              ))}
             </div>
-            <div class="modal-footer">
-               
-            </div>
-            </div>
+            <div class="modal-footer"></div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default Cart

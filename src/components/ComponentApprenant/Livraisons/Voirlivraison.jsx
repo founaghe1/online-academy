@@ -1,4 +1,5 @@
-import React,{useState, useEffect} from "react";
+import React,{useState} from "react";
+import 'bootstrap/dist/js/bootstrap.min.js'
 import './style.css'
 import CartLive from "./CartLive";
 
@@ -76,29 +77,29 @@ const Voirlivraison = () => {
 
         {/* <!-- Modal --> */}
         <div
-          class="modal bx-shadow fade"
+          className="modal bx-shadow fade"
           id="mod1"
           tabindex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-              <div class="modal-header shadow mb-4">
-                <h1 class="modal-title" id="exampleModalLabel">
+          <div className="modal-dialog modal-xl">
+            <div className="modal-content">
+              <div className="modal-header shadow mb-4">
+                <h1 className="modal-title" id="exampleModalLabel">
                   Envoyer mon travail
                 </h1>
                 <button
                   type="button"
-                  class="btn-close"
+                  className="btn-close"
                   data-bs-dismiss="modal"
                   aria-label="Close"
-                ></button>
+                ></button>    
               </div>
-              <div class="modal-body">
+              <div className="modal-body">
                 <form action="">
                   <div className=" mb-4">
-                    <select class="form-select rounded border border-warning p-3" aria-label="Default select example" name='tache'
+                    <select className="form-select rounded border border-warning p-3" aria-label="Default select example" name='tache'
                      value={title} onChange={(e)=> setTitle(e.target.value)}>
                       <option selected>Choisir une tâche</option>
                       <option value="Tâche 1">Tâche 1</option>
@@ -106,7 +107,7 @@ const Voirlivraison = () => {
                       <option value="Tâche 3">Tâche 3</option>
                     </select>
                   </div>
-                  <div class="mb-4 border border-warning">
+                  <div className="mb-4 border border-warning">
                     <input
                       type="text"
                       className="form-control  rounded p-3" 
@@ -114,7 +115,7 @@ const Voirlivraison = () => {
                       id="exampleFormControlInput1"
                       placeholder="Lien de Deploiment"/>
                   </div>
-                  <div class="mb-4">
+                  <div className="mb-4">
                     <textarea value={description}
                       className="form-control rounded border border-warning"
                       onChange={e => setDescription(e.target.value)}
