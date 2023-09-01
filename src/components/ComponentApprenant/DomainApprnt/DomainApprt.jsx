@@ -4,19 +4,59 @@ import Card from "react-bootstrap/Card";
 import Programmer from "../../../Assets/programmer.png";
 import Marketer from "../../../Assets/content-strategy.png";
 import Designer from "../../../Assets/web-design.png";
-import { Link } from "react-router-dom";
 import "./domain.css";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { db, storage } from "../../firebase/Firebase"; // Importez la configuration Firebase
+import {
+  getDocs,
+  collection,
+  doc,
+  setDoc,
+  orderBy,
+  query,
+  serverTimestamp,
+} from "firebase/firestore";
 
 const Domain = () => {
+
+  // Recuperation des domaines dans la base de donnees
+  const [domaines, setDomaines] = useState([]);
+
+  const domainesCollectionRef = collection(db, "domaines");
+
+  const getDomaines = async () => {
+    try {
+      const q = query(domainesCollectionRef, orderBy("date", "asc")); // Ajoutez orderBy ici
+      const data = await getDocs(q);
+      const filteredData = data.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setDomaines(filteredData);
+    } catch (err) {
+      console.error("Error getting documents: ", err);
+    }
+  };
+
+  useEffect(() => {
+    // call the function here to fetch all the user list in realtime
+    getDomaines();
+  }, []);
   
   return (
     <div className='container'>
       <h1>Les domaines de formation</h1>
 
       <div className='row'>
-        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
+        {domaines.map((domaine) => (
+        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'
+          key={domaine.id}
+        >
           <Link
-            to='/sous-domaine-programmation'
+            to={`/apprenant/dashboard/domain/${domaine.id}`}
             className='join d-flex right-0'
           >
             <Card
@@ -24,51 +64,22 @@ const Domain = () => {
               className='_grid item1 orangeclair shadow'
             >
               <div className='img_card p-4 d-flex orange'>
-                <Card.Img
-                  variant='top'
-                  className='img-fluid d-flex'
-                  src={Programmer}
-                />
+              {domaine.imageURL && (
+                  <Card.Img
+                    variant="top"
+                    className="img-fluid d-flex orange"
+                    src={domaine.imageURL}
+                  />
+                )}
               </div>
               <Card.Body>
-                <Card.Title>Programmation</Card.Title>
+                <Card.Title>{domaine.titre}</Card.Title>
                 <Card.Text>10 sous-domaines</Card.Text>
               </Card.Body>
             </Card>
           </Link>
         </div>
-        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
-          <Link to='/sous-domaine-marketing' className='join d-flex right-0'>
-            <Card
-              style={{ width: "15rem" }}
-              className='_grid item2 violetclair shadow'
-            >
-              <div className='img_card p-4 d-flex violet'>
-                <Card.Img variant='top' className='img-fluid' src={Marketer} />
-              </div>
-              <Card.Body>
-                <Card.Title>Marketing Digital</Card.Title>
-                <Card.Text>07 sous-domaines</Card.Text>
-              </Card.Body>
-            </Card>
-          </Link>
-        </div>
-        <div className='_kolon col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center mt-4'>
-          <Link to='/sous-domaine-design' className='join d-flex right-0'>
-            <Card
-              style={{ width: "15rem" }}
-              className='_grid item3 blueclair shadow'
-            >
-              <div className='img_card p-4 d-flex blue'>
-                <Card.Img variant='top' className='img-fluid' src={Designer} />
-              </div>
-              <Card.Body>
-                <Card.Title>Design</Card.Title>
-                <Card.Text>08 sous-domaines</Card.Text>
-              </Card.Body>
-            </Card>
-          </Link>
-        </div>
+        ))}
       </div>
     </div>
   );

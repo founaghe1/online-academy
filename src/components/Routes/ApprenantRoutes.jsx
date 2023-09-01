@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import { Router, Route, Routes } from "react-router-dom";
-import Domain from '../ComponentApprenant/DomainApprnt/DomainApprt';
-import Programmation from '../ComponentApprenant/DomainApprnt/ProgrammationApprt';
-import Marketing from '../ComponentApprenant/DomainApprnt/MarketingApprt';
-import Design from '../ComponentApprenant/DomainApprnt/DesignApprt';
-import Voirlivraison from '../ComponentApprenant/Livraisons/Voirlivraison';
+// import Domain from '../ComponentApprenant/DomainApprnt/DomainApprt';
+// import Programmation from '../ComponentApprenant/DomainApprnt/ProgrammationApprt';
+// import Marketing from '../ComponentApprenant/DomainApprnt/MarketingApprt';
+// import Design from '../ComponentApprenant/DomainApprnt/DesignApprt';
+
 import LayoutApp from '../ComponentApprenant/Layout/LayoutApp';
 import StudentDashboard from '../ComponentApprenant/StudentDashboard/StudentDashboard';
-import Login from '../ComponentCoach/login/Login';
-import ForgotPW from '../ComponentCoach/ForgotPW/ForgotPW';
+// import Login from '../ComponentCoach/login/Login';
+// import ForgotPW from '../ComponentCoach/ForgotPW/ForgotPW';
 import Sousdomain from '../ComponentApprenant/DomainApprnt/Sousdomain';
 import Voircour from '../ComponentApprenant/VoirCours/VoirCour';
 import Quizzes from '../ComponentApprenant/VoirCours/Quizzes';
@@ -38,20 +38,91 @@ import Voircourdegiadop from '../ComponentApprenant/VoirCours/Voircourdegiadop';
 import QuizzPhotos from '../ComponentApprenant/VoirCours/QuizzPhotos';
 import ChatPage from '../ComponentCoach/ChatPage/ChatPage';
 import ListCoach from '../ComponentCoach/ListCoach/ListCoach'
-import RecuparationCour from '../ComponentApprenant/Recuperationcourapp/RecuparationCours'
+// import RecuparationCour from '../ComponentApprenant/Recuperationcourapp/RecuparationCours'
+// import Domain from "../ComponentApprenant/DomainApprnt/DomainApprt";
+import DomainApprt from "../ComponentApprenant/DomainApprnt/DomainApprt";
+// import Programmation from "../ComponentApprenant/DomainApprnt/ProgrammationApprt";
+// import Marketing from "../ComponentApprenant/DomainApprnt/MarketingApprt";
+// import Design from "../ComponentApprenant/DomainApprnt/DesignApprt";
+import Voirlivraison from "../ComponentApprenant/Livraisons/Voirlivraison";
+// import LayoutApp from "../ComponentApprenant/Layout/LayoutApp";
+// import StudentDashboard from "../ComponentApprenant/StudentDashboard/StudentDashboard";
+// import Login from "../ComponentCoach/login/Login";
+// import ForgotPW from "../ComponentCoach/ForgotPW/ForgotPW";
+// import Sousdomain from "../ComponentApprenant/DomainApprnt/Sousdomain";
+// import Voircour from "../ComponentApprenant/VoirCours/VoirCour";
+// import Quizzes from "../ComponentApprenant/VoirCours/Quizzes";
+// import CourBoostrap from "../ComponentApprenant/VoirCours/CourBoostrap";
+// import QuizzBoostrap from "../ComponentApprenant/VoirCours/QuizzBoostrap";
+// import Voircourjs from "../ComponentApprenant/VoirCours/VoircourJS";
+// import QuizzJs from "../ComponentApprenant/VoirCours/QuizzJs";
+// import Voircourphp from "../ComponentApprenant/VoirCours/Voircourphp";
+// import QuizzPhp from "../ComponentApprenant/VoirCours/QuizzPhp";
+// import Voircourdiago from "../ComponentApprenant/VoirCours/Voircourdiago";
+// import Quizzdjango from "../ComponentApprenant/VoirCours/Quizzdjango";
+// import Voircourc from "../ComponentApprenant/VoirCours/Voircousc++";
+// import QuizzC from "../ComponentApprenant/VoirCours/QuizzC++";
+// import Voircourmarketud from "../ComponentApprenant/VoirCours/Voircourmarketud";
+// import QuizzMarketinDigital from "../ComponentApprenant/VoirCours/QuizzMarketinDigital";
+// import Voircourmarkdevelo from "../ComponentApprenant/VoirCours/Voircourmarkdevelo";
+// import Quizzresauxsocia from "../ComponentApprenant/VoirCours/Quizzresauxsocia";
+// import Courbooster from "../ComponentApprenant/VoirCours/Courbooster";
+// import Quizzbooster from "../ComponentApprenant/VoirCours/QuizzBooter";
+// import Designinitialisa from "../ComponentApprenant/VoirCours/Designinitialisa";
+// import Quizzinitialisation from "../ComponentApprenant/VoirCours/Quizzinitialisation";
+// import Ulistration from "../ComponentApprenant/VoirCours/ulistratindesi";
+// import Quizzullustrator from "../ComponentApprenant/VoirCours/Quizzullustrator";
+// import Designpro from "../ComponentApprenant/VoirCours/Designpro";
+// import Quizzpro from "../ComponentApprenant/VoirCours/Quizzpro";
+// import Voircourdegiadop from "../ComponentApprenant/VoirCours/Voircourdegiadop";
+// import QuizzPhotos from "../ComponentApprenant/VoirCours/QuizzPhotos";
+import { db } from "../firebase/Firebase";
 
+import {
+  doc,
+  getDocs,
+  getDoc,
+  collection,
+  query,
+  where,
+  serverTimestamp,
+  onSnapshot,
+} from "firebase/firestore";
 
 function ApprenantRoutes() {
+
+  const sousDomaineCollectionRef = collection(db, "sousdomaines");
+  const [sousDomaines, setSousDomaines] = useState([]);
+
+  useEffect(() => {
+    const q = query(sousDomaineCollectionRef);
+    onSnapshot(q, (querySnapshot) => {
+      const sousDomains = [];
+      querySnapshot.forEach((doc) => {
+        sousDomains.push(doc.data().titre);
+      });
+      const getSousDomaines = async () => {
+        const data = await getDocs(q);
+        setSousDomaines(
+          data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+        );
+      };
+      getSousDomaines();
+    }); 
+    // eslint-disable-next-line
+  }, []);
   return (
     <Routes>
-      <Route path='/' element={<LayoutApp />}>
+      <Route path='/' element={<LayoutApp />} />
         <Route index element={<StudentDashboard />} />
         <Route path='/livraison' element={<Voirlivraison />} />
-        <Route path='/cours' element={<RecuparationCour />} />
-        <Route path='/cours/*' element={<TachesRoutes />} />
+        <Route path="/cours" element={<DomainApprt />} />
+        {sousDomaines.map((sousDomaine) => (
+          <Route path="/domain/:domaineId" element={<Sousdomain />} />
+        ))}
+        {/* <Route path='/cours/*' element={<TachesRoutes />} /> */}
         <Route path='/messagerie' element={<ChatPage />} />
         <Route path='/coach' element={<ListCoach />} />
-      </Route>
     </Routes>
   );
 }
@@ -64,43 +135,63 @@ function ApprenantRoutes() {
 //       //       <Route path="/livraison" element={<Voirlivraison />} />
 //       //       <Route path="/cours" element={<Sousdomain />} />
 //       //       <Route path="/cours/*" element={<TachesRoutes />} />
-//       //     </Route>  
+//       //     </Route>
 //       // </Routes>
 //     );
 //   }
 
-
 function TachesRoutes() {
-    return (
-      <Routes>
-        <Route path="/html-css" element={<Voircour />} />
-        <Route path="/html-css-Quizz" element={<Quizzes />} />
-        <Route path="/bootstrap" element={<CourBoostrap />} />
-        <Route path="/bootstrap-Quizz" element={<QuizzBoostrap />} />
-        <Route path="/javascript" element={<Voircourjs />} />
-        <Route path="/javascript-Quizz" element={<QuizzJs />} />
-        <Route path="/php" element={<Voircourphp />} />
-        <Route path="/php-Quizz" element={<QuizzPhp />} />
-        <Route path="/django" element={<Voircourdiago />} />
-        <Route path="/django-Quizz" element={<Quizzdjango />} />
-        <Route path="/csharp" element={<Voircourc />} />
-        <Route path="/csharp-Quizz" element={<QuizzC />} />
-        <Route path="/introduction-au-marketing-digital" element={<Voircourmarketud />} />
-        <Route path="/introduction-au-marketing-digital-Quizz" element={<QuizzMarketinDigital />} />
-        <Route path="/se-démarquer-sur-les-réseaux sociaux" element={<Voircourmarkdevelo />} />
-        <Route path="/se-démarquer-sur-les-réseaux sociaux-Quizz" element={<Quizzresauxsocia />} />
-        <Route path="/comment-booster-ses-stats" element={<Courbooster />} />
-        <Route path="/comment-booster-ses-stats-Quizz" element={<Quizzbooster />} />
-        <Route path="/apprendre-adobe-photoshop" element={<Designinitialisa />} />
-        <Route path="/apprendre-adobe-photoshop-Quizz" element={<QuizzPhotos />} />
-        <Route path="/apprendre-adobe-illustrator" element={<Ulistration />} />
-        <Route path="/apprendre-adobe-illustrator-Quizz" element={<Quizzullustrator />} />
-        <Route path="/apprendre-adobe-premier-pro" element={<Designpro />} />
-        <Route path="/apprendre-adobe-premier-pro-Quizz" element={<Quizzpro />} />
-        <Route path="/initiation-au-3D" element={<Voircourdegiadop />} />
-        <Route path="/initiation-au-3D-Quizz" element={<Quizzinitialisation />} />
-      </Routes>
-    );
-  }
+  return (
+    <Routes>
+      <Route path="/html-css" element={<Voircour />} />
+      <Route path="/html-css-Quizz" element={<Quizzes />} />
+      <Route path="/bootstrap" element={<CourBoostrap />} />
+      <Route path="/bootstrap-Quizz" element={<QuizzBoostrap />} />
+      <Route path="/javascript" element={<Voircourjs />} />
+      <Route path="/javascript-Quizz" element={<QuizzJs />} />
+      <Route path="/php" element={<Voircourphp />} />
+      <Route path="/php-Quizz" element={<QuizzPhp />} />
+      <Route path="/django" element={<Voircourdiago />} />
+      <Route path="/django-Quizz" element={<Quizzdjango />} />
+      <Route path="/csharp" element={<Voircourc />} />
+      <Route path="/csharp-Quizz" element={<QuizzC />} />
+      <Route
+        path="/introduction-au-marketing-digital"
+        element={<Voircourmarketud />}
+      />
+      <Route
+        path="/introduction-au-marketing-digital-Quizz"
+        element={<QuizzMarketinDigital />}
+      />
+      <Route
+        path="/se-démarquer-sur-les-réseaux sociaux"
+        element={<Voircourmarkdevelo />}
+      />
+      <Route
+        path="/se-démarquer-sur-les-réseaux sociaux-Quizz"
+        element={<Quizzresauxsocia />}
+      />
+      <Route path="/comment-booster-ses-stats" element={<Courbooster />} />
+      <Route
+        path="/comment-booster-ses-stats-Quizz"
+        element={<Quizzbooster />}
+      />
+      <Route path="/apprendre-adobe-photoshop" element={<Designinitialisa />} />
+      <Route
+        path="/apprendre-adobe-photoshop-Quizz"
+        element={<QuizzPhotos />}
+      />
+      <Route path="/apprendre-adobe-illustrator" element={<Ulistration />} />
+      <Route
+        path="/apprendre-adobe-illustrator-Quizz"
+        element={<Quizzullustrator />}
+      />
+      <Route path="/apprendre-adobe-premier-pro" element={<Designpro />} />
+      <Route path="/apprendre-adobe-premier-pro-Quizz" element={<Quizzpro />} />
+      <Route path="/initiation-au-3D" element={<Voircourdegiadop />} />
+      <Route path="/initiation-au-3D-Quizz" element={<Quizzinitialisation />} />
+    </Routes>
+  );
+}
 
-export default ApprenantRoutes
+export default ApprenantRoutes;

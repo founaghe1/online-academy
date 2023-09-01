@@ -3,6 +3,7 @@ import { getFirestore, collection, doc, updateDoc } from "firebase/firestore"
 import { getStorage } from 'firebase/storage'
 import { getAuth, updateProfile, updateEmail, sendPasswordResetEmail } from "firebase/auth";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyAQGwZ3Hm3ORR8DW_aaKwj0WIW42emoWzM",
   authDomain: "tache21-34aa0.firebaseapp.com",
@@ -17,8 +18,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 export const db = getFirestore(app);
+
 // Obtenir l'instance d'authentification
 const auth = getAuth(app);
 
+
+
 export {  auth, collection, doc, updateDoc, sendPasswordResetEmail  };
 export { updateProfile, updateEmail }
+
