@@ -222,7 +222,7 @@ const StudentNavbar = () => {
                     </button>)}
                     
                   </li>
-                  <li className="ps-3 mt-2">
+                  {/* <li className="ps-3 mt-2">
                     {editing ? (
                       <button
                         className="btn btn-success text-light"
@@ -232,13 +232,14 @@ const StudentNavbar = () => {
                       </button>
                     ) : (
                       <button
-                        className="btn btn-danger text-light logout"
+                        className="t"
                         onClick={logOut}
                       >
                         Déconnexion
                       </button>
-                    )}
-                  </li>
+                    )
+                    }
+                  </li> */}
                 </ul>
               </div>
             </div>

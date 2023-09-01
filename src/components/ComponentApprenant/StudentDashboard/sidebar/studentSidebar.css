@@ -13,12 +13,27 @@
     background-color: #a023e8;
     color: aliceblue;
 }
-.btnDecon:hover{
+/* .btnDecon:hover{
     background-color: #e60303;
     color: aliceblue;
 }
 .btnDecon{
     border: 3px solid #fe0000;
+} */
+.dec:hover{
+    /* background-color:red !important; */
+    border: 3px solid red !important;
+
+    /* border-radius: 2px rgb(211, 109, 109)  !important; */
+    color: #fff !important;
+}
+
+.dec{
+    background-color: transparent !important;
+    color: #8a70d6 !important;
+    border: 3px solid red !important;
+    
+
 }
 
 .menuLi{

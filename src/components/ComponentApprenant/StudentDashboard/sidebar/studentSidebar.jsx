@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./studentSidebar.css";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
@@ -96,9 +96,9 @@ function Sidebar() {
                 </li>
               </ul>
             </div>
-            <div className="w-100 mt-5 ps-3">
+            <div className="w-100 mt-5 ps-3 ">
                 <Link to="/coach/dashboard/messagerie">
-                  <Button variant="primary" className=""
+                  <Button className="dec"
                     onClick={logOut}
                   >
                     Déconnexion
